@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>More Restaurants - ECO.TRAVEL Malaysia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 引入 Bootstrap CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+  <!-- 引入 Bootstrap Icons -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  >
+  <style>
+    /* 设置 html 与 body 占满全屏 */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f8ff; /* 浅色调背景 */
+      font-family: Arial, sans-serif;
+    }
+    
+    /* 导航栏 */
+    .navbar {
+      background-color: #2196f3;
+    }
+    .navbar .navbar-brand,
+    .navbar .nav-link,
+    .navbar .bi {
+      color: #fff !important;
+    }
+    .navbar .nav-link:hover {
+      color: #dfefff !important;
+    }
+    .navbar .nav-link.active {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* 标题区 */
+    .section-title {
+      background-color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .section-title h2 {
+      font-weight: bold;
+      margin: 0;
+      font-size: 1.75rem;
+      color: #555;
+    }
+    .section-title h3 {
+      margin: 0;
+      color: #0d6efd;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    /* 卡片区域 */
+    .cards-section {
+      min-height: calc(100vh - 120px); /* 预留出导航和标题区域的高度 */
+      padding-top: 1rem; 
+      padding-bottom: 2rem;
+    }
+    .restaurant-card {
+      overflow: hidden;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #fff;
+    }
+    .restaurant-card img {
+      width: 100%;
+      height: 300px; 
+      object-fit: cover;
+    }
+    .restaurant-card .card-body {
+      padding: 15px;
+      flex: 1;
+    }
+    .restaurant-card .card-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .restaurant-card .location,
+    .restaurant-card .rating {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .restaurant-card .price {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #333;
+      margin-top: auto;
+    }
+
+    /* 收藏按钮（心形图标） */
+    .favorite-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .favorite-btn:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+    /* 定义收藏状态：添加 .favorited 类后，内部图标颜色变红 */
+    .favorite-btn.favorited i {
+      color: red;
+    }
+
+    /* 向下箭头及下方提示文字 */
+    .arrow-down-section {
+      text-align: center;
+      margin-top: 2rem;
+      cursor: pointer; /* 鼠标悬停显示手势 */
+    }
+    .arrow-down-section i {
+      font-size: 2rem;
+      color: #2196f3;
+    }
+    .arrow-down-section p {
+      margin-top: 0.5rem;
+      color: #2196f3;
+      font-weight: bold;
+    }
+    
+    /* 返回按钮 */
+    .back-btn {
+      margin-bottom: 1rem;
+    }
+
+    /* 页脚 */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #343a40;
+      color: #fff;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">ECO.TRAVEL Malaysia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation" style="border-color: #fff;">
+        <span class="text-white">
+          <i class="bi bi-list"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Transport</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Weather</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Favourite</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="nav-link" href="#">
+              <i class="bi bi-person-circle fs-5"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 标题区 -->
+  <section class="section-title">
+    <div class="container-fluid">
+      <h2>MORE RESTAURANTS</h2>
+      <h3>DISCOVER OUR EXTENSIVE LIST</h3>
+    </div>
+  </section>
+
+  <!-- 卡片区域 -->
+  <section class="cards-section">
+    <div class="container-fluid">
+      <!-- 返回按钮 -->
+      <button id="back-btn" class="btn btn-secondary back-btn">← Back</button>
+      
+      <!-- 给卡片所在的 row 添加 id 以便后续动态插入 -->
+      <div id="restaurant-cards" class="row g-3 px-3">
+        <!-- 已有的卡片示例 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 d-flex">
+          <div class="card restaurant-card w-100">
+            <!-- 点赞按钮 -->
+            <button class="favorite-btn" title="Like this restaurant">
+              <i class="bi bi-heart"></i>
+            </button>
+            <img 
+              src="Phuket Gajah Restaurant.png" 
+              class="card-img-top" 
+              alt="Phuket Gajah Restaurant"
+              onclick="window.location.href='Phuket_detail.html'"
+            >
+            <div class="card-body">
+              <h5 class="card-title" onclick="window.location.href='Phuket_detail.html'">Phuket Gajah Restaurant</h5>
+              <p class="location">📍 Phuket, Thailand</p>
+              <p class="rating">⭐ 4.93 (8024)</p>
+              <p class="price">From RM76 / adult</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 2 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 d-flex">
+          <div class="card restaurant-card w-100">
+            <button class="favorite-btn" title="Like this restaurant">
+              <i class="bi bi-heart"></i>
+            </button>
+            <img 
+              src="SUshi.jpeg" 
+              class="card-img-top" 
+              alt="Sushi Hasaki Tokyo"
+              onclick="window.location.href='Sushi_detail.html'"
+            >
+            <div class="card-body">
+              <h5 class="card-title" onclick="window.location.href='Sushi_detail.html'">Sushi Hasaki Tokyo</h5>
+              <p class="location">📍 Terengganu, Malaysia</p>
+              <p class="rating">⭐ 4.7 (15,370)</p>
+              <p class="price">From RM110 / adult</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 3 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 d-flex">
+          <div class="card restaurant-card w-100">
+            <button class="favorite-btn" title="Like this restaurant">
+              <i class="bi bi-heart"></i>
+            </button>
+            <img 
+              src="Mingalabar.jpeg" 
+              class="card-img-top" 
+              alt="Mingalabar Myanmar Restaurant"
+              onclick="window.location.href='Mingala_detail.html'"
+            >
+            <div class="card-body">
+              <h5 class="card-title" onclick="window.location.href='Mingala_detail.html'">Mingalabar Myanmar Restaurant</h5>
+              <p class="location">📍 Myanmar</p>
+              <p class="rating">⭐ 4.51 (7654)</p>
+              <p class="price">From RM90 / adult</p>
+            </div>
+          </div>
+        </div>
+        
+       <!-- 卡片 4 -->
+<div class="col-lg-4 col-md-6 col-sm-12 d-flex">
+  <div class="card restaurant-card w-100">
+    <button class="favorite-btn" title="Like this restaurant">
+      <i class="bi bi-heart"></i>
+    </button>
+    <img 
+      src="Penang_Laksa_House.jpeg" 
+      class="card-img-top" 
+      alt="Penang Laksa House"
+      onclick="window.location.href='Laksa_detail.html'"
+    >
+    <div class="card-body">
+      <h5 class="card-title" onclick="window.location.href='Laksa_detail.html'">Penang Laksa House</h5>
+      <p class="location">📍 Penang, Malaysia</p>
+      <p class="rating">⭐ 4.7 (850)</p>
+      <p class="price">From RM90 / adult</p>
+    </div>
+  </div>
+</div>
+
+<!-- 卡片 5 -->
+<div class="col-lg-4 col-md-6 col-sm-12 d-flex">
+  <div class="card restaurant-card w-100">
+    <button class="favorite-btn" title="Like this restaurant">
+      <i class="bi bi-heart"></i>
+    </button>
+    <img 
+      src="Bali_Seafood_Grill.jpeg" 
+      class="card-img-top" 
+      alt="Bali Seafood Grill"
+      onclick="window.location.href='BaliSeafood_detail.html'"
+    >
+    <div class="card-body">
+      <h5 class="card-title" onclick="window.location.href='BaliSeafood_detail.html'">Bali Seafood Grill</h5>
+      <p class="location">📍 Bali, Indonesia</p>
+      <p class="rating">⭐ 4.4 (680)</p>
+      <p class="price">From RM75 / adult</p>
+    </div>
+  </div>
+</div>
+
+<!-- 卡片 6 -->
+<div class="col-lg-4 col-md-6 col-sm-12 d-flex">
+  <div class="card restaurant-card w-100">
+    <button class="favorite-btn" title="Like this restaurant">
+      <i class="bi bi-heart"></i>
+    </button>
+    <img 
+      src="Bali_Seafood_Grill.jpeg" 
+      class="card-img-top" 
+      alt="Seoul BBQ Heaven"
+      onclick="window.location.href='SeoulBBQ_detail.html'"
+    >
+    <div class="card-body">
+      <h5 class="card-title" onclick="window.location.href='SeoulBBQ_detail.html'">Seoul BBQ Heaven</h5>
+      <p class="location">📍 Seoul, South Korea</p>
+      <p class="rating">⭐ 4.9 (950)</p>
+      <p class="price">From RM95 / adult</p>
+    </div>
+  </div>
+</div>
+</div>
+      <!-- 向下箭头及说明文字 -->
+      <div class="arrow-down-section" id="load-more">
+        <i class="bi bi-arrow-down-circle"></i>
+        <p>More Restaurants</p>
+      </div>
+  </section>
+  
+  <!-- 页脚 -->
+  <footer>
+    <div class="container-fluid">
+      <p class="mb-0">© 2025 ECO.TRAVEL Malaysia. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- 引入 Bootstrap JS Bundle -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <script>
+    // 加载更多逻辑：动态添加卡片到页面
+    document.getElementById('load-more').addEventListener('click', function() {
+      // 模拟获取新数据，实际场景可替换为 AJAX 请求
+      const newRestaurants = [
+      {
+  title: "Bangkok Thai Garden",
+  location: "📍 Bangkok, Thailand",
+  rating: "4.5 (820)",
+  price: "From RM85 / adult",
+  image: "Bangkok_Thai_Garden.jpeg"
+},
+{
+  title: "Kota Kinabalu Night Market",
+  location: "📍 Sabah, Malaysia",
+  rating: "4.8 (930)",
+  price: "From RM92 / adult",
+  image: "KK_Night_Market.jpeg"
+},
+{
+  title: "Ho Chi Minh Pho House",
+  location: "📍 Ho Chi Minh City, Vietnam",
+  rating: "4.2 (710)",
+  price: "From RM75 / adult",
+  image: "Pho_House_Vietnam.jpeg"
+}
+
+      ];
+
+      const cardsRow = document.getElementById('restaurant-cards');
+
+      newRestaurants.forEach(function(restaurant) {
+        // 创建外层列元素
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col-lg-4 col-md-6 col-sm-12 d-flex';
+        
+        // 创建卡片元素
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card restaurant-card w-100';
+        
+        // 创建收藏按钮
+        const favBtn = document.createElement('button');
+        favBtn.className = 'favorite-btn';
+        favBtn.title = "Add to favorite";
+        favBtn.innerHTML = '<i class="bi bi-heart"></i>';
+        
+        // 创建图片
+        const img = document.createElement('img');
+        img.src = restaurant.image;
+        img.className = 'card-img-top';
+        img.alt = restaurant.title;
+        
+        // 创建卡片主体
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+        
+        const titleElem = document.createElement('h5');
+        titleElem.className = 'card-title';
+        titleElem.textContent = restaurant.title;
+        
+        const locationElem = document.createElement('p');
+        locationElem.className = 'location';
+        locationElem.textContent = restaurant.location;
+        
+        const ratingElem = document.createElement('p');
+        ratingElem.className = 'rating mb-1';
+        ratingElem.innerHTML = '<i class="bi bi-star-fill text-warning"></i> ' + restaurant.rating;
+        
+        const priceElem = document.createElement('p');
+        priceElem.className = 'price';
+        priceElem.textContent = restaurant.price;
+        
+        // 组装卡片
+        cardBody.appendChild(titleElem);
+        cardBody.appendChild(locationElem);
+        cardBody.appendChild(ratingElem);
+        cardBody.appendChild(priceElem);
+        cardDiv.appendChild(favBtn);
+        cardDiv.appendChild(img);
+        cardDiv.appendChild(cardBody);
+        colDiv.appendChild(cardDiv);
+        cardsRow.appendChild(colDiv);
+      });
+      
+      // 如果不再有更多数据加载，可隐藏加载按钮
+      document.getElementById('load-more').style.display = 'none';
+    });
+
+    // 返回按钮点击事件：返回到前一个页面
+    document.getElementById('back-btn').addEventListener('click', function() {
+      window.history.back();
+    });
+
+    // 收藏按钮点击事件：点击时切换“favorited”样式，从而将图标变红
+    document.addEventListener('click', function(e) {
+      const favBtn = e.target.closest('.favorite-btn');
+      if (favBtn) {
+        favBtn.classList.toggle('favorited');
+      }
+    });
+  </script>
+</body>
+</html>
