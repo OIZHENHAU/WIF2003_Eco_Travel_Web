@@ -19,13 +19,34 @@
             <div class="col-8">
                 At Accomodation<br>
 
-                <label for="electricity" class="form-label">Electricity</label>
-                <input type="number" class="inputValue" id="electricity">
-                <label for="electricity" class="form-label">kWh</label>
+                <div class="row">
+                    <div class="col-auto">
+                        <label for="electricity" class="form-label">Electricity</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control" id="electricity" aria-describedby="electricityUnit">
+                    </div>
+                    <div class="col-auto">
+                        <span id="electricityUnit" class="form-text">
+                            kWh
+                        </span>
+                    </div>
+                </div>
 
-                <label for="naturalGas" class="form-label">Natural gas</label>
-                <input type="number" class="inputValue" id="naturalGas">
-                <label for="naturalGas" class="form-label">kWh</label>
+                <div class="row">
+                    <div class="col-auto">
+                        <label for="naturalGas" class="form-label">Natural Gas</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control" id="naturalGas" aria-describedby="naturalGasUnit">
+                    </div>
+                    <div class="col-auto">
+                        <span id="naturalGasUnitUnit" class="form-text">
+                            kWh
+                        </span>
+                    </div>
+                </div>
+
             </div>
             <div class="col-4">
                 Second col 
