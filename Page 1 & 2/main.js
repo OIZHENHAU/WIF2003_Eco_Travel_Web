@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Validate password
     if (!isStrongPassword(password)) {
       const passwordError = document.getElementById('passwordError');
-      passwordError.textContent = 'Password must be at least 8 characters with letters and numbers';
+      passwordError.textContent = 'Password must be at least 8 characters';
       passwordError.classList.add('visible');
       hasError = true;
     }
