@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Travel Profile Settings</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+
+
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-container">
+        <div class="logo-icon">🌍</div>
+        <div class="brand">
+          <h1 class="brand-name">ECO_TRAVEL</h1>
+          <span class="brand-location">Malaysia</span>
+        </div>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#" class="nav-link">Transport</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">History</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Weather</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Favourite</a></li>
+        </ul>
+      </nav>
+      
+      <div class="user-menu">
+        <button class="user-avatar-btn">
+          <div class="user-avatar">
+            <img src="https://via.placeholder.com/40" alt="User" id="header-avatar">
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="profile-settings">
+      <div class="profile-container">
+        <div class="profile-sidebar">
+          <div class="profile-image-container">
+            <div class="profile-image-wrapper" id="profileImageWrapper">
+              <img src="https://via.placeholder.com/150" alt="Profile" id="profileImage" class="profile-image">
+              <div class="image-overlay">
+                <span class="camera-icon">📷</span>
+              </div>
+            </div>
+            <input type="file" id="imageInput" accept="image/*" class="hidden-input">
+            
+            <div class="profile-info">
+              <h2 class="profile-name" id="profileName">OI ZHEN HAU</h2>
+              <p class="profile-email" id="profileEmail">zhenhau8072@gmail.com</p>
+            </div>
+            
+            <button class="update-image-btn" id="updateImageBtn">
+              Update Profile Image
+            </button>
+          </div>
+        </div>
+        
+        <div class="profile-main">
+          <h2 class="settings-title">Profile Settings</h2>
+          
+          <form id="profileForm" class="profile-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                <span class="error-message"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                <span class="error-message"></span>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+                <span class="error-message"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                  <option value="">Select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="error-message"></span>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                <span class="error-message"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter new password">
+                <span class="error-message"></span>
+              </div>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="address">Address</label>
+              <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
+              <span class="error-message"></span>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Update Profile</button>
+              <button type="button" class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
+            </div>
+            
+            <button type="button" class="btn btn-logout" id="logoutBtn">Log out</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="successMessage" class="success-message hidden"></div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
