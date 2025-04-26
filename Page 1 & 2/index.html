@@ -12,15 +12,14 @@
   <script src="validation.js" defer></script>
   <script src="dark-mode.js" defer></script>
   <script src="animations.js" defer></script>
-
-
-</head>
-<body>
   
-<!-- Loading Spinner -->
-<div class="loading-overlay" style="display: none;">
-  <span class="loader"></span>
-</div>
+</head>
+
+<body>
+  <!-- Loading Spinner -->
+  <div class="loading-overlay" style="display: none;">
+    <span class="loader"></span>
+  </div>
 
   <div class="theme-toggle">
     <input type="checkbox" id="darkModeToggle" class="dark-mode-toggle">
@@ -29,8 +28,10 @@
     </label>
   </div>
 
+
   <div class="container">
     <div class="form-container">
+
       <!-- Login Form -->
       <div class="form-section login-section active">
         <div class="left-panel">
@@ -38,6 +39,7 @@
           <p class="welcome-subtext">Do you have any account?</p>
           <button class="switch-btn register-switch">REGISTER</button>
         </div>
+
         <div class="right-panel">
           <h2 class="form-title">LOGIN</h2>
           <form id="loginForm" class="form">
@@ -45,20 +47,25 @@
               <input type="text" id="loginUsername" class="form-input" placeholder="Username" required>
               <span class="input-icon username-icon"></span>
             </div>
+
             <div class="form-group">
               <input type="password" id="loginPassword" class="form-input" placeholder="Password" required>
               <span class="input-icon password-icon"></span>
               <span class="toggle-password" data-target="loginPassword"></span>
             </div>
+
             <div class="form-extra">
               <a href="#" class="forgot-password">Forgot Password?</a>
             </div>
+
             <button type="submit" class="form-button">Login</button>
+            
             <p class="social-text">or login with social platform?</p>
             <div class="social-buttons">
-              <a href="#" class="social-btn facebook"></a>
-              <a href="#" class="social-btn google"></a>
-              <a href="#" class="social-btn linkedin"></a>
+              <a href="#" class="social-btn facebook" data-tooltip="Facebook"></a>
+              <a href="#" class="social-btn google" data-tooltip="Google"></a>
+              <a href="#" class="social-btn linkedin" data-tooltip="LinkedIn"></a>
+
             </div>
           </form>
         </div>
@@ -71,6 +78,7 @@
           <p class="welcome-subtext">Do you have an account?</p>
           <button class="switch-btn login-switch">LOGIN</button>
         </div>
+
         <div class="right-panel">
           <h2 class="form-title">REGISTER</h2>
           <form id="registerForm" class="form">
@@ -79,29 +87,34 @@
               <span class="input-icon username-icon"></span>
               <span class="error-message" id="usernameError"></span>
             </div>
+
             <div class="form-group">
               <input type="email" id="registerEmail" class="form-input" placeholder="Email" required>
               <span class="input-icon email-icon"></span>
               <span class="error-message" id="emailError"></span>
             </div>
+
             <div class="form-group">
               <input type="password" id="registerPassword" class="form-input" placeholder="Password" required>
               <span class="input-icon password-icon"></span>
               <span class="toggle-password" data-target="registerPassword"></span>
               <span class="error-message" id="passwordError"></span>
             </div>
+
             <div class="password-strength-meter">
               <div class="strength-section"></div>
               <div class="strength-section"></div>
               <div class="strength-section"></div>
               <div class="strength-section"></div>
             </div>
+
             <button type="submit" class="form-button">Register</button>
             <p class="social-text">or register with social platform?</p>
             <div class="social-buttons">
-              <a href="#" class="social-btn facebook"></a>
-              <a href="#" class="social-btn google"></a>
-              <a href="#" class="social-btn linkedin"></a>
+              <a href="#" class="social-btn facebook" data-tooltip="Sign in with Facebook"></a>
+              <a href="#" class="social-btn google" data-tooltip="Sign in with Google"></a>
+              <a href="#" class="social-btn linkedin" data-tooltip="Sign in with LinkedIn"></a>
+
             </div>
           </form>
         </div>
