@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Carbon Footprint Calculator</title>
 </head>
 <body>
@@ -144,9 +145,35 @@
             </div>
 
             <div class="col-8 category" id="vehicle">
+                <h3>Private Transport<br></h3>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-car"></i>
+                        Car 1:
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label" for="carType">Type: </label>
+                        <select class="form-select" id="carType" name="carType">
+                            <option value="smallCar">Small Car</option>
+                            <option value="middleCar">Middle Car</option>
+                            <option value="largeCar">Large Car</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label" for="fuel">Fuel: </label>
+                        <select class="form-select" id="fuel" name="fuel">
+                            <option value="petrol">Petrol</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="electric">Electric</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <input class="form-control" type="number" id="distance" name="distance" placeholder="Distance (km)">
+                    </div>
+                </div>
 
             </div>
-            
+
             <div class="col-4">
                 <h3>Your Carbon Footprint<br></h3>
                 <p>Cost per tonne of CO2 (tCO2) = RM25.00</p>
