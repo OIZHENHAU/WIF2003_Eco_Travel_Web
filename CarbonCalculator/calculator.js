@@ -1,6 +1,11 @@
-let accomodationBtn = document.getElementById("accomodationBtn")
-let vehicleBtn = document.getElementById("vehicleBtn")
-let restaurantBtn = document.getElementById("restaurantBtn")
+// let accomodationBtn = document.getElementById("accomodationBtn")
+// let vehicleBtn = document.getElementById("vehicleBtn")
+// let restaurantBtn = document.getElementById("restaurantBtn")
+
+const defaultBtn = "accomodationBtn"
+const defaultContent = "accomodation"
+
+toggleContent(defaultBtn, defaultContent)
 
 function toggleContent(buttonId, contentId) {
     //remove active class from all buttons
@@ -8,7 +13,7 @@ function toggleContent(buttonId, contentId) {
     //hide all category content
     document.querySelectorAll(".category").forEach(category => category.style.display = "none")
 
-    document.getElementById(contentId).style.display = "block";
+    document.getElementById(contentId).style.display = "block"
     document.getElementById(buttonId).classList.add("active")
 }
 
