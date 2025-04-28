@@ -1,10 +1,15 @@
-let accomodationBtn = document.getElementById(accomodationBtn)
-let vehicleBtn = document.getElementById(vehicleBtn)
-let restaurantBtn = document.getElementById(restaurantBtn)
+let accomodationBtn = document.getElementById("accomodationBtn")
+let vehicleBtn = document.getElementById("vehicleBtn")
+let restaurantBtn = document.getElementById("restaurantBtn")
 
-// accomodationBtn.addEventListener("click", )
+accomodationBtn.addEventListener("click", showCategory("accomodation"))
+vehicleBtn.addEventListener("click", showCategory("vehicle"))
+restaurantBtn.addEventListener("click", showCategory("restaurant"))
 
-// function switchCategory(category) {
-
-// }
+function showCategory(categoryId) {
+    let displayCategory = document.getElementById(categoryId)
+    let displayCalculator = document.getElementsByClassName("category")
+    displayCalculator.style.display = "none";
+    displayCategory.style.display = "grid";
+}
 
