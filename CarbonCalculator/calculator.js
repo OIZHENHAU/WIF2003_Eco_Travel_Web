@@ -2,14 +2,17 @@ let accomodationBtn = document.getElementById("accomodationBtn")
 let vehicleBtn = document.getElementById("vehicleBtn")
 let restaurantBtn = document.getElementById("restaurantBtn")
 
-accomodationBtn.addEventListener("click", showCategory("accomodation"))
-vehicleBtn.addEventListener("click", showCategory("vehicle"))
-restaurantBtn.addEventListener("click", showCategory("restaurant"))
+function toggleContent(buttonId, contentId) {
+    //remove active class from all buttons
+    document.querySelectorAll(".toggle-btn").forEach(btn => btn.classList.remove("active"))
+    //hide all category content
+    document.querySelectorAll(".category").forEach(category => category.style.display = "none")
 
-function showCategory(categoryId) {
-    let displayCategory = document.getElementById(categoryId)
-    let displayCalculator = document.getElementsByClassName("category")
-    displayCalculator.style.display = "none";
-    displayCategory.style.display = "grid";
+    document.getElementById(contentId).style.display = "block";
+    document.getElementById(buttonId).classList.add("active")
+}
+
+function test() {
+    console.log("test print")
 }
 
