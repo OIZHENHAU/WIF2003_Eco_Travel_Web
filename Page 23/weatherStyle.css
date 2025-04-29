@@ -33,9 +33,9 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.5;
     color: var(--gray-900);
+    background-image: url(src/mountain.png);
   }
 
-  
   
   .headerNav {
     background-color: var(--primary-color);
@@ -406,6 +406,16 @@
   margin-bottom: 10px;
   padding: 15px 0;
 
+  & .main-weather-title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* or try 8px, 1rem, etc. */
+
+    & .highlights-text {
+      font-size: 30px;
+    }
+  }
+
   & #searchBtn {
     border: none;
     font-size: 16px;
@@ -647,5 +657,138 @@
       }
     }
     
+  }
+}
+
+@media(max-width: 1100px) {
+  .weather-data {
+    grid-template-columns: repeat(3, 1fr);
+
+    & .weather-right {
+      grid-column: span 2;
+
+      & .highlights {
+        grid-template-columns: repeat(3, 1fr);
+
+        & .card:nth-of-type(1) {
+          grid-column: span 3;
+        }
+      }
+
+      & .hourly-forecast {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  }
+}
+
+@media(max-width: 1040px) {
+  .weather-data {
+    grid-template-columns: repeat(2, 1fr);
+
+    & .weather-right {
+      grid-column: span 1;
+      & .highlights {
+        grid-template-columns: repeat(2, 1fr);
+
+        & .card:nth-of-type(1) {
+          grid-column: span 2;
+        }
+      }
+
+      & .hourly-forecast {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      & .air-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .weather-data .weather-right .highlights {
+    & .card {
+      grid-column: span 2;
+    }
+
+    & .air-indices {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    & .air-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media(max-width: 850px) {
+  .weather-data {
+    grid-template-columns: 1fr;
+
+    & .weather-right .extra-features-list {
+      & .card:nth-of-type(1),
+      & .card:nth-of-type(2),
+      & .card:nth-of-type(3),
+      & .card:nth-of-type(4) {
+        grid-column: span 1;
+      }
+    }
+  }
+}
+
+@media(max-width: 660px) {
+  .header {
+    flex-direction: column;
+
+    & h2 {
+      margin-bottom: 8px;
+    }
+
+    & #city_input {
+      width: 100%;
+    }
+
+    & #city_input, #searchBtn, #locationBtn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media(max-width: 580px) {
+  .weather-data .weather-right .highlights .extra-features-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media(max-width: 520px) {
+  .weather-data .weather-right .highlights {
+      & .card:nth-of-type(1),
+      & .card:nth-of-type(2),
+      & .card:nth-of-type(3),
+      & .card:nth-of-type(4) {
+        grid-column: span 2;
+      }
+  }
+}
+
+@media(max-width: 480px) {
+  .weather-data .weather-right .highlights .sunrise-sunset {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 450px) {
+  .weather-data .weather-right .hourly-forecast {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width: 380px) {
+  .weather-data .weather-right .highlights .extra-features-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
