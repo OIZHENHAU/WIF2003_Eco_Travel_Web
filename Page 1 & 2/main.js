@@ -179,3 +179,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+// Redirect with fade out effect
+function redirectWithFadeOut(targetPage) {
+  document.body.classList.add('fade-out'); // Add fade class to body
+  setTimeout(() => {
+    window.location.href = targetPage; // Redirect after fade-out finishes
+  }, 500); // Match 500ms with your CSS transition time
+}
+
+// Login form
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  redirectWithFadeOut('../Page 3/index.html'); // Fade out, then redirect
+});
+
+// Register form
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  redirectWithFadeOut('../Page 3/index.html'); // Fade out, then redirect
+});

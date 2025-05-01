@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
-
-
 </head>
 <body>
+    <div class="page-transition"></div>
+    
     <header>
         <div class="container">
             <div class="logo">
@@ -31,9 +31,9 @@
             </nav>
             
             <div class="user-menu">
-                <div class="user-icon">
+                <a href="../Page 4/index.html" class="user-icon" id="profileLink">
                     <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/user.svg" alt="User Icon">
-                </div>
+                </a>
                 <button class="mobile-menu-btn" aria-label="Toggle menu">
                     <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/menu.svg" alt="Menu Icon" class="menu-icon">
                     <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/x.svg" alt="Close Icon" class="close-icon hidden">
@@ -49,6 +49,10 @@
             <a href="#weather">Weather</a>
             <a href="#favourite">Favourite</a>
         </nav>
+    </div>
+
+    <div class="search-results hidden">
+        <p></p>
     </div>
 
     <main>
@@ -108,6 +112,11 @@
 
                 <button class="search-btn">Search Now</button>
             </div>
+        </div>
+
+        <div class="loader-container hidden">
+            <div class="loader"></div>
+            <p class="loading-text">Searching for the best eco-friendly destinations...</p>
         </div>
     </main>
 </body>
