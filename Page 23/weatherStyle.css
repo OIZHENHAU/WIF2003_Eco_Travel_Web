@@ -396,6 +396,81 @@
     }
   }
 
+
+/* +++++++++++++++++++ Header Start ++++++++++++++++++++++++ */
+
+header {
+  background-color: var(--primary-color);
+  align-items: center;
+  padding: 1rem 0;
+
+  & .main-title {
+      margin-left: 30px;
+      display: flex;
+      gap: 15px;
+      
+
+      & .main-title-icon {
+          color: var(--white);
+          align-items: center;
+          margin-top: 12px;
+          font-size: 50px;
+      }
+
+      & .main-subtitle {
+          margin-top: 5px;
+           & #subtitle1 {
+              font-family: "Special Gothic Expanded One", sans-serif;
+              font-weight: 400;
+              font-size: 40px;
+              font-style: normal;
+              color: var(--white);
+           }
+
+           & #subtitle2 {
+              color: var(--white);
+           }
+      }
+  }
+
+  ul {
+    margin-right: 30px;
+  }
+
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  nav ul {
+      list-style-type: none;
+      display: flex;
+  }
+
+  nav ul li {
+      margin: 0 0.9rem;
+      color: var(--white);
+  }
+
+  nav ul li a {
+      color: var(--white);
+      font-size: 1.1rem;
+      font-family: "Ubuntu", sans-serif;
+      text-decoration: none;
+
+  }
+
+  .user-icon {
+      font-size: 30px;
+  }
+}
+
+
+
+/* +++++++++++++++++++Header Close ++++++++++++++++++++++++ */
+
+
 /* stating header of the weather */
 .header {
   position: sticky;

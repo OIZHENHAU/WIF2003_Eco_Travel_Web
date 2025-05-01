@@ -4,7 +4,7 @@
 :root {
     --primary-color: #29B6F6;
     --primary-dark: #0086c3;
-    --primary-light: #73e8ff;
+    --primary-light: #54d4ed;
     --secondary-color: #2c3e50;
     --accent-color: #e74c3c;
     --success-color: #2ecc71;
@@ -101,6 +101,7 @@ a {
 
 /* +++++++++++++++++++ Header Start ++++++++++++++++++++++++ */
 
+
 header {
     background-color: var(--primary-color);
     align-items: center;
@@ -167,5 +168,317 @@ header {
 /* +++++++++++++++++++Header Close ++++++++++++++++++++++++ */
 
 .main-carbonOffest-result {
-    margin-top: 20px;
+    margin-top: 40px;
+    padding: 0 2rem;
+
+    & .flexbox-top {
+        display: flex;
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 30px;
+
+        .flexbox-left {
+            gap: 10px;
+
+            & .carbonOffest-result-list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                & .offset-item1 {
+                    background-color: var(--primary-light);
+                    padding: 5px;
+
+                    & .flexbox-accomodation {
+                        display: flex;
+                        gap: 30px;
+                    }
+
+                    p {
+                        color: white;
+                    }
+
+                    & .element-title {
+                        font-family: "Special Gothic Expanded One", sans-serif;
+                        font-weight: 400;
+                        font-size: 25px;
+                        font-style: normal;
+                        margin-bottom: 10px;
+                    }
+
+                    & .accomodation-icon {
+                        color: white;
+                        font-size: 35px;
+                        align-items: center;
+                        margin-top: 10px;
+                        margin-left: 10px;
+                    }
+
+
+                    & .accomodation-carbon-list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        margin-bottom: 10px;
+                    }
+
+                    & .accomodation-element-list {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 120px;
+                        color: white;
+                    }
+                }
+
+                & .offset-item2 {
+                    background-color: var(--primary-color);
+                    padding: 5px;
+
+                    & .flexbox-accomodation {
+                        display: flex;
+                        gap: 40px;
+                    }
+
+                    p {
+                        color: white;
+                    }
+
+                    & .element-title {
+                        font-family: "Special Gothic Expanded One", sans-serif;
+                        font-weight: 400;
+                        font-size: 25px;
+                        font-style: normal;
+                        margin-bottom: 10px;
+                    }
+
+                    & .accomodation-icon {
+                        color: white;
+                        font-size: 35px;
+                        align-items: center;
+                        margin-top: 10px;
+                        margin-left: 10px;
+                    }
+
+
+                    & .accomodation-carbon-list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        margin-bottom: 10px;
+                    }
+
+                    & .accomodation-element-list {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 120px;
+                        color: white;
+                    }
+                }
+
+                & .offset-item3 {
+                    background-color: var(--primary-dark);
+                    padding: 5px;
+
+                    & .flexbox-accomodation {
+                        display: flex;
+                        gap: 25px;
+                    }
+
+                    p {
+                        color: white;
+                    }
+
+                    & .element-title {
+                        font-family: "Special Gothic Expanded One", sans-serif;
+                        font-weight: 400;
+                        font-size: 25px;
+                        font-style: normal;
+                        margin-bottom: 10px;
+                    }
+
+                    & .accomodation-icon {
+                        color: white;
+                        font-size: 35px;
+                        align-items: center;
+                        margin-top: 10px;
+                        margin-left: 10px;
+                    }
+
+
+                    & .accomodation-carbon-list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        margin-bottom: 10px;
+                    }
+
+                    & .accomodation-element-list {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 120px;
+                        color: white;
+                    }
+                }
+            }
+
+            h2 {
+                margin-bottom: 20px;
+                font-family: "Special Gothic Expanded One", sans-serif;
+                font-weight: 400;
+                font-size: 25px;
+                font-style: normal;
+            }
+
+        }
+    }
+
+    & .flexbox-right {
+        align-items: center;
+
+        h2 {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-weight: 400;
+            font-size: 25px;
+            font-style: normal; 
+            margin-bottom: 20px;
+        }
+        
+        & .charts {
+            display: flex;
+            place-content: center;
+            flex-flow: wrap;
+            gap: 2rem;
+            margin-bottom: 30px;
+        }
+
+        & .pie {
+            flex: 1 0 225px;
+            max-width: 325px;
+            aspect-ratio: 1;
+            /*border: 1px solid;*/
+            border-radius: 50%;
+            background-image: conic-gradient(from 30deg, #29B6F6 0% 40%, #0086c3 40% 77%, #54d4ed 77% 100%);
+        }
+
+        & .donut {
+            background-image: 
+                radial-gradient(
+                    white 40%,
+                    transparent 0 70%,
+                    white 0
+                ),
+
+                conic-gradient(from 30deg, 
+                #29B6F6 0% 40%, 
+                #0086c3 40% 77%, 
+                #54d4ed 77% 100%
+                );
+        }
+
+        .legends {
+            margin-block-end: 2rem;
+            font-size: 0.9rem;
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-flow: wrap;
+            gap: 1rem;
+            background-color: var(--gray-300);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .legends span {
+            position: relative;
+            padding-inline-start: 1.25rem;
+        }
+
+        .legends span::before {
+            top: 1px;
+            left: 0;
+            content: "";
+            position: absolute;
+            width: 0.8rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+
+        .legends span:nth-child(1)::before {
+            background-color: var(--primary-light);
+        }
+
+        .legends span:nth-child(2)::before {
+            background-color: var(--primary-color);
+        }
+
+        .legends span:nth-child(3)::before {
+            background-color: var(--primary-dark);
+        }
+        
+    }
+
+    & .flexbox-bottom {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        h2 {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-weight: 400;
+            font-size: 25px;
+            font-style: normal;
+            margin-bottom: 20px; 
+        }
+
+        img {
+            height: 300px;
+            width: 400px;
+        }
+
+        .carbon-credit-flexbox {
+            display: flex;
+            gap: 20px;
+
+            & #searchBtn {
+                border: none;
+                font-size: 16px;
+                padding: 12px;
+                border-radius: 10px;
+                background-color: #29B6F6;
+                cursor: pointer;
+                color: white;
+              }
+            
+              & #locationBtn {
+                border: none;
+                font-size: 16px;
+                padding: 12px;
+                border-radius: 10px;
+                background-color: #29B6F6;
+                cursor: pointer;
+                color: white;
+              }
+
+              & .carbon-credit-payment-input {
+
+                & .payment-btn {
+                    background-color: var(--primary-color);
+                    border-color: var(--primary-color);
+                    width: 200px;
+                }
+              }
+        }
+
+        .search-form {
+            
+            & .search-container {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        
+
+    }
 }

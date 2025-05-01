@@ -14,6 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
 
@@ -45,17 +51,66 @@
     <div class="main-carbonOffest-result">
         <div class="flexbox-top">
             <!-- Main Result Display -->
-            <div>
+            <div class="flexbox-left">
                 <h2>YOUR CARBON FOOTPRINT</h2>
 
-                <div class="carbon-element-list">
-                    
+                <div class="carbonOffest-result-list">
+                    <div class="offset-item1">
+                        <div class="flexbox-accomodation">
+                            <i class="fa-solid fa-house-user accomodation-icon"></i>
+                            <div class="accomodation-carbon-list">
+                                <p class="element-title">Accomodation</p>
+                                <div class="accomodation-element-list">
+                                    <p>Electricity: 100KWH</p>
+                                    <p>27kgCO2</p>
+                                    <p>RM0.68</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-item2">
+                        <div class="flexbox-accomodation">
+                            <i class="fa-solid fa-utensils accomodation-icon"></i>
+                            <div class="accomodation-carbon-list">
+                                <p class="element-title">Restaurant</p>
+                                <div class="accomodation-element-list">
+                                    <p>Small Car (Petrol): 35miles</p>
+                                    <p>73kgCO2</p>
+                                    <p>RM19.90</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-item3">
+                        <div class="flexbox-accomodation">
+                            <i class="fa-solid fa-truck-plane accomodation-icon"></i>
+                            <div class="accomodation-carbon-list">
+                                <p class="element-title">Transportation</p>
+                                <div class="accomodation-element-list">
+                                    <p>High meat-eater (3 days a week)</p>
+                                    <p>100kgCO2</p>
+                                    <p>RM150.59</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
             <!-- Carbon Pie Chart Shown-->
-            <div>
+            <div class="flexbox-right">
+                <h2>TOTAL FOOTPRINT: 2700KG CO2</h2>
+
+                <figure class="charts">
+                    <div class="pie donut"></div>
+                </figure>
+
+                <figcaption class="legends">
+                    <span>Accomodation 40%</span>
+                    <span>Restaurant 22%</span>
+                    <span>Transportation 38%</span>
+                </figcaption>
 
             </div>
         </div>
@@ -63,8 +118,48 @@
          <hr>
 
         <!-- Carbon Credit Purchase -->
-         <div class="class-bottom">
+         <div class="flexbox-bottom">
+            <h2>OFFSET YOUR CARBON FOOTPRINT</h2>
 
+            <div class="carbon-credit-flexbox">
+                <img src="img/industry_img.jpg">
+
+                <div>
+                    <p>The money that you pay to offset your carbon emissions is used to fund Climate Stewards’ partners in Ghana, Kenya, Nepal, Peru, Tanzania and Uganda. We work with local partners on community-based projects that either reduce carbon emissions or remove carbon dioxide from the atmosphere - creating carbon offsets.</p>
+
+                    <div class="carbon-credit-payment-input">
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                          
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-primary dropdown-toggle payment-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                          
+                            <div class="btn-group" role="group">
+                              <button type="button" class="btn btn-primary dropdown-toggle payment-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        
+                        <button type="button" id="locationBtn">
+                            <i class="fa-solid fa-sack-dollar"></i> Make Payment
+                        </button>
+                    </div>
+                </div>
+            </div>
          </div>
     </div>
 
@@ -72,5 +167,7 @@
     <script src="carbonOffset.js"></script>
     <script src="swiper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </body>
 </html>
