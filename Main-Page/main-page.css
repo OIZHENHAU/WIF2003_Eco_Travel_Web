@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+:root {
+    --primary-color: #29B6F6;
+    --primary-dark: #0086c3;
+    --primary-light: #54d4ed;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+    --white: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+  }
+
+  html {
+    font-size: 16px;
+
+  }
+
+/* ++++++++++++++++++++Utality Classes Start+++++++++++++++++++++ */
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading-normal-txt {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color: var(--primary-color);
+
+}
+
+.headings {
+    font-size: 3rem;
+    font-family: "ubuntu";
+    padding-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.headings span {
+    color: var(--primary-color);
+}
+
+.secondary-headings {
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    padding: 1rem 0;
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+.primary-btn {
+    width: 50%;
+    outline: none;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: var(--white);
+    cursor: pointer;
+}
+/* +++++++++++++++++++Utality Class Close++++++++++++++++++++++++ */
+
+/* +++++++++++++++++++ Header Start ++++++++++++++++++++++++ */
+
+
+header {
+    background-color: var(--primary-color);
+    align-items: center;
+    padding: 1rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    height: 100;
+
+    & .main-title {
+        display: flex;
+        gap: 15px;
+        
+
+        & .main-title-icon {
+            color: var(--white);
+            align-items: center;
+            margin-top: 12px;
+            font-size: 50px;
+        }
+
+        & .main-subtitle {
+            margin-top: 5px;
+             & #subtitle1 {
+                font-family: "Special Gothic Expanded One", sans-serif;
+                font-weight: 400;
+                font-size: 40px;
+                font-style: normal;
+                color: var(--white);
+             }
+
+             & #subtitle2 {
+                color: var(--white);
+             }
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0 0.9rem;
+        color: var(--white);
+        position: relative;
+    }
+
+    nav ul li a {
+        color: var(--white);
+        font-size: 1.1rem;
+        font-family: "Ubuntu", sans-serif;
+
+    }
+
+    nav ul li::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: var(--white);
+        opacity: 0;
+        transition: all 0.3s ease-in;
+    }
+
+    nav ul li:hover::before {
+        opacity: 1;
+        width: 100%;
+    }
+
+    .user-icon {
+        font-size: 30px;
+    }
+}
+
+/* +++++++++++++++++++Header Close ++++++++++++++++++++++++ */
+
+
+/* ======================== Showcase Start ========================== */
+
+main {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+}
+
+.swiper {
+    height: 100vh;
+}
+
+.slide-container {
+    width: 100%;
+}
+
+.slide-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-overlay {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    font-family: "ubuntu";
+    transform: translate(-50%, -50%);
+}
+
+.img-overlay p {
+    font-size: 1rem;
+    letter-spacing: 8px;
+    color: var(--white);
+    animation: animate 4s forwards;
+}
+
+.img-overlay h2 {
+    font-size: 5rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    animation: animate 4s forwards;
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay {
+    position: relative;
+}
+
+.overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(-0%);
+    }
+}
+
+.img-overlay h2 span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+}
+
+/* ========================Showcase End ========================== */
+
+/* ======================== Search Start ========================== */
+
+#location-search {
+    transform: translateY(-170%);
+
+}
+
+.form-wrapper {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control {
+    width: 100%;
+
+}
+
+form input, select {
+     padding: 0.6rem;
+     outline: none;
+     font-size: 1.1rem;
+     color: #000;
+     border: 1px solid var(--gray-300);
+     margin: 0 0.4rem;
+     border-radius: 4px;
+}
+
+/* ======================== Search End ========================== */
