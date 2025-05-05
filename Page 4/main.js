@@ -8,6 +8,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const successMessage = document.getElementById('successMessage');
   const spinnerOverlay = document.getElementById('spinnerOverlay');
   
+  // Create exit transition overlay element
+  const exitTransitionOverlay = document.createElement('div');
+  exitTransitionOverlay.className = 'exit-transition-overlay';
+  document.body.appendChild(exitTransitionOverlay);
+  
+  // Create modal overlay
+  const modalOverlay = document.createElement('div');
+  modalOverlay.className = 'modal-overlay';
+  modalOverlay.innerHTML = `
+    <div class="modal">
+      <h3 class="modal-title">Confirm Action</h3>
+      <p class="modal-message"></p>
+      <div class="modal-actions">
+        <button class="modal-btn modal-btn-secondary" data-action="cancel">Cancel</button>
+        <button class="modal-btn modal-btn-primary" data-action="confirm">Confirm</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modalOverlay);
+  
   // Default avatar HTML
   const defaultAvatarSvg = `
     <svg class="default-avatar" viewBox="0 0 24 24" fill="currentColor">
@@ -23,6 +43,43 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const hideSpinner = () => {
     spinnerOverlay.classList.remove('show');
+  };
+  
+  // Show modal
+  const showModal = (title, message) => {
+    return new Promise((resolve) => {
+      const modal = modalOverlay.querySelector('.modal');
+      modal.querySelector('.modal-title').textContent = title;
+      modal.querySelector('.modal-message').textContent = message;
+      
+      const handleModalAction = (e) => {
+        if (e.target.classList.contains('modal-btn')) {
+          const action = e.target.dataset.action;
+          modalOverlay.classList.remove('show');
+          modal.removeEventListener('click', handleModalAction);
+          resolve(action === 'confirm');
+        }
+      };
+      
+      modal.addEventListener('click', handleModalAction);
+      modalOverlay.classList.add('show');
+    });
+  };
+  
+  // Page transition effect
+  const startPageTransition = (targetUrl) => {
+    // First add transition class to body
+    document.body.classList.add('page-transition-out');
+    
+    // Then show exit transition overlay
+    setTimeout(() => {
+      exitTransitionOverlay.classList.add('active');
+      
+      // After overlay is fully visible, redirect to new page
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 600);
+    }, 300);
   };
   
   // Load saved profile from localStorage
@@ -101,6 +158,17 @@ document.addEventListener('DOMContentLoaded', () => {
     return isValid;
   };
   
+  // Add animation to form inputs
+  const animateFormElements = () => {
+    const formElements = document.querySelectorAll('.form-group');
+    formElements.forEach((element, index) => {
+      element.style.animation = `fadeInUp 0.4s ease-out ${0.1 + index * 0.05}s backwards`;
+    });
+  };
+  
+  // Run animations on page load
+  animateFormElements();
+  
   // Handle form submission
   profileForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -165,7 +233,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle delete account
   let deleteConfirmation = false;
   deleteAccountBtn.addEventListener('click', async () => {
-    if (deleteConfirmation) {
+    const confirmed = await showModal(
+      'Delete Account',
+      'Are you sure you want to delete your account? This action cannot be undone.'
+    );
+    
+    if (confirmed) {
       showSpinner('Deleting account...');
       
       // Simulate API call
@@ -187,40 +260,64 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('profileName').textContent = 'User Name';
       document.getElementById('profileEmail').textContent = 'user@example.com';
       
-      deleteConfirmation = false;
-      deleteAccountBtn.textContent = 'Delete Account';
-      deleteAccountBtn.classList.remove('confirm');
-      
       hideSpinner();
       showSuccess('Account deleted successfully!');
-    } else {
-      deleteConfirmation = true;
-      deleteAccountBtn.textContent = 'Confirm Delete';
-      deleteAccountBtn.classList.add('confirm');
       
+      // Start page transition after success message
       setTimeout(() => {
-        deleteConfirmation = false;
-        deleteAccountBtn.textContent = 'Delete Account';
-        deleteAccountBtn.classList.remove('confirm');
-      }, 3000);
+        startPageTransition('../Page 1 & 2/index.html');
+      }, 1000);
     }
   });
   
   // Handle logout
   logoutBtn.addEventListener('click', async () => {
-    showSpinner('Logging out...');
+    const confirmed = await showModal(
+      'Confirm Logout',
+      'Are you sure you want to log out? You will need to log in again to access your account.'
+    );
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    hideSpinner();
-    showSuccess('Logged out successfully!');
+    if (confirmed) {
+      showSpinner('Logging out...');
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      hideSpinner();
+      showSuccess('Logged out successfully!');
+      
+      // After showing success message, start transition and redirect
+      setTimeout(() => {
+        startPageTransition('../Page 1 & 2/index.html');
+      }, 800);
+    }
   });
   
   // Clear error messages on input
   profileForm.querySelectorAll('input, select, textarea').forEach(input => {
     input.addEventListener('input', () => {
       input.nextElementSibling.textContent = '';
+    });
+  });
+  
+  // Add ripple effect to buttons
+  const buttons = document.querySelectorAll('.btn');
+  buttons.forEach(button => {
+    button.addEventListener('mousedown', function(e) {
+      const rect = button.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      button.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
     });
   });
 });
