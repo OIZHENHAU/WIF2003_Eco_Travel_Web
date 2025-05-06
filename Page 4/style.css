@@ -101,7 +101,7 @@ header .main-title {
 header .main-title-icon {
     color: var(--white);
     align-items: center;
-    margin-top: 1002px;
+    margin-top: 12px;
     font-size: 50px;
 }
 
@@ -877,10 +877,6 @@ textarea:focus {
 .about .lead {
   font-size: 0.95rem;
   margin-top: 1rem;
-}
-
-.links ul {
-  
 }
 
 .links ul li {
