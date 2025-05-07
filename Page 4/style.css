@@ -20,8 +20,6 @@
   --transition-speed: 0.3s;
   --border-radius: 8px;
   --page-transition-duration: 0.6s;
- 
-
 }
 
 * {
@@ -37,6 +35,9 @@ body {
   background-color: var(--gray-100);
   opacity: 0;
   animation: fadeIn 0.5s ease-out forwards;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -67,11 +68,11 @@ body {
   }
 }
 
-/* Updated header  */
+/* Updated header - SLIMMER VERSION */
 header {
     background-color: var(--primary-color);
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* Reduced padding from 1rem to 0.5rem */
     animation: slideInDown 0.5s ease-out;
 }
 
@@ -95,30 +96,33 @@ header {
 
 header .main-title {
     display: flex;
-    gap: 15px;
+    gap: 10px; /* Reduced from 15px */
+    margin-left: -15px; /* Move more to the left */
 }
 
 header .main-title-icon {
     color: var(--white);
     align-items: center;
-    margin-top: 12px;
-    font-size: 50px;
+    margin-top: 8px; /* Adjusted from 12px */
+    font-size: 36px; /* Reduced size from 50px */
 }
 
 header .main-subtitle {
-    margin-top: 5px;
+    margin-top: 3px; /* Adjusted from 5px */
 }
 
 header #subtitle1 {
     font-family: "Special Gothic Expanded One", sans-serif;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 32px; /* Reduced from 40px */
     font-style: normal;
     color: var(--white);
 }
 
 header #subtitle2 {
     color: var(--white);
+    font-size: 16px; /* Added font size */
+    margin-top: -5px; /* Added negative margin for tighter spacing */
 }
 
 header nav {
@@ -130,10 +134,11 @@ header nav {
 header nav ul {
     list-style-type: none;
     display: flex;
+    margin-right: -15px; /* Move more to the right */
 }
 
 header nav ul li {
-    margin: 0 0.9rem;
+    margin: 0 1rem; /* Increased from 0.9rem */
     color: var(--white);
 }
 
@@ -172,6 +177,7 @@ header .user-icon {
 .main-content {
   padding: 2rem 0;
   animation: fadeInUp 0.5s ease-out 0.1s backwards;
+  flex: 1; /* This helps eliminate the scrolling issue */
 }
 
 @keyframes fadeInUp {
@@ -763,14 +769,14 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
-  /* Responsive header styles (can discard if dont one)*/
+  /* Responsive header styles */
   header nav {
     flex-direction: column;
     align-items: center;
   }
 
   header .main-title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Reduced from 1rem */
   }
 
   header nav ul {
@@ -779,16 +785,20 @@ textarea:focus {
   }
 
   header #subtitle1 {
-    font-size: 30px;
+    font-size: 26px; /* Reduced from 30px */
+  }
+  
+  header .main-title-icon {
+    font-size: 30px; /* Reduced from 36px in mobile view */
   }
 }
 
 /* ======== Footer Start ======== */
 
 #footer {
-  padding: 6rem 0;
+  padding: 4rem 0; /* Reduced from 6rem */
   background: var(--primary-color);
-
+  margin-top: auto; /* This helps eliminate the scrolling issue */
 }
 
 .footer-content {
@@ -815,32 +825,32 @@ textarea:focus {
   padding: 1rem;
 }
 
-.main-title {
+.footer-wrapper .main-title {
   display: flex;
   gap: 15px;
-  
+}
 
-  & .main-title-icon {
-      color: var(--white);
-      align-items: center;
-      margin-top: 12px;
-      font-size: 100px;
-  }
+.footer-wrapper .main-title .main-title-icon {
+  color: var(--white);
+  align-items: center;
+  margin-top: 12px;
+  font-size: 100px; /* Maintaining size for footer */
+}
 
-  & .main-subtitle {
-      margin-top: 5px;
-       & #subtitle1 {
-          font-family: "Special Gothic Expanded One", sans-serif;
-          font-weight: 400;
-          font-size: 40px;
-          font-style: normal;
-          color: var(--white);
-       }
+.footer-wrapper .main-title .main-subtitle {
+  margin-top: 5px;
+}
 
-       & #subtitle2 {
-          color: var(--white);
-       }
-  }
+.footer-wrapper .main-title .main-subtitle #subtitle1 {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  font-style: normal;
+  color: var(--white);
+}
+
+.footer-wrapper .main-title .main-subtitle #subtitle2 {
+  color: var(--white);
 }
 
 .footer-wrapper {
@@ -850,7 +860,6 @@ textarea:focus {
   grid-gap: 4rem;
   color: var(--white);
   margin: 4rem 0;
-
 }
 
 .about img {
@@ -922,4 +931,3 @@ form {
 }
 
 /* ======== Footer End ======== */
-
