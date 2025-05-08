@@ -103,16 +103,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadProfileImage = () => {
     const savedImage = localStorage.getItem('userProfileImage');
     const profileImage = document.getElementById('profileImage');
-    const headerAvatar = document.getElementById('header-avatar');
     
     if (savedImage) {
       profileImage.src = savedImage;
-      headerAvatar.src = savedImage;
+      
+      // Update the user icon in the header with the profile image
+      const userIcon = document.querySelector('.user-icon');
+      if (userIcon) {
+        // Create a new image element to replace the user icon
+        const headerAvatar = document.createElement('img');
+        headerAvatar.src = savedImage;
+        headerAvatar.alt = 'User';
+        headerAvatar.style.width = '30px';
+        headerAvatar.style.height = '30px';
+        headerAvatar.style.borderRadius = '50%';
+        headerAvatar.style.objectFit = 'cover';
+        
+        // Replace the icon with the image
+        userIcon.parentNode.replaceChild(headerAvatar, userIcon);
+      }
     } else {
       profileImage.style.display = 'none';
       profileImageWrapper.insertAdjacentHTML('afterbegin', defaultAvatarSvg);
-      headerAvatar.style.display = 'none';
-      headerAvatar.parentElement.insertAdjacentHTML('afterbegin', defaultAvatarSvg);
+      
+      // Keep the default user icon in the header
     }
   };
   
@@ -158,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return isValid;
   };
   
-  // Add animation to form inputs
+  // Add animation to form elements
   const animateFormElements = () => {
     const formElements = document.querySelectorAll('.form-group');
     formElements.forEach((element, index) => {
@@ -219,9 +233,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         document.getElementById('profileImage').src = result;
-        document.getElementById('header-avatar').src = result;
-        document.getElementById('header-avatar').style.display = 'block';
         localStorage.setItem('userProfileImage', result);
+        
+        // Update the user icon in the header with the profile image
+        const userIcon = document.querySelector('.user-icon');
+        if (userIcon) {
+          // Create a new image element to replace the user icon
+          const headerAvatar = document.createElement('img');
+          headerAvatar.src = result;
+          headerAvatar.alt = 'User';
+          headerAvatar.style.width = '30px';
+          headerAvatar.style.height = '30px';
+          headerAvatar.style.borderRadius = '50%';
+          headerAvatar.style.objectFit = 'cover';
+          
+          // Replace the icon with the image
+          userIcon.parentNode.replaceChild(headerAvatar, userIcon);
+        }
         
         hideSpinner();
         showSuccess('Profile image updated successfully!');
@@ -231,7 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // Handle delete account
-  let deleteConfirmation = false;
   deleteAccountBtn.addEventListener('click', async () => {
     const confirmed = await showModal(
       'Delete Account',
@@ -250,11 +277,17 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Reset profile image to default
       document.getElementById('profileImage').style.display = 'none';
-      document.getElementById('header-avatar').style.display = 'none';
       
       if (!profileImageWrapper.querySelector('.default-avatar')) {
         profileImageWrapper.insertAdjacentHTML('afterbegin', defaultAvatarSvg);
-        document.querySelector('.user-avatar').insertAdjacentHTML('afterbegin', defaultAvatarSvg);
+        
+        // Reset the user icon in the header
+        const userAvatar = document.querySelector('.user-icon').parentNode.querySelector('img');
+        if (userAvatar) {
+          const userIcon = document.createElement('i');
+          userIcon.className = 'fa-solid fa-circle-user user-icon';
+          userAvatar.parentNode.replaceChild(userIcon, userAvatar);
+        }
       }
       
       document.getElementById('profileName').textContent = 'User Name';
