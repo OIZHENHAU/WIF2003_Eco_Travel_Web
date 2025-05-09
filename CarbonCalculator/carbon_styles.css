@@ -212,6 +212,12 @@ header.sticky {
     --bs-btn-active-border-color: black;
 }
 
+h3 {
+    font-family: "Ubuntu", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 #footer {
     padding: 6rem 0;
     background: var(--primary-color);
