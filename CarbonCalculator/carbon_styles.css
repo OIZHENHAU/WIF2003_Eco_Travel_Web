@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+:root {
+    --primary-color: #29B6F6;
+    --primary-dark: #0086c3;
+    --primary-light: #54d4ed;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+    --white: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+  }
+
+
+#footer {
+    padding: 6rem 0;
+    background: var(--primary-color);
+
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--white);
+}
+
+.ft-content {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    color: var(--white);
+}
+
+.icon i {
+    padding: 1rem;
+    font-size: 2.5rem;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.main-title {
+    display: flex;
+    gap: 15px;
+    
+
+    & .main-title-icon {
+        color: var(--white);
+        align-items: center;
+        margin-top: 12px;
+        font-size: 100px;
+    }
+
+    & .main-subtitle {
+        margin-top: 5px;
+         & #subtitle1 {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            font-style: normal;
+            color: var(--white);
+         }
+
+         & #subtitle2 {
+            color: var(--white);
+         }
+    }
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 0;
+    grid-gap: 4rem;
+    color: var(--white);
+    margin: 4rem 0;
+
+}
+
+.about img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons i {
+    background: #000;
+    color: var(--white);
+    padding: 0.5rem;
+    font-size: 30px;
+    margin: 1rem 0;
+    border-radius: 50%;
+    cursor: pointer; 
+}
+
+.about .lead {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+
+.links ul li {
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.links ul li a {
+    color: var(--white);
+}
+
+.subscribe .lead {
+    font-size: 1.1rem;
+    letter-spacing: 1;
+}
+
+form {
+    position: relative;
+}
+
+.subscribe input {
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--white);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.subscribe button {
+    display: block;
+    position: absolute;
+    top: 35%;
+    right: 4%;
+    padding: 0.5rem 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--white);
+}
