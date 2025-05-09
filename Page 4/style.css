@@ -35,6 +35,9 @@ body {
   background-color: var(--gray-100);
   opacity: 0;
   animation: fadeIn 0.5s ease-out forwards;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -65,11 +68,12 @@ body {
   }
 }
 
-.header {
-  background-color: var(--primary-color);
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  animation: slideInDown 0.5s ease-out;
+/* Updated header - SLIMMER VERSION */
+header {
+    background-color: var(--primary-color);
+    align-items: center;
+    padding: 0.5rem 0; /* Reduced padding from 1rem to 0.5rem */
+    animation: slideInDown 0.5s ease-out;
 }
 
 @keyframes slideInDown {
@@ -84,118 +88,96 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+header .main-title {
+    display: flex;
+    gap: 10px; /* Reduced from 15px */
+    margin-left: -15px; /* Move more to the left */
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+header .main-title-icon {
+    color: var(--white);
+    align-items: center;
+    margin-top: 8px; /* Adjusted from 12px */
+    font-size: 36px; /* Reduced size from 50px */
 }
 
-.logo-icon {
-  font-size: 2rem;
+header .main-subtitle {
+    margin-top: 3px; /* Adjusted from 5px */
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
+header #subtitle1 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-size: 32px; /* Reduced from 40px */
+    font-style: normal;
+    color: var(--white);
 }
 
-.brand-name {
-  color: var(--white);
-  font-size: 1.5rem;
-  font-weight: 700;
+header #subtitle2 {
+    color: var(--white);
+    font-size: 16px; /* Added font size */
+    margin-top: -5px; /* Added negative margin for tighter spacing */
 }
 
-.brand-location {
-  color: var(--white);
-  font-size: 0.875rem;
-  opacity: 0.9;
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.main-nav {
-  margin-right: 2rem;
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: -15px; /* Move more to the right */
 }
 
-.nav-list {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
+header nav ul li {
+    margin: 0 1rem; /* Increased from 0.9rem */
+    color: var(--white);
 }
 
-.nav-link {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity var(--transition-speed);
-  position: relative;
+header nav ul li a {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    transition: opacity var(--transition-speed);
+    position: relative;
 }
 
-.nav-link:hover {
-  opacity: 0.8;
+header nav ul li a:hover {
+    opacity: 0.8;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--white);
-  transition: width var(--transition-speed);
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width var(--transition-speed);
 }
 
-.nav-link:hover::after {
-  width: 100%;
+header nav ul li a:hover::after {
+    width: 100%;
 }
 
-.user-menu {
-  margin-left: 2rem;
-}
-
-.user-avatar-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--white);
-  transition: transform var(--transition-speed);
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.user-avatar:hover {
-  transform: scale(1.1);
-}
-
-.user-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+header .user-icon {
+    font-size: 30px;
 }
 
 .main-content {
   padding: 2rem 0;
   animation: fadeInUp 0.5s ease-out 0.1s backwards;
+  flex: 1; /* This helps eliminate the scrolling issue */
 }
 
 @keyframes fadeInUp {
@@ -685,7 +667,6 @@ textarea:focus {
   opacity: 1;
 }
 
-/* Modal styles */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -788,7 +769,191 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
-  .nav-list {
-    display: none;
+  /* Responsive header styles */
+  header nav {
+    flex-direction: column;
+    align-items: center;
   }
+
+  header .main-title {
+    margin-bottom: 0.5rem; /* Reduced from 1rem */
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header #subtitle1 {
+    font-size: 26px; /* Reduced from 30px */
+  }
+  
+  header .main-title-icon {
+    font-size: 30px; /* Reduced from 36px in mobile view */
+  }
+}
+
+/* ======== Footer Start ======== */
+
+#footer {
+  padding: 4rem 0; /* Reduced from 6rem */
+  background: var(--primary-color);
+  margin-top: auto; /* This helps eliminate the scrolling issue */
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--white);
+}
+
+.ft-content {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  color: var(--white);
+}
+
+.icon i {
+  padding: 1rem;
+  font-size: 2.5rem;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.footer-wrapper .main-title {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-wrapper .main-title .main-title-icon {
+  color: var(--white);
+  align-items: center;
+  margin-top: 12px;
+  font-size: 100px; /* Maintaining size for footer */
+}
+
+.footer-wrapper .main-title .main-subtitle {
+  margin-top: 5px;
+}
+
+.footer-wrapper .main-title .main-subtitle #subtitle1 {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  font-style: normal;
+  color: var(--white);
+}
+
+.footer-wrapper .main-title .main-subtitle #subtitle2 {
+  color: var(--white);
+}
+
+.footer-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 0;
+  grid-gap: 4rem;
+  color: var(--white);
+  margin: 4rem 0;
+}
+
+.about img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons i {
+  background: #000;
+  color: var(--white);
+  padding: 0.5rem;
+  font-size: 30px;
+  margin: 1rem 0;
+  border-radius: 50%;
+  cursor: pointer; 
+}
+
+.about .lead {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.links ul li {
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+.links ul li a {
+  color: var(--white);
+}
+
+.subscribe .lead {
+  font-size: 1.1rem;
+  letter-spacing: 1;
+}
+
+form {
+  position: relative;
+}
+
+.subscribe input {
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--white);
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.subscribe button {
+  display: block;
+  position: absolute;
+  top: 35%;
+  right: 4%;
+  padding: 0.5rem 1.5rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: var(--primary-color);
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+/* ======== Footer End ======== */
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+#footer {
+  margin-top: auto;
+}
+
+body > *:not(header):not(main):not(footer):not(#spinnerOverlay):not(#successMessage) {
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
