@@ -196,6 +196,7 @@ header.sticky {
 
 .container-fluid {
     position: relative;
+    margin-top: 11%;
 }
 
 #footer {
