@@ -199,6 +199,19 @@ header.sticky {
     margin-top: 11%;
 }
 
+.btnCategory {
+    font-family: "Ubuntu", sans-serif;
+    --bs-btn-color: var(--primary-color);
+    --bs-btn-bg: white;
+    --bs-btn-border-color: black;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: var(--primary-color);
+    --bs-btn-hover-border-color: black;
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: var(--bs-btn-hover-bg);
+    --bs-btn-active-border-color: black;
+}
+
 #footer {
     padding: 6rem 0;
     background: var(--primary-color);
