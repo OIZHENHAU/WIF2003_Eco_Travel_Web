@@ -15,3 +15,7 @@ how to stop
 how to reset data 
 
 ``docker-compose down -v``
+
+goto website:
+
+``localhost:3000``
