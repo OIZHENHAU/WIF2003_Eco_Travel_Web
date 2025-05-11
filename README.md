@@ -7,6 +7,8 @@ cd project (make sure ur terminal is in same folder as docker-compose file basic
 
 ``docker-compose up --build``
 
+``docker-compose up --build -d`` (detached)
+
 
 how to stop
 
@@ -14,7 +16,7 @@ how to stop
 
 how to reset data 
 
-``docker-compose down -v``
+``docker-compose down -v`` (deletes volumes)
 
 goto website:
 
