@@ -199,7 +199,18 @@ header.sticky {
     margin-top: 11%;
 }
 
+.btn {
+    font-family: "Ubuntu", sans-serif;
+    --bs-btn-color: white;
+    --bs-btn-bg: var(--primary-color);
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .btnCategory {
+    border-radius: 5px;
+    padding: auto;
     font-family: "Ubuntu", sans-serif;
     --bs-btn-color: var(--primary-color);
     --bs-btn-bg: white;
