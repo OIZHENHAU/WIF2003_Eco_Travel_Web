@@ -212,10 +212,19 @@ header.sticky {
     --bs-btn-active-border-color: black;
 }
 
+.row {
+    margin: 10px;
+}
+
 h3 {
     font-family: "Ubuntu", sans-serif;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+label {
+    font-family: "Arial", sans-serif;
+    margin: 5px;
 }
 
 #footer {
