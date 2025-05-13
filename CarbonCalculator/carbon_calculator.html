@@ -224,7 +224,7 @@
                         </button>
                     </div>
                     <div class="col-4">
-                        <button id="addFootVehicle" type="button" class="btn">
+                        <button id="addFootVehicle" type="button" class="btn" onclick="addFootprint('Vehicle')">
                             <i class="fa-solid fa-shoe-prints"></i> Add Footprint
                         </button>
                     </div>
@@ -249,8 +249,8 @@
 
                 <div class="row justify-content-right">
                     <div class="col-6">Total:</div>
-                    <div class="col-3">10kg CO2</div>
-                    <div class="col">RM0.25</div>
+                    <div class="col-3" id="totalVehicleEmission">10kg CO2</div>
+                    <div class="col" id="totalVehicleCost">RM0.25</div>
                 </div>
 
             </div>
@@ -318,7 +318,7 @@
                         </button>
                     </div>
                     <div class="col-4">
-                        <button id="addFootFood" type="button" class="btn">
+                        <button id="addFootFood" type="button" class="btn" onclick="addFootprint('Restaurant')">
                             <i class="fa-solid fa-shoe-prints"></i> Add Footprint
                         </button>
                     </div>
@@ -345,8 +345,8 @@
 
                 <div class="row justify-content-right">
                     <div class="col-6">Total:</div>
-                    <div class="col-3">4.78 tCO2</div>
-                    <div class="col">RM119.59</div>
+                    <div class="col-3" id="totalRestaurantEmission">4.78 tCO2</div>
+                    <div class="col" id="totalRestaurantCost">RM119.59</div>
                 </div>
 
             </div>

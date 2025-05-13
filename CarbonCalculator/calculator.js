@@ -134,7 +134,24 @@ function addFootprint(category) {
     var cell2 = row.insertCell(1)
     var cell3 = row.insertCell(2)
 
-    cell1.insertAdjacentHTML("afterend", "<i class='fas fa-hotel'></i>")
+    var htmlIcon = ""
+
+    switch(category) {
+        case "Accom":
+            htmlIcon = "<i class='fas fa-hotel'></i>"
+            break;
+        case "Vehicle":
+            htmlIcon = "<i class='fas fa-car'></i>"
+            break;
+        case "Restaurant":
+            htmlIcon = "<i class='fas fa-utensils'></i>"
+            break;
+        default:
+            htmlIcon = "<p>icon</p>"
+            break;
+    }
+
+    cell1.insertAdjacentHTML("afterend", htmlIcon)
     cell2.innerHTML = totalEmission.innerHTML
     cell3.innerHTML = totalCost.innerHTML
 }
