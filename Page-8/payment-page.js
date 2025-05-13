@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const method = this.getAttribute('data-method');
             
-       =
             if (method !== 'credit-card') {
                 creditCardForm.style.opacity = '0.5';
                 
