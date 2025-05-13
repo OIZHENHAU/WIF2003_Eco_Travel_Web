@@ -17,6 +17,24 @@ function toggleContent(buttonId, contentId) {
     document.getElementById(buttonId).classList.add("active")
 }
 
+function calculate() {
+
+}
+
+function addToTable(tableID, desc, emission, cost) {
+    var table = document.getElementById(tableID);
+    var numOfRows = table.rows.length;
+
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+
+    cell1.innerHTML = desc;
+    cell2.innerHTML = emission;
+    cell3.innerHTML = cost;
+}
+
 function test() {
     console.log("test print")
 }
