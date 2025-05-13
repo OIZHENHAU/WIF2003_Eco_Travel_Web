@@ -12,6 +12,7 @@ closeBtn.addEventListener("click", () => {
     menus.classList.remove("display"); 
 })
 
+
 //scroll sticky navbar
 window.addEventListener('scroll', () => {
     if (document.documentElement.scrollTop > 20) {

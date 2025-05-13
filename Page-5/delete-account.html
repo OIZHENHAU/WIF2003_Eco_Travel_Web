@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main-page.css">
-    <link rel="stylesheet" href="payment-page.css">
+    <link rel="stylesheet" href="delete-account.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     
-    <title>Payment - Eco-Travel Malaysia</title>
+    <title>Delete Account - Eco-Travel Malaysia</title>
 </head>
 <body>
     <!-- Header Start -->
@@ -30,11 +30,11 @@
                     <div class="btn">
                         <i class="fas fa-times close-btn"></i>
                     </div>
-                    <li><a href="#">Transport</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Weather</a></li>
-                    <li><a href="#">Favourite</a></li>
-                    <li><a href="#"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
+                    <li><a href="../Page-16/favourite.html" id="favouriteNav">Favourite</a></li>
+                    <li><a href="../Page-17/empty-history.html" id="historyNav">History</a></li>
+                    <li><a href="../Page-23/weather.html" id="weatherNav">Weather</a></li>
+                    <li><a href="../Page-22/carbonOffset.html" id="footprintNav">Footprint</a></li>
+                    <li><a href="../Page-4/index.html" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
                 </ul>
 
                 <div class="btn">
@@ -46,57 +46,31 @@
      </header>
     <!-- Header Close -->
 
-    <!-- Payment Section -->
-    <section id="payment">
+    <!-- Delete Account Section -->
+    <section id="delete-account">
         <div class="container">
-            <div class="payment-container">
-                <div class="payment-card">
-                    <!-- Payment Methods -->
-                    <div class="payment-methods">
-                        <button class="payment-method-btn" data-method="paypal">
-                            <i class="fa-brands fa-paypal"></i> PayPal
-                        </button>
-                        <button class="payment-method-btn" data-method="apple">
-                            <i class="fa-brands fa-apple"></i> Pay
-                        </button>
-                        <button class="payment-method-btn" data-method="google">
-                            <i class="fa-brands fa-google"></i> Pay
-                        </button>
-                    </div>
-
-                    <!-- Divider -->
-                    <div class="payment-divider">
-                        <span class="divider-line"></span>
-                        <span class="divider-text">or pay using credit card</span>
-                        <span class="divider-line"></span>
-                    </div>
-
-                    <!-- Credit Card Form -->
-                    <form id="credit-card-form">
+            <div class="delete-account-container">
+                <div class="delete-account-card">
+                    <h2 class="delete-account-title">Permanent Delete Account</h2>
+                    <p class="delete-account-message">
+                        We are sad to see you go. So you are aware, deleting your account will permanently
+                        remove all your account and your progress. You cannot undo this action.
+                    </p>
+                    
+                    <div class="confirmation-section">
+                        <p class="confirmation-instruction">Enter the word "CONFIRM" to proceed the action</p>
                         <div class="form-group">
-                            <label for="card-holder-name">Card Holder Full Name</label>
-                            <input type="text" id="card-holder-name" class="form-input" placeholder="">
+                            <label for="confirm-text">Confirm Text</label>
+                            <input type="text" id="confirm-text" class="form-input" placeholder="">
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="card-number">Card Number</label>
-                            <input type="text" id="card-number" class="form-input" placeholder="">
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group half">
-                                <label for="expiry-date">Expiry Date</label>
-                                <input type="text" id="expiry-date" class="form-input" placeholder="MM/YY">
-                            </div>
-                            
-                            <div class="form-group half">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" class="form-input" placeholder="">
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="btn-checkout">Check Out</button>
-                    </form>
+                    </div>
+                    
+                    <div class="separator"></div>
+                    
+                    <div class="button-group">
+                        <button class="btn-cancel">Cancel</button>
+                        <button class="btn-delete" id="delete-account-btn" disabled>Delete My Account</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -169,7 +143,7 @@
                 <div class="links">
                     <h2>Quick Link</h2>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="../Main-Page/main-page.html">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Transport</a></li>
                         <li><a href="#">History</a></li>
@@ -192,6 +166,6 @@
     <!-- Footer End -->
     
     <script src="main-page.js"></script>
-    <script src="payment-page.js"></script>
+    <script src="delete-account.js"></script>
 </body>
 </html>
