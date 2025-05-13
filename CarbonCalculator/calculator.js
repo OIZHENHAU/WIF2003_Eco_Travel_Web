@@ -122,7 +122,21 @@ function calculateAccom() {
     }
     totalAccomEmmision.textContent = `${totalEm.toFixed(2)}kg CO2`
     totalAccomCost.textContent = `RM${totalCost.toFixed(2)}`
+}
 
+function addFootprint(category) {
+    var carbonFootprint = document.getElementById("carbonFootprint")
+    var totalEmission = document.getElementById(`total${category}Emission`)
+    var totalCost = document.getElementById(`total${category}Cost`)
+
+    var row = carbonFootprint.insertRow(-1)
+    var cell1 = row.insertCell(0)
+    var cell2 = row.insertCell(1)
+    var cell3 = row.insertCell(2)
+
+    cell1.insertAdjacentHTML("afterend", "<i class='fas fa-hotel'></i>")
+    cell2.innerHTML = totalEmission.innerHTML
+    cell3.innerHTML = totalCost.innerHTML
 }
 
 function addToTable(tableID, desc, emission, cost) {

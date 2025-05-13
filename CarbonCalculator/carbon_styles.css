@@ -252,6 +252,11 @@ h3 {
     border-color: black;
 }
 
+#carbonFootprint {
+    border-style: none;
+    border-bottom: white;
+}
+
 label {
     font-family: "Arial", sans-serif;
     margin: 5px;

@@ -155,7 +155,7 @@
                         </button>
                     </div>
                     <div class="col-4">
-                        <button id="addFootAccom" type="button" class="btn">
+                        <button id="addFootAccom" type="button" class="btn" onclick="addFootprint('Accom')">
                             <i class="fa-solid fa-shoe-prints"></i> Add Footprint
                         </button>
                     </div>
@@ -176,8 +176,8 @@
 
                 <div class="row justify-content-right">
                     <div class="col-6">Total:</div>
-                    <div class="col-3" id="totalAccomEmission"></div>
-                    <div class="col" id="totalAccomCost"></div>
+                    <div class="col-3" id="totalAccomEmission">0kg</div>
+                    <div class="col" id="totalAccomCost">RM0</div>
                 </div>
 
             </div>
@@ -357,7 +357,7 @@
                 <p>As you add items to your footprint, a summary will appear here.</p>
 
                 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col">
                         <i class="fas fa-hotel"></i>
                     </div>
@@ -367,7 +367,13 @@
                     <div class="col">
                         RM0.68
                     </div>
-                </div>
+                </div> -->
+
+                <table class="table" id="carbonFootprint">
+                    <tbody>
+
+                    </tbody>
+                </table>
 
                 <button type="button" id="offsetNow" class="btn">Offset Now</button>
             </div>
