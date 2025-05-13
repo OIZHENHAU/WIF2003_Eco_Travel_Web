@@ -124,6 +124,59 @@ function calculateAccom() {
     totalAccomCost.textContent = `RM${totalCost.toFixed(2)}`
 }
 
+function calculateVehicle() {
+    var table = document.getElementById("vehicleTable")
+    var numOfRows = table.rows.length;
+    for(let i = 0; i < numOfRows - 1; i++) {
+        table.deleteRow(-1);
+    }
+
+    var totalVehicleEmmision = document.getElementById("totalVehicleEmission")
+    var totalVehicleCost = document.getElementById("totalVehicleCost")
+    var emission = 0
+    var cost = 0
+    var totalEm = 0
+    var totalCost = 0
+
+    const vehicleInputs = document.querySelectorAll(".vehicleInput")
+    const vehicleType = vehicleInputs[0].value
+    const fuelType = vehicleInputs[1].value
+    const distance = vehicleInputs[2].value
+
+    var fuelFactor = 1;
+    var vehicleTypeName = "Small Car"
+
+    if (vehicleType == "middleCar") {
+        fuelFactor = 1.2
+        vehicleTypeName = "Middle Car"
+    }
+    else if (vehicleType == "largeCar") {
+        fuelFactor = 1.5
+        vehicleTypeName = "Large Car"
+    }
+
+    emission = (calcEmission(fuelType, distance) * fuelFactor).toFixed(2)
+    cost = calcCost(emission).toFixed(2)
+    totalEm += parseFloat(emission)
+    totalCost += parseFloat(cost)
+
+    switch (fuelType) {
+        case "petrol":
+            addToTable("vehicleTable", `${vehicleTypeName}(Petrol): ${distance}km`, `${emission}kg CO2`, `RM${cost}`)
+            break;
+        case "diesel":
+            addToTable("vehicleTable", `${vehicleTypeName}(Diesel): ${distance}km`, `${emission}kg CO2`, `RM${cost}`)
+            break;
+        case "electric":
+            addToTable("vehicleTable", `${vehicleTypeName}(Electric): ${distance}km`, `${emission}kg CO2`, `RM${cost}`)
+            break;
+    }
+
+    
+    totalVehicleEmmision.textContent = `${totalEm.toFixed(2)}kg CO2`
+    totalVehicleCost.textContent = `RM${totalCost.toFixed(2)}`
+}
+
 function addFootprint(category) {
     var carbonFootprint = document.getElementById("carbonFootprint")
     var totalEmission = document.getElementById(`total${category}Emission`)

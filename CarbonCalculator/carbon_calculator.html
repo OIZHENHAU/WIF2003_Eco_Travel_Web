@@ -193,7 +193,7 @@
                         <label class="form-label" for="carType">Type: </label>
                     </div>
                     <div class="col-2">
-                        <select class="form-select" id="carType" name="carType">
+                        <select class="form-select vehicleInput" id="carType" name="carType">
                             <option value="smallCar">Small Car</option>
                             <option value="middleCar">Middle Car</option>
                             <option value="largeCar">Large Car</option>
@@ -203,14 +203,14 @@
                         <label class="form-label" for="fuel">Fuel: </label>
                     </div>
                     <div class="col-2">
-                        <select class="form-select" id="fuel" name="fuel">
+                        <select class="form-select vehicleInput" id="fuel" name="fuel">
                             <option value="petrol">Petrol</option>
                             <option value="diesel">Diesel</option>
                             <option value="electric">Electric</option>
                         </select>
                     </div>
                     <div class="col-3">
-                        <input class="form-control" type="number" id="distance" name="distance" placeholder="Distance (km)">
+                        <input class="form-control vehicleInput" type="number" id="distance" name="distance" placeholder="Distance (km)">
                     </div>
                 </div>
                 
@@ -219,7 +219,7 @@
 
                     </div>
                     <div class="col-2">
-                        <button id="calculateVehicle" type="button" class="btn">
+                        <button id="calculateVehicle" type="button" class="btn" onclick="calculateVehicle()">
                             <i class="fa-solid fa-calculator"></i> Calculate
                         </button>
                     </div>
@@ -239,18 +239,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td scope="row">Small Car(Petrol): 35km</td>
-                            <td>10kg CO2</td>
-                            <td>RM0.25</td>
-                        </tr>
+
                     </tbody>
                 </table>
 
                 <div class="row justify-content-right">
                     <div class="col-6">Total:</div>
-                    <div class="col-3" id="totalVehicleEmission">10kg CO2</div>
-                    <div class="col" id="totalVehicleCost">RM0.25</div>
+                    <div class="col-3" id="totalVehicleEmission">0kg</div>
+                    <div class="col" id="totalVehicleCost">RM0</div>
                 </div>
 
             </div>
