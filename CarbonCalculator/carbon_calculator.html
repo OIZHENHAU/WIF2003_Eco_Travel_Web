@@ -75,7 +75,7 @@
                         <label for="electricity" class="form-label">Electricity</label>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control" id="electricity" aria-describedby="electricityUnit">
+                        <input type="number" class="form-control accomInput" id="electricity" aria-describedby="electricityUnit">
                     </div>
                     <div class="col-2">
                         <span id="electricityUnit" class="form-text">
@@ -87,7 +87,7 @@
                         <label for="renewableElec" class="form-label">Renewable</label>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control" id="renewableElec" aria-describedby="renewableElecUnit">
+                        <input type="number" class="form-control accomInput" id="renewableElec" aria-describedby="renewableElecUnit">
                     </div>
                     <div class="col-2">
                         <span id="renewableElecUnit" class="form-text">
@@ -101,7 +101,7 @@
                         <label for="naturalGas" class="form-label">Natural Gas</label>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control" id="naturalGas" aria-describedby="naturalGasUnit">
+                        <input type="number" class="form-control accomInput" id="naturalGas" aria-describedby="naturalGasUnit">
                     </div>
                     <div class="col-2">
                         <span id="naturalGasUnit" class="form-text">
@@ -113,7 +113,7 @@
                         <label for="renewableGas" class="form-label">Renewable</label>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control" id="renewableGas" aria-describedby="renewableGasUnit">
+                        <input type="number" class="form-control accomInput" id="renewableGas" aria-describedby="renewableGasUnit">
                     </div>
                     <div class="col-2">
                         <span id="renewableGasUnit" class="form-text">
@@ -127,7 +127,7 @@
                         <label for="coal" class="form-label">Coal</label>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control" id="coal" aria-describedby="coalUnit">
+                        <input type="number" class="form-control accomInput" id="coal" aria-describedby="coalUnit">
                     </div>
                     <div class="col-2">
                         <span id="coalUnit" class="form-text">
@@ -141,7 +141,7 @@
                         <label for="heatingOil" class="form-label">Heating Oil</label>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control" id="heatingOil" aria-describedby="heatingOilUnit">
+                        <input type="number" class="form-control accomInput" id="heatingOil" aria-describedby="heatingOilUnit">
                     </div>
                     <div class="col-2">
                         <span id="heatingOilUnit" class="form-text">
@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="col-2">
-                        <button id="calculateAccom" type="button" class="btn">
+                        <button id="calculateAccom" type="button" class="btn" onclick="calculateAccom()">
                             <i class="fa-solid fa-calculator"></i> Calculate
                         </button>
                     </div>
@@ -170,18 +170,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td scope="row">Electricity 100kWh</td>
-                            <td>27kg CO2</td>
-                            <td>RM0.68</td>
-                        </tr>
+
                     </tbody>
                 </table>
 
                 <div class="row justify-content-right">
                     <div class="col-6">Total:</div>
-                    <div class="col-3">27kg CO2</div>
-                    <div class="col">RM0.68</div>
+                    <div class="col-3" id="totalAccomEmission"></div>
+                    <div class="col" id="totalAccomCost"></div>
                 </div>
 
             </div>
