@@ -31,6 +31,80 @@
     font-family: "poppins", sans-serif;
   }
 
+  html {
+    font-size: 16px;
+
+  }
+
+  body {
+    background-image: url(../Page-23/src/weather-lzone.jpg);
+  }
+
+/* ++++++++++++++++++++Utality Classes Start+++++++++++++++++++++ */
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading-normal-txt {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color: var(--primary-color);
+
+}
+
+.headings {
+    font-size: 3rem;
+    font-family: "ubuntu";
+    padding-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.headings span {
+    color: var(--primary-color);
+}
+
+.secondary-headings {
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    padding: 1rem 0;
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+    margin-bottom: 0px;
+}
+
+.primary-btn {
+    width: 50%;
+    outline: none;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: var(--white);
+    cursor: pointer;
+}
+/* +++++++++++++++++++Utality Class Close++++++++++++++++++++++++ */
+
   
 
   header {
@@ -197,7 +271,7 @@ header.sticky {
 
 .container-fluid {
     position: relative;
-    margin-top: 200px;
+    margin-top: 11%;
 }
 
 .btn {
@@ -228,6 +302,11 @@ header.sticky {
     margin: 10px;
 }
 
+.content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 h3 {
     font-family: "Ubuntu", sans-serif;
     margin-top: 20px;
@@ -251,6 +330,12 @@ h3 {
 .table {
     border-style: solid;
     border-color: black;
+    margin-top: 5%;
+}
+
+#carbonFootprint {
+    border-style: none;
+    border-bottom: white;
 }
 
 label {
@@ -392,5 +477,3 @@ form {
     font-size: 1rem;
     color: var(--white);
 }
-
-

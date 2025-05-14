@@ -260,6 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Handle delete account
   deleteAccountBtn.addEventListener('click', async () => {
+    window.location.href = `../Page-5/delete-account.html`;
+
     const confirmed = await showModal(
       'Delete Account',
       'Are you sure you want to delete your account? This action cannot be undone.'
@@ -305,6 +307,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Handle logout
   logoutBtn.addEventListener('click', async () => {
+    window.location.href = `../Page 1 & 2/index.html`;
+
     const confirmed = await showModal(
       'Confirm Logout',
       'Are you sure you want to log out? You will need to log in again to access your account.'
