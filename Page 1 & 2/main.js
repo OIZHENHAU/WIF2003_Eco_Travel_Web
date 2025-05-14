@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const registerSection = document.querySelector('.register-section');
   const loadingOverlay = document.querySelector('.loading-overlay');
 
+  //Button for Login and Register
+  const registerButton = document.querySelector('.register-button');
+  const loginButton = document.querySelector('.login-button');
+
+
   registerSwitch.addEventListener('click', function () {
     loginSection.classList.remove('active');
     registerSection.classList.add('active');
@@ -191,11 +196,11 @@ function redirectWithFadeOut(targetPage) {
 // Login form
 document.getElementById('loginForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  redirectWithFadeOut('../Page 3/index.html'); // Fade out, then redirect
+  redirectWithFadeOut('../Main-Page/main-page.html'); // Fade out, then redirect
 });
 
 // Register form
 document.getElementById('registerForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  redirectWithFadeOut('../Page 3/index.html'); // Fade out, then redirect
+  redirectWithFadeOut('../Main-Page/main-page.html'); // Fade out, then redirect
 });
