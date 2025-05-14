@@ -10,6 +10,7 @@
 .payment-container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .payment-card {
@@ -25,6 +26,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    gap: 0.5rem;
 }
 
 .payment-method-btn {
@@ -33,21 +35,13 @@
     background-color: var(--white);
     border: 1px solid var(--gray-300);
     border-radius: 4px;
-    margin: 0 0.5rem;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.payment-method-btn:first-child {
-    margin-left: 0;
-}
-
-.payment-method-btn:last-child {
-    margin-right: 0;
+    white-space: nowrap;
 }
 
 .payment-method-btn:hover {
@@ -80,9 +74,14 @@
     padding: 0 1rem;
     color: var(--gray-600);
     font-size: 0.9rem;
+    white-space: nowrap;
 }
 
 /* Form Styles */
+#credit-card-form {
+    display: block;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -92,6 +91,7 @@
     font-size: 0.9rem;
     color: var(--gray-700);
     margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
 .form-input {
@@ -102,6 +102,7 @@
     font-size: 1rem;
     background-color: var(--gray-200);
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-input:focus {
@@ -128,6 +129,7 @@
     border: none;
     border-radius: 4px;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 1rem;
@@ -137,44 +139,197 @@
     background-color: #333333;
 }
 
-/* Responsive styles */
+.btn-checkout:active {
+    transform: translateY(1px);
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 992px) {
+    #payment {
+        padding: 6rem 0 3rem 0;
+    }
+    
+    .payment-container {
+        max-width: 600px;
+    }
+    
+    .payment-card {
+        padding: 2rem;
+    }
+}
+
+/* Responsive styles for mobile */
 @media (max-width: 768px) {
+    #payment {
+        padding: 5rem 0 2rem 0;
+        min-height: auto;
+    }
+    
+    .payment-container {
+        padding: 0 0.75rem;
+    }
+    
     .payment-card {
         padding: 1.5rem;
+        margin: 1rem 0;
     }
     
     .payment-methods {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
     }
     
     .payment-method-btn {
-        margin: 0;
+        padding: 1rem 0.8rem;
+        font-size: 0.95rem;
     }
     
     .form-row {
         flex-direction: column;
         gap: 1.5rem;
     }
+    
+    .form-group.half {
+        flex: none;
+    }
+    
+    .form-input {
+        padding: 1rem;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .btn-checkout {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
 }
 
+/* Responsive styles for small mobile */
 @media (max-width: 576px) {
     #payment {
-        padding: 6rem 0 2rem 0;
+        padding: 4rem 0 1.5rem 0;
+    }
+    
+    .payment-container {
+        padding: 0 0.5rem;
+    }
+    
+    .payment-card {
+        padding: 1rem;
+        border-radius: 8px;
     }
     
     .payment-divider {
-        flex-direction: column;
-        gap: 1rem;
+        margin: 1.5rem 0;
     }
     
-    .divider-line {
-        width: 100%;
+    .divider-text {
+        padding: 0 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+    
+    .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .payment-method-btn {
+        padding: 0.9rem;
+        font-size: 0.9rem;
+    }
+    
+    .payment-method-btn i {
+        margin-right: 0.4rem;
     }
 }
 
-#credit-card-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+/* Very small devices */
+@media (max-width: 360px) {
+    .payment-card {
+        padding: 0.75rem;
+    }
+    
+    .payment-method-btn {
+        font-size: 0.85rem;
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .payment-method-btn span {
+        display: none;
+    }
+    
+    .payment-method-btn i {
+        margin-right: 0;
+    }
+    
+    .divider-text {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+}
+
+/* Additional fixes for better mobile experience */
+@media (max-width: 768px) {
+    /* Prevent horizontal scrolling */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Better touch targets */
+    .payment-method-btn {
+        min-height: 44px;
+    }
+    
+    .btn-checkout {
+        min-height: 44px;
+    }
+    
+    /* Improve form field spacing on mobile */
+    .form-input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    /* Better focus states for mobile */
+    .form-input:focus {
+        border-width: 2px;
+        padding: calc(0.8rem - 1px) calc(1rem - 1px);
+    }
+}
+
+/* Fix for iOS input zoom */
+@media screen and (max-width: 768px) {
+    .form-input {
+        font-size: 16px;
+        transform: none;
+    }
+}
+
+/* Loading state for better UX */
+.btn-checkout.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-checkout.loading::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
