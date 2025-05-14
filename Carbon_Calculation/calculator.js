@@ -5,6 +5,13 @@
 const defaultBtn = "accomodationBtn"
 const defaultContent = "accomodation"
 
+const offsetCarbon = document.getElementById('offsetNow');
+
+offsetCarbon.addEventListener('click', () => {
+    window.location.href = `../Page-22/carbonOffset.html`;
+    
+});
+
 toggleContent(defaultBtn, defaultContent)
 
 function toggleContent(buttonId, contentId) {
