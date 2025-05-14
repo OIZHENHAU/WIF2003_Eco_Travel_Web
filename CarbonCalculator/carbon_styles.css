@@ -227,6 +227,11 @@ header.sticky {
     margin: 10px;
 }
 
+.content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 h3 {
     font-family: "Ubuntu", sans-serif;
     margin-top: 20px;
@@ -250,6 +255,7 @@ h3 {
 .table {
     border-style: solid;
     border-color: black;
+    margin-top: 5%;
 }
 
 #carbonFootprint {
