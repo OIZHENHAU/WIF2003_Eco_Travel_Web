@@ -368,6 +368,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
         integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
         crossorigin="anonymous"></script>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const imgSrc = urlParams.get('img');
+            console.log(decodeURIComponent(imgSrc));
+      
+            if (imgSrc) {
+              document.getElementById('car_image').src = "../Main-Page/" + decodeURIComponent(imgSrc);
+            }
+          </script>
 </body>
 
 </html>

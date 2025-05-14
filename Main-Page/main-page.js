@@ -3,6 +3,9 @@ const header = document.querySelector("header");
 const menuBtn = document.querySelector(".menu-btn");
 const closeBtn = document.querySelector(".close-btn");
 
+const likeButton = document.querySelector(".favourite-btn");
+const searchNowButton = document.querySelector(".primary-btn");
+
 
 menuBtn.addEventListener("click", () => {
     menus.classList.add("display"); 
@@ -22,3 +25,8 @@ window.addEventListener('scroll', () => {
         header.classList.remove('sticky');
     }
 });
+
+searchNowButton.addEventListener('click', () => {
+    window.location.href = `../Search-Page/search.html`;
+});
+

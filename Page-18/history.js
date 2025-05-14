@@ -14,7 +14,7 @@ menuBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
     menus.classList.remove("display"); 
-})
+});
 
 //scroll sticky navbar
 window.addEventListener('scroll', () => {

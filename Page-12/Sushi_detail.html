@@ -168,7 +168,7 @@
   <!-- 详情头部 -->
   <div class="detail-header d-flex align-items-center justify-content-between">
     <div>
-      <h4 class="mb-0">Sushi Hasaki Tokyo</h4>
+      <h4 class="mb-0">MALAI THAI RESTAURANT</h4>
       <span class="badge bg-info text-dark">Top Rated</span>
     </div>
   </div>
@@ -181,12 +181,12 @@
     <div class="row">
       <!-- 图片区域 -->
       <div class="col-md-4 image-container">
-        <img src="SUshi.jpeg" alt="Sushi Hasaki Tokyo">
+        <img src="../Main-Page/img/award-winning-thai-restaurant.jpg" alt="Sushi Hasaki Tokyo" id="restaurant-img">
       </div>
       <!-- 文字信息区域 -->
       <div class="col-md-8">
         <p>
-          Located in Terengganu, Malaysia, Sushi Hasaki Tokyo brings the art of Japanese sushi to life. With impeccable freshness, innovative rolls, and a sleek dining experience, guests are treated to an immersive culinary journey in an inviting modern setting.
+          Located in Terengganu, Malaysia, Malai Thai Cuisinre brings the art of Thai sushi to life. With impeccable freshness, innovative rolls, and a sleek dining experience, guests are treated to an immersive culinary journey in an inviting modern setting.
         </p>
         <!-- 设施说明 -->
         <div class="facilities">
@@ -235,6 +235,7 @@
           <div class="col-md-4 d-flex align-items-end">
             <button class="btn btn-primary me-2">Book Now</button>
             <button class="btn btn-outline-primary">Add Planner</button>
+            <button class="btn btn-outline-primary" style="margin-left: 10px;">Add Favourite</button>
           </div>
         </div>
       </div>
@@ -363,5 +364,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/Main-Page/swiperMainPage.js"></script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const imgSrc = urlParams.get('img');
+      console.log(decodeURIComponent(imgSrc));
+
+      if (imgSrc) {
+        document.getElementById('restaurant-img').src = "../Main-Page/" + decodeURIComponent(imgSrc);
+      }
+    </script>
 </body>
 </html>

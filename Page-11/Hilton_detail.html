@@ -190,7 +190,7 @@
   <!-- 详情头部 -->
   <div class="detail-header d-flex align-items-center justify-content-between">
     <div>
-      <h4 class="mb-0">HILTON KUALA LUMPUR</h4>
+      <h4 class="mb-0">PAVILION HOTEL KUALA LUMPUR</h4>
       <span class="badge bg-info text-dark">Top Popular</span>
     </div>
   </div>
@@ -203,12 +203,12 @@
     <div class="row">
       <!-- 左侧图片 -->
       <div class="col-md-4 image-container">
-        <img src="Hilton.jpeg" alt="Hilton Kuala Lumpur">
+        <img src="../Main-Page/img/pavilion-hotel.jpg" alt="Hilton Kuala Lumpur" id="accomodation-img">
       </div>
       <!-- 右侧文字信息 -->
       <div class="col-md-8">
         <p style="font-weight: 150px; font-style: bold;">
-          Offering city views and free WiFi, Hilton Kuala Lumpur provides luxurious accommodations conveniently located in the city. With elegant dining options, a world-class spa, and modern meeting facilities, it is the perfect destination for both business and leisure travelers.
+          Offering city views and free WiFi, Pavilion Kuala Lumpur provides luxurious accommodations conveniently located in the city. With elegant dining options, a world-class spa, and modern meeting facilities, it is the perfect destination for both business and leisure travelers.
         </p>
         <!-- 设施说明 -->
         <div class="facilities">
@@ -256,6 +256,7 @@
           <div class="col-md-4 d-flex align-items-end">
             <button class="btn btn-primary me-2">Book Now</button>
             <button class="btn btn-outline-primary">Add Planner</button>
+            <button class="btn btn-outline-primary" style="margin-left: 10px;">Add Favourite</button>
           </div>
         </div>
       </div>
@@ -384,5 +385,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/Main-Page/swiperMainPage.js"></script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const imgSrc = urlParams.get('img');
+      console.log(decodeURIComponent(imgSrc));
+
+      if (imgSrc) {
+        document.getElementById('accomodation-img').src = "../Main-Page/" + decodeURIComponent(imgSrc);
+      }
+    </script>
 </body>
 </html>

@@ -195,6 +195,13 @@
 
   <!-- 内容区 -->
   <div class="content-wrapper">
+    <div class="detail-header d-flex align-items-center justify-content-between" style="margin-left: 60px; margin-top: 0px;">
+      <div>
+        <h4 class="mb-0">TOURIST DESTINATION</h4>
+        <span class="badge bg-info text-dark">Top Popular</span>
+      </div>
+    </div>
+
     <div class="container px-0">
       <div class="detail-wrapper">
         <button class="btn btn-secondary back-btn" onclick="window.history.back()">← Back</button>
@@ -205,19 +212,19 @@
           <div class="left-col">
             <div class="img-box">
               <!-- 替换为实际图片路径，例如 camero.jpg -->
-              <img src="camero.jpeg" alt="Cameron Bharat Tea Estate" />
+              <img src="../Main-Page/img/genting_highland.jpg" alt="Cameron Bharat Tea Estate" id="destination-img" />
             </div>
           </div>
           <!-- 右侧文字列 -->
           <div class="right-col ms-3">
             <!-- <span class="badge-top">Top Popular</span> -->
-            <h4 class="detail-title">Cameron Bharat Tea Estate</h4>
+            <h4 class="detail-title">Genting Highland Kuala Lumpur</h4>
             <p>
-              Experience the serene landscapes of Cameron Highlands at Bharat Tea Estate. Enjoy panoramic views, refreshing breezes, and a taste of nature, along with a cozy stay in the hills.
+              Nestled in the cool hills of Pahang, Malaysia, Genting Highlands is a popular mountain resort located about an hour’s drive from Kuala Lumpur. Sitting at 1,800 meters above sea level, it offers a refreshing escape from the tropical heat and a wide range of entertainment, leisure, and natural attractions.
               <a href="#">Read More...</a>
             </p>
             <ul class="icon-tags">
-              <li><i class="bi bi-door-open"></i>Spacious Rooms</li>
+              <li style="font-weight: 200px;"><i class="bi bi-door-open"></i>Spacious Rooms</li>
               <li><i class="bi bi-tree"></i>Scenic Views</li>
               <li><i class="bi bi-cup-straw"></i>Tea & Dining</li>
               <li><i class="bi bi-wifi"></i>Free Wi-Fi</li>
@@ -232,14 +239,14 @@
         <!-- 价格区域 -->
         <div class="row mt-3">
           <div class="col-12 text-end">
-            <div class="price-block">
+            <div class="price-block" style="font-size: 40px;">
               RM 95 <span class="fw-normal" style="font-size:0.85rem;">total</span>
             </div>
-            <p class="cancel-note">Free Cancellation</p>
+            <p class="cancel-note" style="font-size: 20px;">Free Cancellation</p>
           </div>
         </div>
         <!-- 预订区域 -->
-        <div class="row g-3 align-items-end mt-3">
+        <div class="row g-3 align-items-end mt-3" style="margin-top: 10px;">
           <div class="col-md-3">
             <label class="form-label">Arrival Date</label>
             <input type="date" class="form-control" />
@@ -251,6 +258,7 @@
           <div class="col-12">
             <button class="btn btn-primary me-2">Book Now</button>
             <button class="btn btn-outline-primary">Add Planner</button>
+            <button class="btn btn-outline-primary">Add Favourite</button>
           </div>
         </div>
         <!-- 评分与操作区域 -->
@@ -371,5 +379,15 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="/Main-Page/swiperMainPage.js"></script>
+  <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const imgSrc = urlParams.get('img');
+      console.log(decodeURIComponent(imgSrc));
+
+      if (imgSrc) {
+        document.getElementById('destination-img').src = "../Main-Page/" + decodeURIComponent(imgSrc);
+      }
+
+  </script>
 </body>
 </html>
