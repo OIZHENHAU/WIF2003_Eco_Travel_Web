@@ -56,6 +56,13 @@ function calcEmission(type, value, renew = 0) {
     return emission;
 }
 
+function calcFoodEmission(people, highM = 0, medM = 0, lowM = 0, fish = 0, veg = 0) {
+    var emissionPerP = (highM * 2.92) + (medM * 2.34) + (lowM * 2.15) + (fish * 1.69) + (veg * 0.25)
+    var totalEmission = emissionPerP * people
+
+    return totalEmission
+}
+
 function calcCost(emission) {
     var cost = emission * 0.025
     return cost;
@@ -68,7 +75,7 @@ function calculateAccom() {
         table.deleteRow(-1);
     }
 
-    var totalAccomEmmision = document.getElementById("totalAccomEmission")
+    var totalAccomEmission = document.getElementById("totalAccomEmission")
     var totalAccomCost = document.getElementById("totalAccomCost")
     var totalEm = 0
     var totalCost = 0
@@ -120,7 +127,7 @@ function calculateAccom() {
             console.log("Value empty")
         }
     }
-    totalAccomEmmision.textContent = `${totalEm.toFixed(2)}kg CO2`
+    totalAccomEmission.textContent = `${totalEm.toFixed(2)}kg CO2`
     totalAccomCost.textContent = `RM${totalCost.toFixed(2)}`
 }
 
@@ -131,7 +138,7 @@ function calculateVehicle() {
         table.deleteRow(-1);
     }
 
-    var totalVehicleEmmision = document.getElementById("totalVehicleEmission")
+    var totalVehicleEmission = document.getElementById("totalVehicleEmission")
     var totalVehicleCost = document.getElementById("totalVehicleCost")
     var emission = 0
     var cost = 0
@@ -173,8 +180,57 @@ function calculateVehicle() {
     }
 
     
-    totalVehicleEmmision.textContent = `${totalEm.toFixed(2)}kg CO2`
+    totalVehicleEmission.textContent = `${totalEm.toFixed(2)}kg CO2`
     totalVehicleCost.textContent = `RM${totalCost.toFixed(2)}`
+}
+
+function calculateRest() {
+    var table = document.getElementById("restaurantTable")
+    var numOfRows = table.rows.length;
+    for(let i = 0; i < numOfRows - 1; i++) {
+        table.deleteRow(-1);
+    }
+
+    var totalRestaurantEmission = document.getElementById("totalRestaurantEmission")
+    var totalRestaurantCost = document.getElementById("totalRestaurantCost")
+    var totalEm = 0
+    var totalCost = 0
+
+    const restInputs = document.querySelectorAll(".restInput")
+    var restArr = [].slice.call(restInputs).map(input => input.value)
+    restArr = restArr.map(input => (input != 0) ? input : 0)
+    totalEm = calcFoodEmission(restArr[5], restArr[0], restArr[1], restArr[2], restArr[3], restArr[4])
+    totalEm *= 52 //for one year
+    totalCost = (calcCost(totalEm)).toFixed(2)
+
+
+    var desc = `Food for ${restArr[5]} people, for 1 year`
+    for (let i = 0; i < restArr.length - 1; i++) {
+        if (restArr[i] == 0) {
+            continue;
+        }
+        switch (i) {
+            case 0:
+                desc += `<br>High meat-eater (${restArr[i]} day(s) a week)`
+                break;
+            case 1:
+                desc += `<br>Medium meat-eater (${restArr[i]} day(s) a week)`
+                break;
+            case 2:
+                desc += `<br>Low meat-eater (${restArr[i]} day(s) a week)`
+                break;
+            case 3:
+                desc += `<br>Fish eater (${restArr[i]} day(s) a week)`
+                break;
+            case 4:
+                desc += `<br>Vegetarian (${restArr[i]} day(s) a week)`
+                break;
+        }
+    }
+    addToTable("restaurantTable", desc, `${(totalEm / 1000).toFixed(2)} tCO2`, `RM${totalCost}`)
+
+    totalRestaurantEmission.textContent = `${(totalEm / 1000).toFixed(2)} tCO2`
+    totalRestaurantCost.textContent = `RM${totalCost}`
 }
 
 function addFootprint(category) {

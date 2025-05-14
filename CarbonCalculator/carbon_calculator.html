@@ -263,13 +263,13 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <input type="number" class="form-control" id="highMeat">
+                        <input type="number" class="form-control restInput" id="highMeat">
                     </div>
                     <div class="col-4">
-                        <input type="number" class="form-control" id="mediumMeat">
+                        <input type="number" class="form-control restInput" id="mediumMeat">
                     </div>
                     <div class="col-4">
-                        <input type="number" class="form-control" id="lowMeat">
+                        <input type="number" class="form-control restInput" id="lowMeat">
                     </div>
                 </div>
                 <div class="row">
@@ -287,19 +287,19 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <input type="number" class="form-control" id="fish">
+                        <input type="number" class="form-control restInput" id="fish">
                     </div>
                     <div class="col-4">
-                        <input type="number" class="form-control" id="veg">
+                        <input type="number" class="form-control restInput" id="veg">
                     </div>
                     <div class="col-4">
-                        <input type="number" class="form-control" id="numOfPeople">
+                        <input type="number" class="form-control restInput" id="numOfPeople">
                     </div>
                 </div>
 
                 <div class="row justify-content-end">
                     <div class="col-5 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button id="calculateFood" type="button" class="btn">
+                        <button id="calculateFood" type="button" class="btn" onclick="calculateRest()">
                             <i class="fa-solid fa-calculator"></i> Calculate
                         </button>
                         <button id="addFootFood" type="button" class="btn" onclick="addFootprint('Restaurant')">
