@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+:root {
+    --primary-color: #29B6F6;
+    --primary-dark: #0086c3;
+    --primary-light: #54d4ed;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+    --white: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+  }
+
+  html {
+    font-size: 16px;
+
+  }
+
+  body {
+    background-image: url(/weather-lzone.jpg);
+  }
+
+/* ++++++++++++++++++++Utality Classes Start+++++++++++++++++++++ */
+
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading-normal-txt {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color: var(--primary-color);
+
+}
+
+.headings {
+    font-size: 3rem;
+    font-family: "ubuntu";
+    padding-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.headings span {
+    color: var(--primary-color);
+}
+
+.secondary-headings {
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    padding: 1rem 0;
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+    margin-bottom: 0px;
+}
+
+.primary-btn {
+    width: 50%;
+    outline: none;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: var(--white);
+    cursor: pointer;
+}
+/* +++++++++++++++++++Utality Class Close++++++++++++++++++++++++ */
+
+  
+
+  header {
+    background-color: var(--primary-color);
+    align-items: center;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    height: 100;
+    transition: all 0.3s ease-in-out;
+
+    & .main-title {
+        display: flex;
+        gap: 15px;
+        
+
+        & .main-title-icon {
+            color: var(--white);
+            align-items: center;
+            margin-top: 12px;
+            font-size: 50px;
+        }
+
+        & .main-subtitle {
+            margin-top: 5px;
+             & #subtitle1 {
+                font-family: "Special Gothic Expanded One", sans-serif;
+                font-weight: 400;
+                font-size: 40px;
+                font-style: normal;
+                color: var(--white);
+             }
+
+             & #subtitle2 {
+                color: var(--white);
+             }
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0 0.9rem;
+        color: var(--white);
+        position: relative;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: var(--white);
+        font-size: 1.1rem;
+        font-family: "Ubuntu", sans-serif;
+
+    }
+
+    nav ul li::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: var(--white);
+        opacity: 0;
+        transition: all 0.3s ease-in;
+    }
+
+    nav ul li:hover::before {
+        opacity: 1;
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+        color: var(--white);
+        cursor: pointer;
+        display: none;
+        
+    }
+
+    @media(max-width: 1024px) {
+        .container {
+            padding: 0 1rem;
+        }
+
+        .swiper {
+            height: 90vh;
+        }
+
+    }
+
+    @media(max-width: 900px) {
+        .btn {
+            display: block;
+        }
+    
+        nav ul {
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            height: 400px;
+            background: var(--primary-color);
+            top: -600px;
+            left: 0;
+            padding: 3rem 1rem;
+            transition: all 0.5s ease-in;
+    
+        }
+    
+        nav ul li a {
+            margin: 15px;
+            display: block;
+    
+        }
+    
+        .close-btn {
+            position: absolute;
+            top: 0rem;
+            right: 0;
+            margin: 25px;
+        }
+    
+        nav ul.display {
+             top: 0;
+             transition: all 0.5s ease-in-out;
+        }
+
+        nav ul li::before {
+            top: 45px;
+            left: 10px;
+            
+        }
+    
+        nav ul li:hover::before {
+            width: 20%;
+        }
+
+        .swiper {
+            height: 70vh;
+        }
+        
+    } 
+
+    .user-icon {
+        font-size: 30px;
+    }
+}
+
+header.sticky {
+    background-color: var(--primary-color);
+}
+
+.container-fluid {
+    position: relative;
+    margin-top: 11%;
+}
+
+.btn {
+    font-family: "Ubuntu", sans-serif;
+    --bs-btn-color: white;
+    --bs-btn-bg: var(--primary-color);
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btnCategory {
+    border-radius: 5px;
+    padding: auto;
+    font-family: "Ubuntu", sans-serif;
+    --bs-btn-color: var(--primary-color);
+    --bs-btn-bg: white;
+    --bs-btn-border-color: black;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: var(--primary-color);
+    --bs-btn-hover-border-color: black;
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: var(--bs-btn-hover-bg);
+    --bs-btn-active-border-color: black;
+}
+
+.row {
+    margin: 10px;
+}
+
+.content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-family: "Ubuntu", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#yourCarbonFootprint {
+    color: var(--primary-color);
+}
+
+.form-control {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+}
+
+.form-select {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+}
+
+.table {
+    border-style: solid;
+    border-color: black;
+    margin-top: 5%;
+}
+
+#carbonFootprint {
+    border-style: none;
+    border-bottom: white;
+}
+
+label {
+    font-family: "Arial", sans-serif;
+    margin: 5px;
+}
+
+#footer {
+    padding: 6rem 0;
+    background: var(--primary-color);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--white);
+}
+
+.ft-content {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    color: var(--white);
+}
+
+.icon i {
+    padding: 1rem;
+    font-size: 2.5rem;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.main-title {
+    display: flex;
+    gap: 15px;
+    
+
+    & .main-title-icon {
+        color: var(--white);
+        align-items: center;
+        margin-top: 12px;
+        font-size: 100px;
+    }
+
+    & .main-subtitle {
+        margin-top: 5px;
+         & #subtitle1 {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            font-style: normal;
+            color: var(--white);
+         }
+
+         & #subtitle2 {
+            color: var(--white);
+         }
+    }
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 0;
+    grid-gap: 4rem;
+    color: var(--white);
+    margin: 4rem 0;
+
+}
+
+.about img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons i {
+    background: #000;
+    color: var(--white);
+    padding: 0.5rem;
+    font-size: 30px;
+    margin: 1rem 0;
+    border-radius: 50%;
+    cursor: pointer; 
+}
+
+.about .lead {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+
+.links ul li {
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.links ul li a {
+    color: var(--white);
+}
+
+.subscribe .lead {
+    font-size: 1.1rem;
+    letter-spacing: 1;
+}
+
+form {
+    position: relative;
+}
+
+.subscribe input {
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--white);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.subscribe button {
+    display: block;
+    position: absolute;
+    top: 35%;
+    right: 4%;
+    padding: 0.5rem 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--white);
+}

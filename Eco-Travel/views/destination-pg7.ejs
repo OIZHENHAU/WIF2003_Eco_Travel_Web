@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cameron Bharat Tea Estate - ECO.TRAVEL Malaysia</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="/Page-17/history-pg17.css">
+    <link rel="stylesheet" href="/Main-Page/responsiveMainPage.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  <style>
+    /* 全局设置 */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4faff;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    .content-wrapper {
+      flex: 1 0 auto;
+      margin-top: 200px;
+    }
+    /* 导航栏 */
+    .navbar {
+      background-color: #2196f3;
+    }
+    .navbar .navbar-brand,
+    .navbar .nav-link,
+    .navbar .bi {
+      color: #fff !important;
+    }
+    /* 详情卡片 */
+    .detail-wrapper {
+      background-color: #fff;
+      border: 2px solid #c9e2ff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px 0;
+    }
+    /* 徽章 */
+    .badge-top {
+      background-color: #0d6efd;
+      color: #fff;
+      padding: 5px 12px;
+      font-weight: bold;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .detail-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    /* 等高布局 */
+    .equal-height-row {
+      display: flex;
+      align-items: stretch;
+      gap: 1rem;
+    }
+    /* 左侧图列 */
+    .left-col {
+      flex: 0 0 40%;
+      display: flex;
+      flex-direction: column;
+    }
+    .img-box {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: #f4f4f4;
+    }
+    .img-box img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    /* 右侧文列 */
+    .right-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    /* 图标标签竖向排列 */
+    .icon-tags {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .icon-tags li {
+      font-size: 0.9rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
+    .icon-tags li i {
+      color: #0d6efd;
+      margin-right: 5px;
+    }
+    /* 价格区域 */
+    .price-block {
+      text-align: right;
+      font-weight: bold;
+      color: #000;
+    }
+    .cancel-note {
+      font-size: 0.85rem;
+      color: #0d6efd;
+    }
+    .stars i {
+      color: #ffc107;
+    }
+    /* 页脚 */
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: auto;
+    }
+    /* 返回按钮 */
+    .back-btn {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Start -->
+  <header>
+    <div class="container">
+        <nav>
+            <div class="main-title">
+                <i class="fa-solid fa-earth-asia main-title-icon"></i>
+                <div class="main-subtitle">
+                    <p style="margin-bottom: 0px;" id="subtitle1">Eco-Travel</p>
+                    <p style="margin-bottom: 0px;" id="subtitle2">Malaysia</p>
+                </div>
+            </div>
+
+            <ul>
+              <div class="btn">
+                  <i class="fas fa-times close-btn"></i>
+              </div>
+              <li><a href="../Main-Page/main-page.html" id="homeNav">Home</a></li>
+              <li><a href="../Page-16/favourite.html" id="favouriteNav">Favourite</a></li>
+              <li><a href="../Page-17/empty-history.html" id="historyNav">History</a></li>
+              <li><a href="../Page-23/weather.html" id="weatherNav">Weather</a></li>
+              <li><a href="../Carbon_Calculation/carbon_calculator.html" id="footprintNav">Footprint</a></li>
+              <li><a href="../Page-4/index.html" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
+          </ul>
+
+            <div class="btn">
+                <i class="fas fa-bars menu-btn"></i>
+            </div>
+            
+        </nav>
+    </div>
+ </header>
+
+<!-- Header Close -->
+
+  <!-- 内容区 -->
+  <div class="content-wrapper">
+    <div class="detail-header d-flex align-items-center justify-content-between" style="margin-left: 60px; margin-top: 0px;">
+      <div>
+        <h4 class="mb-0">TOURIST DESTINATION</h4>
+        <span class="badge bg-info text-dark">Top Popular</span>
+      </div>
+    </div>
+
+    <div class="container px-0">
+      <div class="detail-wrapper">
+        <button class="btn btn-secondary back-btn" onclick="window.history.back()">← Back</button>
+       
+        <!-- 等高布局：左侧图片 + 右侧文字 -->
+        <div class="equal-height-row">
+          <!-- 左侧图列 -->
+          <div class="left-col">
+            <div class="img-box">
+              <!-- 替换为实际图片路径，例如 camero.jpg -->
+              <img src="../Main-Page/img/genting_highland.jpg" alt="Cameron Bharat Tea Estate" id="destination-img" />
+            </div>
+          </div>
+          <!-- 右侧文字列 -->
+          <div class="right-col ms-3">
+            <!-- <span class="badge-top">Top Popular</span> -->
+            <h4 class="detail-title">Labuan</h4>
+            <p>
+              Nestled in the cool hills of Pahang, Malaysia, Labuan is a popular mountain resort located about an hour’s drive from Johor. Sitting at 1,800 meters above sea level, it offers a refreshing escape from the tropical heat and a wide range of entertainment, leisure, and natural attractions.
+              <a href="#">Read More...</a>
+            </p>
+            <ul class="icon-tags">
+              <li style="font-weight: 200px;"><i class="bi bi-door-open"></i>Spacious Rooms</li>
+              <li><i class="bi bi-tree"></i>Scenic Views</li>
+              <li><i class="bi bi-cup-straw"></i>Tea & Dining</li>
+              <li><i class="bi bi-wifi"></i>Free Wi-Fi</li>
+              <li><i class="bi bi-check-circle"></i>24/7 Service</li>
+            </ul>
+            <p class="mt-2">
+              <i class="bi bi-geo-alt-fill text-primary"></i>
+              12 Jalan Abdul Talif Road, Johor, Malaysia
+            </p>
+          </div>
+        </div>
+        <!-- 价格区域 -->
+        <div class="row mt-3">
+          <div class="col-12 text-end">
+            <div class="price-block" style="font-size: 40px;">
+              RM 95 <span class="fw-normal" style="font-size:0.85rem;">total</span>
+            </div>
+            <p class="cancel-note" style="font-size: 20px;">Free Cancellation</p>
+          </div>
+        </div>
+        <!-- 预订区域 -->
+        <div class="row g-3 align-items-end mt-3" style="margin-top: 10px;">
+          <div class="col-md-3">
+            <label class="form-label">Arrival Date</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">No. of Persons</label>
+            <input type="number" min="1" value="2" class="form-control" />
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary me-2">Book Now</button>
+            <button class="btn btn-outline-primary">Add Planner</button>
+            <button class="btn btn-outline-primary">Add Favourite</button>
+          </div>
+        </div>
+        <!-- 评分与操作区域 -->
+        <div class="row mt-4 align-items-center">
+          <div class="col-md-6">
+            <p class="mb-1 fw-bold">650+ Reviews</p>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <span class="ms-2">4.4/5</span>
+            </div>
+          </div>
+          <div class="col-md-6 text-end">
+            <button class="btn btn-secondary me-2">Check on Location</button>
+            <button class="btn btn-outline-secondary">Important Info</button>
+          </div>
+        </div>
+      </div> <!-- detail-wrapper end -->
+    </div>
+  </div>
+
+      <!-- Footer Start -->
+      <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- First Content -->
+                <div class="ft-content">
+                    <div class="icon">
+                        <i class="fa fa-phone-volume"></i>
+                    </div>
+
+                    <div class="content">
+                        <p class="lead" style="margin-bottom: 0px;">Call Us</p>
+                        <p>+65-80201558</p>
+                    </div>
+                </div>
+
+                <!-- Second Content -->
+                <div class="ft-content">
+                    <div class="icon">
+                        <i class="fa fa-envelope-open"></i>
+                    </div>
+
+                    <div class="content">
+                        <p class="lead" style="margin-bottom: 0px;">Write For Us</p>
+                        <p>zhenhauoi1234@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Third Content -->
+                <div class="ft-content">
+                    <div class="icon">
+                        <i class="fa fa-map-location"></i>
+                    </div>
+
+                    <div class="content">
+                        <p class="lead" style="margin-bottom: 0px;">Address</p>
+                        <p style="text-align: left;">No.15 Lorong Bukit Setongkol, 21400 Kuantan, Pahang</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Footer Content -->
+            <div class="footer-wrapper" style="text-align: left;">
+                <div class="about">
+                    <div class="main-title">
+                        <i class="fa-solid fa-earth-asia main-title-icon"></i>
+                        <div class="main-subtitle">
+                            <p id="subtitle1">Eco-Travel</p>
+                            <p id="subtitle2" style="text-align: left;">Malaysia</p>
+                        </div>
+                    </div>
+
+                    <p class="lead">"Adventure is Worthwhile. 
+                        The world is a book, and those who do not travel read only one page."</p>
+
+                    <div class="social-icons">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    
+                </div>
+                
+                <div class="links">
+                    <h2>Quick Link</h2>
+                    <ul>
+                        <li><a href="../Main-Page/main-page.html">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Transport</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Weather</a></li>
+                        <li><a href="#">Favourite</a></li>
+                    </ul>
+                </div>
+
+                <div class="subscribe">
+                    <h2>Subscribe</h2>
+                    <p class="lead">Sign Up for our monthly blog to stay informed about travel and tours.</p>
+                    <form action="#">
+                        <input type="text" placeholder="Email Address">
+                        <button type="button" class="button">Send</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/Page-17/history-pg17.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/Main-Page/swiperMainPage.js"></script>
+  <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const imgSrc = urlParams.get('img');
+      console.log(decodeURIComponent(imgSrc));
+
+      if (imgSrc) {
+        document.getElementById('destination-img').src = "../Main-Page/" + decodeURIComponent(imgSrc);
+      }
+
+  </script>
+</body>
+</html>

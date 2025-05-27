@@ -1,0 +1,828 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+:root {
+    --primary-color: #29B6F6;
+    --primary-dark: #0086c3;
+    --primary-light: #54d4ed;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+    --white: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+  }
+
+  html {
+    font-size: 16px;
+
+  }
+
+/* ++++++++++++++++++++Utality Classes Start+++++++++++++++++++++ */
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading-normal-txt {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color: var(--primary-color);
+
+}
+
+.headings {
+    font-size: 3rem;
+    font-family: "ubuntu";
+    padding-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.headings span {
+    color: var(--primary-color);
+}
+
+.secondary-headings {
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    padding: 1rem 0;
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+.primary-btn {
+    width: 50%;
+    outline: none;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: var(--white);
+    cursor: pointer;
+}
+/* +++++++++++++++++++Utality Class Close++++++++++++++++++++++++ */
+
+/* +++++++++++++++++++ Header Start ++++++++++++++++++++++++ */
+
+
+header {
+    background-color: var(--primary-color);
+    align-items: center;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    height: 100;
+    transition: all 0.3s ease-in-out;
+
+    & .main-title {
+        display: flex;
+        gap: 15px;
+        
+
+        & .main-title-icon {
+            color: var(--white);
+            align-items: center;
+            margin-top: 12px;
+            font-size: 50px;
+        }
+
+        & .main-subtitle {
+            margin-top: 5px;
+             & #subtitle1 {
+                font-family: "Special Gothic Expanded One", sans-serif;
+                font-weight: 400;
+                font-size: 40px;
+                font-style: normal;
+                color: var(--white);
+             }
+
+             & #subtitle2 {
+                color: var(--white);
+             }
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0 0.9rem;
+        color: var(--white);
+        position: relative;
+    }
+
+    nav ul li a {
+        color: var(--white);
+        font-size: 1.1rem;
+        font-family: "Ubuntu", sans-serif;
+
+    }
+
+    nav ul li::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: var(--white);
+        opacity: 0;
+        transition: all 0.3s ease-in;
+    }
+
+    nav ul li:hover::before {
+        opacity: 1;
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+        color: var(--white);
+        cursor: pointer;
+        display: none;
+        
+    }
+
+    @media(max-width: 1024px) {
+        .container {
+            padding: 0 1rem;
+        }
+
+        .swiper {
+            height: 90vh;
+        }
+
+    }
+
+    @media(max-width: 900px) {
+        .btn {
+            display: block;
+        }
+    
+        nav ul {
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            height: 400px;
+            background: var(--primary-color);
+            top: -600px;
+            left: 0;
+            padding: 3rem 1rem;
+            transition: all 0.5s ease-in;
+    
+        }
+    
+        nav ul li a {
+            margin: 15px;
+            display: block;
+    
+        }
+    
+        .close-btn {
+            position: absolute;
+            top: 0rem;
+            right: 0;
+            margin: 25px;
+        }
+    
+        nav ul.display {
+             top: 0;
+             transition: all 0.5s ease-in-out;
+        }
+
+        nav ul li::before {
+            top: 45px;
+            left: 10px;
+            
+        }
+    
+        nav ul li:hover::before {
+            width: 20%;
+        }
+
+        .swiper {
+            height: 70vh;
+        }
+        
+    } 
+
+    .user-icon {
+        font-size: 30px;
+    }
+}
+
+header.sticky {
+    background-color: var(--primary-color);
+}
+
+/* +++++++++++++++++++Header Close ++++++++++++++++++++++++ */
+
+
+/* ======================== Showcase Start ========================== */
+
+main {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+}
+
+.swiper {
+    height: 100vh;
+}
+
+.slide-container {
+    width: 100%;
+}
+
+.slide-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-overlay {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    font-family: "ubuntu";
+    transform: translate(-50%, -50%);
+}
+
+.img-overlay p {
+    font-size: 1rem;
+    letter-spacing: 8px;
+    color: var(--white);
+    animation: animate 4s forwards;
+}
+
+.img-overlay h2 {
+    font-size: 5rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    animation: animate 4s forwards;
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay {
+    position: relative;
+}
+
+.overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(-0%);
+    }
+}
+
+.img-overlay h2 span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+}
+
+/* ========================Showcase End ========================== */
+
+/* ======================== Search Start ========================== */
+
+#location-search {
+    transform: translateY(-170%);
+
+}
+
+.form-wrapper {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control {
+    width: 100%;
+
+}
+
+form input, select {
+     padding: 0.6rem;
+     outline: none;
+     font-size: 1.1rem;
+     color: #000;
+     border: 1px solid var(--gray-300);
+     margin: 0 0.4rem;
+     border-radius: 4px;
+}
+
+/* ======================== Search End ========================== */
+
+/* ======================== About Start ========================== */
+
+.about-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    margin: 3rem 0;
+}
+
+.about-content-wrapper h2 span {
+    color: var(--primary-color);
+    font-family: "ubuntu";
+}
+
+.about-content-wrapper ul {
+    list-style: none;
+}
+
+.about-content-wrapper ul .icons {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.about-content-wrapper ul .icons i {
+    background-color: var(--primary-color);
+    padding: 0.8rem;
+    border-radius: 50%;
+    color: var(--white);
+}
+
+.about-content-wrapper ul p {
+    margin-left: 1rem;
+}
+
+.agency-right-side .img {
+    position: relative;
+
+}
+
+.agency-right-side .img img {
+    width: 75%;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    transition: 0.5s ease-in;
+}
+
+.agency-right-side .img::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 55px;
+    bottom: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    width: 95%;
+    height: 100%;
+    z-index: -2;
+}
+
+.agency-right-side .img img:hover {
+    transform: scale(0.95);
+}
+
+/* ======================== About End ========================== */
+
+/* ======================== Choose Place Start ========================== */
+
+#choose-place {
+    padding: 6rem 0;
+
+}
+
+.choose-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+
+}
+
+.lg-img {
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 100%;
+    height: 96%;
+}
+
+.lg-img:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.lg-img:hover {
+    transform: scale(1.02); 
+}
+
+.img-content {
+    position: absolute;
+    bottom: 20px;
+
+}
+
+.img-content h2 {
+    padding: 0 2rem;
+    color: var(--white);
+    font-size: 30px;
+}
+
+.hidden-content {
+    padding: 0.5rem 2rem;
+    color: var(--white);
+    transform: translateY(150%);
+    transition: all 0.5s ease-in-out;
+}
+
+.lg-img:hover .hidden-content {
+    transform: translateY(0%); 
+}
+
+/* Favourite Content */
+.content-fav-and-price {
+    padding: 0.2rem;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.price-label {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    transform: rotate(-90deg);
+}
+
+.favourite-btn {
+    background: var(--primary-color);
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    border-color: transparent;
+
+    & .heart-icon {
+        color: var(--white);
+        font-size: 20px;
+    }
+}
+
+
+.row-wise-img {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+/* ======================== Choose Place End ========================== */
+
+
+/* ======================== Popular Destination Start ========================== */
+
+#top-destination {
+    padding: 6rem 0;
+}
+
+.top-destination-wrapper {
+    width: 100%;
+}
+
+.carousel {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.carousel:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-img-overlay {
+    width: 100%;
+}
+
+.hidden-content-carousel {
+    padding: 0.5rem 2rem;
+    color: var(--white);
+    transform: translateY(140%);
+    transition: all 0.5s ease-in-out;
+}
+
+.carousel-img-overlay i {
+    padding-right: 1rem;
+}
+
+.carousel:hover .hidden-content-carousel {
+    transform: translateY(0%);
+}
+
+.carousel:hover {
+    transform: scale(1.2);
+}
+
+#specific-heart-icon {
+    margin-left: 8px;
+}
+
+.option-img {
+    height: 500px;
+    width: 100%;
+}
+
+/* ======================== Popular Destination End ========================== */
+
+
+/* ======================== Video Destination Start ========================== */
+
+#costa-victoria {
+    padding: 6rem 0;
+    position: relative;
+}
+
+#costa-victoria video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    max-height: 650px; 
+}
+
+.video-bg {
+    position: relative;
+}
+
+.video-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.video-content {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+}
+
+.video-content h2 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    color: var(--white);
+    font-family: "ubuntu";
+    margin-bottom: 1rem;
+}
+
+.video-content span {
+    font-size: 1.2rem;
+    margin: 0 1.5rem;
+}
+
+/* ======================== Video Destination End ========================== */
+
+
+/* ======== Footer Start ======== */
+
+#footer {
+    padding: 6rem 0;
+    background: var(--primary-color);
+
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--white);
+}
+
+.ft-content {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    color: var(--white);
+}
+
+.icon i {
+    padding: 1rem;
+    font-size: 2.5rem;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.main-title {
+    display: flex;
+    gap: 15px;
+    
+
+    & .main-title-icon {
+        color: var(--white);
+        align-items: center;
+        margin-top: 12px;
+        font-size: 100px;
+    }
+
+    & .main-subtitle {
+        margin-top: 5px;
+         & #subtitle1 {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            font-style: normal;
+            color: var(--white);
+         }
+
+         & #subtitle2 {
+            color: var(--white);
+         }
+    }
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 0;
+    grid-gap: 4rem;
+    color: var(--white);
+    margin: 4rem 0;
+
+}
+
+.about img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons i {
+    background: #000;
+    color: var(--white);
+    padding: 0.5rem;
+    font-size: 30px;
+    margin: 1rem 0;
+    border-radius: 50%;
+    cursor: pointer; 
+}
+
+.about .lead {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+
+.links ul {
+    
+}
+
+.links ul li {
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.links ul li a {
+    color: var(--white);
+}
+
+.subscribe .lead {
+    font-size: 1.1rem;
+    letter-spacing: 1;
+}
+
+form {
+    position: relative;
+}
+
+.subscribe input {
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--white);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.subscribe button {
+    display: block;
+    position: absolute;
+    top: 35%;
+    right: 4%;
+    padding: 0.5rem 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--white);
+}
+
+/* ======== Footer End ======== */
