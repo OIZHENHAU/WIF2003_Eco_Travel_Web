@@ -260,7 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Handle delete account
   deleteAccountBtn.addEventListener('click', async () => {
-    window.location.href = `../Page-5/delete-account.html`;
 
     const confirmed = await showModal(
       'Delete Account',

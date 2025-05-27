@@ -126,6 +126,11 @@ app.get("/search", (req, res) => {
     res.render("search.ejs");
 });
 
+//Delete Account
+app.get("/delete-account", (req, res) => {
+    res.render("delete-account-pg5.ejs");
+});
+
 const port = 5000;
 app.listen(port, () => {
   console.log(`Server running on Port: ${port}`);

@@ -117,7 +117,9 @@
             
             <div class="form-actions">
               <button type="submit" class="btn btn-primary">Update Profile</button>
-              <button type="button" class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
+              <form action="/delete-account" method="get">
+                <button type="submit" class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
+              </form>
             </div>
             
             <button type="button" class="btn btn-logout" id="logoutBtn">Log out</button>
