@@ -1,0 +1,226 @@
+/* Page Transitions */
+.form-section {
+  transform: translateX(100%);
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.5s ease;
+  perspective: 1000px;
+}
+
+.form-section.active {
+  transform: translateX(0) rotateY(0);
+}
+
+.login-section.active + .register-section {
+  transform: translateX(100%) rotateY(-10deg);
+}
+
+.register-section.active + .login-section {
+  transform: translateX(-100%) rotateY(10deg);
+}
+
+/* Initial load animations */
+.welcome-text {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpIn 0.8s ease forwards 0.3s;
+}
+
+.welcome-subtext {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpIn 0.8s ease forwards 0.5s;
+}
+
+.switch-btn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpIn 0.8s ease forwards 0.7s;
+}
+
+.form-title {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeUpIn 0.8s ease forwards 0.4s;
+}
+
+.form {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpIn 0.8s ease forwards 0.6s;
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input animations */
+.form-input {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(41, 182, 246, 0.2);
+}
+
+/* Button animations */
+.form-button, .switch-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-button:hover, .switch-btn:hover {
+  transform: translateY(-2px);
+}
+
+.form-button::after, .switch-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.form-button:active::after, .switch-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Social button animations */
+.social-btn {
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Error message animations */
+.error-message {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.error-message.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Password visibility toggle */
+.toggle-password {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-password:hover {
+  transform: translateY(-50%) scale(1.1) rotate(5deg);
+}
+
+/* Password strength meter */
+.strength-section {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.strength-section.weak, 
+.strength-section.medium, 
+.strength-section.strong {
+  transform: scaleY(1.2);
+}
+
+/* Form shake animation for validation errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px) rotate(-1deg); }
+  20%, 40%, 60%, 80% { transform: translateX(5px) rotate(1deg); }
+}
+
+.shake {
+  animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* Container fade in */
+.container {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  animation: containerAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes containerAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Dark mode toggle animation */
+.toggle-icon {
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Panel transition effects */
+.left-panel, .right-panel {
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-section:not(.active) .left-panel {
+  transform: scale(0.95) translateX(-10px);
+}
+
+.form-section:not(.active) .right-panel {
+  transform: scale(0.95) translateX(10px);
+}
+
+/* Form input focus effect */
+.form-group {
+  position: relative;
+}
+
+.form-group::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+.form-group.focused::after {
+  width: 100%;
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
