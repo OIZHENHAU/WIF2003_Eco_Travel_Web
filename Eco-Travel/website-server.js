@@ -21,6 +21,19 @@ app.set('view engine', 'ejs');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+const destinations = {
+    'kuantan': {
+        name: "Kuantan",
+        image: "/kuantan.jpg",
+        duration: "3 Days",
+        rating: "4.9", 
+        location: "Kuantan",
+        price: "100",
+        description: "Kuantan 188, which stands proud on the banks of Kuantan River here, is not only the latest iconic landmark of Pahang’s first city, but also sets the night and weekend moods of Kuantan, the capital city of Pahang situated on the East Coast of Malaysia.",
+        operating_hour: "10:00 AM - 10:00 PM"
+    }
+};
+
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
@@ -130,6 +143,20 @@ app.get("/search", (req, res) => {
 app.get("/delete-account", (req, res) => {
     res.render("delete-account-pg5.ejs");
 });
+
+//Get Popular Tourist
+app.get("/destination/:place", (req, res) => {
+    const destination = destinations[req.params.place];
+
+    if (destination) {
+        res.render("destination-pg7.ejs", {destination});
+
+    } else {
+        res.status(404).send("Destination not found");
+    }
+
+});
+
 
 const port = 5000;
 app.listen(port, () => {
