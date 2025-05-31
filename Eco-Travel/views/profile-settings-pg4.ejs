@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eco Travel Profile Settings</title>
+  <link rel="stylesheet" href="/profile-settings-pg4.css">
+  <script src="/profile-settings-pg4.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="main-title">
+          <i class="fa-solid fa-earth-asia main-title-icon"></i>
+          <div class="main-subtitle">
+            <p id="subtitle1">Eco-Travel</p>
+            <p id="subtitle2">Malaysia</p>
+          </div>
+        </div>
+        <ul>
+          <li><a href="/main-page" id="homeNav">Home</a></li>
+          <li><a href="/favourite-pg16" id="favouriteNav">Favourite</a></li>
+          <li><a href="/history-pg17" id="historyNav">History</a></li>
+          <li><a href="/weather-pg23" id="weatherNav">Weather</a></li>
+          <li><a href="/carbon_calculator" id="footprintNav">Footprint</a></li>
+          <li><a href="/profile-settings-pg4" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="profile-settings">
+      <div class="profile-container">
+        <div class="profile-sidebar">
+          <div class="profile-image-container">
+            <div class="profile-image-wrapper" id="profileImageWrapper">
+              <img src="https://via.placeholder.com/150" alt="Profile" id="profileImage" class="profile-image">
+              <div class="image-overlay">
+                <span class="camera-icon">📷</span>
+              </div>
+            </div>
+            <input type="file" id="imageInput" accept="image/*" class="hidden-input">
+            
+            <div class="profile-info">
+              <h2 class="profile-name" id="profileName">OI ZHEN HAU</h2>
+              <p class="profile-email" id="profileEmail">zhenhau8072@gmail.com</p>
+            </div>
+            
+            <button class="update-image-btn" id="updateImageBtn">
+              Update Profile Image
+            </button>
+          </div>
+        </div>
+        
+        <div class="profile-main">
+          <h2 class="settings-title">Profile Settings</h2>
+          
+          <form id="profileForm" class="profile-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                <span class="error-message"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                <span class="error-message"></span>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+                <span class="error-message"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                  <option value="">Select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="error-message"></span>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                <span class="error-message"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter new password">
+                <span class="error-message"></span>
+              </div>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="address">Address</label>
+              <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
+              <span class="error-message"></span>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Update Profile</button>
+              <form action="/delete-account" method="get">
+                <button type="submit" class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
+              </form>
+            </div>
+            
+            <button type="button" class="btn btn-logout" id="logoutBtn">Log out</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="successMessage" class="success-message hidden"></div>
+  <div id="spinnerOverlay" class="spinner-overlay">
+    <span class="loader"></span>
+    <div class="spinner-text">Loading...</div>
+  </div>
+
+  <!-- Footer Start -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="ft-content">
+          <div class="icon">
+            <i class="fa fa-phone-volume"></i>
+          </div>
+          <div class="content">
+            <p class="lead">Call Us</p>
+            <p>+65-80201558</p>
+          </div>
+        </div>
+        <div class="ft-content">
+          <div class="icon">
+            <i class="fa fa-envelope-open"></i>
+          </div>
+          <div class="content">
+            <p class="lead">Write For Us</p>
+            <p>zhenhauoi1234@gmail.com</p>
+          </div>
+        </div>
+        <div class="ft-content">
+          <div class="icon">
+            <i class="fa fa-map-location"></i>
+          </div>
+          <div class="content">
+            <p class="lead">Address</p>
+            <p>No.15 Lorong Bukit Setongkol, 21400 Kuantan, Pahang</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-wrapper">
+        <div class="about">
+          <div class="main-title">
+            <i class="fa-solid fa-earth-asia main-title-icon"></i>
+            <div class="main-subtitle">
+              <p id="subtitle1">Eco-Travel</p>
+              <p id="subtitle2">Malaysia</p>
+            </div>
+          </div>
+          <p class="lead">"Adventure is Worthwhile. The world is a book, and those who do not travel read only one page."</p>
+          <div class="social-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+        <div class="links">
+          <h2>Quick Link</h2>
+          <ul>
+            <li><a href="../Main-Page/main-page.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Transport</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Weather</a></li>
+            <li><a href="#">Favourite</a></li>
+          </ul>
+        </div>
+        <div class="subscribe">
+          <h2>Subscribe</h2>
+          <p class="lead">Sign Up for our monthly blog to stay informed about travel and tours.</p>
+          <form action="#">
+            <input type="text" placeholder="Email Address">
+            <button type="button" class="button">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/animations.css">
+  <link rel="stylesheet" href="/dark-mode.css">
+  <script src="/animations.js" defer></script>
+  <script src="/config.js" defer></script>
+  <script src="/dark-mode.js" defer></script>
+  <script src="/mongodb.js" defer></script>
+  <script src="/validation.js" defer></script>
+  
+</head>
+
+<body>
+  <!-- Loading Spinner -->
+  <div class="loading-overlay" style="display: none;">
+    <span class="loader"></span>
+  </div>
+
+  <div class="theme-toggle">
+    <input type="checkbox" id="darkModeToggle" class="dark-mode-toggle">
+    <label for="darkModeToggle" class="toggle-label">
+      <span class="toggle-icon"></span>
+    </label>
+  </div>
+
+
+  <div class="container">
+    <div class="form-container">
+
+      <!-- Login Form -->
+        <div class="form-section login-section active">
+          <div class="left-panel">
+            <h1 class="welcome-text">HELLO, WELCOME!</h1>
+            <p class="welcome-subtext">Do you have any account?</p>
+            <button class="switch-btn register-switch">REGISTER</button>
+          </div>
+
+          <div class="right-panel">
+            <h2 class="form-title">LOGIN</h2>
+            <form id="loginForm" class="form" action="/login" method="post">
+              <div class="form-group">
+                <input type="text" id="loginUsername" class="form-input" placeholder="Username" name= "username" required>
+                <span class="input-icon username-icon"></span>
+              </div>
+
+              <div class="form-group">
+                <input type="password" id="loginPassword" class="form-input" placeholder="Password" name = "password" required>
+                <span class="input-icon password-icon"></span>
+                <span class="toggle-password" data-target="loginPassword"></span>
+              </div>
+
+              <div class="form-extra">
+                <a href="#" class="forgot-password">Forgot Password?</a>
+              </div>
+
+              <button type="submit" class="form-button login-button">Login</button>
+              
+              <p class="social-text">or login with social platform?</p>
+              <div class="social-buttons">
+                <a href="#" class="social-btn facebook" data-tooltip="Facebook"></a>
+                <a href="#" class="social-btn google" data-tooltip="Google"></a>
+                <a href="#" class="social-btn linkedin" data-tooltip="LinkedIn"></a>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      
+
+        <!-- Register Form -->
+          <div class="form-section register-section">
+            <div class="left-panel">
+              <h1 class="welcome-text">WELCOME BACK!</h1>
+              <p class="welcome-subtext">Do you have an account?</p>
+              <button class="switch-btn login-switch">LOGIN</button>
+            </div>
+
+            <div class="right-panel">
+              <h2 class="form-title">REGISTER</h2>
+              <form id="registerForm" class="form" action="/signup" method="post">
+                <div class="form-group">
+                  <input type="text" id="registerUsername" class="form-input" placeholder="Username" name="username" required>
+                  <span class="input-icon username-icon"></span>
+                  <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" id="registerEmail" class="form-input" placeholder="Email" name="email" required>
+                  <span class="input-icon email-icon"></span>
+                  <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                  <input type="password" id="registerPassword" class="form-input" placeholder="Password" name="password" required>
+                  <span class="input-icon password-icon"></span>
+                  <span class="toggle-password" data-target="registerPassword"></span>
+                  <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <div class="password-strength-meter">
+                  <div class="strength-section"></div>
+                  <div class="strength-section"></div>
+                  <div class="strength-section"></div>
+                  <div class="strength-section"></div>
+                </div>
+
+                <button type="submit" class="form-button register-button">Register</button>
+                <p class="social-text">or register with social platform?</p>
+                <div class="social-buttons">
+                  <a href="#" class="social-btn facebook" data-tooltip="Sign in with Facebook"></a>
+                  <a href="#" class="social-btn google" data-tooltip="Sign in with Google"></a>
+                  <a href="#" class="social-btn linkedin" data-tooltip="Sign in with LinkedIn"></a>
+
+                </div>
+              </form>
+            </div>
+          </div>
+
+
+    </div>
+  </div>
+</body>
+</html>
