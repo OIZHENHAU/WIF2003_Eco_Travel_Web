@@ -8,8 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="/Page-17/history-pg17.css">
-    <link rel="stylesheet" href="/Main-Page/responsiveMainPage.css">
+  <link rel="stylesheet" href="/history-pg17.css">
+    <link rel="stylesheet" href="/responsiveMainPage.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -176,12 +176,12 @@
               <div class="btn">
                   <i class="fas fa-times close-btn"></i>
               </div>
-              <li><a href="../Main-Page/main-page.html" id="homeNav">Home</a></li>
-              <li><a href="../Page-16/favourite.html" id="favouriteNav">Favourite</a></li>
-              <li><a href="../Page-17/empty-history.html" id="historyNav">History</a></li>
-              <li><a href="../Page-23/weather.html" id="weatherNav">Weather</a></li>
-              <li><a href="../Carbon_Calculation/carbon_calculator.html" id="footprintNav">Footprint</a></li>
-              <li><a href="../Page-4/index.html" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
+              <li><a href="/main-page" id="homeNav">Home</a></li>
+              <li><a href="/favourite-pg16" id="favouriteNav">Favourite</a></li>
+              <li><a href="/history-pg17" id="historyNav">History</a></li>
+              <li><a href="/weather-pg23" id="weatherNav">Weather</a></li>
+              <li><a href="/carbon_calculator" id="footprintNav">Footprint</a></li>
+              <li><a href="/profile-settings-pg4" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
           </ul>
 
             <div class="btn">
@@ -196,14 +196,14 @@
 
   <!-- 内容区 -->
   <div class="content-wrapper">
-    <div class="detail-header d-flex align-items-center justify-content-between" style="margin-left: 60px; margin-top: 0px;">
+    <div class="detail-header d-flex align-items-center justify-content-between" style="margin-left: 60px; margin-top: -20px;">
       <div>
         <h4 class="mb-0">TOURIST DESTINATION</h4>
         <span class="badge bg-info text-dark">Top Popular</span>
       </div>
     </div>
 
-    <div class="container px-0">
+    <div class="container px-0" style="width: 1300px">
       <div class="detail-wrapper">
         <button class="btn btn-secondary back-btn" onclick="window.history.back()">← Back</button>
        
@@ -213,23 +213,22 @@
           <div class="left-col">
             <div class="img-box">
               <!-- 替换为实际图片路径，例如 camero.jpg -->
-              <img src="../Main-Page/img/genting_highland.jpg" alt="Cameron Bharat Tea Estate" id="destination-img" />
+              <img src="<%=destination.image %>" alt="Cameron Bharat Tea Estate" id="destination-img" />
             </div>
           </div>
           <!-- 右侧文字列 -->
           <div class="right-col ms-3">
             <!-- <span class="badge-top">Top Popular</span> -->
-            <h4 class="detail-title">Labuan</h4>
+            <h4 class="detail-title"><%=destination.name %></h4>
             <p>
-              Nestled in the cool hills of Pahang, Malaysia, Labuan is a popular mountain resort located about an hour’s drive from Johor. Sitting at 1,800 meters above sea level, it offers a refreshing escape from the tropical heat and a wide range of entertainment, leisure, and natural attractions.
-              <a href="#">Read More...</a>
+              <%=destination.description %>
             </p>
             <ul class="icon-tags">
               <li style="font-weight: 200px;"><i class="bi bi-door-open"></i>Spacious Rooms</li>
               <li><i class="bi bi-tree"></i>Scenic Views</li>
               <li><i class="bi bi-cup-straw"></i>Tea & Dining</li>
               <li><i class="bi bi-wifi"></i>Free Wi-Fi</li>
-              <li><i class="bi bi-check-circle"></i>24/7 Service</li>
+              <li><i class="bi bi-check-circle"></i><%=destination.operating_hour%></li>
             </ul>
             <p class="mt-2">
               <i class="bi bi-geo-alt-fill text-primary"></i>
@@ -241,7 +240,7 @@
         <div class="row mt-3">
           <div class="col-12 text-end">
             <div class="price-block" style="font-size: 40px;">
-              RM 95 <span class="fw-normal" style="font-size:0.85rem;">total</span>
+              RM <%=destination.price %> <span class="fw-normal" style="font-size:0.85rem;">total</span>
             </div>
             <p class="cancel-note" style="font-size: 20px;">Free Cancellation</p>
           </div>
@@ -376,10 +375,10 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/Page-17/history-pg17.js"></script>
+  <script src="/history-pg17.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="/Main-Page/swiperMainPage.js"></script>
+  <script src="/swiperMainPage.js"></script>
   <script>
       const urlParams = new URLSearchParams(window.location.search);
       const imgSrc = urlParams.get('img');
