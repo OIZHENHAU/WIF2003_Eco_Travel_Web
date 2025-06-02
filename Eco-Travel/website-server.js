@@ -9,10 +9,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-app.use(express.static("public"));
-app.use(express.static("src"));
-app.use(express.static("img"));
-app.use(express.static("views"));
+// app.use(express.static("public"));
+// app.use(express.static("src"));
+// app.use(express.static("img"));
+// app.use(express.static("views"));
+
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/img'));
+app.use(express.static(__dirname + '/views'));
 
 //use EJS as the view engine
 app.set('view engine', 'ejs');
@@ -142,6 +147,11 @@ app.get("/search", (req, res) => {
 //Delete Account
 app.get("/delete-account", (req, res) => {
     res.render("delete-account-pg5.ejs");
+});
+
+//Delete Account
+app.get("/carbon-offset", (req, res) => {
+    res.render("carbonOffset-pg22.ejs");
 });
 
 //Get Popular Tourist

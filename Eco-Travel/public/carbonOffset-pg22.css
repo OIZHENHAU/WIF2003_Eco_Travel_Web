@@ -312,7 +312,7 @@ header.sticky {
 
                     & .flexbox-accomodation {
                         display: flex;
-                        gap: 30px;
+                        gap: 2rem;
                     }
 
                     p {
@@ -358,7 +358,7 @@ header.sticky {
 
                     & .flexbox-accomodation {
                         display: flex;
-                        gap: 40px;
+                        gap: 1.5rem;
                     }
 
                     p {
@@ -404,7 +404,7 @@ header.sticky {
 
                     & .flexbox-accomodation {
                         display: flex;
-                        gap: 25px;
+                        gap: 2.5rem;
                     }
 
                     p {

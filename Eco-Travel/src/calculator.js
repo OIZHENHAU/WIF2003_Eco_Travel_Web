@@ -15,7 +15,7 @@ closeBtn.addEventListener("click", () => {
 const offsetNowButton = document.getElementById('offsetNow');
 
 offsetNowButton.addEventListener('click', () => {
-    window.location.href = `../Page-22/carbonOffset.html`;
+    window.location.href = `../carbon-offset`;
 });
 
 // let accomodationBtn = document.getElementById("accomodationBtn")
