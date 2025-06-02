@@ -356,7 +356,7 @@ header.sticky {
                     padding: 5px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
-                    & .flexbox-accomodation {
+                    & .flexbox-transportation {
                         display: flex;
                         gap: 1.5rem;
                     }
@@ -373,7 +373,7 @@ header.sticky {
                         margin-bottom: 10px;
                     }
 
-                    & .accomodation-icon {
+                    & .transportation-icon {
                         color: white;
                         font-size: 35px;
                         align-items: center;
@@ -382,14 +382,14 @@ header.sticky {
                     }
 
 
-                    & .accomodation-carbon-list {
+                    & .transportation-carbon-list {
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
                         margin-bottom: 10px;
                     }
 
-                    & .accomodation-element-list {
+                    & .transportation-element-list {
                         display: flex;
                         justify-content: space-between;
                         gap: 120px;
@@ -402,7 +402,7 @@ header.sticky {
                     padding: 5px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
-                    & .flexbox-accomodation {
+                    & .flexbox-restaurant {
                         display: flex;
                         gap: 2.5rem;
                     }
@@ -419,7 +419,7 @@ header.sticky {
                         margin-bottom: 10px;
                     }
 
-                    & .accomodation-icon {
+                    & .restaurant-icon {
                         color: white;
                         font-size: 35px;
                         align-items: center;
@@ -428,14 +428,14 @@ header.sticky {
                     }
 
 
-                    & .accomodation-carbon-list {
+                    & .restaurant-carbon-list {
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
                         margin-bottom: 10px;
                     }
 
-                    & .accomodation-element-list {
+                    & .restaurant-element-list {
                         display: flex;
                         justify-content: space-between;
                         gap: 120px;

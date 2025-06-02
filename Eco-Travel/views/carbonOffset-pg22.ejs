@@ -71,19 +71,20 @@
                             <div class="accomodation-carbon-list">
                                 <p class="element-title">Accomodation</p>
                                 <div class="accomodation-element-list">
-                                    <p>Electricity: 100KWH</p>
-                                    <p>27kgCO2</p>
-                                    <p>RM0.68</p>
+                                    <% data.processedData.forEach(row => {%>
+                                        <p><%= row.emission%></p>
+                                        <p><%= row.cost%></p>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="offset-item2">
-                        <div class="flexbox-accomodation">
-                            <i class="fa-solid fa-truck-plane accomodation-icon"></i>
-                            <div class="accomodation-carbon-list">
+                        <div class="flexbox-transportation">
+                            <i class="fa-solid fa-truck-plane transportation-icon"></i>
+                            <div class="transportation-carbon-list">
                                 <p class="element-title">Transportation</p>
-                                <div class="accomodation-element-list">
+                                <div class="transportation-element-list">
                                     <p>Small Car (Petrol): 35miles</p>
                                     <p>73kgCO2</p>
                                     <p>RM19.90</p>
@@ -92,11 +93,11 @@
                         </div>
                     </div>
                     <div class="offset-item3">
-                        <div class="flexbox-accomodation">
-                            <i class="fa-solid fa-utensils accomodation-icon"></i>
-                            <div class="accomodation-carbon-list">
+                        <div class="flexbox-restaurant">
+                            <i class="fa-solid fa-utensils restaurant-icon"></i>
+                            <div class="restaurant-carbon-list">
                                 <p class="element-title">Restaurant</p>
-                                <div class="accomodation-element-list">
+                                <div class="restaurant-element-list">
                                     <p>High meat-eater (3 days a week)</p>
                                     <p>100kgCO2</p>
                                     <p>RM150.59</p>

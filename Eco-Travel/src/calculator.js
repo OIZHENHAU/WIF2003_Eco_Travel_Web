@@ -15,7 +15,28 @@ closeBtn.addEventListener("click", () => {
 const offsetNowButton = document.getElementById('offsetNow');
 
 offsetNowButton.addEventListener('click', () => {
-    window.location.href = `../carbon-offset`;
+    const table = document.getElementById("carbonFootprint")
+    const rows = table.querySelectorAll("tbody tr")
+    var tableData = []
+
+    rows.forEach(row => {
+        const cells = row.querySelectorAll("td")
+        tableData.push({
+            emission: cells[1].textContent,
+            cost: cells[2].textContent
+        })
+    })
+
+    fetch("/offset-now", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({tableData})
+    })
+        .then(response => response.json())
+        .then(data => {
+            window.location.href = `../carbon-offset?data=${encodeURIComponent(JSON.stringify(data))}`
+        })
+        .catch(err => console.error(err))
 });
 
 // let accomodationBtn = document.getElementById("accomodationBtn")

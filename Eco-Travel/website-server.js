@@ -151,7 +151,8 @@ app.get("/delete-account", (req, res) => {
 
 //Delete Account
 app.get("/carbon-offset", (req, res) => {
-    res.render("carbonOffset-pg22.ejs");
+    const data = JSON.parse(req.query.data);
+    res.render("carbonOffset-pg22.ejs", {data});
 });
 
 //Get Popular Tourist
@@ -165,6 +166,15 @@ app.get("/destination/:place", (req, res) => {
         res.status(404).send("Destination not found");
     }
 
+});
+
+//to receive carbon footprint data and redirect to carbonOffset
+app.post('/offset-now', (req, res) => {
+  const { tableData } = req.body;
+  console.log('Received Table Data:', tableData);
+
+  // Respond with the processed data or redirect
+  res.json({ processedData: tableData });
 });
 
 
