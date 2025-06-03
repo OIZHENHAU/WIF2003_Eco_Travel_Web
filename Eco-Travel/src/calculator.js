@@ -254,7 +254,7 @@ function calculateRest() {
     restArr = restArr.map(input => (input != 0) ? input : 0)
     totalEm = calcFoodEmission(restArr[5], restArr[0], restArr[1], restArr[2], restArr[3], restArr[4])
     totalEm *= 52 //for one year
-    totalCost = (calcCost(totalEm)).toFixed(2)
+    totalCost = parseFloat((calcCost(totalEm)).toFixed(2))
 
 
     var desc = `Food for ${restArr[5]} people, for 1 year`
@@ -280,10 +280,12 @@ function calculateRest() {
                 break;
         }
     }
-    addToTable("restaurantTable", desc, `${(totalEm / 1000).toFixed(2)} tCO2`, `RM${totalCost}`)
+    addToTable("restaurantTable", desc, kgToTonne(totalEm), `RM${totalCost}`)
 
-    totalRestaurantEmission.textContent = `${(totalEm / 1000).toFixed(2)} tCO2`
+    totalRestaurantEmission.textContent = kgToTonne(totalEm)
     totalRestaurantCost.textContent = `RM${totalCost}`
+    cumulativeRestEm += totalEm
+    cumulativeRestCost += totalCost
 }
 
 function addFootprint(category) {
@@ -309,6 +311,8 @@ function addFootprint(category) {
             break;
         case "Restaurant":
             htmlIcon = '<i class="fas fa-utensils" aria-hidden="true"></i>'
+            cumulativeEm = cumulativeRestEm
+            cumulativeCost = cumulativeRestCost
             break;
         default:
             htmlIcon = "<p>icon</p>"
@@ -320,7 +324,7 @@ function addFootprint(category) {
         var cells = row.querySelectorAll("td")
         if (htmlIcon == cells[0].querySelector("i").outerHTML && sameCategory == false) {
             sameCategory = true
-            cells[1].innerHTML = `${cumulativeEm.toFixed(2)}kg CO2`
+            cells[1].innerHTML = kgToTonne(cumulativeEm)
             cells[2].innerHTML = `RM${cumulativeCost.toFixed(2)}`
         }
     })
@@ -333,8 +337,8 @@ function addFootprint(category) {
         var cell3 = row.insertCell(2)
 
         cell1.insertAdjacentHTML("afterbegin", htmlIcon)
-        cell2.innerHTML = `${cumulativeEm.toFixed(2)}kg CO2`
-        cell3.innerHTML = `RM${cumulativeCost.toFixed(2)}`
+        cell2.innerHTML = kgToTonne(cumulativeEm)
+        cell3.innerHTML = `RM${cumulativeCost}`
     }
 }
 
@@ -361,6 +365,15 @@ function checkCategory(icon) {
             return "Restaurant"
         default:
             return "No category"
+    }
+}
+
+function kgToTonne(amount) {
+    if (amount > 1000) {
+        return `${(amount / 1000).toFixed(2)} tCO2`
+    }
+    else {
+        return `${amount.toFixed(2)}kg CO2`
     }
 }
 
