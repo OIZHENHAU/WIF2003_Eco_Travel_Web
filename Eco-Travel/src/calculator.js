@@ -22,6 +22,7 @@ offsetNowButton.addEventListener('click', () => {
     rows.forEach(row => {
         const cells = row.querySelectorAll("td")
         tableData.push({
+            category: checkCategory(cells[0].innerHTML),
             emission: cells[1].textContent,
             cost: cells[2].textContent
         })
@@ -45,6 +46,13 @@ offsetNowButton.addEventListener('click', () => {
 
 const defaultBtn = "accomodationBtn"
 const defaultContent = "accomodation"
+
+var cumulativeAccomEm = 0
+var cumulativeAccomCost = 0
+var cumulativeVehicleEm = 0
+var cumulativeVehicleCost = 0
+var cumulativeRestEm = 0
+var cumulativeRestCost = 0
 
 // var electricity = document.getElementById("electricity")
 // var renewableElec = document.getElementById("renewableElec")
@@ -170,6 +178,8 @@ function calculateAccom() {
     }
     totalAccomEmission.textContent = `${totalEm.toFixed(2)}kg CO2`
     totalAccomCost.textContent = `RM${totalCost.toFixed(2)}`
+    cumulativeAccomEm += totalEm
+    cumulativeAccomCost += totalCost
 }
 
 function calculateVehicle() {
@@ -207,6 +217,8 @@ function calculateVehicle() {
     cost = calcCost(emission).toFixed(2)
     totalEm += parseFloat(emission)
     totalCost += parseFloat(cost)
+    cumulativeVehicleEm += totalEm
+    cumulativeVehicleCost += totalCost
 
     switch (fuelType) {
         case "petrol":
@@ -278,32 +290,52 @@ function addFootprint(category) {
     var carbonFootprint = document.getElementById("carbonFootprint")
     var totalEmission = document.getElementById(`total${category}Emission`)
     var totalCost = document.getElementById(`total${category}Cost`)
-
-    var row = carbonFootprint.insertRow(-1)
-    var cell1 = row.insertCell(0)
-    var cell2 = row.insertCell(1)
-    var cell3 = row.insertCell(2)
+    var sameCategory = false
+    var cumulativeEm = 0
+    var cumulativeCost = 0
 
     var htmlIcon = ""
 
     switch(category) {
         case "Accom":
-            htmlIcon = "<i class='fas fa-hotel'></i>"
+            htmlIcon = '<i class="fas fa-hotel" aria-hidden="true"></i>'
+            cumulativeEm = cumulativeAccomEm
+            cumulativeCost = cumulativeAccomCost
             break;
         case "Vehicle":
-            htmlIcon = "<i class='fas fa-car'></i>"
+            htmlIcon = '<i class="fas fa-car" aria-hidden="true"></i>'
+            cumulativeEm = cumulativeVehicleEm
+            cumulativeCost = cumulativeVehicleCost
             break;
         case "Restaurant":
-            htmlIcon = "<i class='fas fa-utensils'></i>"
+            htmlIcon = '<i class="fas fa-utensils" aria-hidden="true"></i>'
             break;
         default:
             htmlIcon = "<p>icon</p>"
             break;
     }
 
-    cell1.insertAdjacentHTML("afterend", htmlIcon)
-    cell2.innerHTML = totalEmission.innerHTML
-    cell3.innerHTML = totalCost.innerHTML
+    var footprintRows = carbonFootprint.querySelectorAll("tr")
+    footprintRows.forEach(row => {
+        var cells = row.querySelectorAll("td")
+        if (htmlIcon == cells[0].querySelector("i").outerHTML && sameCategory == false) {
+            sameCategory = true
+            cells[1].innerHTML = `${cumulativeEm.toFixed(2)}kg CO2`
+            cells[2].innerHTML = `RM${cumulativeCost.toFixed(2)}`
+        }
+    })
+
+    
+    if (sameCategory == false) {
+        var row = carbonFootprint.insertRow(-1)
+        var cell1 = row.insertCell(0)
+        var cell2 = row.insertCell(1)
+        var cell3 = row.insertCell(2)
+
+        cell1.insertAdjacentHTML("afterbegin", htmlIcon)
+        cell2.innerHTML = `${cumulativeEm.toFixed(2)}kg CO2`
+        cell3.innerHTML = `RM${cumulativeCost.toFixed(2)}`
+    }
 }
 
 function addToTable(tableID, desc, emission, cost) {
@@ -317,6 +349,19 @@ function addToTable(tableID, desc, emission, cost) {
     cell1.innerHTML = desc;
     cell2.innerHTML = emission;
     cell3.innerHTML = cost;
+}
+
+function checkCategory(icon) {
+    switch (icon) {
+        case '<i class="fas fa-hotel" aria-hidden="true"></i>':
+            return "Accomodation"
+        case '<i class="fas fa-car" aria-hidden="true"></i>':
+            return "Vehicle"
+        case '<i class="fas fa-utensils" aria-hidden="true"></i>':
+            return "Restaurant"
+        default:
+            return "No category"
+    }
 }
 
 function test() {

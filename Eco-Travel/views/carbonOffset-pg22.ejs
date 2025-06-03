@@ -72,8 +72,10 @@
                                 <p class="element-title">Accomodation</p>
                                 <div class="accomodation-element-list">
                                     <% data.processedData.forEach(row => {%>
-                                        <p><%= row.emission%></p>
-                                        <p><%= row.cost%></p>
+                                        <% if (row.category == "Accomodation") {%>
+                                            <p><%= row.emission%></p>
+                                            <p><%= row.cost%></p>
+                                        <% } %>
                                     <% }) %>
                                 </div>
                             </div>
@@ -85,9 +87,12 @@
                             <div class="transportation-carbon-list">
                                 <p class="element-title">Transportation</p>
                                 <div class="transportation-element-list">
-                                    <p>Small Car (Petrol): 35miles</p>
-                                    <p>73kgCO2</p>
-                                    <p>RM19.90</p>
+                                    <% data.processedData.forEach(row => {%>
+                                        <% if (row.category == "Vehicle") {%>
+                                            <p><%= row.emission%></p>
+                                            <p><%= row.cost%></p>
+                                        <% } %>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
@@ -98,9 +103,12 @@
                             <div class="restaurant-carbon-list">
                                 <p class="element-title">Restaurant</p>
                                 <div class="restaurant-element-list">
-                                    <p>High meat-eater (3 days a week)</p>
-                                    <p>100kgCO2</p>
-                                    <p>RM150.59</p>
+                                    <% data.processedData.forEach(row => {%>
+                                        <% if (row.category == "Restaurant") {%>
+                                            <p><%= row.emission%></p>
+                                            <p><%= row.cost%></p>
+                                        <% } %>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
