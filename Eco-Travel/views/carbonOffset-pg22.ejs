@@ -119,7 +119,10 @@
 
             <!-- Carbon Pie Chart Shown-->
             <div class="flexbox-right">
-                <h2 class="headings">Total Carbon Footprint: <span>27KGCO2</span></h2>
+                <h2 class="headings">Total Carbon Footprint: <span>
+                    <% const totalFootprint = data.processedData[2] %>
+                    <%= totalFootprint.total %>
+                </span></h2>
 
                 <figure class="charts">
                     <div class="pie donut"></div>

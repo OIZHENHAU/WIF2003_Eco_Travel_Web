@@ -24,9 +24,12 @@ offsetNowButton.addEventListener('click', () => {
         tableData.push({
             category: checkCategory(cells[0].innerHTML),
             emission: cells[1].textContent,
-            cost: cells[2].textContent
+            cost: cells[2].textContent,
+            total: kgToTonne(totalFootprint)
         })
     })
+
+    console.log(totalFootprint)
 
     fetch("/offset-now", {
         method: "POST",
@@ -53,6 +56,8 @@ var cumulativeVehicleEm = 0
 var cumulativeVehicleCost = 0
 var cumulativeRestEm = 0
 var cumulativeRestCost = 0
+
+var totalFootprint = 0
 
 // var electricity = document.getElementById("electricity")
 // var renewableElec = document.getElementById("renewableElec")
@@ -338,8 +343,10 @@ function addFootprint(category) {
 
         cell1.insertAdjacentHTML("afterbegin", htmlIcon)
         cell2.innerHTML = kgToTonne(cumulativeEm)
-        cell3.innerHTML = `RM${cumulativeCost}`
+        cell3.innerHTML = `RM${cumulativeCost.toFixed(2)}`
     }
+
+    totalFootprint += cumulativeEm
 }
 
 function addToTable(tableID, desc, emission, cost) {
