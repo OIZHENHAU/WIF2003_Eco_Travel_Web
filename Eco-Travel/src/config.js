@@ -73,9 +73,39 @@ const LoginRegisterSchema = new mongoose.Schema({
         required: true
     },
 
+    first_name: {
+        type: String,
+        required: false,
+        default: "NIL"
+    },
+
+    last_name: {
+        type: String,
+        required: false,
+        default: "NIL"
+    },
+
+    mobile: {
+        type: String,
+        required: false,
+        default: "NIL"
+    },
+
+    gender: {
+        type: String,
+        required: false,
+        default: "NIL"
+    },
+
     email: {
         type: String,
         required: true
+    },
+
+    address: {
+        type: String,
+        required: false,
+        default: "NIL"
     },
 
     password: {

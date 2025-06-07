@@ -132,10 +132,79 @@ app.post("/login", async(req, res) => {
 
 //User Profile Settingd
 app.get("/profile-settings-pg4", async (req, res) => {
-    const userProfileData = await collection.findById(req.session.userId);
-    console.log("User Profile Settings: ", userProfileData);
-    res.render("profile-settings-pg4.ejs");
+    try {
+        const userProfileData = await collection.findById(req.session.userId);
+        console.log("User Profile Settings: ", userProfileData);
+
+        if (!userProfileData) {
+            return res.status(404).send("User Not Found!");
+        }
+        
+        res.render("profile-settings-pg4.ejs", { user: userProfileData });
+
+    } catch (err) {
+        console.error("Error loading user profile:", err);
+        res.status(500).send("Server error");
+    }
 })
+
+//User Update Profile
+app.post("/api/update-profile", async (req, res) => {
+    try {
+        const userId = req.session.userId;
+        console.log("Updating profile for user ID:", req.session.userId);
+
+        const existingUser = await collection.findById(userId);
+        if (!existingUser) {
+            return res.status(404).send("User not found");
+        }
+
+        // 2. Prepare updated data, fallback to existing values
+        const updatedData = {
+            first_name: req.body.firstName?.trim() || existingUser.first_name,
+            last_name: req.body.lastName?.trim() || existingUser.last_name,
+            mobile: req.body.mobile?.trim() || existingUser.mobile,
+            gender: req.body.gender?.trim() || existingUser.gender,
+            email: req.body.email?.trim() || existingUser.email,
+            address: req.body.address?.trim() || existingUser.address,
+        };
+
+        console.log("Updated Data: ", updatedData);
+
+        // Only update password if a new one is entered
+        if (req.body.password && req.body.password.trim() !== "") {
+            //hash the password using bcrypt
+            const saltRounds = 10; //Numnber of salt round for bcrypt
+            const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+
+            updatedData.password = hashedPassword; // Consider hashing it!
+        }
+
+        console.log("Data After Password Updated: ", updatedData);
+
+        const updatedUser = await collection.findByIdAndUpdate(
+            userId,
+            { $set: updatedData },
+            { new: true }
+        );
+
+        if (!updatedUser) {
+            return res.status(404).send("User not found");
+        }
+
+        console.log("Profile updated successfully:", updatedUser);
+
+        req.session.user = updatedUser;
+
+        // Redirect back to the settings page with updated info
+        res.render("profile-settings-pg4.ejs", { user: updatedUser });
+
+    } catch (err) {
+        console.error("Error updating profile:", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 
 //Main Home Page
 app.get("/main-page", (req, res) => {

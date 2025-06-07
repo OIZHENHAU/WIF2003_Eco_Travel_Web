@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Update display name and email
       const displayName = `${profile.firstName} ${profile.lastName}`.trim();
-      document.getElementById('profileName').textContent = displayName || 'User Name';
-      document.getElementById('profileEmail').textContent = profile.email || 'user@example.com';
+      //document.getElementById('profileName').textContent = displayName || 'User Name';
+      //document.getElementById('profileEmail').textContent = profile.email || 'user@example.com';
     }
   };
   
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   
   // Initialize
-  loadProfile();
+  //loadProfile();
   loadProfileImage();
   
   // Show success message
@@ -193,15 +193,30 @@ document.addEventListener('DOMContentLoaded', () => {
       const formData = new FormData(profileForm);
       const profile = Object.fromEntries(formData.entries());
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Replace this:
+// await new Promise(resolve => setTimeout(resolve, 1500));
+// localStorage.setItem('userProfile', JSON.stringify(profile));
+
+    // With this:
+    try {
+      const res = await fetch('/api/update-profile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(profile)
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        showSuccess('Profile updated successfully!');
+      } else {
+        alert('Error: ' + data.message);
+      }
+    } catch (err) {
       
-      localStorage.setItem('userProfile', JSON.stringify(profile));
-      
-      // Update display name and email
-      const displayName = `${profile.firstName} ${profile.lastName}`.trim();
-      document.getElementById('profileName').textContent = displayName;
-      document.getElementById('profileEmail').textContent = profile.email;
+    }
+
       
       hideSpinner();
       showSuccess('Profile updated successfully!');
@@ -291,8 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       
-      document.getElementById('profileName').textContent = 'User Name';
-      document.getElementById('profileEmail').textContent = 'user@example.com';
+      //document.getElementById('profileName').textContent = 'User Name';
+      //document.getElementById('profileEmail').textContent = 'user@example.com';
       
       hideSpinner();
       showSuccess('Account deleted successfully!');

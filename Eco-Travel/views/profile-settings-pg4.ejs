@@ -48,8 +48,8 @@
             <input type="file" id="imageInput" accept="image/*" class="hidden-input">
             
             <div class="profile-info">
-              <h2 class="profile-name" id="profileName">OI ZHEN HAU</h2>
-              <p class="profile-email" id="profileEmail">zhenhau8072@gmail.com</p>
+              <h2 class="profile-name" id="profileName"><%= user.name %></h2>
+              <p class="profile-email" id="profileEmail"><%= user.email %></p>
             </div>
             
             <button class="update-image-btn" id="updateImageBtn">
@@ -61,17 +61,17 @@
         <div class="profile-main">
           <h2 class="settings-title">Profile Settings</h2>
           
-          <form id="profileForm" class="profile-form">
+          <form id="profileForm" class="profile-form" action="/api/update-profile" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                <input type="text" id="firstName" name="firstName" value="<%= user.first_name || '' %>" placeholder="<%= user.first_name === "NIL" ? "Enter first name" : user.first_name %>">
                 <span class="error-message"></span>
               </div>
               
               <div class="form-group">
                 <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                <input type="text" id="lastName" name="lastName" value="<%= user.last_name || '' %>" placeholder="<%= user.last_name === "NIL" ? "Enter last name" : user.last_name %>">
                 <span class="error-message"></span>
               </div>
             </div>
@@ -79,17 +79,17 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="mobile">Mobile</label>
-                <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+                <input type="tel" id="mobile" name="mobile" value="<%= user.mobile || '' %>" placeholder="<%= user.mobile === "NIL" ? "Enter mobile number" : user.mobile %>">
                 <span class="error-message"></span>
               </div>
               
               <div class="form-group">
                 <label for="gender">Gender</label>
-                <select id="gender" name="gender" required>
-                  <option value="">Select gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
+                <select id="gender" name="gender">
+                  <option value="" <%= !user.gender ? "selected" : "" %>>Select gender</option>
+                  <option value="male" <%= user.gender === "male" ? "selected" : "" %>>Male</option>
+                  <option value="female" <%= user.gender === "female" ? "selected" : "" %>>Female</option>
+                  <option value="other" <%= user.gender === "other" ? "selected" : "" %>>Other</option>
                 </select>
                 <span class="error-message"></span>
               </div>
@@ -98,7 +98,7 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                <input type="email" id="email" name="email" value="<%= user.email || '' %>" placeholder="<%= user.email === "NIL" ? "Enter email address" : user.email %>">
                 <span class="error-message"></span>
               </div>
               
@@ -111,19 +111,21 @@
             
             <div class="form-group full-width">
               <label for="address">Address</label>
-              <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
+              <textarea id="address" name="address" placeholder="<%= user.address === "NIL" ? "Enter your address" : user.address %>" rows="3"><%= user.address || '' %></textarea>
               <span class="error-message"></span>
             </div>
             
             <div class="form-actions">
               <button type="submit" class="btn btn-primary">Update Profile</button>
-              <form action="/delete-account" method="get">
-                <button type="submit" class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
-              </form>
             </div>
             
-            <button type="button" class="btn btn-logout" id="logoutBtn">Log out</button>
           </form>
+
+          <form action="/delete-account" method="get">
+                <button type="submit" class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
+          </form>
+
+          <button type="button" class="btn btn-logout" id="logoutBtn">Log out</button>
         </div>
       </div>
     </div>
