@@ -68,34 +68,56 @@
     <section id="location-search" style="margin-top: 50px; margin-bottom: 0px;">
         <div class="container">
             <div class="form-wrapper">
-                <form action="#">
-                    <input type="text" placeholder="Where to ?" class="form-control">
-                    <select class="form-control">
-                        <option value="Interest">Interest</option>
-                        <option value="Interest">Accomodation</option>
-                        <option value="Interest">Restaurant</option>
-                        <option value="Interest">Transportation</option>
+                <form action="/search" method="get">
+
+                    <select name="state" class="form-control">
+                        <option value="Where to?">Where to?</option>
+                        <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Johor">Johor</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Melaka">Melaka</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Sarawak">Sarawak</option>
+                        <option value="Selangor">Selangor</option>
+                    </select>
+                    
+                    <select name="category" class="form-control" required>
+                        <option value="" disabled selected>Interest</option>
+                        <option value="Accomodation">Accomodation</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Destination">Destination</option>
                     </select>
 
-                    <select class="form-control">
+                    <select name="price" class="form-control">
                         <option value="Budget">Budget</option>
-                        <option value="Less than RM500">Less than RM500</option>
-                        <option value="RM500 - RM1000">RM500 - RM1000</option>
-                        <option value="RM1000 - R2000">RM1000 - R2000</option>
-                        <option value="RM2000 - RM3000">RM2000 - RM3000</option>
-                        <option value="RM3000 - RM4000">RM3000 - RM4000</option>
-                        <option value="More than RM4000">More than RM4000</option>
+                        <option value="50">Less than RM50</option>
+                        <option value="100">RM50 - RM100</option>
+                        <option value="200">RM1000 - R2000</option>
+                        <option value="300">RM2000 - RM3000</option>
+                        <option value="400">RM3000 - RM4000</option>
+                        <option value="401">More than RM4000</option>
                     </select>
 
-                    <select class="form-control">
-                        <option value="Weather">Weather</option>
-                        <option value="Weather">Sunny</option>
-                        <option value="Weather">Rainy</option>
-                        <option value="Weather">Cloudy</option>
-                        <option value="Weather">Haze</option>
+                    <select name="idea" class="form-control">
+                        <option value="Travel Ideas">Travel Ideas</option>
+                        <option value="Relaxing Walk">Relaxing Walk</option>
+                        <option value="Birdwatching">Birdwatching</option>
+                        <option value="Natural Photography">Natural Photography</option>
+                        <option value="Cultural Lover">Cultural Lover</option>
+                        <option value="Eco-conscious Shoppers">Eco-conscious Shoppers</option>
+                        <option value="History Buffs">History Buffs</option>
+                        <option value="Educational Outings">Educational Outings</option>
+                        <option value="Green Lifestyle Enthusiasts">Green Lifestyle Enthusiasts</option>
+                        <option value="Curious learners">Curious learners</option>
+                        <option value="Family Travel">Family Travel</option>
                     </select>
 
-                    <button type="button" class="primary-btn"><i class="fa-solid fa-magnifying-glass"></i>  Search Now</button>
+                    <button type="submit" class="primary-btn"><i class="fa-solid fa-magnifying-glass"></i>  Search Now</button>
                 </form>
             </div>
         </div>
@@ -106,32 +128,43 @@
     <!-- Activity Start -->
     <div class="divider" style="margin-top: 0px; align-items: center;">
         <div class="display-history">
-            <!-- First Favourite -->
-            <div class="carousel swiper-slide lg-img">
-                <img class="option-img" src="/batu-ferringhi-penang-hotel.png" alt="">
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2>Batu Ferringhi</h2>
-                        <div class="hidden-content-carousel">
-                            <span><i class="fa fa-clock"></i>4 Days</span>
-                            <span><i class="fa fa-star"></i>4.7</span>
-                            <span><i class="fa fa-location-dot"></i> Penang</span>
-                        </div>
-                    </div>
+            <%
+              function isFavourite(destination, favouriteList) {
+                 return favouriteList.some(fav => fav.name === destination.name);
+              }  
+            %>
 
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn">
-                            <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                        </button>
-                        <div class="price-label">
-                            <p>RM 150</p>
+            <!-- First Favourite -->
+            <% results.forEach(destination => { %>
+                <a href="/get-info/<%=destination.category %>/<%=destination.link_name %>">
+                    <div class="carousel swiper-slide lg-img">
+                        <img class="option-img" src="<%=destination.image %>" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2><%=destination.name %></h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i><%=destination.duration %></span>
+                                    <span><i class="fa fa-star"></i><%=destination.rating %></span>
+                                    <span><i class="fa fa-location-dot"></i><%=destination.short_location %></span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn <%= isFavourite(destination, favourite) ? 'favourite-active' : '' %>">
+                                    <i class="fa-solid fa-heart heart-icon <%= isFavourite(destination, favourite) ? 'favourite' : 'unfavourite' %>" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM <%=destination.price %></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </a>
+
+            <% }) %>
 
             <!-- Second Favourite -->
-            <div class="carousel swiper-slide lg-img">
+            <!-- <div class="carousel swiper-slide lg-img">
                 <img class="option-img" src="/kuantan-resort-hotel.jpg" alt="">
                 <div class="carousel-img-overlay">
                     <div class="img-content">
@@ -152,103 +185,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <!-- Third Favourite -->
-            <div class="carousel swiper-slide lg-img">
-                <img class="option-img" src="/sunway-resort-hotel-spa.jpg" alt="">
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2>Sunway Resort</h2>
-                        <div class="hidden-content-carousel">
-                            <span><i class="fa fa-clock"></i>4 Days</span>
-                            <span><i class="fa fa-star"></i>4.7</span>
-                            <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
-                        </div>
-                    </div>
-
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn">
-                            <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                        </button>
-                        <div class="price-label">
-                            <p>RM 129</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fourth Favourite -->
-            <div class="carousel swiper-slide lg-img">
-                <img class="option-img" src="/Datai_Langkawi.jpg" alt="">
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2>Datai Langkawi</h2>
-                        <div class="hidden-content-carousel">
-                            <span><i class="fa fa-clock"></i>4 Days</span>
-                            <span><i class="fa fa-star"></i>4.7</span>
-                            <span><i class="fa fa-location-dot"></i>Johor</span>
-                        </div>
-                    </div>
-
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn">
-                            <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                        </button>
-                        <div class="price-label">
-                            <p>RM 200</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fifth Favourite -->
-            <div class="carousel swiper-slide lg-img">
-                <img class="option-img" src="/Tanjong-Jara-Resort-Terengganu.jpg" alt="">
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2>Tanjong Jara Resort</h2>
-                        <div class="hidden-content-carousel">
-                            <span><i class="fa fa-clock"></i>4 Days</span>
-                            <span><i class="fa fa-star"></i>4.9</span>
-                            <span><i class="fa fa-location-dot"></i>Terengganu</span>
-                        </div>
-                    </div>
-
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn">
-                            <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                        </button>
-                        <div class="price-label">
-                            <p>RM 199</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Six Favourite -->
-            <div class="carousel swiper-slide lg-img">
-                <img class="option-img" src="/pavilion-hotel.jpg" alt="">
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2>Pavilion Hotel</h2>
-                        <div class="hidden-content-carousel">
-                            <span><i class="fa fa-clock"></i>4 Days</span>
-                            <span><i class="fa fa-star"></i>4.7</span>
-                            <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
-                        </div>
-                    </div>
-
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn">
-                            <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                        </button>
-                        <div class="price-label">
-                            <p>RM 189</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
      </div>

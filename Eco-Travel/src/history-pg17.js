@@ -62,6 +62,53 @@ const updateCalendar = () => {
     }
 
     datesElement.innerHTML = datesHTML;
+
+    // Add click event to all .date elements
+    const dateElements = datesElement.querySelectorAll('.date');
+
+    dateElements.forEach((el, index) => {
+        el.addEventListener('click', () => {
+            const selectedDay = parseInt(el.textContent);
+
+            // Ignore clicks on "inactive" dates
+            if (el.classList.contains('inactive')) return;
+
+            const selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), selectedDay);
+            const formattedDate = selectedDate.toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+            });
+
+            const weekDay = selectedDate.toLocaleDateString('en-GB', { weekday: 'long'});
+
+            const titleEl = document.getElementById('carbonTitle');
+            titleEl.innerHTML = `${weekDay}, <span>${formattedDate}</span>`;
+
+            console.log(`Selected date: ${weekDay}, ${formattedDate}`);
+
+            // Send selected date to backend
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/log-selected-date';
+
+            const dateInput = document.createElement('input');
+            dateInput.type = 'hidden';
+            dateInput.name = 'date';
+            dateInput.value = formattedDate;
+
+            const weekdayInput = document.createElement('input');
+            weekdayInput.type = 'hidden';
+            weekdayInput.name = 'weekDay';
+            weekdayInput.value = weekDay;
+
+            form.appendChild(dateInput);
+            form.appendChild(weekdayInput);
+            document.body.appendChild(form);
+            form.submit();
+            
+        });
+    });
 }
 
 prevBtn.addEventListener('click', () => {

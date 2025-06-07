@@ -14,8 +14,8 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
   >
-  <link rel="stylesheet" href="/Page-17/history-pg17.css">
-    <link rel="stylesheet" href="/Main-Page/responsiveMainPage.css">
+  <link rel="stylesheet" href="/history-pg17.css">
+    <link rel="stylesheet" href="/responsiveMainPage.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -113,7 +113,7 @@
     }
     /* 评分区域 */
     .rating-section {
-      margin-top: 20px;
+      margin-top: 0px;
     }
     .rating-section .stars i {
       color: #ffc107;
@@ -148,6 +148,23 @@
     footer .social-links a:hover {
       color: #fff;
     }
+
+    .price-block {
+      text-align: right;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .cancel-note {
+      font-size: 0.85rem;
+      color: #0d6efd;
+    }
+
+    .btn-danger.fav-active {
+      color: white !important;
+      border: 1px solid white !important;
+    }
+
   </style>
 </head>
 <body>
@@ -168,12 +185,12 @@
             <div class="btn">
                 <i class="fas fa-times close-btn"></i>
             </div>
-            <li><a href="../Main-Page/main-page.html" id="homeNav">Home</a></li>
-            <li><a href="../Page-16/favourite.html" id="favouriteNav">Favourite</a></li>
-            <li><a href="../Page-17/empty-history.html" id="historyNav">History</a></li>
-            <li><a href="../Page-23/weather.html" id="weatherNav">Weather</a></li>
-            <li><a href="../Carbon_Calculation/carbon_calculator.html" id="footprintNav">Footprint</a></li>
-            <li><a href="../Page-4/index.html" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
+            <li><a href="/main-page" id="homeNav">Home</a></li>
+              <li><a href="/favourite-pg16" id="favouriteNav">Favourite</a></li>
+              <li><a href="/history-pg17" id="historyNav">History</a></li>
+              <li><a href="/weather-pg23" id="weatherNav">Weather</a></li>
+              <li><a href="/carbon_calculator" id="footprintNav">Footprint</a></li>
+              <li><a href="/profile-settings-pg4" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
         </ul>
 
           <div class="btn">
@@ -191,8 +208,8 @@
   <!-- 详情头部 -->
   <div class="detail-header d-flex align-items-center justify-content-between">
     <div>
-      <h4 class="mb-0">PAVILION HOTEL KUALA LUMPUR</h4>
-      <span class="badge bg-info text-dark">Top Popular</span>
+      <h4 class="mb-0"><%=accomodation.name %></h4>
+      <span class="badge bg-info text-dark" style="margin-top: 10px;">Top Popular</span>
     </div>
   </div>
 
@@ -201,40 +218,78 @@
     <!-- Back 按钮 -->
     <button id="backBtn" class="btn btn-secondary back-btn">← Back</button>
 
+    <%
+      function isFavourite(destination, favouriteList) {
+        return favouriteList.some(fav => fav.name === destination.name);
+      }  
+    %>
+
     <div class="row">
       <!-- 左侧图片 -->
       <div class="col-md-4 image-container">
-        <img src="../Main-Page/img/pavilion-hotel.jpg" alt="Hilton Kuala Lumpur" id="accomodation-img">
+        <img src="<%=accomodation.image %>" alt="Hilton Kuala Lumpur" id="accomodation-img">
       </div>
       <!-- 右侧文字信息 -->
       <div class="col-md-8">
         <p style="font-weight: 150px; font-style: bold;">
-          Offering city views and free WiFi, Pavilion Kuala Lumpur provides luxurious accommodations conveniently located in the city. With elegant dining options, a world-class spa, and modern meeting facilities, it is the perfect destination for both business and leisure travelers.
+          <%=accomodation.description %>
         </p>
         <!-- 设施说明 -->
         <div class="facilities">
           <i class="bi bi-check-circle-fill"></i>
-          Stylish Rooms, 24-Hour Concierge, Multiple Dining Options, Spa & Fitness
+          <%=accomodation.room_info %>
         </div>
         <!-- 付款与其他信息说明 -->
         <div class="other-info mt-2">
           <i class="bi bi-credit-card-fill"></i>
-          RM200/person - Flexible payment options available
+            <%=accomodation.payment_info %>
         </div>
         <!-- 地址及链接 -->
-        <div class="detail-actions mt-3">
+        <div class="detail-actions mt-3 facilities">
           <div class="mb-1">
             <i class="bi bi-geo-alt-fill text-primary"></i>
-            <span>14 Jalan Pinang, Kuala Lumpur 50450 Malaysia</span>
+            <span><%=accomodation.location %></span>
           </div>
-          <a href="https://www.google.com/aclk?sa=l&ai=DChcSEwijjbLIgdyMAxU6pmYCHevgA-wYABAAGgJzbQ&co=1&ase=2&gclid=Cj0KCQjwqv2_BhC0ARIsAFb5Ac9TxK-g_w9rI_wtbqCoQVeGZtb20gkosFvIvcN8-fSkUc1ShCqtdYEaAiwCEALw_wcB&sig=AOD64_0EPnIhZW3KzfHM9Du6unxhAq1W8g&q&nis=4&adurl&ved=2ahUKEwiU1qrIgdyMAxWSR2cHHSRaLH4Q0Qx6BAgKEAE" target="_blank">
+          <a href="<%=accomodation.location_link %>" target="_blank">
             <i class="bi bi-globe"></i>
+            Location
+          </a>
+          <a href="<%=accomodation.official_website %>" target="_blank">
+            <i class="bi bi-file-earmark-text"></i>
             Official Website
           </a>
-          <a href="#" target="_blank">
-            <i class="bi bi-file-earmark-text"></i>
-            More Info
-          </a>
+
+          <div class="row rating-section">
+            <div class="col-md-6 mt-4">
+              <h6>700+ Reviews</h6>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <span class="ms-2"><%=accomodation.rating %>/5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row rating-section">
+            <div class="row mt-3">
+              <div class="col-12 text-end">
+                <div class="price-block" style="font-size: 40px;">
+                  RM <%=accomodation.price %> <span class="fw-normal" style="font-size:0.85rem;">/ person</span>
+                </div>
+
+                <div class="mt-3">
+                  <form action="/add-favourite/<%=accomodation.category %>/<%=accomodation.name.toLowerCase()%>" method="post">
+                    <button class="btn btn-outline-primary <%= isFavourite(accomodation, favourite) ? 'btn-danger fav-active' : 'btn-outline-primary' %>">
+                      <%= isFavourite(accomodation, favourite) ? 'Remove Favourite' : 'Add Favourite' %>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- 价格展示 -->
         
@@ -245,40 +300,24 @@
     <div class="row booking-section mt-4">
       <div class="col-md-12">
         <h5>Select date and travellers</h5>
-        <div class="row g-3">
-          <div class="col-md-4">
-            <label class="form-label">Arrival Date</label>
-            <input type="date" class="form-control">
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">No. of Person</label>
-            <input type="number" class="form-control" placeholder="2" min="1">
-          </div>
-          <div class="col-md-4 d-flex align-items-end">
-            <button class="btn btn-primary me-2">Book Now</button>
-            <button class="btn btn-outline-primary">Add Planner</button>
-            <button class="btn btn-outline-primary" style="margin-left: 10px;">Add Favourite</button>
-          </div>
+        <div class="box-flex">
+          <form action="/add-planner/<%=accomodation.category %>/<%=accomodation.name.toLowerCase() %>" method="post">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label">Arrival Date</label>
+                <input type="date" class="form-control" name="date" required>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">No. of Person</label>
+                <input type="number" name="num_of_person" class="form-control" placeholder="2" min="1" required>
+              </div>
+                <div class="col-md-4 d-flex align-items-end">
+                  <button class="btn btn-primary me-2" style="margin-left: 190px;">Book Now</button>
+                  <button class="btn btn-outline-primary">Add Planner</button>
+                </div>
+            </div>
+          </form>       
         </div>
-      </div>
-    </div>
-
-    <!-- 评分与操作区域 -->
-    <div class="row rating-section">
-      <div class="col-md-6 mt-4">
-        <h6>700+ Reviews</h6>
-        <div class="stars">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
-          <span class="ms-2">4.5/5</span>
-        </div>
-      </div>
-      <div class="col-md-6 mt-4">
-        <button class="btn btn-secondary me-2">Check on Location</button>
-        <button class="btn btn-outline-secondary">Important Info</button>
       </div>
     </div>
   </div>
@@ -382,10 +421,10 @@
     window.history.back();
   });
 </script>
-<script src="/Page-17/history-pg17.js"></script>
+<script src="/history-pg17.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/Main-Page/swiperMainPage.js"></script>
+    <script src="/swiperMainPage.js"></script>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const imgSrc = urlParams.get('img');

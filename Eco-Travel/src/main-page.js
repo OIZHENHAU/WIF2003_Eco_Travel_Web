@@ -26,7 +26,4 @@ window.addEventListener('scroll', () => {
     }
 });
 
-searchNowButton.addEventListener('click', () => {
-    window.location.href = `../Search-Page/search.html`;
-});
 

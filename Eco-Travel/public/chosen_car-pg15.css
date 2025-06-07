@@ -274,12 +274,12 @@ header.sticky {
     justify-content: center;
     margin-top: 200px;
     margin-bottom: 40px;
-    padding: 0 2rem;
+    padding: 0 1rem;
 
     .outer_container {
         border: 2px solid;
         border-radius: 20px;
-        padding: 1rem;
+        padding: 0.5rem;
         border-color: var(--primary-color);
 
         #favourite_button {
@@ -490,13 +490,38 @@ header.sticky {
 
         }
 
-
-
-
     }
 
 }
 
+.favourite-btn {
+    background: var(--primary-color);
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    border-color: transparent;
+
+
+
+    & .heart-icon {
+        color: var(--white);
+        font-size: 20px;
+    }
+
+    & .heart-icon.favourite {
+        color: var(--accent-color);
+        font-size: 20px;
+    }
+
+    & .heart-icon.unfavourite {
+        color: var(--white);
+        font-size: 20px;
+    }
+}
+
+.favourite-btn.favourite-active {
+  background: var(--white);
+}
 
 /* ======== Footer Start ======== */
 
