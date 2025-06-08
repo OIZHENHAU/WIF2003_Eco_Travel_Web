@@ -22,6 +22,9 @@
     --gray-900: #212529;
     --transition-speed: 0.3s;
     --border-radius: 8px;
+    --accomPercent: 0% 40%;
+    --vehiclePercent: 40% 70%;
+    --restPercent: 70% 100%;
   }
 
   * {
@@ -482,7 +485,7 @@ header.sticky {
             aspect-ratio: 1;
             /*border: 1px solid;*/
             border-radius: 50%;
-            background-image: conic-gradient(from 30deg, #29B6F6 0% 40%, #0086c3 40% 77%, #54d4ed 77% 100%);
+            background-image: conic-gradient(from 30deg, #29B6F6 var(--accomPercent), #0086c3 var(--vehiclePercent), #54d4ed var(--restPercent));
         }
 
         & .donut {
@@ -494,9 +497,9 @@ header.sticky {
                 ),
 
                 conic-gradient(from 30deg, 
-                #29B6F6 0% 40%, 
-                #0086c3 40% 77%, 
-                #54d4ed 77% 100%
+                #29B6F6 var(--accomPercent), 
+                #0086c3 var(--vehiclePercent), 
+                #54d4ed var(--restPercent)
                 );
         }
 
