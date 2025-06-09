@@ -747,6 +747,18 @@ app.get("/search", async (req, res) => {
     }
 });
 
+app.post('/offset-now', (req, res) => {
+  const { footprintData } = req.body;
+  console.log('Received Table Data:', footprintData);
+
+  // Respond with the processed data or redirect
+  res.json({ processedData: footprintData });
+});
+
+app.get('/carbon-offset', (req, res) => {
+  const data = JSON.parse(req.query.data);
+  res.render('carbonOffset-pg22', { data });
+});
 
 const port = 5000;
 app.listen(port, () => {
