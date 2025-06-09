@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Friendly Travel Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="carbonOffset-pg22.css">
     <link rel="stylesheet" href="/Main-Page/responsiveMainPage.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
@@ -125,13 +126,14 @@
                 </span></h2>
 
                 <figure class="charts">
-                    <div class="pie donut"></div>
+                    <canvas id="pieChart" width="400" height="400"></canvas>
                 </figure>
 
                 <figcaption class="legends">
-                    <span>Accomodation 80%</span>
-                    <span>Restaurant 12%</span>
-                    <span>Transportation 8%</span>
+                    <% const percentage = data.processedData[data.processedData.length - 1] %>
+                    <span>Accomodation <%= percentage.accomPercent %> %</span>
+                    <span>Transportation <%= percentage.vehiclePercent %> %</span>
+                    <span>Restaurant <%= percentage.restPercent %> %</span>
                 </figcaption>
 
             </div>
@@ -317,6 +319,29 @@
     </footer>
     <!-- Footer End -->
 
+    <script>
+        const data = <%- JSON.stringify(data) %>
+        const percentage = data.processedData[data.processedData.length - 1]
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+            labels: ["Accomodation", "Transportation", "Restaurant"],
+            datasets: [{
+                data: [percentage.accomPercent, percentage.vehiclePercent, percentage.restPercent],
+                backgroundColor: ["#54d4ed", "#29B6F6", "#0086c3"],
+            }]
+            },
+            options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                position: 'top',
+                },
+            },
+            }
+        });
+    </script>
 
     <script src="carbonOffset-pg22.js"></script>
     <script src="/Main-Page/swiperMainPage.js" defer></script>

@@ -22,9 +22,6 @@
     --gray-900: #212529;
     --transition-speed: 0.3s;
     --border-radius: 8px;
-    --accomPercent: 0% 40%;
-    --vehiclePercent: 40% 70%;
-    --restPercent: 70% 100%;
   }
 
   * {
@@ -475,32 +472,6 @@ header.sticky {
             flex-flow: wrap;
             gap: 2rem;
             margin-bottom: 30px;
-        }
-
-        & .pie {
-            flex: 1 0 225px;
-            max-width: 300px;
-            margin-left: 200px;
-            margin-bottom: 10px;
-            aspect-ratio: 1;
-            /*border: 1px solid;*/
-            border-radius: 50%;
-            background-image: conic-gradient(from 30deg, #29B6F6 var(--accomPercent), #0086c3 var(--vehiclePercent), #54d4ed var(--restPercent));
-        }
-
-        & .donut {
-            background-image: 
-                radial-gradient(
-                    white 40%,
-                    transparent 0 70%,
-                    white 0
-                ),
-
-                conic-gradient(from 30deg, 
-                #29B6F6 var(--accomPercent), 
-                #0086c3 var(--vehiclePercent), 
-                #54d4ed var(--restPercent)
-                );
         }
 
         .legends {

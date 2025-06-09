@@ -5,7 +5,6 @@ const closeBtn = document.querySelector(".close-btn");
 
 const paymentButton = document.querySelector(".primary-btn");
 
-const footprints = data.processedData
 
 paymentButton.addEventListener('click', () => {
     window.location.href = `../Page-8/payment-page.html`;

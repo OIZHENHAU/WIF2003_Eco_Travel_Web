@@ -20,7 +20,7 @@ offsetNowButton.addEventListener('click', () => {
     var footprintData = []
     var accom = percentage(cumulativeAccomEm, totalFootprint)
     var vehicle = percentage(cumulativeVehicleEm, totalFootprint)
-    var rest = percentage(cumulativeRestCost, totalFootprint)
+    var rest = percentage(cumulativeRestEm, totalFootprint)
 
     rows.forEach(row => {
         const cells = row.querySelectorAll("td")
@@ -392,8 +392,8 @@ function kgToTonne(amount) {
 }
 
 function percentage(emission, totalEmission) {
-    var result = emission / totalEmission
-    return Math.round(result)
+    var result = (emission / totalEmission) * 100
+    return parseFloat(result.toFixed(2))
 }
 
 function test() {
