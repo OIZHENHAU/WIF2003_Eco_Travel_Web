@@ -100,30 +100,52 @@
         <div class="container">
             <div class="form-wrapper">
                 <form action="/search" method="get">
-                    <input type="text" placeholder="Where to ?" class="form-control">
-                    <select class="form-control">
-                        <option value="Interest">Interest</option>
-                        <option value="Interest">Accomodation</option>
-                        <option value="Interest">Restaurant</option>
-                        <option value="Interest">Transportation</option>
+
+                    <select name="state" class="form-control">
+                        <option value="Where to?">Where to?</option>
+                        <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Johor">Johor</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Melaka">Melaka</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Sarawak">Sarawak</option>
+                        <option value="Selangor">Selangor</option>
+                    </select>
+                    
+                    <select name="category" class="form-control" required>
+                        <option value="" disabled selected>Interest</option>
+                        <option value="Accomodation">Accomodation</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Destination">Destination</option>
                     </select>
 
-                    <select class="form-control">
+                    <select name="price" class="form-control">
                         <option value="Budget">Budget</option>
-                        <option value="Less than RM500">Less than RM500</option>
-                        <option value="RM500 - RM1000">RM500 - RM1000</option>
-                        <option value="RM1000 - R2000">RM1000 - R2000</option>
-                        <option value="RM2000 - RM3000">RM2000 - RM3000</option>
-                        <option value="RM3000 - RM4000">RM3000 - RM4000</option>
-                        <option value="More than RM4000">More than RM4000</option>
+                        <option value="50">Less than RM50</option>
+                        <option value="100">RM50 - RM100</option>
+                        <option value="200">RM1000 - R2000</option>
+                        <option value="300">RM2000 - RM3000</option>
+                        <option value="400">RM3000 - RM4000</option>
+                        <option value="401">More than RM4000</option>
                     </select>
 
-                    <select class="form-control">
-                        <option value="Weather">Weather</option>
-                        <option value="Weather">Sunny</option>
-                        <option value="Weather">Rainy</option>
-                        <option value="Weather">Cloudy</option>
-                        <option value="Weather">Haze</option>
+                    <select name="idea" class="form-control">
+                        <option value="Travel Ideas">Travel Ideas</option>
+                        <option value="Relaxing Walk">Relaxing Walk</option>
+                        <option value="Birdwatching">Birdwatching</option>
+                        <option value="Natural Photography">Natural Photography</option>
+                        <option value="Cultural Lover">Cultural Lover</option>
+                        <option value="Eco-conscious Shoppers">Eco-conscious Shoppers</option>
+                        <option value="History Buffs">History Buffs</option>
+                        <option value="Educational Outings">Educational Outings</option>
+                        <option value="Green Lifestyle Enthusiasts">Green Lifestyle Enthusiasts</option>
+                        <option value="Curious learners">Curious learners</option>
+                        <option value="Family Travel">Family Travel</option>
                     </select>
 
                     <button type="submit" class="primary-btn"><i class="fa-solid fa-magnifying-glass"></i>  Search Now</button>
@@ -193,11 +215,11 @@
             <h2 class="headings">Popular <span>Tours</span></h2>
             <div class="choose-wrapper">
                 <div class="img-left-side">
-                    <a href="/destination/kuantan">
+                    <a href="/get-info/destination/kuantan 188">
                         <div class="lg-img">
                             <img src="/kuantan.jpg" alt="">
                             <div class="img-content">
-                                <h2>Kuantan</h2>
+                                <h2>Kuantan 188</h2>
                                 <div class="hidden-content">
                                     <span><i class="fa fa-clock"></i> 3 Days</span>
                                     <span><i class="fa fa-star"></i> 4.9</span>
@@ -216,85 +238,94 @@
                 </div>
 
                 <div class="img-right-side">
+                    <a href="/get-info/destination/batu caves">
+                        <div class="lg-img">
+                            <img src="/batu-caves.jpg" alt="">
+                            <div class="img-content">
+                                <h2>Batu Caves</h2>
+                                <div class="hidden-content">
+                                    <span><i class="fa fa-clock"></i> 1 Days</span>
+                                    <span><i class="fa fa-star"></i> 4.8</span>
+                                    <span><i class="fa fa-location-dot"></i> Selangor</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                                <div class="price-label">
+                                    <p>RM 60</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Root Wise Images -->
+             <div class="row-wise-img">
+                <a href="/get-info/destination/genting highland">
                     <div class="lg-img">
-                        <img src="/batu-caves.jpg" alt="">
+                        <img src="/genting_highland.jpg" alt="">
                         <div class="img-content">
-                            <h2>Batu Caves</h2>
+                            <h2>Genting Highland</h2>
                             <div class="hidden-content">
-                                <span><i class="fa fa-clock"></i> 1 Days</span>
-                                <span><i class="fa fa-star"></i> 4.8</span>
-                                <span><i class="fa fa-location-dot"></i> Selangor</span>
+                                <span><i class="fa fa-clock"></i> 3 Days</span>
+                                <span><i class="fa fa-star"></i> 5.0</span>
+                                <span><i class="fa fa-location-dot"></i> Kuala Lumpur</span>
                             </div>
                         </div>
 
                         <div class="content-fav-and-price">
                             <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
                             <div class="price-label">
-                                <p>RM 60</p>
+                                <p>RM 500</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </a>
 
-            <!-- Root Wise Images -->
-             <div class="row-wise-img">
-                <div class="lg-img">
-                    <img src="/genting_highland.jpg" alt="">
-                    <div class="img-content">
-                        <h2>Genting Highland</h2>
-                        <div class="hidden-content">
-                            <span><i class="fa fa-clock"></i> 3 Days</span>
-                            <span><i class="fa fa-star"></i> 5.0</span>
-                            <span><i class="fa fa-location-dot"></i> Kuala Lumpur</span>
+                <a href="/get-info/destination/pulau tioman">
+                    <div class="lg-img">
+                        <img src="/pulau-tioman.jpg" alt="">
+                        <div class="img-content">
+                            <h2>Pulau Tioman</h2>
+                            <div class="hidden-content">
+                                <span><i class="fa fa-clock"></i> 5 Days</span>
+                                <span><i class="fa fa-star"></i> 5.0</span>
+                                <span><i class="fa fa-location-dot"></i> Pahang</span>
+                            </div>
+                        </div>
+
+                        <div class="content-fav-and-price">
+                            <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                            <div class="price-label">
+                                <p>RM 385</p>
+                            </div>
                         </div>
                     </div>
+                </a>
 
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
-                        <div class="price-label">
-                            <p>RM 500</p>
+                <a href="/get-info/destination/kek lok si temple">
+                    <div class="lg-img">
+                        <img src="/Kek-Lok-Si-Temple-Penang.jpg" alt="">
+                        <div class="img-content">
+                            <h2>Kek Lok Si Temple</h2>
+                            <div class="hidden-content">
+                                <span><i class="fa fa-clock"></i> 3 Days</span>
+                                <span><i class="fa fa-star"></i> 4.9</span>
+                                <span><i class="fa fa-location-dot"></i> Penang</span>
+                            </div>
+                        </div>
+
+                        <div class="content-fav-and-price">
+                            <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                            <div class="price-label">
+                                <p>RM 88</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="lg-img">
-                    <img src="/pulau-tioman.jpg" alt="">
-                    <div class="img-content">
-                        <h2>Pulau Tioman</h2>
-                        <div class="hidden-content">
-                            <span><i class="fa fa-clock"></i> 5 Days</span>
-                            <span><i class="fa fa-star"></i> 5.0</span>
-                            <span><i class="fa fa-location-dot"></i> Pahang</span>
-                        </div>
-                    </div>
-
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
-                        <div class="price-label">
-                            <p>RM 385</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg-img">
-                    <img src="/Kek-Lok-Si-Temple-Penang.jpg" alt="">
-                    <div class="img-content">
-                        <h2>Kek Lok Si Temple</h2>
-                        <div class="hidden-content">
-                            <span><i class="fa fa-clock"></i> 3 Days</span>
-                            <span><i class="fa fa-star"></i> 4.9</span>
-                            <span><i class="fa fa-location-dot"></i> Penang</span>
-                        </div>
-                    </div>
-
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
-                        <div class="price-label">
-                            <p>RM 88</p>
-                        </div>
-                    </div>
-                </div>
              </div>
         </div>
     </section>
@@ -309,15 +340,15 @@
             <div class="top-destination-wrapper swiper2">
                 <div class="swiper-wrapper">
                     <!-- Slider Destination 1 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
-                        <img class="option-img" src="/labuan-johor.png" alt="">
+                     <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
+                        <img class="option-img" src="/legoland-malaysia-resort.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
-                                <h2>Labuan</h2>
+                                <h2>Legoland Malaysia Resort</h2>
                                 <div class="hidden-content-carousel">
                                     <span><i class="fa fa-clock"></i>4 Days</span>
-                                    <span><i class="fa fa-star"></i>4.7</span>
-                                    <span><i class="fa fa-location-dot"></i> Johor</span>
+                                    <span><i class="fa fa-star"></i>5.0</span>
+                                    <span><i class="fa fa-location-dot"></i>Johor</span>
                                 </div>
                             </div>
 
@@ -326,12 +357,12 @@
                                     <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
                                 </button>
                                 <div class="price-label">
-                                    <p>RM 189</p>
+                                    <p>RM 130</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Slider Destination 2 Start -->
                     <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
                         <img class="option-img" src="/langkawi.png" alt="">

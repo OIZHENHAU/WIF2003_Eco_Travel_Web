@@ -28,6 +28,11 @@ hourlyForecastCard = document.querySelector('.hourly-forecast');
 apiList= ['Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'];
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    getUserCoordinates(); // Auto call when the page is fully loaded
+});
+
+
 function getWeatherDetails(name, lat, lon, country, state) {
     /*console.log("Method Name: " + name);
     console.log("Method Lat: " + lat);
@@ -274,4 +279,4 @@ function getUserCoordinates() {
 
 searchBtn.addEventListener('click', getCityCoordinates);
 
-locationBtn.addEventListener('click', getUserCoordinates)
+locationBtn.addEventListener('click', getUserCoordinates);

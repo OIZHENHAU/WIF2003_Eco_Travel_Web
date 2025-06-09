@@ -314,7 +314,6 @@ form input, select {
 .display-history {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 2 columns */
-    grid-template-rows: repeat(2, 1fr);    /* 3 rows */
     gap: 10px; /* space between grid items */
     width: 1280px;
 
@@ -503,10 +502,26 @@ form input, select {
     width: 40px;
     border-color: transparent;
 
+
+
     & .heart-icon {
         color: var(--white);
         font-size: 20px;
     }
+
+    & .heart-icon.favourite {
+        color: var(--accent-color);
+        font-size: 20px;
+    }
+
+    & .heart-icon.unfavourite {
+        color: var(--white);
+        font-size: 20px;
+    }
+}
+
+.favourite-btn.favourite-active {
+  background: var(--white);
 }
 
 .row-wise-img {

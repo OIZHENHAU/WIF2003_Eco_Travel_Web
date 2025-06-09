@@ -39,7 +39,7 @@ const swiper2 = new Swiper(".swiper2", {
     },
 
     speed: 400,
-    spaceBetween: 40
+    spaceBetween: 30
 
 });
 

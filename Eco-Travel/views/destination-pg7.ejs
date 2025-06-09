@@ -157,6 +157,31 @@
     .back-btn {
       margin-bottom: 1rem;
     }
+
+    .book-favourite-planner {
+      display: flex;
+      gap: 10px;
+    }
+
+    .destination-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 0px;
+    }
+
+    .booking-section {
+      background-color: #f3eeee;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .btn-danger.fav-active {
+      color: white !important;
+      border: 1px solid white !important;
+    }
+
   </style>
 </head>
 <body>
@@ -196,7 +221,7 @@
 
   <!-- 内容区 -->
   <div class="content-wrapper">
-    <div class="detail-header d-flex align-items-center justify-content-between" style="margin-left: 60px; margin-top: -20px;">
+    <div class="detail-header d-flex align-items-center justify-content-between" style="margin-left: 60px; margin-top: -50px;">
       <div>
         <h4 class="mb-0">TOURIST DESTINATION</h4>
         <span class="badge bg-info text-dark">Top Popular</span>
@@ -206,6 +231,12 @@
     <div class="container px-0" style="width: 1300px">
       <div class="detail-wrapper">
         <button class="btn btn-secondary back-btn" onclick="window.history.back()">← Back</button>
+
+        <%
+          function isFavourite(destination, favouriteList) {
+            return favouriteList.some(fav => fav.name === destination.name);
+          }  
+        %>
        
         <!-- 等高布局：左侧图片 + 右侧文字 -->
         <div class="equal-height-row">
@@ -219,7 +250,7 @@
           <!-- 右侧文字列 -->
           <div class="right-col ms-3">
             <!-- <span class="badge-top">Top Popular</span> -->
-            <h4 class="detail-title"><%=destination.name %></h4>
+            <h4 class="detail-title" name="name"><%=destination.name %></h4>
             <p>
               <%=destination.description %>
             </p>
@@ -232,52 +263,62 @@
             </ul>
             <p class="mt-2">
               <i class="bi bi-geo-alt-fill text-primary"></i>
-              12 Jalan Abdul Talif Road, Johor, Malaysia
+              <%=destination.location%>
             </p>
           </div>
         </div>
+
+        <div class="row rating-section">
+            <div class="col-md-6 mt-4">
+              <h6>700+ Reviews</h6>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <span class="ms-2"><%=destination.rating %>/5</span>
+              </div>
+            </div>
+        </div>
+
         <!-- 价格区域 -->
         <div class="row mt-3">
           <div class="col-12 text-end">
             <div class="price-block" style="font-size: 40px;">
               RM <%=destination.price %> <span class="fw-normal" style="font-size:0.85rem;">total</span>
             </div>
-            <p class="cancel-note" style="font-size: 20px;">Free Cancellation</p>
-          </div>
-        </div>
-        <!-- 预订区域 -->
-        <div class="row g-3 align-items-end mt-3" style="margin-top: 10px;">
-          <div class="col-md-3">
-            <label class="form-label">Arrival Date</label>
-            <input type="date" class="form-control" />
-          </div>
-          <div class="col-md-3">
-            <label class="form-label">No. of Persons</label>
-            <input type="number" min="1" value="2" class="form-control" />
-          </div>
-          <div class="col-12">
-            <button class="btn btn-primary me-2">Book Now</button>
-            <button class="btn btn-outline-primary">Add Planner</button>
-            <button class="btn btn-outline-primary">Add Favourite</button>
-          </div>
-        </div>
-        <!-- 评分与操作区域 -->
-        <div class="row mt-4 align-items-center">
-          <div class="col-md-6">
-            <p class="mb-1 fw-bold">650+ Reviews</p>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-half"></i>
-              <span class="ms-2">4.4/5</span>
+            <p class="cancel-note" style="font-size: 20px;"><%=destination.duration%> / Free Cancellation</p>
+
+            <div class="mt-3">
+              <form action="/add-favourite/<%=destination.category %>/<%=destination.name.toLowerCase()%>" method="post">
+                    <button class="btn btn-outline-primary <%= isFavourite(destination, favourite) ? 'btn-danger fav-active' : 'btn-outline-primary' %>">
+                      <%= isFavourite(destination, favourite) ? 'Remove Favourite' : 'Add Favourite' %>
+                    </button>
+              </form>
             </div>
           </div>
-          <div class="col-md-6 text-end">
-            <button class="btn btn-secondary me-2">Check on Location</button>
-            <button class="btn btn-outline-secondary">Important Info</button>
-          </div>
+        </div>
+
+
+        <!-- 预订区域 -->
+        <div class="row g-3 align-items-end mt-3 booking-section" style="margin-top: 10px;">
+          <form action="/add-planner/<%=destination.category %>/<%=destination.name.toLowerCase()%>" method="post">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label">Arrival Date</label>
+                <input type="date" class="form-control" name="date" required>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">No. of Person</label>
+                <input type="number" name="num_of_person" class="form-control" placeholder="2" min="1" required>
+              </div>
+                <div class="col-md-4 d-flex align-items-end">
+                  <button class="btn btn-primary me-2" style="margin-left: 160px;">Book Now</button>
+                  <button class="btn btn-outline-primary">Add Planner</button>
+                </div>
+            </div>
+          </form>
         </div>
       </div> <!-- detail-wrapper end -->
     </div>
