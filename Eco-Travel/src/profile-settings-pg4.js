@@ -320,8 +320,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // Handle logout
-  logoutBtn.addEventListener('click', async () => {
-    window.location.href = `../Page 1 & 2/index.html`;
+  /*logoutBtn.addEventListener('click', async () => {
+    window.location.href = `index.ejs`;
 
     const confirmed = await showModal(
       'Confirm Logout',
@@ -339,10 +339,11 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // After showing success message, start transition and redirect
       setTimeout(() => {
-        startPageTransition('../Page 1 & 2/index.html');
+        startPageTransition('index.ejs');
       }, 800);
     }
   });
+  */
   
   // Clear error messages on input
   profileForm.querySelectorAll('input, select, textarea').forEach(input => {

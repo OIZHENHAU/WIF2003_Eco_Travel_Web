@@ -313,14 +313,42 @@ app.get("/weather-pg23", (req, res) => {
     res.render("weather-pg23.ejs");
 });
 
+
 //Carbon Calculator
 app.get("/carbon_calculator", (req, res) => {
     res.render("carbon_calculator.ejs");
 });
 
-//Delete Account
+//Redirect to Delete Account Page
 app.get("/delete-account", (req, res) => {
     res.render("delete-account-pg5.ejs");
+});
+
+//Delete Account
+app.post('/delete-my-account', async (req, res) => {
+    try {
+        const userId = req.session.userId;
+        if (!userId) return res.status(401).json({ success: false, message: "Unauthorized" });
+
+        await collection.findByIdAndDelete(userId);
+        req.session.destroy(); // Clear the session after deleting the user
+        res.json({ success: true });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: "Server error" });
+    }
+});
+
+//Log Out Account
+app.get("/logout-account", (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+        console.error(err);
+        return res.redirect('profile-settings-pg4.ejs'); // stay if error
+        }
+        res.clearCookie('connect.sid'); // optional: clear cookie
+        res.render('index.ejs'); // go to login/register page
+    });
 });
 
 //Get Popular Tourist
