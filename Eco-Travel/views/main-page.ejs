@@ -1,1 +1,898 @@
- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main-page.css">
+    <link rel="stylesheet" href="/responsiveMainPage.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <title>Main Page</title>
+</head>
+<body>
+    <!-- Header Start -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="main-title">
+                    <i class="fa-solid fa-earth-asia main-title-icon"></i>
+                    <div class="main-subtitle">
+                        <p id="subtitle1">Eco-Travel</p>
+                        <p id="subtitle2">Malaysia</p>
+                    </div>
+                </div>
+
+                <ul>
+                    <div class="btn">
+                        <i class="fas fa-times close-btn"></i>
+                    </div>
+                    <li><a href="/main-page" id="homeNav">Home</a></li>
+                    <li><a href="/favourite-pg16" id="favouriteNav">Favourite</a></li>
+                    <li><a href="/history-pg17" id="historyNav">History</a></li>
+                    <li><a href="/weather-pg23" id="weatherNav">Weather</a></li>
+                    <li><a href="/carbon_calculator" id="footprintNav">Footprint</a></li>
+                    <li><a href="/profile-settings-pg4" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
+                </ul>
+
+                <div class="btn">
+                    <i class="fas fa-bars menu-btn"></i>
+                </div>
+                
+            </nav>
+        </div>
+     </header>
+
+    <!-- Header Close -->
+
+    <!-- Showcase Start -->
+    <main>
+        <div class="slide-container swiper">
+            <div class="slide-content swiper-wrapper">
+                <div class="overlay swiper-slide">
+                    <img src="/show-case-1.jpeg" alt="">
+                    <div class="img-overlay">
+                        <p>Let's Travel the World With Us</p>
+                        <h2><span>Discover</span> The World</h2>
+                        <h2>With Our Guide</h2>
+                    </div>
+                </div>
+
+                <div class="overlay swiper-slide">
+                    <img src="/show-case-2.png" alt="">
+                    <div class="img-overlay">
+                        <p>Let's Travel the World With Us</p>
+                        <h2><span>Discover</span> The World</h2>
+                        <h2>With Our Guide</h2>
+                    </div>
+                </div>
+
+                <div class="overlay swiper-slide">
+                    <img src="/show-case-3.png" alt="">
+                    <div class="img-overlay">
+                        <p>Let's Travel the World With Us</p>
+                        <h2><span>Discover</span> The World</h2>
+                        <h2>With Our <span>Travelo</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Showcase Close -->
+
+    <!-- Search Location Start -->
+     <section id="location-search">
+        <div class="container">
+            <div class="form-wrapper">
+                <form action="/search" method="get">
+
+                    <select name="state" class="form-control">
+                        <option value="Where to?">Where to?</option>
+                        <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Johor">Johor</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Melaka">Melaka</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Sarawak">Sarawak</option>
+                        <option value="Selangor">Selangor</option>
+                    </select>
+                    
+                    <select name="category" class="form-control" required>
+                        <option value="" disabled selected>Interest</option>
+                        <option value="Accomodation">Accomodation</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Destination">Destination</option>
+                    </select>
+
+                    <select name="price" class="form-control">
+                        <option value="Budget">Budget</option>
+                        <option value="50">Less than RM50</option>
+                        <option value="100">RM50 - RM100</option>
+                        <option value="200">RM1000 - R2000</option>
+                        <option value="300">RM2000 - RM3000</option>
+                        <option value="400">RM3000 - RM4000</option>
+                        <option value="401">More than RM4000</option>
+                    </select>
+
+                    <select name="idea" class="form-control">
+                        <option value="Travel Ideas">Travel Ideas</option>
+                        <option value="Relaxing Walk">Relaxing Walk</option>
+                        <option value="Birdwatching">Birdwatching</option>
+                        <option value="Natural Photography">Natural Photography</option>
+                        <option value="Cultural Lover">Cultural Lover</option>
+                        <option value="Eco-conscious Shoppers">Eco-conscious Shoppers</option>
+                        <option value="History Buffs">History Buffs</option>
+                        <option value="Educational Outings">Educational Outings</option>
+                        <option value="Green Lifestyle Enthusiasts">Green Lifestyle Enthusiasts</option>
+                        <option value="Curious learners">Curious learners</option>
+                        <option value="Family Travel">Family Travel</option>
+                    </select>
+
+                    <button type="submit" class="primary-btn"><i class="fa-solid fa-magnifying-glass"></i>  Search Now</button>
+                </form>
+            </div>
+        </div>
+     </section>
+    <!-- Search Location Close -->
+
+    <!-- About Start -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content-wrapper">
+                <div class="agency-left-side">
+                    <p class="heading-normal-txt">THE BEST TRAVEL AGENCY</p>
+                    <h2 class="headings">DISCOVER THE <span>MALAYSIA</span> WITH OUR GUIDE</h2>
+
+                    <p class="lead">
+                        Explore the beauty and culture of Malaysia. 
+                        You can choose any state and discover unique attractions, 
+                        rich heritage, and unforgettable adventures!
+                    </p>
+                    <br/>
+                    <p class="lead">
+                        Dive into Malaysia's rich heritage — select a state to experience colorful festivals, 
+                        historic landmarks, and diverse cultural traditions
+                    </p>
+
+                    <ul>
+                        <li>
+                            <div class="icons">
+                                <i class="fa fa-check"></i>
+                                <p>20 Years of Experience</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icons">
+                                <i class="fa fa-check"></i>
+                                <p>65 Tour Destinations</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="icons">
+                                <i class="fa fa-phone-volume"></i>
+                                <p>+6011-15880259</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="agency-right-side">
+                    <div class="img">
+                        <img src="/about.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Close -->
+
+    <!-- Choose Your Place Start -->
+    <section id="choose-place">
+        <div class="container">
+            <p class="heading-normal-txt">Tourist Recommedation</p>
+            <h2 class="headings">Popular <span>Tours</span></h2>
+            <div class="choose-wrapper">
+                <div class="img-left-side">
+                    <a href="/get-info/destination/kuantan 188">
+                        <div class="lg-img">
+                            <img src="/kuantan.jpg" alt="">
+                            <div class="img-content">
+                                <h2>Kuantan 188</h2>
+                                <div class="hidden-content">
+                                    <span><i class="fa fa-clock"></i> 3 Days</span>
+                                    <span><i class="fa fa-star"></i> 4.9</span>
+                                    <span><i class="fa fa-location-dot"></i> Kuantan</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                                <div class="price-label">
+                                    <p>RM 200</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="img-right-side">
+                    <a href="/get-info/destination/batu caves">
+                        <div class="lg-img">
+                            <img src="/batu-caves.jpg" alt="">
+                            <div class="img-content">
+                                <h2>Batu Caves</h2>
+                                <div class="hidden-content">
+                                    <span><i class="fa fa-clock"></i> 1 Days</span>
+                                    <span><i class="fa fa-star"></i> 4.8</span>
+                                    <span><i class="fa fa-location-dot"></i> Selangor</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                                <div class="price-label">
+                                    <p>RM 60</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Root Wise Images -->
+             <div class="row-wise-img">
+                <a href="/get-info/destination/genting highland">
+                    <div class="lg-img">
+                        <img src="/genting_highland.jpg" alt="">
+                        <div class="img-content">
+                            <h2>Genting Highland</h2>
+                            <div class="hidden-content">
+                                <span><i class="fa fa-clock"></i> 3 Days</span>
+                                <span><i class="fa fa-star"></i> 5.0</span>
+                                <span><i class="fa fa-location-dot"></i> Kuala Lumpur</span>
+                            </div>
+                        </div>
+
+                        <div class="content-fav-and-price">
+                            <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                            <div class="price-label">
+                                <p>RM 500</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/get-info/destination/pulau tioman">
+                    <div class="lg-img">
+                        <img src="/pulau-tioman.jpg" alt="">
+                        <div class="img-content">
+                            <h2>Pulau Tioman</h2>
+                            <div class="hidden-content">
+                                <span><i class="fa fa-clock"></i> 5 Days</span>
+                                <span><i class="fa fa-star"></i> 5.0</span>
+                                <span><i class="fa fa-location-dot"></i> Pahang</span>
+                            </div>
+                        </div>
+
+                        <div class="content-fav-and-price">
+                            <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                            <div class="price-label">
+                                <p>RM 385</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/get-info/destination/kek lok si temple">
+                    <div class="lg-img">
+                        <img src="/Kek-Lok-Si-Temple-Penang.jpg" alt="">
+                        <div class="img-content">
+                            <h2>Kek Lok Si Temple</h2>
+                            <div class="hidden-content">
+                                <span><i class="fa fa-clock"></i> 3 Days</span>
+                                <span><i class="fa fa-star"></i> 4.9</span>
+                                <span><i class="fa fa-location-dot"></i> Penang</span>
+                            </div>
+                        </div>
+
+                        <div class="content-fav-and-price">
+                            <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                            <div class="price-label">
+                                <p>RM 88</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+             </div>
+        </div>
+    </section>
+
+    <!-- Choose Your Place End -->
+
+    <!-- Popular Destination Start -->
+    <section id="top-destination">
+        <div class="container">
+            <p class="heading-normal-txt">TOP DESTINATION</p>
+            <h2 class="headings">POPULAR <span>DESTINATION</span></h2>
+            <div class="top-destination-wrapper swiper2">
+                <div class="swiper-wrapper">
+                    <!-- Slider Destination 1 Start -->
+                     <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
+                        <img class="option-img" src="/legoland-malaysia-resort.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Legoland Malaysia Resort</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>4 Days</span>
+                                    <span><i class="fa fa-star"></i>5.0</span>
+                                    <span><i class="fa fa-location-dot"></i>Johor</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 130</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slider Destination 2 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
+                        <img class="option-img" src="/langkawi.png" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Pulau Langkawi</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>5 Days</span>
+                                    <span><i class="fa fa-star"></i>4.6</span>
+                                    <span><i class="fa fa-location-dot"></i> Kedah</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 119</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Destination 3 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
+                        <img class="option-img" src="/island-of-tioman.png" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Island of Tioman</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>2 Days</span>
+                                    <span><i class="fa fa-star"></i>4.3</span>
+                                    <span><i class="fa fa-location-dot"></i> Pahang</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 150</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Destination 4 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
+                        <img class="option-img" src="/aquaria_klcc.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Aquaria KLCC</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>2 Days</span>
+                                    <span><i class="fa fa-star"></i>4.8</span>
+                                    <span><i class="fa fa-location-dot"></i> Kuala Lumpur</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 350</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Popular Destination End -->
+
+    <!-- Popular Accomodation Start -->
+    <section id="top-destination">
+        <div class="container">
+            <p class="heading-normal-txt">TOP DESTINATION</p>
+            <h2 class="headings">POPULAR <span>ACCOMODATION</span></h2>
+            <div class="top-destination-wrapper swiper2">
+                <div class="swiper-wrapper">
+                    <!-- Slider Accomodation 1 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToAccomodation(this)">
+                        <img class="option-img" src="/pavilion-hotel.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Pavilion Hotel</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>1 Days</span>
+                                    <span><i class="fa fa-star"></i>4.7+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 120</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Accomodation 2 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToAccomodation(this)">
+                        <img class="option-img" src="/batu-ferringhi-penang-hotel.png" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Batu Ferringhi Hotel</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>1 Days</span>
+                                    <span><i class="fa fa-star"></i>4.6+</span>
+                                    <span><i class="fa fa-location-dot"></i>Penang</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 109</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Accomodation 3 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToAccomodation(this)">
+                        <img class="option-img" src="/sunway-resort-hotel-spa.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Sunway Resort Hotel</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>1 Days</span>
+                                    <span><i class="fa fa-star"></i>4.8+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Accomodation 4 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToAccomodation(this)">
+                        <img class="option-img" src="/kuantan-resort-hotel.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Kuantan Resort</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>1 Days</span>
+                                    <span><i class="fa fa-star"></i>4.8+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuantan Resort Hotel</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 130</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Accomodation End -->
+
+    <!-- Popular Restaurant Start -->
+    <section id="top-destination">
+        <div class="container">
+            <p class="heading-normal-txt">TOP DESTINATION</p>
+            <h2 class="headings">POPULAR <span>RESTAURANT</span></h2>
+            <div class="top-destination-wrapper swiper2">
+                <div class="swiper-wrapper">
+                    <!-- Slider Restaurant 1 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToRestaurant(this)">
+                        <img class="option-img" src="/thirty8restaurant-kl.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Thirty8 Restaurant</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>1 Days</span>
+                                    <span><i class="fa fa-star"></i>4.7+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 500</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Restaurant 2 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToRestaurant(this)">
+                        <img class="option-img" src="/rooftop-25-restaurant-kl.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Roof Top 25 Restaurant</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>1 Days</span>
+                                    <span><i class="fa fa-star"></i>4.6+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 300</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Restaurant 3 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToRestaurant(this)">
+                        <img class="option-img" src="/award-winning-thai-restaurant.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Malai Thai Cuisine</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>1 Days</span>
+                                    <span><i class="fa fa-star"></i>4.9+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 150</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Restaurant 4 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToRestaurant(this)">
+                        <img class="option-img" src="/flock-at-w-kuala-lumpur.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2>Flock At Western</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>1 Days</span>
+                                    <span><i class="fa fa-star"></i>4.8+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 350</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Restaurant End -->
+
+    <!-- Popular Transportation Start -->
+    <section id="top-destination">
+        <div class="container">
+            <p class="heading-normal-txt">TOP DESTINATION</p>
+            <h2 class="headings">POPULAR <span>TRANSPORTATION</span></h2>
+            <div class="top-destination-wrapper swiper2">
+                <div class="swiper-wrapper">
+                    <!-- Slider Transport 1 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToTransportation(this)">
+                        <img class="option-img" src="/bezza_lrg-transport.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2 style="color: #29B6F6">Proton Bezza</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>7 Days</span>
+                                    <span><i class="fa fa-star"></i>4.7+</span>
+                                    <span><i class="fa fa-location-dot"></i>Johor</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 109</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Transport 2 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToTransportation(this)">
+                        <img class="option-img" src="/brv_lrg-transport.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2 style="color: #29B6F6">Proton BRV</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>7 Days</span>
+                                    <span><i class="fa fa-star"></i>4.6+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kedah</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 119</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Transportation 3 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToTransportation(this)">
+                        <img class="option-img" src="/exora_lrg-transport.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2 style="color: #29B6F6">Proton Exora</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>7 Days</span>
+                                    <span><i class="fa fa-star"></i>4.9+</span>
+                                    <span><i class="fa fa-location-dot"></i>Pahang</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 150</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Transportation 4 Start -->
+                    <div class="carousel swiper-slide lg-img" onclick="goToTransportation(this)">
+                        <img class="option-img" src="/saga_lrg-transport.jpg" alt="">
+                        <div class="carousel-img-overlay">
+                            <div class="img-content">
+                                <h2 style="color: #29B6F6">Proton Saga</h2>
+                                <div class="hidden-content-carousel">
+                                    <span><i class="fa fa-clock"></i>7 Days</span>
+                                    <span><i class="fa fa-star"></i>4.8+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
+                                </div>
+                            </div>
+
+                            <div class="content-fav-and-price">
+                                <button class="favourite-btn">
+                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                </button>
+                                <div class="price-label">
+                                    <p>RM 159</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Transportation End -->
+
+    <!-- Footer Start -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- First Content -->
+                <div class="ft-content">
+                    <div class="icon">
+                        <i class="fa fa-phone-volume"></i>
+                    </div>
+
+                    <div class="content">
+                        <p class="lead">Call Us</p>
+                        <p>+65-80201558</p>
+                    </div>
+                </div>
+
+                <!-- Second Content -->
+                <div class="ft-content">
+                    <div class="icon">
+                        <i class="fa fa-envelope-open"></i>
+                    </div>
+
+                    <div class="content">
+                        <p class="lead">Write For Us</p>
+                        <p>zhenhauoi1234@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Third Content -->
+                <div class="ft-content">
+                    <div class="icon">
+                        <i class="fa fa-map-location"></i>
+                    </div>
+
+                    <div class="content">
+                        <p class="lead">Address</p>
+                        <p>No.15 Lorong Bukit Setongkol, 21400 Kuantan, Pahang</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Footer Content -->
+            <div class="footer-wrapper">
+                <div class="about">
+                    <div class="main-title">
+                        <i class="fa-solid fa-earth-asia main-title-icon"></i>
+                        <div class="main-subtitle">
+                            <p id="subtitle1">Eco-Travel</p>
+                            <p id="subtitle2">Malaysia</p>
+                        </div>
+                    </div>
+
+                    <p class="lead">"Adventure is Worthwhile. 
+                        The world is a book, and those who do not travel read only one page."</p>
+
+                    <div class="social-icons">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    
+                </div>
+                
+                <div class="links">
+                    <h2>Quick Link</h2>
+                    <ul>
+                        <li><a href="../Main-Page/main-page.html">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Transport</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Weather</a></li>
+                        <li><a href="#">Favourite</a></li>
+                    </ul>
+                </div>
+
+                <div class="subscribe">
+                    <h2>Subscribe</h2>
+                    <p class="lead">Sign Up for our monthly blog to stay informed about travel and tours.</p>
+                    <form action="#">
+                        <input type="text" placeholder="Email Address">
+                        <button type="button" class="button">Send</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Footer End -->
+    
+    <script src="/main-page.js"></script>
+    <script src="/swiperMainPage.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function goToDestination(element) {
+            const img = element.querySelector('.option-img');
+            const imgSrc = encodeURIComponent('../Main-Page/' + img.getAttribute('src'));
+            //console.log(imgSrc);
+            window.location.href = `../Page-7/camero_detail.html?img=${imgSrc}`;
+        }
+
+        function goToAccomodation(element) {
+            const img = element.querySelector('.option-img');
+            const imgSrc = encodeURIComponent('../Main-Page/' + img.getAttribute('src'));
+            //console.log(imgSrc);
+            window.location.href = `../Page-11/Hilton_detail.html?img=${imgSrc}`;
+        }
+
+        function goToRestaurant(element) {
+            const img = element.querySelector('.option-img');
+            const imgSrc = encodeURIComponent('../Main-Page/' + img.getAttribute('src'));
+            //console.log(imgSrc);
+            window.location.href = `../Page-12/Sushi_detail.html?img=${imgSrc}`;
+        }
+
+        function goToTransportation(element) {
+            const img = element.querySelector('.option-img');
+            const imgSrc = encodeURIComponent('../Main-Page/' + img.getAttribute('src'));
+            //console.log(imgSrc);
+            window.location.href = `../Page-15/chosen_car.html?img=${imgSrc}`;
+        }
+    </script>
+</body>
+</html>
