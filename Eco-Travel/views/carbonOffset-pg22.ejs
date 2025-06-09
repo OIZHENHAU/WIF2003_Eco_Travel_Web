@@ -120,7 +120,7 @@
             <!-- Carbon Pie Chart Shown-->
             <div class="flexbox-right">
                 <h2 class="headings">Total Carbon Footprint: <span>
-                    <% const totalFootprint = data.processedData[2] %>
+                    <% const totalFootprint = data.processedData[data.processedData.length - 1] %>
                     <%= totalFootprint.total %>
                 </span></h2>
 

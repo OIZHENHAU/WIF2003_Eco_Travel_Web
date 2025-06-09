@@ -17,24 +17,31 @@ const offsetNowButton = document.getElementById('offsetNow');
 offsetNowButton.addEventListener('click', () => {
     const table = document.getElementById("carbonFootprint")
     const rows = table.querySelectorAll("tbody tr")
-    var tableData = []
+    var footprintData = []
+    var accom = percentage(cumulativeAccomEm, totalFootprint)
+    var vehicle = percentage(cumulativeVehicleEm, totalFootprint)
+    var rest = percentage(cumulativeRestCost, totalFootprint)
 
     rows.forEach(row => {
         const cells = row.querySelectorAll("td")
-        tableData.push({
+        footprintData.push({
             category: checkCategory(cells[0].innerHTML),
             emission: cells[1].textContent,
             cost: cells[2].textContent,
-            total: kgToTonne(totalFootprint)
         })
     })
 
-    console.log(totalFootprint)
+    footprintData.push({
+        accomPercent: accom,
+        vehiclePercent: vehicle,
+        restPercent: rest,
+        total: kgToTonne(totalFootprint)
+    })
 
     fetch("/offset-now", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({tableData})
+        body: JSON.stringify({footprintData})
     })
         .then(response => response.json())
         .then(data => {
@@ -382,6 +389,11 @@ function kgToTonne(amount) {
     else {
         return `${amount.toFixed(2)}kg CO2`
     }
+}
+
+function percentage(emission, totalEmission) {
+    var result = emission / totalEmission
+    return Math.round(result)
 }
 
 function test() {

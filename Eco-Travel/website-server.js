@@ -170,11 +170,11 @@ app.get("/destination/:place", (req, res) => {
 
 //to receive carbon footprint data and redirect to carbonOffset
 app.post('/offset-now', (req, res) => {
-  const { tableData } = req.body;
-  console.log('Received Table Data:', tableData);
+  const { footprintData } = req.body;
+  console.log('Received Table Data:', footprintData);
 
   // Respond with the processed data or redirect
-  res.json({ processedData: tableData });
+  res.json({ processedData: footprintData} );
 });
 
 
