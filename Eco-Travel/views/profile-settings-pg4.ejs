@@ -10,6 +10,497 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Profile image container - FIXED */
+    .profile-image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .profile-image-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    /* Profile image - MAIN FIX */
+    .profile-image {
+      width: 120px !important;
+      height: 120px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: opacity 0.3s ease;
+      display: block; /* Ensure it's displayed as block */
+      background-color: #f8f9fa; /* Fallback background */
+    }
+
+    .profile-image.loading {
+      opacity: 0.5;
+    }
+
+    /* Image overlay for hover effect */
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .profile-image-wrapper:hover .image-overlay {
+      opacity: 1;
+    }
+
+    .camera-icon {
+      font-size: 24px;
+      color: white;
+    }
+
+    /* Loading spinner */
+    .image-loading-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      display: none;
+      z-index: 10;
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Hidden input for file upload */
+    .hidden-input {
+      display: none !important;
+    }
+
+    /* OAuth Badge Styles */
+    .oauth-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 500;
+      margin-top: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .oauth-badge.auth0 {
+      background: rgba(235, 84, 36, 0.1);
+      color: #eb5424;
+      border-color: #eb5424;
+    }
+    
+    .oauth-badge.google {
+      background: rgba(66, 133, 244, 0.1);
+      color: #4285f4;
+      border-color: #4285f4;
+    }
+    
+    .oauth-badge i {
+      font-size: 8px;
+    }
+    
+    /* Profile info section */
+    .profile-info {
+      text-align: center;
+      margin-top: 15px;
+      width: 100%;
+    }
+    
+    .profile-name {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .profile-email {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    
+    .verification-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 11px;
+      color: #28a745;
+      margin-top: 8px;
+    }
+    
+    /* Update button */
+    .update-image-btn {
+      margin-top: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #dee2e6;
+      color: #495057;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .update-image-btn:hover {
+      background: white;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Account type info */
+    .account-type-info {
+      background: rgba(248, 249, 250, 0.8);
+      border-left: 4px solid #007bff;
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    
+    .account-type-info.oauth {
+      border-left-color: #6f42c1;
+      background: rgba(111, 66, 193, 0.05);
+    }
+    
+    .account-type-title {
+      font-weight: 600;
+      color: #495057;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+    }
+    
+    .account-type-desc {
+      font-size: 12px;
+      color: #6c757d;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Form field enhancements */
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+    
+    .form-field-info {
+      font-size: 11px;
+      color: #6c757d;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .password-disabled {
+      background-color: #f8f9fa !important;
+      color: #6c757d !important;
+      cursor: not-allowed !important;
+      border-color: #e9ecef !important;
+    }
+    
+    .password-disabled::placeholder {
+      color: #adb5bd !important;
+    }
+    
+    .oauth-field-note {
+      background: rgba(255, 243, 205, 0.8);
+      border: 1px solid #ffeaa7;
+      color: #856404;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .oauth-field-note i {
+      color: #f39c12;
+      font-size: 10px;
+    }
+
+    /* Error message styles */
+    .error-message {
+      color: #dc3545;
+      font-size: 12px;
+      margin-top: 4px;
+      display: none;
+    }
+    
+    /* Button styling */
+    .form-actions {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      border: none;
+      font-size: 14px;
+    }
+    
+    .btn i {
+      font-size: 12px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+    }
+    
+    .btn-danger {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+      margin-right: 10px;
+    }
+    
+    .btn-danger:hover {
+      background: linear-gradient(135deg, #c82333 0%, #a71e2a 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(220,53,69,0.3);
+    }
+    
+    .btn-logout {
+      background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+      color: white;
+    }
+    
+    .btn-logout:hover {
+      background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(108,117,125,0.3);
+    }
+    
+    .action-buttons {
+      padding-top: 20px;
+      border-top: 1px solid #dee2e6;
+      margin-top: 30px;
+    }
+    
+    .action-buttons form {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Layout fixes */
+    .profile-container {
+      display: flex;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .profile-sidebar {
+      flex: 0 0 300px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+
+    .profile-main {
+      flex: 1;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    .settings-title {
+      margin-bottom: 25px;
+      color: #333;
+      border-bottom: 2px solid #f8f9fa;
+      padding-bottom: 10px;
+    }
+    
+    /* Success message */
+    .success-message {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: slideIn 0.3s ease;
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .hidden {
+      display: none !important;
+    }
+
+    /* Spinner overlay */
+    .spinner-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .spinner-text {
+      color: white;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .profile-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .profile-sidebar {
+        flex: none;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Make sure images are always visible */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Debug styles for troubleshooting */
+    .debug-image-info {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 12px;
+      font-family: monospace;
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -29,7 +520,7 @@
           <li><a href="/weather-pg23" id="weatherNav">Weather</a></li>
           <li><a href="/carbon_calculator" id="footprintNav">Footprint</a></li>
           <li><a href="/profile-settings-pg4" id="profileNav"><i class="fa-solid fa-circle-user user-icon"></i></a></li>
-      </ul>
+        </ul>
       </nav>
     </div>
   </header>
@@ -40,38 +531,96 @@
         <div class="profile-sidebar">
           <div class="profile-image-container">
             <div class="profile-image-wrapper" id="profileImageWrapper">
-              <img src="https://via.placeholder.com/150" alt="Profile" id="profileImage" class="profile-image">
-              <div class="image-overlay">
+              <!-- FIXED: Simple fallback approach -->
+              <img src="<%= user.profilePicture || 'https://via.placeholder.com/150/cccccc/ffffff?text=User' %>" 
+                   alt="Profile Picture" 
+                   id="profileImage" 
+                   class="profile-image"
+                   onerror="this.src='https://via.placeholder.com/150/cccccc/ffffff?text=User'; console.log('Image failed to load, using fallback');"
+                   onload="console.log('Image loaded successfully:', this.src);">
+              <div class="image-loading-spinner" id="imageLoadingSpinner"></div>
+              <div class="image-overlay" onclick="document.getElementById('imageInput').click();">
                 <span class="camera-icon">📷</span>
               </div>
             </div>
             <input type="file" id="imageInput" accept="image/*" class="hidden-input">
             
             <div class="profile-info">
-              <h2 class="profile-name" id="profileName"><%= user.name %></h2>
+              <h2 class="profile-name" id="profileName">
+                <%= user.name %>
+                <% if (user.provider && user.provider !== 'local') { %>
+                  <span class="oauth-badge <%= user.provider %>">
+                    <% if (user.provider === 'auth0') { %>
+                      <i class="fas fa-shield-alt"></i> Auth0
+                    <% } else if (user.provider === 'google') { %>
+                      <i class="fab fa-google"></i> Google
+                    <% } else { %>
+                      <i class="fas fa-link"></i> <%= user.provider.toUpperCase() %>
+                    <% } %>
+                  </span>
+                <% } %>
+              </h2>
               <p class="profile-email" id="profileEmail"><%= user.email %></p>
+              <% if (user.isVerified) { %>
+                <div class="verification-status">
+                  <i class="fas fa-check-circle"></i> Verified Account
+                </div>
+              <% } %>
             </div>
             
             <button class="update-image-btn" id="updateImageBtn">
               Update Profile Image
             </button>
+
+            <!-- Debug info (hidden by default) -->
+            <div class="debug-image-info" id="debugInfo">
+              <strong>Debug Info:</strong><br>
+              Original URL: <%= user.profilePicture %><br>
+              Provider: <%= user.provider %><br>
+              User ID: <%= user._id %>
+            </div>
           </div>
         </div>
         
         <div class="profile-main">
           <h2 class="settings-title">Profile Settings</h2>
           
+          <!-- Account Type Information -->
+          <div class="account-type-info <%= user.provider !== 'local' ? 'oauth' : '' %>">
+            <div class="account-type-title">
+              <% if (user.provider !== 'local') { %>
+                <i class="fas fa-link" style="color: #6f42c1;"></i>
+                Social Sign-In Account
+              <% } else { %>
+                <i class="fas fa-user" style="color: #007bff;"></i>
+                Traditional Account
+              <% } %>
+            </div>
+            <p class="account-type-desc">
+              <% if (user.provider !== 'local') { %>
+                This account is linked with <%= user.provider === 'auth0' ? 'Auth0' : user.provider.charAt(0).toUpperCase() + user.provider.slice(1) %>. 
+                Some settings may be managed by your identity provider.
+              <% } else { %>
+                This is a traditional account with email and password authentication.
+              <% } %>
+            </p>
+          </div>
+          
           <form id="profileForm" class="profile-form" action="/api/update-profile" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" value="<%= user.first_name || '' %>" placeholder="<%= user.first_name === "NIL" ? "Enter first name" : user.first_name %>">
+                <input type="text" id="firstName" name="firstName" 
+                       value="<%= user.first_name && user.first_name !== 'NIL' ? user.first_name : '' %>" 
+                       placeholder="<%= user.first_name === 'NIL' ? 'Enter first name' : user.first_name %>">
                 <span class="error-message"></span>
               </div>
               
               <div class="form-group">
                 <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" value="<%= user.last_name || '' %>" placeholder="<%= user.last_name === "NIL" ? "Enter last name" : user.last_name %>">
+                <input type="text" id="lastName" name="lastName" 
+                       value="<%= user.last_name && user.last_name !== 'NIL' ? user.last_name : '' %>" 
+                       placeholder="<%= user.last_name === 'NIL' ? 'Enter last name' : user.last_name %>">
                 <span class="error-message"></span>
               </div>
             </div>
@@ -79,14 +628,16 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="mobile">Mobile</label>
-                <input type="tel" id="mobile" name="mobile" value="<%= user.mobile || '' %>" placeholder="<%= user.mobile === "NIL" ? "Enter mobile number" : user.mobile %>">
+                <input type="tel" id="mobile" name="mobile" 
+                       value="<%= user.mobile && user.mobile !== 'NIL' ? user.mobile : '' %>" 
+                       placeholder="<%= user.mobile === 'NIL' ? 'Enter mobile number' : user.mobile %>">
                 <span class="error-message"></span>
               </div>
               
               <div class="form-group">
                 <label for="gender">Gender</label>
                 <select id="gender" name="gender">
-                  <option value="" <%= !user.gender ? "selected" : "" %>>Select gender</option>
+                  <option value="" <%= !user.gender || user.gender === 'NIL' ? "selected" : "" %>>Select gender</option>
                   <option value="male" <%= user.gender === "male" ? "selected" : "" %>>Male</option>
                   <option value="female" <%= user.gender === "female" ? "selected" : "" %>>Female</option>
                   <option value="other" <%= user.gender === "other" ? "selected" : "" %>>Other</option>
@@ -98,46 +649,308 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="<%= user.email || '' %>" placeholder="<%= user.email === "NIL" ? "Enter email address" : user.email %>">
+                <input type="email" id="email" name="email" 
+                       value="<%= user.email || '' %>" 
+                       placeholder="<%= user.email === 'NIL' ? 'Enter email address' : user.email %>"
+                       <% if (user.provider !== 'local') { %>readonly style="background-color: #f8f9fa;"<% } %>>
                 <span class="error-message"></span>
+                <% if (user.provider !== 'local') { %>
+                  <div class="form-field-info">
+                    <i class="fas fa-info-circle"></i> Email is managed by your identity provider
+                  </div>
+                <% } %>
               </div>
               
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter new password">
-                <span class="error-message"></span>
+                <% if (user.provider !== 'local') { %>
+                  <input type="password" id="password" name="password" 
+                         placeholder="Password managed by identity provider" 
+                         class="password-disabled" disabled>
+                  <div class="oauth-field-note">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Password changes are handled by your <%= user.provider === 'auth0' ? 'Auth0' : user.provider.charAt(0).toUpperCase() + user.provider.slice(1) %> account
+                  </div>
+                <% } else { %>
+                  <input type="password" id="password" name="password" placeholder="Enter new password (leave blank to keep current)">
+                  <span class="error-message"></span>
+                  <div class="form-field-info">
+                    <i class="fas fa-info-circle"></i> Leave blank to keep your current password
+                  </div>
+                <% } %>
               </div>
             </div>
             
             <div class="form-group full-width">
               <label for="address">Address</label>
-              <textarea id="address" name="address" placeholder="<%= user.address === "NIL" ? "Enter your address" : user.address %>" rows="3"><%= user.address || '' %></textarea>
+              <textarea id="address" name="address" 
+                        placeholder="<%= user.address === 'NIL' ? 'Enter your address' : user.address %>" 
+                        rows="3"><%= user.address && user.address !== 'NIL' ? user.address : '' %></textarea>
               <span class="error-message"></span>
             </div>
             
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Update Profile</button>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Update Profile
+              </button>
             </div>
-            
           </form>
 
-          <form action="/delete-account" method="get">
-                <button type="submit" class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
-          </form>
+          <div class="action-buttons">
+            <form action="/delete-account" method="get">
+              <button type="submit" class="btn btn-danger" id="deleteAccountBtn">
+                <i class="fas fa-trash-alt"></i> Delete Account
+              </button>
+            </form>
 
-          <form action="/logout-account" method="get">
-            <button type="submit" class="btn btn-logout" id="logoutBtn">Log out</button>
-          </form>
+            <form action="/logout-account" method="get">
+              <button type="submit" class="btn btn-logout" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> 
+                <% if (user.provider !== 'local') { %>
+                  Sign Out from <%= user.provider === 'auth0' ? 'Auth0' : user.provider.charAt(0).toUpperCase() + user.provider.slice(1) %>
+                <% } else { %>
+                  Log Out
+                <% } %>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
-  <div id="successMessage" class="success-message hidden"></div>
+  <div id="successMessage" class="success-message hidden">
+    <i class="fas fa-check-circle"></i>
+    <span id="successText">Profile updated successfully!</span>
+  </div>
+  
   <div id="spinnerOverlay" class="spinner-overlay">
     <span class="loader"></span>
     <div class="spinner-text">Loading...</div>
   </div>
+
+  <script>
+    // Simplified JavaScript focusing on image display
+    document.addEventListener('DOMContentLoaded', function() {
+      const profileForm = document.getElementById('profileForm');
+      const successMessage = document.getElementById('successMessage');
+      const successText = document.getElementById('successText');
+      const spinnerOverlay = document.getElementById('spinnerOverlay');
+      const profileImage = document.getElementById('profileImage');
+      const imageInput = document.getElementById('imageInput');
+      const updateImageBtn = document.getElementById('updateImageBtn');
+      const debugInfo = document.getElementById('debugInfo');
+      
+      // Check if user is OAuth user
+      const isOAuthUser = <%= user.provider !== 'local' ? 'true' : 'false' %>;
+      
+      // Debug toggle (double-click image to show debug info)
+      if (profileImage) {
+        profileImage.addEventListener('dblclick', function() {
+          debugInfo.style.display = debugInfo.style.display === 'none' ? 'block' : 'none';
+          console.log('Image src:', this.src);
+          console.log('Natural width:', this.naturalWidth);
+          console.log('Natural height:', this.naturalHeight);
+        });
+      }
+      
+      // Image upload functionality
+      if (updateImageBtn && imageInput) {
+        updateImageBtn.addEventListener('click', function() {
+          imageInput.click();
+        });
+        
+        imageInput.addEventListener('change', function(e) {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              profileImage.src = e.target.result;
+              console.log('Local image loaded');
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      }
+      
+      // Test image loading
+      function testImageLoad() {
+        console.log('Testing image load...');
+        console.log('Current src:', profileImage.src);
+        console.log('Image complete:', profileImage.complete);
+        console.log('Image naturalWidth:', profileImage.naturalWidth);
+        
+        if (profileImage.naturalWidth === 0) {
+          console.log('Image failed to load, trying fallback');
+          profileImage.src = 'https://via.placeholder.com/150/cccccc/ffffff?text=User';
+        }
+      }
+      
+      // Test after page load
+      setTimeout(testImageLoad, 1000);
+      
+      // Form submission (existing code)
+      if (profileForm) {
+        profileForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          spinnerOverlay.style.display = 'flex';
+          
+          const formData = new FormData(profileForm);
+          
+          fetch('/api/update-profile', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            if (response.ok) {
+              return response.text();
+            }
+            throw new Error('Network response was not ok');
+          })
+          .then(data => {
+            spinnerOverlay.style.display = 'none';
+            
+            successText.textContent = isOAuthUser ? 
+              'Profile updated successfully! Some settings are managed by your identity provider.' : 
+              'Profile updated successfully!';
+            successMessage.classList.remove('hidden');
+            
+            setTimeout(() => {
+              successMessage.classList.add('hidden');
+            }, 5000);
+            
+            setTimeout(() => {
+              window.location.reload();
+            }, 1500);
+          })
+          .catch(error => {
+            spinnerOverlay.style.display = 'none';
+            console.error('Error:', error);
+            alert('An error occurred while updating your profile. Please try again.');
+          });
+        });
+      }
+      
+      // Enhanced logout functionality
+      const logoutBtn = document.getElementById('logoutBtn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const confirmMessage = isOAuthUser ? 
+            'Are you sure you want to sign out from your account?' : 
+            'Are you sure you want to log out?';
+          
+          if (confirm(confirmMessage)) {
+            spinnerOverlay.style.display = 'flex';
+            
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            fetch('/logout-account', { 
+              method: 'GET',
+              credentials: 'same-origin'
+            })
+            .then(response => {
+              if (response.redirected) {
+                window.location.href = response.url;
+              } else {
+                window.location.href = '/logout-account-simple';
+              }
+            })
+            .catch(error => {
+              console.error('Logout error:', error);
+              window.location.href = '/logout-account-simple';
+            });
+          }
+        });
+      }
+      
+      // Form validation
+      const inputs = profileForm ? profileForm.querySelectorAll('input, select, textarea') : [];
+      inputs.forEach(input => {
+        input.addEventListener('blur', validateField);
+        input.addEventListener('input', clearError);
+      });
+      
+      function validateField(e) {
+        const field = e.target;
+        const errorElement = field.parentNode.querySelector('.error-message');
+        
+        if (field.hasAttribute('required') && !field.value.trim()) {
+          showError(field, 'This field is required');
+        } else if (field.type === 'email' && field.value && !isValidEmail(field.value)) {
+          showError(field, 'Please enter a valid email address');
+        } else if (field.type === 'tel' && field.value && !isValidPhone(field.value)) {
+          showError(field, 'Please enter a valid phone number');
+        } else {
+          clearError(e);
+        }
+      }
+      
+      function showError(field, message) {
+        const errorElement = field.parentNode.querySelector('.error-message');
+        if (errorElement) {
+          errorElement.textContent = message;
+          errorElement.style.display = 'block';
+          field.style.borderColor = '#dc3545';
+        }
+      }
+      
+      function clearError(e) {
+        const field = e.target;
+        const errorElement = field.parentNode.querySelector('.error-message');
+        if (errorElement) {
+          errorElement.textContent = '';
+          errorElement.style.display = 'none';
+          field.style.borderColor = '';
+        }
+      }
+      
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+      
+      function isValidPhone(phone) {
+        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+        return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
+      }
+      
+      // Global debug function
+      window.debugImage = function() {
+        console.log('=== IMAGE DEBUG INFO ===');
+        console.log('Image element:', profileImage);
+        console.log('Current src:', profileImage.src);
+        console.log('Alt text:', profileImage.alt);
+        console.log('Complete:', profileImage.complete);
+        console.log('Natural dimensions:', profileImage.naturalWidth + 'x' + profileImage.naturalHeight);
+        console.log('Computed styles:', window.getComputedStyle(profileImage));
+        console.log('OAuth user:', isOAuthUser);
+        console.log('========================');
+      };
+      
+      // Image loading diagnostics
+      profileImage.addEventListener('load', function() {
+        console.log('✅ Image loaded successfully:', this.src);
+        console.log('Dimensions:', this.naturalWidth + 'x' + this.naturalHeight);
+      });
+      
+      profileImage.addEventListener('error', function() {
+        console.log('❌ Image failed to load:', this.src);
+        console.log('Switching to fallback image');
+      });
+      
+      // Force check after 2 seconds
+      setTimeout(() => {
+        if (profileImage.naturalWidth === 0 && profileImage.complete) {
+          console.log('🔄 Image appears broken, forcing fallback');
+          profileImage.src = 'https://via.placeholder.com/150/cccccc/ffffff?text=User';
+        }
+      }, 2000);
+    });
+  </script>
 
   <!-- Footer Start -->
   <footer id="footer">
