@@ -1,22 +1,6 @@
 version: '3'
 services:
-  backend:
-    build: ./backend
-    container_name: node_backend
-    restart: always
-    ports:
-      - "3000:3000"
-    volumes:
-      # Mount the entire backend directory except node_modules
-      - ./backend:/app:rw
-      - ./frontend:/app/public:rw
-      # Anonymous volume to protect node_modules from being overwritten
-      - /app/node_modules
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/myapp
-      - NODE_ENV=development
-    depends_on:
-      - mongo
+
 
   mongo:
     image: mongo:latest
@@ -26,6 +10,8 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=Login-Register
 
 volumes:
   mongo_data:

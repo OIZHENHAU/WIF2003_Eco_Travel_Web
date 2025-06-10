@@ -66,7 +66,7 @@ app.post("/signup", async(req, res) => {
     const existingUser = await collection.findOne({email: data.email});
 
     if (existingUser) {
-        res.send("User already exists. Please choose a different email");
+        return res.send("User already exists. Please choose a different email");
 
     } else {
         try {
@@ -103,7 +103,7 @@ app.post("/login", async(req, res) => {
         const check = await collection.findOne({name: req.body.username});
 
         if (!check) {
-            res.send("User name cannot found!");
+            return res.send("User name cannot found!"); // Added return
         }
 
         //Compare the hash password from the database with the plain text
@@ -112,7 +112,7 @@ app.post("/login", async(req, res) => {
         if (isPasswordMatch) {
             console.log("Current User Login: ", check._id);
             req.session.userId = check._id;
-            res.render("main-page.ejs", {
+            return res.render("main-page.ejs", { // Added return
                 destinations: Object.values(destinations),
                 accomodations: Object.values(accomodations),
                 restaurants: Object.values(restaurants),
@@ -120,15 +120,14 @@ app.post("/login", async(req, res) => {
             });
 
         } else {
-            req.send("Password Incorrect!");
-
+            return res.send("Password Incorrect!"); // Fixed typo: req.send -> res.send, added return
         }
 
-    } catch {
-        res.send("Wrong Details");
-
+    } catch (error) { // Added error parameter
+        console.error("Login error:", error); // Better error logging
+        return res.send("Wrong Details"); // Added return
     }
-})
+});
 
 //User Profile Settingd
 app.get("/profile-settings-pg4", async (req, res) => {
@@ -747,6 +746,110 @@ app.get("/search", async (req, res) => {
     }
 });
 
+
+// GET route for forgot password page
+app.get("/forgot-password", (req, res) => {
+    res.render("forgot-password");
+});
+
+// POST route to send OTP
+app.post("/send-otp", async (req, res) => {
+    try {
+        const { email } = req.body;
+        
+        if (!email) {
+            return res.status(400).json({ success: false, message: "Email is required" });
+        }
+
+        // Check if user exists in database
+        const user = await collection.findOne({ email: email });
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found with this email" });
+        }
+
+        // Call the OTP API
+        const response = await fetch('http://20.255.74.48:8080/send-otp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                key: "soda"
+            })
+        });
+
+        const data = await response.json();
+        
+        if (response.ok && data.otp) {
+            // Store OTP in session for verification
+            req.session.resetOTP = data.otp;
+            req.session.resetEmail = email;
+            req.session.otpTimestamp = Date.now();
+            
+            console.log(`OTP sent to ${email}: ${data.otp}`);
+            res.json({ success: true, message: "OTP sent successfully to your email" });
+        } else {
+            res.status(500).json({ success: false, message: "Failed to send OTP" });
+        }
+
+    } catch (error) {
+        console.error("Error sending OTP:", error);
+        res.status(500).json({ success: false, message: "Server error occurred" });
+    }
+});
+
+// POST route to verify OTP and reset password
+app.post("/verify-otp", async (req, res) => {
+    try {
+        const { otp, newPassword } = req.body;
+        
+        if (!otp || !newPassword) {
+            return res.status(400).json({ success: false, message: "OTP and new password are required" });
+        }
+
+        // Check if OTP session exists
+        if (!req.session.resetOTP || !req.session.resetEmail) {
+            return res.status(400).json({ success: false, message: "No OTP session found. Please request a new OTP" });
+        }
+
+        // Check OTP expiry (10 minutes)
+        const otpAge = Date.now() - req.session.otpTimestamp;
+        if (otpAge > 10 * 60 * 1000) {
+            req.session.resetOTP = null;
+            req.session.resetEmail = null;
+            req.session.otpTimestamp = null;
+            return res.status(400).json({ success: false, message: "OTP has expired. Please request a new one" });
+        }
+
+        // Verify OTP
+        if (otp !== req.session.resetOTP) {
+            return res.status(400).json({ success: false, message: "Invalid OTP" });
+        }
+
+        // Hash new password
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
+
+        // Update password in database
+        await collection.findOneAndUpdate(
+            { email: req.session.resetEmail },
+            { $set: { password: hashedPassword } }
+        );
+
+        // Clear OTP session
+        req.session.resetOTP = null;
+        req.session.resetEmail = null;
+        req.session.otpTimestamp = null;
+
+        console.log(`Password reset successful for ${req.session.resetEmail}`);
+        res.json({ success: true, message: "Password reset successfully" });
+
+    } catch (error) {
+        console.error("Error verifying OTP:", error);
+        res.status(500).json({ success: false, message: "Server error occurred" });
+    }
+});
 
 const port = 5000;
 app.listen(port, () => {
