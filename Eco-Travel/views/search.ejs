@@ -127,67 +127,50 @@
 
     <!-- Activity Start -->
     <div class="divider" style="margin-top: 0px; align-items: center;">
-        <div class="display-history">
-            <%
-              function isFavourite(destination, favouriteList) {
-                 return favouriteList.some(fav => fav.name === destination.name);
-              }  
-            %>
-
-            <!-- First Favourite -->
-            <% results.forEach(destination => { %>
-                <a href="/get-info/<%=destination.category %>/<%=destination.link_name %>">
-                    <div class="carousel swiper-slide lg-img">
-                        <img class="option-img" src="<%=destination.image %>" alt="">
-                        <div class="carousel-img-overlay">
-                            <div class="img-content">
-                                <h2><%=destination.name %></h2>
-                                <div class="hidden-content-carousel">
-                                    <span><i class="fa fa-clock"></i><%=destination.duration %></span>
-                                    <span><i class="fa fa-star"></i><%=destination.rating %></span>
-                                    <span><i class="fa fa-location-dot"></i><%=destination.short_location %></span>
-                                </div>
-                            </div>
-
-                            <div class="content-fav-and-price">
-                                <button class="favourite-btn <%= isFavourite(destination, favourite) ? 'favourite-active' : '' %>">
-                                    <i class="fa-solid fa-heart heart-icon <%= isFavourite(destination, favourite) ? 'favourite' : 'unfavourite' %>" id="specific-heart-icon"></i>
-                                </button>
-                                <div class="price-label">
-                                    <p>RM <%=destination.price %></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-            <% }) %>
-
-            <!-- Second Favourite -->
-            <!-- <div class="carousel swiper-slide lg-img">
-                <img class="option-img" src="/kuantan-resort-hotel.jpg" alt="">
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2>Kuantan Resort</h2>
-                        <div class="hidden-content-carousel">
-                            <span><i class="fa fa-clock"></i>4 Days</span>
-                            <span><i class="fa fa-star"></i>4.7</span>
-                            <span><i class="fa fa-location-dot"></i>Kuantan</span>
-                        </div>
-                    </div>
-
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn">
-                            <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                        </button>
-                        <div class="price-label">
-                            <p>RM 189</p>
-                        </div>
-                    </div>
+        <% if (results.length === 0) { %>
+                <div class="no-results-message">
+                    <i class="fa fa-magnifying-glass"></i>
+                    <span>No result matches</span>
                 </div>
-            </div> -->
 
-        </div>
+        <% } else { %>
+            <div class="display-history">
+                <%
+                function isFavourite(destination, favouriteList) {
+                    return favouriteList.some(fav => fav.name === destination.name);
+                }  
+                %>
+                    <!-- First Favourite -->
+                    <% results.forEach(destination => { %>
+                        <a href="/get-info/<%=destination.category %>/<%=destination.link_name %>">
+                            <div class="carousel swiper-slide lg-img">
+                                <img class="option-img" src="<%=destination.image %>" alt="">
+                                <div class="carousel-img-overlay">
+                                    <div class="img-content">
+                                        <h2><%=destination.name %></h2>
+                                        <div class="hidden-content-carousel">
+                                            <span><i class="fa fa-clock"></i><%=destination.duration %></span>
+                                            <span><i class="fa fa-star"></i><%=destination.rating %></span>
+                                            <span><i class="fa fa-location-dot"></i><%=destination.short_location %></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-fav-and-price">
+                                        <button class="favourite-btn <%= isFavourite(destination, favourite) ? 'favourite-active' : '' %>">
+                                            <i class="fa-solid fa-heart heart-icon <%= isFavourite(destination, favourite) ? 'favourite' : 'unfavourite' %>" id="specific-heart-icon"></i>
+                                        </button>
+                                        <div class="price-label">
+                                            <p>RM <%=destination.price %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    <% }) %>
+
+            </div>
+        <% } %>
 
      </div>
 

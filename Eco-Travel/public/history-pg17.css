@@ -504,6 +504,21 @@ header.sticky {
 
 /* ======================== Popular Destination Start ========================== */
 
+.no-results-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    margin-left: 190px;
+    font-size: 34px;
+    color: #888;
+}
+
+.no-results-message i {
+    font-size: 36px;
+    margin-right: 20px;
+}
+
 #top-destination {
     padding: 6rem 0;
 }

@@ -67,62 +67,45 @@
             <p class="heading-normal-txt">TOP DESTINATION</p>
             <h2 class="headings">RECENT <span>FAVOURITE</span></h2>
         </div>
-        <div class="display-history">
-            <% favourite.forEach(destination => { %>
-                <a href="/get-info/<%=destination.category %>/<%=destination.link_name %>">
-                    <!-- First Favourite -->
-                    <div class="carousel swiper-slide lg-img">
-                        <img class="option-img" src="<%=destination.image %>" alt="">
-                        <div class="carousel-img-overlay">
-                            <div class="img-content">
-                                <h2><%=destination.name %></h2>
-                                <div class="hidden-content-carousel">
-                                    <span><i class="fa fa-clock"></i><%= destination.duration %></span>
-                                    <span><i class="fa fa-star"></i><%= destination.rating %></span>
-                                    <span><i class="fa fa-location-dot"></i><%=destination.short_location %></span>
+
+        <% if (favourite.length === 0) { %>
+            <div class="no-results-message">
+                <i class="fa fa-magnifying-glass"></i>
+                <span>No favourite planning</span>
+            </div>
+        <% } else { %>
+            <div class="display-history">
+                <% favourite.forEach(destination => { %>
+                    <a href="/get-info/<%=destination.category %>/<%=destination.link_name %>">
+                        <!-- First Favourite -->
+                        <div class="carousel swiper-slide lg-img">
+                            <img class="option-img" src="<%=destination.image %>" alt="">
+                            <div class="carousel-img-overlay">
+                                <div class="img-content">
+                                    <h2><%=destination.name %></h2>
+                                    <div class="hidden-content-carousel">
+                                        <span><i class="fa fa-clock"></i><%= destination.duration %></span>
+                                        <span><i class="fa fa-star"></i><%= destination.rating %></span>
+                                        <span><i class="fa fa-location-dot"></i><%=destination.short_location %></span>
+                                    </div>
+                                </div>
+
+                                <div class="content-fav-and-price">
+                                    <button class="favourite-btn">
+                                        <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
+                                    </button>
+                                    <div class="price-label">
+                                        <p>RM <%=destination.price %></p>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
-                                <div class="price-label">
-                                    <p>RM <%=destination.price %></p>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-            <% }) %>
+                <% }) %>
 
-
-            <!-- Second Favourite -->
-            <!-- <div class="carousel swiper-slide lg-img">
-                <img class="option-img" src="/genting_highland.jpg" alt="">
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2>Genting Highland</h2>
-                        <div class="hidden-content-carousel">
-                            <span><i class="fa fa-clock"></i>4 Days</span>
-                            <span><i class="fa fa-star"></i>4.7</span>
-                            <span><i class="fa fa-location-dot"></i> Kuala Lumpur</span>
-                        </div>
-                    </div>
-
-                    <div class="content-fav-and-price">
-                        <button class="favourite-btn">
-                            <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                        </button>
-                        <div class="price-label">
-                            <p>RM 189</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-        </div>
+            </div>
+        <% } %>
 
      </div>
 

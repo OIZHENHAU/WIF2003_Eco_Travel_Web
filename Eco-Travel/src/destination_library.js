@@ -492,9 +492,9 @@ const destinations = {
         operating_hour: "10:00 AM - 9:30 PM"
     },
 
-    'encore Melaka': {
+    'encore melaka': {
         category: "destination",
-        link_name: "encore Melaka",
+        link_name: "encore melaka",
         name: "Encore Melaka",
         image: "/encore-melaka.jpg",
         idea: "Curious learners",
@@ -509,6 +509,39 @@ const destinations = {
         operating_hour: "11:00 AM - 10:30 PM"
     },
 
+    'melaka straits mosque': {
+        category: "destination",
+        link_name: "melaka straits mosque",
+        name: "Melaka Straits Mosque",
+        image: "/straits-of-malacca-mosque.jpg",
+        idea: "Cultural Lover",
+        duration: "1 Days",
+        rating: "4.9",
+        short_location: "Melaka",
+        location: "Masjid Selat, 75000, Melaka",
+        location_link: "https://www.google.com/maps/dir//Masjid+Selat,+75000,+Melaka/@2.1790775,102.1667329,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d1f1db5a5920d9:0xd9cf83e66b327038!2m2!1d102.2491797!2d2.1791849?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D",
+        price: 59,
+        favourite: false,
+        description: "The Malacca Straits Mosque is a mosque located on the artificial Malacca Island in Malacca City, Malaysia. Constructed at a cost of about MYR10 million, it was inaugurated on 24 November 2006 by the King of Malaysia, Tuanku Syed Sirajuddin ibni Almarhum Tuanku Syed Putra Jamalullail.",
+        operating_hour: "9:00 AM - 8:00 PM"
+    },
+
+    'baba house melaka': {
+        category: "destination",
+        link_name: "baba house melaka",
+        name: "Baba House Melaka",
+        image: "/baba-house-melaka.jpg",
+        idea: "Cultural Lover",
+        duration: "1 Days",
+        rating: "4.2",
+        short_location: "Melaka",
+        location: "Taman Kota Laksamana, 75200 Melaka",
+        location_link: "https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqEggAEAAYFBiHAhjjAhixAxiABDISCAAQABgUGIcCGOMCGLEDGIAEMhsIARAuGBQYrwEYxwEYhwIYsQMYgAQYmAUYmQUyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBggHEEUYPKgCALACAA&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KX9XuJfc8dExMevkcnyFe38w&daddr=121-127,+Jalan+Tun+Tan+Cheng+Lock,+Taman+Kota+Laksamana,+75200+Melaka",
+        price: 40,
+        favourite: false,
+        description: "Baba House Melaka is celebrated for combining traditional Peranakan charm with modern comforts, creating an inviting atmosphere that resonates with travelers. While guests commend the cleanliness and the service for enhancing their stay, some highlight concerns with room soundproofing and inconsistent housekeeping.",
+        operating_hour: "9:00 AM - 8:00 PM"
+    },
 
 };
 
