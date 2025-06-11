@@ -13,8 +13,7 @@ const accomodations = {
         favourite: false,
         rating: 4.7,
         official_website: "https://www.banyantree.com/malaysia/pavilion-hotel",
-        description: "Offering city view and free WiFi, Pavilion Hotel Kuala Lumpur provides luxurious accomodations conveniently located in the city. With elegant dining options, a world-class spa, and modern meeting facilities, it is the perfect destination for both business and leisure travelers.",
-        detail: "Infinity pool overlooking the skyline, Sky Gym, exclusive Club Lounge, and direct access to Pavilion Mall via skybridge. Member rates from ~USD110 ≈ RM520/night (with breakfast); Check-in 3:00 PM, Check-out 12:00 PM. Best weekdays during low seasons (Feb–Apr, Sep–Nov) for lowest rates; flash sales around 11.11 & Black Friday. Request high-floor city view; covered walkway to KLCC takes ~15 mins; Club Lounge afternoon tea is great value."
+        description: "Offering city view and free WiFi, Pavilion Hotel Kuala Lumpur provides luxurious accomodations conveniently located in the city. With elegant dining options, a world-class spa, and modern meeting facilities, it is the perfect destination for both business and leisure travelers."
     },
 
     'shangri-la kuala lumpur': {
@@ -31,8 +30,7 @@ const accomodations = {
         favourite: false,
         rating: 4.8,
         official_website: "https://www.shangri-la.com/kualalumpur/shangrila/",
-        description: "A traditional greeting from the heart awaits each of our guests on arrival to the Shangri-La Hotel, Kuala Lumpur. Our hotel is a welcome retreat from the bustling streets of the city; relax poolside in our tropical gardens, re-connect over drinks in our sun drenched lounge or rejuvenate and recharge at our Health Club & SPA.",
-        detail: "Tropical garden pool in the city, 6 restaurants (Lemon Garden buffet is the most popular), and private Horizon Club access. Shangri-La Circle member rate with breakfast from ~USD110; 15% off for 30-day advance booking. Best December for festive decor & lobster buffet (rates higher); weekday lunch buffets offer great value. Request a garden wing high floor; app allows room selection and mobile key access."
+        description: "A traditional greeting from the heart awaits each of our guests on arrival to the Shangri-La Hotel, Kuala Lumpur. Our hotel is a welcome retreat from the bustling streets of the city; relax poolside in our tropical gardens, re-connect over drinks in our sun drenched lounge or rejuvenate and recharge at our Health Club & SPA."
     },
 
     'sunway resort hotel': {
@@ -49,8 +47,7 @@ const accomodations = {
         favourite: false,
         rating: 4.9,
         official_website: "https://www.sunwayhotels.com/sunway-resort",
-        description: "Sunway Resort Hotel, formerly Sunway Resort Hotel & Spa, is Kuala Lumpur's most iconic 5-star hotel, located in Sunway City Kuala Lumpur—Malaysia's premier entertainment and hospitality destination. The hotel features 477 smart, environmentally friendly rooms and suites, designed and equipped with state-of-the-art technology. Specialty suites cater to business travellers, families, wellness seekers and luxury enthusiasts. Guests can enjoy exclusive lounges, family-friendly zones like Waterventure and extraordinary dining—from the world-class Gordon Ramsay Bar & Grill, the chef's first restaurant in Malaysia and outside London, to laid-back poolside dining at Sunset Terrace.",
-        detail: "Fully refurbished 477 smart rooms, direct access to Sunway Lagoon theme parks, and Malaysia's first Gordon Ramsay Bar & Grill. Family Terrace from ~RM900/night; look for 'Room + Theme Park' bundled packages on official site. Best to avoid Malaysian/Singapore school holidays (June–August & November–December). For families, book WaterVenture floor; register kids in advance for the Wonderland Explorers Club."
+        description: "Sunway Resort Hotel, formerly Sunway Resort Hotel & Spa, is Kuala Lumpur’s most iconic 5-star hotel, located in Sunway City Kuala Lumpur—Malaysia’s premier entertainment and hospitality destination. The hotel features 477 smart, environmentally friendly rooms and suites, designed and equipped with state-of-the-art technology. Specialty suites cater to business travellers, families, wellness seekers and luxury enthusiasts. Guests can enjoy exclusive lounges, family-friendly zones like Waterventure and extraordinary dining—from the world-class Gordon Ramsay Bar & Grill, the chef’s first restaurant in Malaysia and outside London, to laid-back poolside dining at Sunset Terrace."
     },
 
     'one world hotel': {
@@ -67,8 +64,7 @@ const accomodations = {
         favourite: false,
         rating: 4.6,
         official_website: "https://www.tripadvisor.com.my/Commerce?p=TABAIndependentHotels&src=0&geo=656672&from=Hotel_Review&area=&slot=2&matchID=1&oos=0&cnt=1&silo=30356&bucket=875171&nrank=1&crank=1&clt=CLD&tm=328875077&managed=false&capped=false&gosox=5_3Y6UYwwGjgw_c7hEwIkaMWncZYqB1tN1tJAU3Ybs1UzJsHmO1A0W8n_IVX36vvypxiViMSB6kUDmyTXVRwVQ&bapid=2&cs=1f4b94b941584f8bca73aeb6ca214b52f&ba_uid=df55e2d0-d067-4579-b3a6-156f28c4adad",
-        description: "The award-winning 5-star One World Hotel, Petaling Jaya features 6 categories of 452 contemporary guestrooms and suites furnished with luxurious amenities, facilities and services. Conveniently adjoined to the world's 7th largest mall, 1 Utama comprises of more than 650 retail outlets, with direct access to the Bandar Utama MRT Station and just minutes away from downtown Kuala Lumpur and the Kuala Lumpur International Airport. ",
-        detail: "Connected to 1 Utama (7th largest mall in the world), direct MRT access, saltwater pool, and 4 restaurants. Deluxe room with breakfast from ~RM480; free parking for guests. Best July anniversary sale or 11.11 shopping festivals; lower rates on weekdays. Zuan Yuan Chinese restaurant is highly rated; use skybridge to MRT to save on transport."
+        description: "The award-winning 5-star One World Hotel, Petaling Jaya features 6 categories of 452 contemporary guestrooms and suites furnished with luxurious amenities, facilities and services. Conveniently adjoined to the world’s 7th largest mall, 1 Utama comprises of more than 650 retail outlets, with direct access to the Bandar Utama MRT Station and just minutes away from downtown Kuala Lumpur and the Kuala Lumpur International Airport. "
     },
 
     'swiss garden resort kuantan': {
@@ -85,8 +81,7 @@ const accomodations = {
         favourite: false,
         rating: 4.7,
         official_website: "https://www.swissgarden.com/beach-resort-kuantan/",
-        description: "Sky, sea and sun provide a peaceful backdrop to a landscape so alluring it stirs the emotions. The vivid colours of nature's palette glow in the soft tropical light accenting the purity of air, water and land. From the colors of the sunset, to soothing air greeting you with a warm embrace; the family and kids friendly Swiss- Garden Beach Resort, Kuantan, offers sensual delights at every turn with a beautiful beach front, fun and enjoyable kids club as well as a fun-filled splash pool perfect for family staycation.",
-        detail: "Private beachfront, dual swimming pools, Kids Club & splash pool, and 3 dining venues. Renovated Deluxe Room with breakfast from ~RM330; Family Rooms fit up to 4 guests. Best dry season (March–October) with calm seas; weekends attract local families. Book 'Sea-Facing' wing for best views; bring insect repellent for evenings on the beach."
+        description: "Sky, sea and sun provide a peaceful backdrop to a landscape so alluring it stirs the emotions. The vivid colours of nature's palette glow in the soft tropical light accenting the purity of air, water and land. From the colors of the sunset, to soothing air greeting you with a warm embrace; the family and kids friendly Swiss- Garden Beach Resort, Kuantan, offers sensual delights at every turn with a beautiful beach front, fun and enjoyable kids club as well as a fun-filled splash pool perfect for family staycation."
     },
 
     'hyatt regency resort kuantan': {
@@ -103,8 +98,7 @@ const accomodations = {
         favourite: false,
         rating: 4.9,
         official_website: "https://www.hyatt.com/hyatt-regency/en-US/kuakt-hyatt-regency-kuantan-resort?src=corp_lclb_google_seo_kuakt&utm_source=google&utm_medium=organic&utm_campaign=lmr",
-        description: "Located on the stunning beachfront of Teluk Cempedak, on the east coast of peninsular Malaysia and within proximity to Kuantan city, capital of Pahang, the refurbished Hyatt Regency Kuantan Resort is the perfect place for making meaningful connections that last a lifetime. 301 guestrooms and suites that have been completely rebuilt, including new family oriented rooms",
-        detail: "Seafront resort at Teluk Cempedak, two lagoon-style pools, Beach Bar, and Camp Hyatt activities. Member rate with breakfast from ~RM450; sea view rooms ~RM80 extra. Best April–September offers clearer skies and sunrise views; avoid monsoon season (Nov–Jan). High-floor sea view rooms offer the best experience; 5-min walk to Teluk Cempedak's food stalls and beach."
+        description: "Located on the stunning beachfront of Teluk Cempedak, on the east coast of peninsular Malaysia and within proximity to Kuantan city, capital of Pahang, the refurbished Hyatt Regency Kuantan Resort is the perfect place for making meaningful connections that last a lifetime. 301 guestrooms and suites that have been completely rebuilt, including new family oriented rooms"
     },
 
     'hard rock hotel desaru': {
@@ -121,8 +115,7 @@ const accomodations = {
         favourite: false,
         rating: 4.5,
         official_website: "https://hotel.hardrock.com/desaru-coast/",
-        description: "Your ultimate destination getaway at the leading entertainment hotel in Desaru Coast, Johor, Malaysia. Experience the perfect blend of modern comfort, music-inspired vibes in our stylish hotel rooms and suites.",
-        detail: "Rock-themed lobby with live bands, Roxity Kids Club, and walking distance to Adventure Waterpark. Roxity Deluxe with breakfast from ~RM580; 'Stay & Play' includes water park access. Best to avoid Singapore school holidays (May/September); live music every Wednesday evening. Free Fender guitar or turntable rental; 5:00 PM daily guided tour of memorabilia and signature wall."
+        description: "Your ultimate destination getaway at the leading entertainment hotel in Desaru Coast, Johor, Malaysia. Experience the perfect blend of modern comfort, music-inspired vibes in our stylish hotel rooms and suites."
     },
 
     'doubletree by hiton hotel': {
@@ -139,45 +132,181 @@ const accomodations = {
         favourite: false,
         rating: 4.6,
         official_website: "https://www.hilton.com/en/hotels/jhbdtdi-doubletree-johor-bahru/?SEO_id=GMB-APAC-DI-JHBDTDI",
-        description: "Step into DoubleTree by Hilton Johor Bahru, where contemporary elegance meets vibrant city living. Relax in our stylish rooms, each designed for your utmost comfort. At our Executive Lounge, find exclusive amenities and personalized services. Guests of all ages can enjoy our facilities including a fitness center, steam room, jacuzzi, and an inviting outdoor pool.",
-        detail: "City view infinity pool in Johor Bahru, Executive Lounge, EV charging, and walking distance to City Square & immigration. Hilton Honors member rate from ~RM380; free guest parking (Valet RM49/day). Best weekend promos often available for Malaysian residents; ideal for early immigration clearance on Mondays. Warm cookie upon check-in; rooftop pool best for sunset; 20 min by car to Johor Premium Outlets."
+        description: "Step into DoubleTree by Hilton Johor Bahru, where contemporary elegance meets vibrant city living. Relax in our stylish rooms, each designed for your utmost comfort. At our Executive Lounge, find exclusive amenities and personalized services. Guests of all ages can enjoy our facilities including a fitness center, steam room, jacuzzi, and an inviting outdoor pool."
     },
 
-    'batu ferringhi hotel': {
-        category: "accommodation",
-        link_name: "batu ferringhi hotel",
-        name: "Shangri-La's Rasa Sayang Resort & Spa, Penang",
-        image: "/batu-ferringhi-hotel.jpg",
-        room_info: "Garden Wing & adult-only Rasa Wing rooms, 3 outdoor pools, full-service spa, free shuttle to George Town, 5 signature restaurants & bars",
-        payment_info: "RM730–RM1,190/night (breakfast included)",
+    // --- NEW ACCOMMODATIONS ADDED BELOW ---
+
+    'the datai langkawi': {
+        category: "accomodation",
+        link_name: "the datai langkawi",
+        name: "The Datai Langkawi",
+        image: "/the-datai-langkawi.jpg",
+        room_info: "Luxury rainforest villas, private beach, multiple dining options, spa, golf course, nature activities",
+        payment_info: "RM1500/person",
+        short_location: "Kedah",
+        location: "Jalan Teluk Datai, 07000 Langkawi, Kedah Darul Aman, Malaysia",
+        location_link: "https://www.google.com/maps/place/The+Datai+Langkawi/@6.4172582,99.6970723,17z/data=!3m1!4b1!4m9!3m8!1s0x304c407519a71a07:0x2213e8b0934ef03f!5m2!4m1!1i2!8m2!3d6.4172582!4d99.6970723!16s%2Fg%2F1hf5g54b1?entry=ttu",
+        price: 1500,
+        favourite: false,
+        rating: 4.9,
+        official_website: "https://www.thedatai.com/",
+        description: "Nestled in the heart of a 10-million-year-old rainforest leading to an idyllic beach, The Datai Langkawi is a luxurious retreat offering an exquisite blend of nature and comfort. Experience world-class hospitality, stunning villas and suites, exceptional dining, and unique rainforest and beach activities, all within a pristine natural environment."
+    },
+
+    'the majestic hotel kuala lumpur': {
+        category: "accomodation",
+        link_name: "the majestic hotel kuala lumpur",
+        name: "The Majestic Hotel Kuala Lumpur",
+        image: "/the-majestic-hotel-kl.jpg",
+        room_info: "Colonial-style rooms, butler service, award-winning dining, spa, swimming pool, cigar room",
+        payment_info: "RM550/person",
+        short_location: "Kuala Lumpur",
+        location: "5 Jalan Sultan Hishamuddin, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+        location_link: "https://www.google.com/maps/place/The+Majestic+Hotel+Kuala+Lumpur/@3.1388147,101.6917637,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc49e75525048d:0x39a044ce4a2d398f!8m2!3d3.1388147!4d101.6917637!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 550,
+        favourite: false,
+        rating: 4.8,
+        official_website: "https://www.majestic.com.my/",
+        description: "A heritage landmark, The Majestic Hotel Kuala Lumpur combines colonial charm with modern luxury. Housed in a beautifully restored historical building, it offers elegant accommodation, exceptional culinary experiences including a famed tea lounge, and impeccable service, transporting guests back to the golden era of Malaysia."
+    },
+
+    'eastern & oriental hotel penang': {
+        category: "accomodation",
+        link_name: "eastern & oriental hotel penang",
+        name: "Eastern & Oriental Hotel Penang",
+        image: "/e-o-hotel-penang.jpg",
+        room_info: "Heritage suites, sea views, outdoor pool, multiple restaurants, bar, fitness center",
+        payment_info: "RM480/person",
         short_location: "Penang",
-        location: "Jalan Batu Ferringhi, Batu Ferringhi, 11100 Penang, Malaysia",
-        location_link: "https://www.google.com/maps/place/Shangri-La's+Rasa+Sayang+Resort+%26+Spa",
-        price: 730,
+        location: "10 Lebuh Farquhar, 10200 George Town, Pulau Pinang, Malaysia",
+        location_link: "https://www.google.com/maps/place/Eastern+%26+Oriental+Hotel/@5.4214539,100.342939,17z/data=!3m1!4b1!4m9!3m8!1s0x304ac21262d295ff:0x507567087610360a!5m2!4m1!1i2!8m2!3d5.4214539!4d100.342939!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 480,
         favourite: false,
-        rating: 4.5,
-        official_website: "https://www.shangri-la.com/penang/rasasayangresort/",
-        description: "Set in 30 acres of lush tropical gardens overlooking Batu Ferringhi Beach, Shangri-La's Rasa Sayang Resort & Spa offers two wings (Garden Wing and adult-only Rasa Wing), a full-service spa, three outdoor pools, and five signature restaurants and bars.",
-        detail: "Beachfront resort set on 30 acres of tropical gardens with three outdoor pools (two in the Garden Wing + adult-only Rasa Wing), full-service spa, free shuttle to George Town, and five signature restaurants & bars. Standard rooms range USD 174–284/night (≈RM 730–RM 1,190) with breakfast included; check-in 3:00 PM, check-out 12:00 PM. Best visited Mar–Oct for dry, sunny weather and calm seas; weekday stays avoid local weekend crowds. Sea-view rooms recommended; resort undergoing final-phase renovation until Aug 2025 but guest rooms are placed away from worksites; pre-book spa packages & enjoy free water-park access."
+        rating: 4.7,
+        official_website: "https://www.eohotels.com/",
+        description: "The legendary Eastern & Oriental Hotel, affectionately known as the 'E&O', is a grand dame of heritage hotels in Penang. Overlooking the Andaman Sea, it offers luxurious all-suite accommodations, a timeless colonial ambiance, and unparalleled service, making it an iconic choice for a refined stay in George Town."
     },
 
-    'kuantan resort': {
-        category: "accommodation",
-        link_name: "kuantan resort",
-        name: "Swiss-Garden Beach Resort Kuantan",
-        image: "/swiss-garden-beach-resort-kuantan.jpg",
-        room_info: "Deluxe & Sea-View rooms, Kids Club & splash pool, spa & sauna, fitness center, tennis courts, 6 F&B outlets, complimentary beach cabanas & water sports",
-        payment_info: "RM430/night (breakfast included)",
-        short_location: "Pahang",
-        location: "2656-2657 Jalan Kuantan-Kemaman, Balok Beach, 26100 Kuantan, Pahang, Malaysia",
-        location_link: "https://www.google.com/maps/place/Swiss-Garden+Beach+Resort+Kuantan",
-        price: 430,
+    'pangkor laut resort': {
+        category: "accomodation",
+        link_name: "pangkor laut resort",
+        name: "Pangkor Laut Resort",
+        image: "/pangkor-laut-resort.jpg",
+        room_info: "Private island resort, overwater villas, rainforest villas, multiple pools, spa village, fine dining",
+        payment_info: "RM900/person",
+        short_location: "Perak",
+        location: "Pangkor Laut Island, 32200 Lumut, Perak Darul Ridzuan, Malaysia",
+        location_link: "https://www.google.com/maps/place/Pangkor+Laut+Resort/@4.2057393,100.5694295,17z/data=!3m1!4b1!4m9!3m8!1s0x3034d396cbb7f341:0x2213e8b0934ef03f!5m2!4m1!1i2!8m2!3d4.2057393!4d100.5694295!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 900,
         favourite: false,
-        rating: 4.0,
-        official_website: "https://www.swissgarden.com/beach-resort-kuantan/",
-        description: "Located beachfront on Balok Beach, Swiss-Garden Beach Resort Kuantan offers 304 renovated rooms (Deluxe & Sea-View), two outdoor pools including a kids' splash pool, full-service spa, sauna, fitness center, tennis courts, and six dining outlets. Guests enjoy complimentary beach cabanas and water sports.",
-        detail: "Beachfront Balok Beach resort offering 304 renovated rooms (Deluxe & Sea-View), a free-form outdoor pool with kids' water slide, spa & sauna, fitness center, tennis courts, plus six F&B outlets and complimentary beach cabanas & water sports. Room rates start from USD 96.49/night (≈RM 430) with breakfast; check-in 3:00 PM, check-out 12:00 PM. Best visited Mar–Oct for dry, sunny weather and calm seas; weekday stays avoid local weekend crowds. Sea-view rooms recommended; resort undergoing final-phase renovation until Aug 2025 but guest rooms are placed away from worksites; pre-book spa packages & enjoy free water-park access."
+        rating: 4.9,
+        official_website: "https://www.pangkorlautresort.com/",
+        description: "Pangkor Laut Resort is a private island paradise off the coast of Perak, offering a secluded and luxurious escape. With stunning overwater and rainforest villas, a world-renowned Spa Village, and pristine Emerald Bay, it promises an exclusive and unforgettable experience amidst nature's tranquility. 'One Island, One Resort'."
     },
-}
+
+    'lexis hibiscus port dickson': {
+        category: "accomodation",
+        link_name: "lexis hibiscus port dickson",
+        name: "Lexis Hibiscus Port Dickson",
+        image: "/lexis-hibiscus-pd.jpg",
+        room_info: "Overwater villas with private pools, direct ocean access, multiple F&B outlets, spa, recreation activities",
+        payment_info: "RM400/person",
+        short_location: "Negeri Sembilan",
+        location: "12th Mile, Jalan Pantai, Pasir Panjang, 71250 Port Dickson, Negeri Sembilan, Malaysia",
+        location_link: "https://www.google.com/maps/place/Lexis+Hibiscus+Port+Dickson/@2.4704047,101.8906915,17z/data=!3m1!4b1!4m6!3m5!1s0x31cb92c287a950ed:0x2213e8b0934ef03f!8m2!3d2.4704047!4d101.8906915!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 400,
+        favourite: false,
+        rating: 4.6,
+        official_website: "https://www.lexishibiscus.com/",
+        description: "Lexis Hibiscus Port Dickson is an iconic resort featuring unique overwater villas arranged in the shape of a hibiscus flower, each equipped with its own private plunge pool and steam room. It offers a luxurious and distinctive stay with direct access to the sea, perfect for families and couples seeking a memorable getaway on the coast."
+    },
+
+
+    'shangri-la rasa ria resort & spa kota kinabalu': {
+        category: "accomodation",
+        link_name: "shangri-la rasa ria resort & spa kota kinabalu",
+        name: "Shangri-La Rasa Ria Resort & Spa, Kota Kinabalu",
+        image: "/shangri-la-rasa-ria.jpg",
+        room_info: "Luxury beachfront rooms/suites, private balconies, nature reserve with orangutan care, golf course, spa, multiple dining options, family activities",
+        payment_info: "RM600/person",
+        short_location: "Sabah",
+        location: "Pantai Dalit Beach, Tuaran, 89200 Kota Kinabalu, Sabah, Malaysia",
+        location_link: "https://www.google.com/maps/place/Shangri-La+Rasa+Ria,+Kota+Kinabalu/@6.1557008,116.2731876,17z/data=!3m1!4b1!4m9!3m8!1s0x323b26615b1427b3:0x1b8b6e06b94e0e8e!5m2!4m1!1i2!8m2!3d6.1557008!4d116.2731876!16s%2Fg%2F1hc35b71j?entry=ttu",
+        price: 600,
+        favourite: false,
+        rating: 4.8,
+        official_website: "https://www.shangri-la.com/kotakinabalu/rasaria/",
+        description: "Set amidst a nature reserve, Shangri-La Rasa Ria offers a luxurious escape with a pristine beach and lush rainforest backdrop. Guests can enjoy world-class facilities, engage in wildlife encounters at the Rasa Ria Reserve, play golf, or simply relax by the pool, making it an ideal destination for nature lovers and families."
+    },
+
+    'g hotel gurney penang': {
+        category: "accomodation",
+        link_name: "g hotel gurney penang",
+        name: "G Hotel Gurney, Penang",
+        image: "/g-hotel-gurney.jpg",
+        room_info: "Modern and stylish rooms, infinity pool, fitness center, multiple restaurants and bars, direct access to Gurney Plaza mall",
+        payment_info: "RM320/person",
+        short_location: "Penang",
+        location: "168 Persiaran Gurney, George Town, 10250 George Town, Pulau Pinang, Malaysia",
+        location_link: "https://www.google.com/maps/place/G+Hotel+Gurney/@5.437346,100.310185,17z/data=!3m1!4b1!4m6!3m5!1s0x304ac2465e900c43:0x1b43a5710dd9f67a!8m2!3d5.437346!4d100.310185!16s%2Fg%2F12h4m2q0t?entry=ttu",
+        price: 320,
+        favourite: false,
+        rating: 4.6,
+        official_website: "https://www.ghotel.com.my/gurney/",
+        description: "G Hotel Gurney offers a stylish and contemporary stay right on Penang's famous Gurney Drive, providing direct access to premium shopping. With sleek design, comfortable rooms, and excellent facilities including an infinity pool, it's a perfect choice for both leisure and business travelers seeking modern comforts and convenience."
+    },
+
+    'aloft kuala lumpur sentral': {
+        category: "accomodation",
+        link_name: "aloft kuala lumpur sentral",
+        name: "Aloft Kuala Lumpur Sentral",
+        image: "/aloft-kl-sentral.jpg",
+        room_info: "Loft-inspired rooms, rooftop infinity pool, WXYZ bar, 24/7 gym, direct link to KL Sentral transportation hub",
+        payment_info: "RM250/person",
+        short_location: "Kuala Lumpur",
+        location: "5 Jalan Stesen Sentral, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+        location_link: "https://www.google.com/maps/place/Aloft+Kuala+Lumpur+Sentral/@3.1345995,101.6853243,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc49e701980301:0x36484390f70a1841!8m2!3d3.1345995!4d101.6853243!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 250,
+        favourite: false,
+        rating: 4.4,
+        official_website: "https://www.marriott.com/en-us/hotels/kulal-aloft-kuala-lumpur-sentral/overview/",
+        description: "Aloft Kuala Lumpur Sentral is a vibrant and modern hotel ideally connected to the city's main transportation hub, KL Sentral. It offers stylish, tech-savvy rooms, a lively WXYZ bar, and a stunning rooftop infinity pool, catering to the needs of modern travelers looking for convenience and a lively atmosphere."
+    },
+
+    'the banjaran hotsprings retreat ipoh': {
+        category: "accomodation",
+        link_name: "the banjaran hotsprings retreat ipoh",
+        name: "The Banjaran Hotsprings Retreat, Ipoh",
+        image: "/the-banjaran-hotsprings.jpg",
+        room_info: "Luxury villas with private pools, natural hot springs, ice bath, meditation cave, geothermal lake, spa village, fine dining",
+        payment_info: "RM1200/person",
+        short_location: "Perak",
+        location: "1 Persiaran Lagun Sunway 3, Sunway City Ipoh, 31150 Ipoh, Perak, Malaysia",
+        location_link: "https://www.google.com/maps/place/The+Banjaran+Hotsprings+Retreat/@4.618685,101.127453,17z/data=!3m1!4b1!4m6!3m5!1s0x31cd3d4000000001:0x1b8b6e06b94e0e8e!8m2!3d4.618685!4d101.127453!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 1200,
+        favourite: false,
+        rating: 4.9,
+        official_website: "https://www.thebanjaran.com/",
+        description: "An exclusive wellness retreat nestled within a lush valley, The Banjaran Hotsprings Retreat offers a unique adults-only experience with natural hot springs, stunning limestone caves, and luxurious villas. It's dedicated to holistic well-being, providing an unparalleled escape for relaxation, rejuvenation, and indulgence in nature's tranquility."
+    },
+
+    'hilton garden inn melaka': {
+        category: "accomodation",
+        link_name: "hilton garden inn melaka",
+        name: "Hilton Garden Inn Melaka",
+        image: "/hilton-garden-inn-melaka.jpg",
+        room_info: "Modern rooms, rooftop infinity pool with city views, 24/7 fitness center, Garden Grille & Bar, complimentary WiFi",
+        payment_info: "RM180/person",
+        short_location: "Melaka",
+        location: "2477 Jalan Tun Ali, 75300 Melaka, Malaysia",
+        location_link: "https://www.google.com/maps/place/Hilton+Garden+Inn+Melaka/@2.2036499,102.2599727,17z/data=!3m1!4b1!4m6!3m5!1s0x31d1f04473852175:0x1b8b6e06b94e0e8e!8m2!3d2.2036499!4d102.2599727!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 180,
+        favourite: false,
+        rating: 4.3,
+        official_website: "https://www.hilton.com/en/hotels/mlihggi-hilton-garden-inn-melaka/",
+        description: "Hilton Garden Inn Melaka offers modern comfort and convenience in the historic city. With spacious rooms, a refreshing rooftop infinity pool providing panoramic city views, and excellent dining options, it's a solid choice for travelers looking for a comfortable and well-equipped stay close to Melaka's attractions."
+    }
+};
 
 module.exports = accomodations;

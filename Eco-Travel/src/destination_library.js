@@ -12,9 +12,8 @@ const destinations = {
         location_link: "https://www.google.com/maps/place/kuantan+188+location/data=!4m2!3m1!1s0x31c8ba9c53ade317:0x85959d620830f43d?sa=X&ved=1t:155783&ictx=111",
         price: 100,
         favourite: false,
-        description: "Kuantan 188, which stands proud on the banks of Kuantan River here, is not only the latest iconic landmark of Pahang's first city, but also sets the night and weekend moods of Kuantan, the capital city of Pahang situated on the East Coast of Malaysia.",
-        operating_hour: "10:00 AM - 10:00 PM",
-        detail: "Tallest tower on Malaysia's east coast. 104 m skydeck with 360° river & city views. Observation Deck RM38 adult, SkyDeck+Deck combo RM76 (weekday online promo from RM28). Best weekday late-afternoons (Mon-Thu) for sunset and cheaper tickets. Book online, limited parking, bring hat/sunscreen."
+        description: "Kuantan 188, which stands proud on the banks of Kuantan River here, is not only the latest iconic landmark of Pahang’s first city, but also sets the night and weekend moods of Kuantan, the capital city of Pahang situated on the East Coast of Malaysia.",
+        operating_hour: "10:00 AM - 10:00 PM"
     },
 
     'batu caves': {
@@ -31,8 +30,7 @@ const destinations = {
         price: 90,
         favourite: false,
         description: "Batu Caves is a famous Hindu temple complex located just north of Kuala Lumpur, Malaysia. Set within a series of limestone caves, it is best known for its towering golden statue of Lord Murugan and the 272 colorful steps leading up to the main Temple Cave. The site attracts pilgrims and tourists alike, especially during the Thaipusam festival. Visitors can explore the impressive caves, admire Hindu shrines, spot monkeys, and enjoy scenic views from the top. It's a unique cultural and natural landmark that offers both spiritual insight and adventure.",
-        operating_hour: "10:00 AM - 9:00 PM",
-        detail: "272-step climb to Temple Cave & 42 m Lord Murugan statue in limestone massif. Main Temple Cave free, Ramayana/Cave Villa RM5-15. Arrive before 8 am to avoid heat and crowds. Wear modest clothing; watch your food—macaques grab snacks."
+        operating_hour: "10:00 AM - 9:00 PM"
     },
 
     'pulau tioman': {
@@ -49,8 +47,7 @@ const destinations = {
         price: 290,
         favourite: false,
         description: "Tioman Island lies off the east coast of Peninsular Malaysia, in the South China Sea. It's a nature reserve, ringed by beaches. The area is known for its dive sites, which have corals, sea fans and sea sponges, as well as shipwrecks. The island is covered in tropical rainforests, home to butterflies, lizards and monkeys. On the east coast, the Juara Turtle Project is a hatchery that protects and studies sea turtles",
-        operating_hour: "10:00 AM - 10:00 PM",
-        detail: "Marine-park island with coral dives, jungle trekking & Juara Turtle hatchery. No island fee; pay RM30 Marine-Park levy at Mersing jetty. Best May-Sep for calm seas & clear visibility (avoid Nov-Feb monsoon). Pre-book ferry; cash & ATMs scarce; mosquitos heavy after rain."
+        operating_hour: "10:00 AM - 10:00 PM"
     },
 
     'legoland malaysia resort': {
@@ -67,8 +64,7 @@ const destinations = {
         price: 130,
         favourite: false,
         description: "LEGOLAND Malaysia Resort in Iskandar Puteri, Johor, is a family-friendly destination with over 80 rides, shows, and attractions. It's the first LEGOLAND theme park in Asia and the sixth in the world, offering a unique blend of amusement park fun with LEGO theming. ",
-        operating_hour: "10:00 AM - 6:00 PM",
-        detail: "40+ LEGO rides & shows plus SEA LIFE aquarium and Water Park. 1-Day Theme Park from RM199 adult; Double-Park RM279; kids under 3 enter free. Best on weekdays outside school holidays/Ramadan for minimal queues. Measure kids for ride height, pre-book activities, stay on-site for early entry."
+        operating_hour: "10:00 AM - 6:00 PM"
     },
 
     'kek lok si temple': {
@@ -85,8 +81,7 @@ const destinations = {
         price: 40,
         favourite: false,
         description: "The Kek Lok Si Temple is a Buddhist temple in George Town in the Malaysian state of Penang. Located at Ayer Itam, it is the largest Buddhist temple in Malaysia and an important pilgrimage centre for Buddhists from Hong Kong, the Philippines, Singapore and other parts of Southeast Asia.",
-        operating_hour: "8.30 AM - 5.30 PM",
-        detail: "Malaysia's largest Buddhist complex with a 7-tier pagoda & 36 m Kuan Yin statue. Pagoda RM2, Inclined lift RM3 (RM6 return), Temple grounds free. Visit pre-9 am or after 4 pm; spectacular lantern display week before CNY. Cash only for lift; lots of steps—comfy shoes recommended."
+        operating_hour: "8.30 AM - 5.30 PM"
     },
 
     'aquaria klcc': {
@@ -103,8 +98,7 @@ const destinations = {
         price: 229,
         favourite: false,
         description: "The Aquaria KLCC is an oceanarium located beneath Kuala Lumpur Convention Centre within Kuala Lumpur City Centre in Kuala Lumpur, Malaysia.",
-        operating_hour: "10:00 AM - 10:00 PM",
-        detail: "90-m shark tunnel, daily feeding shows & interactive touch pool. General admission from RM75 adult (online) – MyKad holder discounts. Best at open-hour (10 am) or post-5 pm; time visit for shark feed (3 pm). KLCC LRT stop; buy tickets online & scan QR to skip queue."
+        operating_hour: "10:00 AM - 10:00 PM"
     },
 
     'pulau langkawi': {
@@ -121,8 +115,7 @@ const destinations = {
         price: 119,
         favourite: false,
         description: "Langkawi, officially known as Langkawi, the Jewel of Kedah, is a duty-free island and an archipelago of 99 islands located some 30 km off the coast of northwestern Malaysia and a few kilometres south of Ko Tarutao.",
-        operating_hour: "11:00 AM - 10:30 PM",
-        detail: "Duty-free archipelago of 99 islands; cable-car to SkyBridge & Geopark mangroves. No island fee; Langkawi SkyCab RM85 adult. Best Dec-Apr dry season; Jan-Mar sunniest. Rent car/scooter, sunscreen essential, carry passport for duty-free shopping."
+        operating_hour: "11:00 AM - 10:30 PM"
     },
 
     'island of tioman': {
@@ -139,8 +132,7 @@ const destinations = {
         price: 150,
         favourite: false,
         description: "Tioman Island lies off the east coast of Peninsular Malaysia, in the South China Sea. It's a nature reserve, ringed by beaches. The area is known for its dive sites, which have corals, sea fans and sea sponges, as well as shipwrecks. The island is covered in tropical rainforests, home to butterflies, lizards and monkeys. On the east coast, the Juara Turtle Project is a hatchery that protects and studies sea turtles. ",
-        operating_hour: "11:00 AM - 10:30 PM",
-        detail: "Same Tioman perks—reefs, wreck dives, rainforest hikes. Marine-Park levy RM30 adult. Best May-Sep diving peak. See 'pulau tioman'."
+        operating_hour: "11:00 AM - 10:30 PM"
     },
 
     'genting highland': {
@@ -157,8 +149,7 @@ const destinations = {
         price: 200,
         favourite: false,
         description: "Genting Highlands is a hill station located on the peak of Mount Ulu Kali in the Titiwangsa Mountains, central Peninsular Malaysia, at 1800 metres elevation. Located in the state of Pahang, it was established in 1965 by the late Malaysian businessman Lim Goh Tong. The primary tourist attraction is Resorts World Genting, a hill resort where casinos and theme parks are situated and where gambling is permitted. Many of Pahang's skyscrapers can be found here.",
-        operating_hour: "10:00 AM - 10:00 PM",
-        detail: "Cool-climate hill resort with casinos & the new Genting SkyWorlds theme park. SkyWorlds Malaysian online rate RM138 adult (walk-in RM168). Best on weekdays; pack a jacket (15-22 °C). Take Awana SkyWay gondola; use app for VQ (virtual queue) slots."
+        operating_hour: "10:00 AM - 10:00 PM"
     },
 
     'kuala gandah elephant': {
@@ -175,8 +166,7 @@ const destinations = {
         price: 80,
         favourite: false,
         description: "You'll never forget the day you helped give an elephant a bath (additional request with the help of a guide). Currently elephant riding has been temporary stopped until further notice. Get up close and personal with the amazing semi-wild elephants at Kuala Gandah Elephant Sanctuary. Be sure to book in advance because the center has strict daily visitor quotas",
-        operating_hour: "10:30 AM - 6:30 PM",
-        detail: "National translocation centre—watch orphaned elephants bathe & feed. Admission free; donation RM10+; full-day packages from RM55. Arrive by noon for afternoon bathing sessions. Daily visitor cap—book ahead; wear quick-dry clothes."
+        operating_hour: "10:30 AM - 6:30 PM"
     },
 
     'cameron highland': {
@@ -193,8 +183,7 @@ const destinations = {
         price: 280,
         favourite: false,
         description: "The Cameron Highlands are a popular hill station and tourist destination in Peninsular Malaysia, located within the state of Pahang. It's known for its cool climate, tea plantations, strawberry farms, and other agricultural activities. The area is also known for its natural beauty and is a popular destination for those seeking a relaxing getaway. ",
-        operating_hour: "10:30 AM - 6:30 PM",
-        detail: "Tea estates, strawberry farms & 200-Myr-old Mossy Forest cloud jungle. Boh Tea estate free; Mossy Forest boardwalk RM30. Best Feb-Apr cool & clear / Nov-Dec misty green but wetter. Winding roads—carry motion-sickness pills; pre-book Mossy Forest 4×4."
+        operating_hour: "10:30 AM - 6:30 PM"
     },
 
     'teluk chempedak': {
@@ -211,11 +200,10 @@ const destinations = {
         price: 120,
         favourite: false,
         description: "Teluk Cempedak or Teluk Chempedak also known as Palm Beach is a beach in Kuantan, Pahang, Malaysia. It is located 5 kilometres east from the town centre in Kuantan. The white sandy beach and casuarinas and pine trees line the coast, with some rocky promontories facing the South China Sea.",
-        operating_hour: "5:30 AM - 10:30 PM",
-        detail: "White-sand Kuantan beach with jungle boardwalk to Monkey Bay. Free public beach. Best at sunrise or post-4 pm; avoid NE-monsoon Nov-Jan. Casuarina-lined promenade with cafés; guard food from macaques."
+        operating_hour: "5:30 AM - 10:30 PM"
     },
 
-'sunway lagoon': {
+    'sunway lagoon': {
         category: "destination",
         link_name: "sunway lagoon",
         name: "Sunway Lagoon",
@@ -229,8 +217,7 @@ const destinations = {
         price: 390,
         favourite: false,
         description: "Malaysia's premier multi-park destination offers more than 90 attractions across its six parks - Amusement Park, Water Park, Wildlife Park, Extreme Park, Scream Park, and Asia's First Nickelodeon Themed Land, Nickelodeon Lost Lagoon! Once you step in, you can spend the entire day here! Explore the various Dining options available at the theme park. If you need some place to sleep, we are just next door to the Sunway Resort Hotel & Spa. We also play host to some of the hottest acts and global events so stay tuned for upcoming events and promotion.",
-        operating_hour: "10:00 AM - 6:00 PM",
-        detail: "90+ rides across 6 zones including Vuvuzela mega-slide & Nickelodeon Lost Lagoon. Online RM195–RM245 adult (walk-in RM250). Best Tue-Thu; gates open 10 am—hit Water Park first. Lockers & waterproof phone pouch useful; cashless wristbands on-site."
+        operating_hour: "10:00 AM - 6:00 PM"
     },
 
     'thai chetawan temple': {
@@ -247,8 +234,7 @@ const destinations = {
         price: 89,
         favourite: false,
         description: "A truly remarkable Thai Buddhist Temple in the heart of Petaling Jaya. A wonderful temple that offers a great solace to those seeking some peace and quiet. A good place to offer prayers and mediate.",
-        operating_hour: "9:00 AM - 5:30 PM",
-        detail: "Ornate Thai viharn, golden chedis & tranquil meditation halls. Free; donations welcome. Best 7:30 am–6 pm daily; Vesak night procession at 9 pm (May 2025). Remove shoes, modest attire, photography allowed outside sanctums."
+        operating_hour: "9:00 AM - 5:30 PM"
     },
 
     'sultan salahuddin abdul aziz shah mosque': {
@@ -265,8 +251,7 @@ const destinations = {
         price: 70,
         favourite: false,
         description: "The biggest masjid in Malaysia which is less than 1 hour drive away from KL. It is very clean, stunning, amazing Islamic architecture, beautiful viewpoints, and very big. This is a must visit if you are staying in KL. Personally think this Blue Mosque is better than the one in Istanbul.",
-        operating_hour: "9:00 AM - 6:00 PM",
-        detail: "Blue-domed national mosque with 51 m dome & 4 142 m minarets. Free 45-min guided tours (robes provided). Best weekdays 9 am–12 pm or 2–4 pm (closed Fri noon prayers). Register at visitor desk; drone use prohibited without permit."
+        operating_hour: "9:00 AM - 6:00 PM"
     },
 
     'farm in the city': {
@@ -283,11 +268,10 @@ const destinations = {
         price: 179,
         favourite: false,
         description: "Farm in the City (FITC) is an unique concept that combines the elements of wildlife and nature set in a designed environment of a conservation park. resembling a typical Malaysian Village setting, it houses more than 100 species of Farm and Exotic animals and plants in specially built enclosures. One can get close, touch or feed the animals with almost Zero distance.",
-        operating_hour: "9:00 AM - 6:00 PM",
-        detail: "'Kampung'-style petting zoo with 100+ free-range species & bird aviaries. MyKad RM39 adult, International RM58 adult. Best morning feeding sessions 10–11 am. Buy feed basket RM10; pony rides only weekends."
+        operating_hour: "9:00 AM - 6:00 PM"
     },
 
-'johor bahru city square': {
+    'johor bahru city square': {
         category: "destination",
         link_name: "johor bahru city square",
         name: "Johor Bahru City Square",
@@ -301,8 +285,7 @@ const destinations = {
         price: 199,
         favourite: false,
         description: "Strategically located in the heart of the city and only a stone's throw from the customs and immigration checkpoint, Johor Bahru City Square stands out as a central landmark in JB. With its more than 200 retailers, it offers a host of fashion, entertainment and restaurants. All catered to wow the senses and satisfy the needs. Rush in when the doors open at 10am for breakfast, then head out and start your shopping adventure of clothes, shoes, bags, trinklets, toiletries, electronic toys. Everything the heart desires. Unique to Johor Bahru City Square is the Inner City, an eclectic mix of smallish fashion and accessory shops plus restaurants housed in a tight, quaint setting. Always a firm favorite of the now generation. After many hours of shopping, rest the feet in one of the numerous restaurants and cafes or indulge in a soothing foot massage, then go on to treat the rest of the body at a salon.",
-        operating_hour: "10:00 AM - 10:00 PM",
-        detail: "200-plus-store mall linked to CIQ; cinema & food court. Free entry, Hours 10 am–10 pm. Best weekday mornings (border queues shortest). Currency changers on L1; SG EZ-link accepted by Causeway Link buses."
+        operating_hour: "10:00 AM - 10:00 PM"
     },
 
     'pulai waterfall': {
@@ -319,11 +302,10 @@ const destinations = {
         price: 110,
         favourite: false,
         description: "Pulai Waterfall offers a good experience with available changing and bathing facilities, unlike Kota Tinggi falls. Notably, Pulai Waterfall has no fishes. This suggests it might be a more pleasant swimming experience for those who prefer it. The lack of fish could also indicate differences in the ecosystem or water quality compared to other waterfalls in the area.",
-        operating_hour: "8:00 AM - 5:00 PM",
-        detail: "3-tier cascade inside Gunung Pulai forest; natural plunge pools. Free; parking RM3; plastics screened at gate. Best Apr-Oct; avoid heavy-rain days—flash-flood risk. Access only by car; basic toilets near trailhead."
+        operating_hour: "8:00 AM - 5:00 PM"
     },
 
-'the habitat penang hill': {
+    'the habitat penang hill': {
         category: "destination",
         link_name: "the habitat penang hill",
         name: "The Habitat Penang Hill",
@@ -337,8 +319,7 @@ const destinations = {
         price: 30,
         favourite: false,
         description: "The Habitat Penang Hill provides the most authentic, diverse and educational Malaysian rainforest experience. Reconnect with nature in its purest form as you immerse yourself in our 130-million year old rainforest. Starting at the forest floor, our Naturalists will take you on a journey along our Nature Trail to explore the myriad of flora and fauna – plants, trees, insects, birds, reptiles, and mammals that call The Habitat home. Explore the biodiversity of the rainforest canopy on our 230m Langur Way Canopy Walk. Visit Curtis Crest Tree Top Walk at the top of Penang Hill, and embrace the 360-degree panoramic views of Penang Island from the highest viewing point of Penang. ",
-        operating_hour: "9:00 AM - 7:00 PM",
-        detail: "230 m Langur Way canopy walk & 360° Curtis Crest treetop platform. Standard RM65 adult; after-5:30 pm add-on Evening Walk RM18. Best 9–11 am for birding or sunset slot (last funicular 7 pm). Reach via Penang Hill funicular; wear walking shoes."
+        operating_hour: "9:00 AM - 7:00 PM"
     },
 
     'entopia': {
@@ -355,8 +336,7 @@ const destinations = {
         price: 72,
         favourite: false,
         description: "Entopia, a tropical sanctuary for our planet's little denizens from those that fly freely in the sky to the ones that creep stealthily beneath the ground. Journey into a magical paradise that honours the unsung heroes of our natural world with plenty to discover from outdoor adventures to cavernous mysteries and a multi-storey Indoor Discovery Centre. Live the moment with exciting interactive workshops and activities.",
-        operating_hour: "9:00 AM - 7:00 PM",
-        detail: "Tropical butterfly & insect sanctuary with indoor discovery zones. Adult RM72 day, 'Entopia by Night' RM40 adult (Fri–Sun). Best late-morning when butterflies most active. Lockers & café on-site; bring macro lens for photography."
+        operating_hour: "9:00 AM - 7:00 PM"
     },
 
     'lost world of tambun': {
@@ -372,9 +352,8 @@ const destinations = {
         location_link: "https://www.tripadvisor.com.my/Attraction_Review-g298298-d1488280-Reviews-Lost_World_Of_Tambun-Ipoh_Kinta_District_Perak.html#:~:text=No.%201%20Persiaran%20Lagun%20Sunway%201%2C%20Ipoh%2031150%20Malaysia",
         price: 79,
         favourite: false,
-        description: "The little world of big adventures, Sunway Lost World of Tambun is Malaysia's premiere action and adventure family holiday destination in Ipoh, Malaysia. A theme park located in the historic town of Ipoh, in the middle of the North-South corridor in Perak; and is set in the natural landscapes of Ipoh, surrounded by exquisitely breath-taking limestone features. Whether it's a weekend of mayhem oozing with family fun or a burst of eco-adventure that you're seeking, take it all in as you journey through the attractions of the Lost World of Tambun.",
-        operating_hour: "9:00 AM - 7:00 PM",
-        detail: "Theme + water-park set in limestone karst; evening hot-spring lagoon. Day Park RM142 adult; Hot Springs & Night Park RM85 adult. Best weekdays; stay for 9 pm fire show. Cashless wristband; waterproof footwear helpful."
+        description: "The little world of big adventures, Sunway Lost World of Tambun is Malaysia’s premiere action and adventure family holiday destination in Ipoh, Malaysia. A theme park located in the historic town of Ipoh, in the middle of the North-South corridor in Perak; and is set in the natural landscapes of Ipoh, surrounded by exquisitely breath-taking limestone features. Whether it’s a weekend of mayhem oozing with family fun or a burst of eco-adventure that you’re seeking, take it all in as you journey through the attractions of the Lost World of Tambun.",
+        operating_hour: "9:00 AM - 7:00 PM"
     },
 
     'pangkor island': {
@@ -390,9 +369,8 @@ const destinations = {
         location_link: "https://www.google.com/maps/place/Pangkor+Island/data=!4m2!3m1!1s0x3034d396cbb7f341:0xc8f2ba9f74ec3895?sa=X&ved=1t:155783&ictx=111",
         price: 72,
         favourite: false,
-        description: "Pangkor Island lies just off the west coast of Peninsular Malaysia. It's known for beaches like Teluk Nipah, Coral Bay and Pasir Giam, which connects to coral-ringed Giam Island at low tide. Dating back to 1670, the ruined Dutch Fort demonstrates the island's strategic colonial importance. Nearby, the Sacred Rock is inscribed with the Dutch East India Company symbol and a picture of a tiger carrying away a child",
-        operating_hour: "9:00 AM - 7:00 PM",
-        detail: "Quiet beaches (Teluk Nipah), Dutch Fort ruins & fishing villages. Ferry Lumut↔Pangkor RM14 return; no island tax. Best dry season Dec-Apr (Feb sunniest). Rent scooter for RM25/day; island is duty-free—cheap chocs & liquor."
+        description: "Pangkor Island lies just off the west coast of Peninsular Malaysia. It’s known for beaches like Teluk Nipah, Coral Bay and Pasir Giam, which connects to coral-ringed Giam Island at low tide. Dating back to 1670, the ruined Dutch Fort demonstrates the island’s strategic colonial importance. Nearby, the Sacred Rock is inscribed with the Dutch East India Company symbol and a picture of a tiger carrying away a child",
+        operating_hour: "9:00 AM - 7:00 PM"
     },
 
     'kellie castle': {
@@ -408,9 +386,8 @@ const destinations = {
         location_link: "https://www.tripadvisor.com.my/Attraction_Review-g1450229-d1421132-Reviews-Kellie_s_Castle-Batu_Gajah_Kinta_District_Perak.html#:~:text=Lot%2048436%2C%20Kompleks%20Pelancongan%20Kellie%27s%20Castle%2C%2C%20Batu%20Gajah%2031000%20Malaysia",
         price: 60,
         favourite: false,
-        description: "Kellie's Castle: A historic gem in Perak, showcasing unique Moorish, Indian, and Romanesque architecture.",
-        operating_hour: "9:30 AM - 6:00 PM",
-        detail: "Unfinished 1915 Scottish manor with Moorish & Romanesque flourishes—rumoured haunted. Malaysian adult RM9; foreigners RM10. Best morning or golden-hour photos; open till 10 pm. Bring hat; drone allowed with staff OK."
+        description: "Kellie’s Castle: A historic gem in Perak, showcasing unique Moorish, Indian, and Romanesque architecture.",
+        operating_hour: "9:30 AM - 6:00 PM"
     },
 
     'petronas twin tower': {
@@ -427,8 +404,7 @@ const destinations = {
         price: 360,
         favourite: false,
         description: "No trip to KL would be complete without a visit to the world's tallest twin towers. The skyscrapers are utterly stunning, particularly when illuminated at night. The Twin Towers Visit Operations is open Tuesday through Sunday and tickets are released at 8:30 a.m. on a first-come, first-served basis. To avoid disappointment, you can purchase your ticket in advance via online ticketing or at the Ticketing Counter, Concourse Level.",
-        operating_hour: "9:30 AM - 6:00 PM",
-        detail: "Skybridge (170 m) & 86th-floor observation deck with city panorama. Adult RM98 (MyKad RM38) – timed online tickets only. Best first slot 9 am or sunset 5:30 pm (limited). Arrive 15 min early; tripods not allowed."
+        operating_hour: "9:30 AM - 6:00 PM"
     },
 
     'pavilion kuala lumpur': {
@@ -444,12 +420,11 @@ const destinations = {
         location_link: "https://www.tripadvisor.com.my/Attraction_Review-g298570-d317521-Reviews-Petronas_Twin_Towers-Kuala_Lumpur_Wilayah_Persekutuan.html#:~:text=Concourse%20Level%2C%20Lower%20Ground%20Kuala%20Lumpur%20City%20Centre%2C%20Kuala%20Lumpur%2050088%20Malaysia",
         price: 120,
         favourite: false,
-        description: "Pavilion Kuala Lumpur is an award-winning shopping mall located in the heart of Bukit Bintang, Malaysia's shopping paradise. Pavilion Kuala Lumpur brings the best of retail with a nett lettable area of over 1.7 million square feet, 700 stores and 8 themed precincts. The Pavilion Crystal Fountain, a symbol of Malaysia's diverse culture welcomes visitors to this tourist-friendly destination, surrounded by upmarket hotels and a 10-minute walk from KLCC. Enjoy tourist-centric services such as money changers, ATM machines, currency exchange kiosks, as well as specially curated tours for large groups.",
-        operating_hour: "10:00 AM - 10:00 PM",
-        detail: "1.7 M sq ft mall, 700 stores, Crystal Fountain entrance. Free, Hours 10 am–10 pm. Best weekday mid-morning; night façade lights. Tourist card at concierge yields 10%-off vouchers; MRT Bukit Bintang exit 7."
+        description: "Pavilion Kuala Lumpur is an award-winning shopping mall located in the heart of Bukit Bintang, Malaysia’s shopping paradise. Pavilion Kuala Lumpur brings the best of retail with a nett lettable area of over 1.7 million square feet, 700 stores and 8 themed precincts. The Pavilion Crystal Fountain, a symbol of Malaysia’s diverse culture welcomes visitors to this tourist-friendly destination, surrounded by upmarket hotels and a 10-minute walk from KLCC. Enjoy tourist-centric services such as money changers, ATM machines, currency exchange kiosks, as well as specially curated tours for large groups.",
+        operating_hour: "10:00 AM - 10:00 PM"
     },
 
-'zoo negara kl': {
+    'zoo negara kl': {
         category: "destination",
         link_name: "zoo negara kl",
         name: "Zoo Negara KL",
@@ -463,8 +438,7 @@ const destinations = {
         price: 89,
         favourite: false,
         description: "The National Zoo is a Malaysian zoo located on 110 acres of land in Ulu Klang, Gombak District, Selangor, Malaysia. It was officially opened on November 14, 1963, by the country's first prime minister, Tunku Abdul Rahman.",
-        operating_hour: "10:00 AM - 10:00 PM",
-        detail: "110-acre national zoo—giant pandas, 5,000 animals, open-concept habitats. MyKad RM37.40 adult, International RM88 adult (online). Best 9 am opening—panda slot & animal feedings. Tram RM8 per ride; carry umbrella (little shade)."
+        operating_hour: "10:00 AM - 10:00 PM"
     },
 
     'bukit tabur': {
@@ -481,8 +455,7 @@ const destinations = {
         price: 30,
         favourite: false,
         description: "Bukit Tabur, meaning Spread Rock Hill in Malay, is a prominent geological formation in Malaysia, specifically a quartz ridge, known for its challenging but rewarding hikes and stunning views. It's a popular destination for both local and international hikers, offering a mix of difficult terrain and panoramic vistas.",
-        operating_hour: "10:00 AM - 10:00 PM",
-        detail: "Knife-edge quartz-ridge hike with dam & KL skyline views. Selangor forestry permit RM5; entry gate 6 am. Best dry dawn hike; avoid after rain—slippery & dangerous. Helmet & gloves advised; trail partially closed—check permit availability."
+        operating_hour: "10:00 AM - 10:00 PM"
     },
 
     'thean hou temple': {
@@ -499,8 +472,7 @@ const destinations = {
         price: 39,
         favourite: false,
         description: "This ornate Chinese temple dedicated to the Queen of Heaven, Thean Hou, protectorate of people who make their living from the sea. The temple borrows from Buddhist, Taoist and Confucian traditions. Some visitors believe the panoramic views of KL alone make the trip up the hill worthwhile.",
-        operating_hour: "10:00 AM - 5:30 PM",
-        detail: "Six-tier Chinese temple with zodiac garden & KL city vistas. Free entry, Car-park RM5. Best 8-10 am for photos; lanterns fortnight before Lunar New Year. No direct public transport—use Grab; modest dress."
+        operating_hour: "10:00 AM - 5:30 PM"
     },
 
     'red square': {
@@ -517,13 +489,12 @@ const destinations = {
         price: 159,
         favourite: false,
         description: "Historic square featuring maroon-colored structures in the Dutch colonial style.",
-        operating_hour: "10:00 AM - 9:30 PM",
-        detail: "UNESCO Dutch Square—Stadthuys, Christ Church & colour-lit trishaws at night. Free public square. Best evening for night lights; weekend night market nearby. Negotiate trishaw fare; hat & water for daytime heat."
+        operating_hour: "10:00 AM - 9:30 PM"
     },
 
-    'encore Melaka': {
+    'encore melaka': {
         category: "destination",
-        link_name: "encore Melaka",
+        link_name: "encore melaka",
         name: "Encore Melaka",
         image: "/encore-melaka.jpg",
         idea: "Curious learners",
@@ -535,11 +506,366 @@ const destinations = {
         price: 159,
         favourite: false,
         description: "A cultural performance not to be missed ENCORE MELAKA is an immersive performance with a series of untold stories of Melaka, which reflects a society that embraces diversity and inclusiveness. This 70-minutes long mega show reminiscing life stories of the locals with state-of-the-art production sets. The audience will experience 360-degree rotating audience platform fronting a 240-meter long stage, multi-lifting platforms, sound & light and a 3D mapping projection that creates virtual reality that travels through time.",
-        operating_hour: "11:00 AM - 10:30 PM",
-        detail: "70-min 360° rotating-seat theatre chronicling 600 years of Melaka history. Malaysian adult RM78, Child/Senior RM48, Non-resident RM158. Best shows 8:30 pm (Tue/Thu/Fri/Sat) & 2:30 pm (Sun/Mon); closed Wed. Arrive 20 min early; hall chilly—bring light jacket; photography prohibited."
+        operating_hour: "11:00 AM - 10:30 PM"
     },
 
+    'melaka straits mosque': {
+        category: "destination",
+        link_name: "melaka straits mosque",
+        name: "Melaka Straits Mosque",
+        image: "/straits-of-malacca-mosque.jpg",
+        idea: "Cultural Lover",
+        duration: "1 Days",
+        rating: "4.9",
+        short_location: "Melaka",
+        location: "Masjid Selat, 75000, Melaka",
+        location_link: "https://www.google.com/maps/dir//Masjid+Selat,+75000,+Melaka/@2.1790775,102.1667329,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d1f1db5a5920d9:0xd9cf83e66b327038!2m2!1d102.2491797!2d2.1791849?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D",
+        price: 59,
+        favourite: false,
+        description: "The Malacca Straits Mosque is a mosque located on the artificial Malacca Island in Malacca City, Malaysia. Constructed at a cost of about MYR10 million, it was inaugurated on 24 November 2006 by the King of Malaysia, Tuanku Syed Sirajuddin ibni Almarhum Tuanku Syed Putra Jamalullail.",
+        operating_hour: "9:00 AM - 8:00 PM"
+    },
 
+    'baba house melaka': {
+        category: "destination",
+        link_name: "baba house melaka",
+        name: "Baba House Melaka",
+        image: "/baba-house-melaka.jpg",
+        idea: "Cultural Lover",
+        duration: "1 Days",
+        rating: "4.2",
+        short_location: "Melaka",
+        location: "Taman Kota Laksamana, 75200 Melaka",
+        location_link: "https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqEggAEAAYFBiHAhjjAhixAxiABDISCAAQABgUGIcCGOMCGLEDGIAEMhsIARAuGBQYrwEYxwEYhwIYsQMYgAQYmAUYmQUyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBggHEEUYPKgCALACAA&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KX9XuJfc8dExMevkcnyFe38w&daddr=121-127,+Jalan+Tun+Tan+Cheng+Lock,+Taman+Kota+Laksamana,+75200+Melaka",
+        price: 40,
+        favourite: false,
+        description: "Baba House Melaka is celebrated for combining traditional Peranakan charm with modern comforts, creating an inviting atmosphere that resonates with travelers. While guests commend the cleanliness and the service for enhancing their stay, some highlight concerns with room soundproofing and inconsistent housekeeping.",
+        operating_hour: "9:00 AM - 8:00 PM"
+    },
+
+    // --- NEW DESTINATIONS ADDED BELOW ---
+
+    'taman negara': {
+        category: "destination",
+        link_name: "taman negara",
+        name: "Taman Negara",
+        image: "/taman-negara.jpg",
+        idea: "Adventure Seekers",
+        duration: "3 Days",
+        rating: "4.7",
+        short_location: "Pahang",
+        location: "Kuala Tahan, 27000 Jerantut, Pahang",
+        location_link: "https://www.google.com/maps/place/Taman+Negara/@4.3411039,102.4042852,17z/data=!3m1!4b1!4m6!3m5!1s0x31c9447d483424ff:0x708a3f8115682245!8m2!3d4.3411039!4d102.4042852!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 250, // Estimate for activities and basic entry, not including accommodation
+        favourite: false,
+        description: "Taman Negara is Malaysia's premier national park, boasting one of the world's oldest rainforests, estimated to be 130 million years old. It offers a wide range of activities including canopy walks, jungle trekking, river cruises, cave exploration, and visiting indigenous villages. It's a haven for wildlife enthusiasts and adventure seekers.",
+        operating_hour: "8:00 AM - 5:00 PM (Visitor Centre), activities vary"
+    },
+
+    'perhentian islands': {
+        category: "destination",
+        link_name: "perhentian islands",
+        name: "Perhentian Islands",
+        image: "/perhentian-islands.jpg",
+        idea: "Relaxation",
+        duration: "4 Days",
+        rating: "4.8",
+        short_location: "Terengganu",
+        location: "Pulau Perhentian Kecil, Kuala Besut, Terengganu",
+        location_link: "https://www.google.com/maps/place/Perhentian+Kecil+Island/@5.9189675,102.730303,15z/data=!3m1!4b1!4m6!3m5!1s0x31b6e4e5e786b1c1:0x39df5c808f9ed08b!8m2!3d5.9189675!4d102.730303!16s%2Fg%2F11fn77h89j?entry=ttu",
+        price: 350, // Estimate for boat transfer and basic activities
+        favourite: false,
+        description: "The Perhentian Islands (Pulau Perhentian) are a tropical paradise off the coast of Terengganu, renowned for their crystal-clear turquoise waters, pristine white-sand beaches, and vibrant coral reefs. They are a popular destination for snorkeling, diving, and simply relaxing amidst breathtaking natural beauty.",
+        operating_hour: "Generally accessible (ferry schedules vary)"
+    },
+
+    'mount kinabalu': {
+        category: "destination",
+        link_name: "mount kinabalu",
+        name: "Mount Kinabalu",
+        image: "/mount-kinabalu.jpg",
+        idea: "Adventure Seekers",
+        duration: "3 Days",
+        rating: "4.9",
+        short_location: "Sabah",
+        location: "Kinabalu Park, 89300 Ranau, Sabah",
+        location_link: "https://www.google.com/maps/place/Mount+Kinabalu/@6.0754897,116.5562729,15z/data=!3m1!4b1!4m6!3m5!1s0x323b7e77b4202359:0x87d6fc71317e0892!8m2!3d6.0754897!4d116.5562729!16s%2Fg%2F11g_8w7y1m?entry=ttu",
+        price: 800, // Estimate for permits, guide, and basic accommodation for climb
+        favourite: false,
+        description: "Standing at 4,095 meters, Mount Kinabalu is the highest peak in Southeast Asia and a UNESCO World Heritage Site. It's a challenging but rewarding climb, offering stunning panoramic views and showcasing incredible biodiversity, from unique flora like pitcher plants to various bird species.",
+        operating_hour: "Kinabalu Park: 7:00 AM - 5:00 PM (climbing requires permits)"
+    },
+
+    'petaling street': {
+        category: "destination",
+        link_name: "petaling street",
+        name: "Petaling Street (Chinatown KL)",
+        image: "/petaling-street.jpg",
+        idea: "Eco-conscious Shoppers",
+        duration: "1 Days",
+        rating: "4.5",
+        short_location: "Kuala Lumpur",
+        location: "Jalan Petaling, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        location_link: "https://www.google.com/maps/place/Petaling+Street/@3.1444158,101.6978434,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc49f2b87f4749:0x4d3755b72221b2d0!8m2!3d3.1444158!4d101.6978434!16s%2Fg%2F12239m2d?entry=ttu",
+        price: 50, // Estimate for some shopping/food
+        favourite: false,
+        description: "Petaling Street, the heart of Kuala Lumpur's Chinatown, is a bustling market renowned for its vibrant atmosphere, street food, and wide array of goods, from clothing and souvenirs to electronics. It's a cultural hub that comes alive, especially in the evenings, offering a sensory explosion of sights, sounds, and smells.",
+        operating_hour: "10:00 AM - 10:00 PM (some stalls open later)"
+    },
+
+    'sarawak cultural village': {
+        category: "destination",
+        link_name: "sarawak cultural village",
+        name: "Sarawak Cultural Village",
+        image: "/sarawak-cultural-village.jpg",
+        idea: "Cultural Lover",
+        duration: "1 Days",
+        rating: "4.6",
+        short_location: "Sarawak",
+        location: "Pantai Damai, Santubong, 93756 Kuching, Sarawak",
+        location_link: "https://www.google.com/maps/place/Sarawak+Cultural+Village/@1.7583685,110.3129528,17z/data=!3m1!4b1!4m6!3m5!1s0x31cba3e479c3f0b3:0x1b7024e073c6838a!8m2!3d1.7583685!4d110.3129528!16s%2Fm%2F03f0b0g?entry=ttu",
+        price: 60,
+        favourite: false,
+        description: "Nestled at the foot of Mount Santubong, the Sarawak Cultural Village is a 'living museum' showcasing the diverse cultures and lifestyles of Sarawak's numerous ethnic groups. Visitors can explore traditional houses, observe craft demonstrations, and enjoy vibrant cultural performances, gaining insight into the rich heritage of Borneo.",
+        operating_hour: "9:00 AM - 5:00 PM"
+    },
+
+    'putrajaya': {
+        category: "destination",
+        link_name: "putrajaya",
+        name: "Putrajaya",
+        image: "/putrajaya.jpg",
+        idea: "Architectural Enthusiasts",
+        duration: "1 Days",
+        rating: "4.7",
+        short_location: "Putrajaya",
+        location: "62000 Putrajaya, Wilayah Persekutuan Putrajaya",
+        location_link: "https://www.google.com/maps/place/Putrajaya/@2.9174549,101.6247963,12z/data=!3m1!4b1!4m6!3m5!1s0x31cdb6d5b0028e3b:0x5109675276635205!8m2!3d2.9238356!4d101.691746!16s%2Fg%2F11b6hs47f8?entry=ttu",
+        price: 50, // Estimate for potential activities like lake cruise
+        favourite: false,
+        description: "Putrajaya, Malaysia's federal administrative capital, is a master-planned city known for its stunning modern Islamic architecture, expansive green spaces, and a large artificial lake. Key attractions include the Putra Mosque, Perdana Putra (Prime Minister's Office), and various bridges and gardens, making it ideal for sightseeing and leisurely strolls.",
+        operating_hour: "Generally accessible, landmark hours vary"
+    },
+
+    'port dickson': {
+        category: "destination",
+        link_name: "port dickson",
+        name: "Port Dickson",
+        image: "/port-dickson.jpg",
+        idea: "Family Travel",
+        duration: "2 Days",
+        rating: "4.2",
+        short_location: "Negeri Sembilan",
+        location: "71000 Port Dickson, Negeri Sembilan",
+        location_link: "https://www.google.com/maps/place/Port+Dickson/@2.5204128,101.7610492,12z/data=!3m1!4b1!4m6!3m5!1s0x31cb92c287a950ed:0x2213e8b0934ef03f!8m2!3d2.5204128!4d101.7610492!16zL20vMDM1cW4w?entry=ttu",
+        price: 150, // Estimate for some activities/basic resort stay
+        favourite: false,
+        description: "Port Dickson is a popular coastal town in Negeri Sembilan, well-known for its sandy beaches, resorts, and various recreational activities. It's a favored weekend getaway destination for families and city dwellers looking for sun, sand, and sea, offering opportunities for water sports, beach activities, and relaxing by the coast.",
+        operating_hour: "Generally accessible"
+    },
+     'taman negara': {
+        category: "destination",
+        link_name: "taman negara",
+        name: "Taman Negara",
+        image: "/taman-negara.jpg",
+        idea: "Adventure Seekers",
+        duration: "3 Days",
+        rating: "4.7",
+        short_location: "Pahang",
+        location: "Kuala Tahan, 27000 Jerantut, Pahang",
+        location_link: "https://www.google.com/maps/place/Taman+Negara/@4.3411039,102.4042852,17z/data=!3m1!4b1!4m6!3m5!1s0x31c9447d483424ff:0x708a3f8115682245!8m2!3d4.3411039!4d102.4042852!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 250, // Estimate for activities and basic entry, not including accommodation
+        favourite: false,
+        description: "Taman Negara is Malaysia's premier national park, boasting one of the world's oldest rainforests, estimated to be 130 million years old. It offers a wide range of activities including canopy walks, jungle trekking, river cruises, cave exploration, and visiting indigenous villages. It's a haven for wildlife enthusiasts and adventure seekers.",
+        operating_hour: "8:00 AM - 5:00 PM (Visitor Centre), activities vary"
+    },
+
+    'perhentian islands': {
+        category: "destination",
+        link_name: "perhentian islands",
+        name: "Perhentian Islands",
+        image: "/perhentian-islands.jpg",
+        idea: "Relaxation",
+        duration: "4 Days",
+        rating: "4.8",
+        short_location: "Terengganu",
+        location: "Pulau Perhentian Kecil, Kuala Besut, Terengganu",
+        location_link: "https://www.google.com/maps/place/Perhentian+Kecil+Island/@5.9189675,102.730303,15z/data=!3m1!4b1!4m6!3m5!1s0x31b6e4e5e786b1c1:0x39df5c808f9ed08b!8m2!3d5.9189675!4d102.730303!16s%2Fg%2F11fn77h89j?entry=ttu",
+        price: 350, // Estimate for boat transfer and basic activities
+        favourite: false,
+        description: "The Perhentian Islands (Pulau Perhentian) are a tropical paradise off the coast of Terengganu, renowned for their crystal-clear turquoise waters, pristine white-sand beaches, and vibrant coral reefs. They are a popular destination for snorkeling, diving, and simply relaxing amidst breathtaking natural beauty.",
+        operating_hour: "Generally accessible (ferry schedules vary)"
+    },
+
+    'mount kinabalu': {
+        category: "destination",
+        link_name: "mount kinabalu",
+        name: "Mount Kinabalu",
+        image: "/mount-kinabalu.jpg",
+        idea: "Adventure Seekers",
+        duration: "3 Days",
+        rating: "4.9",
+        short_location: "Sabah",
+        location: "Kinabalu Park, 89300 Ranau, Sabah",
+        location_link: "https://www.google.com/maps/place/Mount+Kinabalu/@6.0754897,116.5562729,15z/data=!3m1!4b1!4m6!3m5!1s0x323b7e77b4202359:0x87d6fc71317e0892!8m2!3d6.0754897!4d116.5562729!16s%2Fg%2F11g_8w7y1m?entry=ttu",
+        price: 800, // Estimate for permits, guide, and basic accommodation for climb
+        favourite: false,
+        description: "Standing at 4,095 meters, Mount Kinabalu is the highest peak in Southeast Asia and a UNESCO World Heritage Site. It's a challenging but rewarding climb, offering stunning panoramic views and showcasing incredible biodiversity, from unique flora like pitcher plants to various bird species.",
+        operating_hour: "Kinabalu Park: 7:00 AM - 5:00 PM (climbing requires permits)"
+    },
+
+    'petaling street': {
+        category: "destination",
+        link_name: "petaling street",
+        name: "Petaling Street (Chinatown KL)",
+        image: "/petaling-street.jpg",
+        idea: "Eco-conscious Shoppers", // Changed from "Eco-conscious Shoppers" as it's more about street shopping/culture
+        duration: "1 Days",
+        rating: "4.5",
+        short_location: "Kuala Lumpur",
+        location: "Jalan Petaling, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        location_link: "https://www.google.com/maps/place/Petaling+Street/@3.1444158,101.6978434,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc49f2b87f4749:0x4d3755b72221b2d0!8m2!3d3.1444158!4d101.6978434!16s%2Fg%2F12239m2d?entry=ttu",
+        price: 50, // Estimate for some shopping/food
+        favourite: false,
+        description: "Petaling Street, the heart of Kuala Lumpur's Chinatown, is a bustling market renowned for its vibrant atmosphere, street food, and wide array of goods, from clothing and souvenirs to electronics. It's a cultural hub that comes alive, especially in the evenings, offering a sensory explosion of sights, sounds, and smells.",
+        operating_hour: "10:00 AM - 10:00 PM (some stalls open later)"
+    },
+
+    'sarawak cultural village': {
+        category: "destination",
+        link_name: "sarawak cultural village",
+        name: "Sarawak Cultural Village",
+        image: "/sarawak-cultural-village.jpg",
+        idea: "Cultural Lover",
+        duration: "1 Days",
+        rating: "4.6",
+        short_location: "Sarawak",
+        location: "Pantai Damai, Santubong, 93756 Kuching, Sarawak",
+        location_link: "https://www.google.com/maps/place/Sarawak+Cultural+Village/@1.7583685,110.3129528,17z/data=!3m1!4b1!4m6!3m5!1s0x31cba3e479c3f0b3:0x1b7024e073c6838a!8m2!3d1.7583685!4d110.3129528!16s%2Fg%2F11b6m70n0f?entry=ttu",
+        price: 60,
+        favourite: false,
+        description: "Nestled at the foot of Mount Santubong, the Sarawak Cultural Village is a 'living museum' showcasing the diverse cultures and lifestyles of Sarawak's numerous ethnic groups. Visitors can explore traditional houses, observe craft demonstrations, and enjoy vibrant cultural performances, gaining insight into the rich heritage of Borneo.",
+        operating_hour: "9:00 AM - 5:00 PM"
+    },
+
+    'putrajaya': {
+        category: "destination",
+        link_name: "putrajaya",
+        name: "Putrajaya",
+        image: "/putrajaya.jpg",
+        idea: "Architectural Enthusiasts",
+        duration: "1 Days",
+        rating: "4.7",
+        short_location: "Putrajaya",
+        location: "62000 Putrajaya, Wilayah Persekutuan Putrajaya",
+        location_link: "https://www.google.com/maps/place/Putrajaya/@2.9174549,101.6247963,12z/data=!3m1!4b1!4m6!3m5!1s0x31cdb6d5b0028e3b:0x5109675276635205!8m2!3d2.9238356!4d101.691746!16s%2Fg%2F11b6hs47f8?entry=ttu",
+        price: 50, // Estimate for potential activities like lake cruise
+        favourite: false,
+        description: "Putrajaya, Malaysia's federal administrative capital, is a master-planned city known for its stunning modern Islamic architecture, expansive green spaces, and a large artificial lake. Key attractions include the Putra Mosque, Perdana Putra (Prime Minister's Office), and various bridges and gardens, making it ideal for sightseeing and leisurely strolls.",
+        operating_hour: "Generally accessible, landmark hours vary"
+    },
+
+    'port dickson': {
+        category: "destination",
+        link_name: "port dickson",
+        name: "Port Dickson",
+        image: "/port-dickson.jpg",
+        idea: "Family Travel",
+        duration: "2 Days",
+        rating: "4.2",
+        short_location: "Negeri Sembilan",
+        location: "71000 Port Dickson, Negeri Sembilan",
+        location_link: "https://www.google.com/maps/place/Port+Dickson/@2.5204128,101.7610492,12z/data=!3m1!4b1!4m6!3m5!1s0x31cb92c287a950ed:0x2213e8b0934ef03f!8m2!3d2.5204128!4d101.7610492!16zL2m/MDM1cW4w?entry=ttu",
+        price: 150, // Estimate for some activities/basic resort stay
+        favourite: false,
+        description: "Port Dickson is a popular coastal town in Negeri Sembilan, well-known for its sandy beaches, resorts, and various recreational activities. It's a favored weekend getaway destination for families and city dwellers looking for sun, sand, and sea, offering opportunities for water sports, beach activities, and relaxing by the coast.",
+        operating_hour: "Generally accessible"
+    },
+
+    'ipoh old town': {
+        category: "destination",
+        link_name: "ipoh old town",
+        name: "Ipoh Old Town",
+        image: "/ipoh-old-town.jpg",
+        idea: "Foodie Adventures",
+        duration: "2 Days",
+        rating: "4.7",
+        short_location: "Perak",
+        location: "Jalan Bandar Timah, 30000 Ipoh, Perak",
+        location_link: "https://www.google.com/maps/place/Ipoh+Old+Town/@4.5973273,101.077271,17z/data=!3m1!4b1!4m6!3m5!1s0x31cd330f6a27e71f:0x79469796e952671e!8m2!3d4.5973273!4d101.077271!16s%2Fg%2F11c341q3d8?entry=ttu",
+        price: 90,
+        favourite: false,
+        description: "Ipoh Old Town is famed for its colonial architecture, vibrant street art, and most notably, its incredible culinary scene. Visitors flock here to sample local delicacies like Ipoh white coffee, bean sprout chicken, and dim sum, while exploring charming heritage buildings and quirky cafes. It's a perfect blend of history, art, and delicious food.",
+        operating_hour: "Generally accessible, shops/eateries vary (typically 8:00 AM - 6:00 PM for most)"
+    },
+
+    'redang island': {
+        category: "destination",
+        link_name: "redang island",
+        name: "Redang Island",
+        image: "/redang-island.jpg",
+        idea: "Snorkeling & Diving",
+        duration: "4 Days",
+        rating: "4.9",
+        short_location: "Terengganu",
+        location: "Pulau Redang, 21090 Kuala Terengganu, Terengganu",
+        location_link: "https://www.google.com/maps/place/Redang+Island/@5.7797746,102.9972323,13z/data=!3m1!4b1!4m6!3m5!1s0x31b5c468e826b0a9:0xc8e932b712b7a07a!8m2!3d5.7797746!4d102.9972323!16s%2Fg%2F1227092z?entry=ttu",
+        price: 450, // Estimate for boat transfer and basic activities
+        favourite: false,
+        description: "Redang Island (Pulau Redang) is one of Malaysia's largest and most stunning islands off the coast of Terengganu, forming part of a marine park. It is celebrated for its pristine white sands, crystal-clear waters, and rich marine biodiversity, making it a prime destination for snorkeling, diving, and beach relaxation. Many resorts line its beautiful shores.",
+        operating_hour: "Generally accessible (ferry schedules vary, seasonal closures)"
+    },
+
+    'gurney drive': {
+        category: "destination",
+        link_name: "gurney drive",
+        name: "Gurney Drive Hawker Centre",
+        image: "/gurney-drive.jpg",
+        idea: "Foodie Adventures",
+        duration: "1 Days",
+        rating: "4.4",
+        short_location: "Penang",
+        location: "172 Solok Gurney 1, George Town, 10250 George Town, Pulau Pinang",
+        location_link: "https://www.google.com/maps/place/Gurney+Drive+Hawker+Centre/@5.437346,100.310185,17z/data=!3m1!4b1!4m6!3m5!1s0x304ac2465e900c43:0x1b43a5710dd9f67a!8m2!3d5.437346!4d100.310185!16s%2Fg%2F12h4m2q0t?entry=ttu",
+        price: 60, // Estimate for food
+        favourite: false,
+        description: "Gurney Drive Hawker Centre in Penang is an iconic open-air food paradise, famous for its vast selection of local Malaysian street food. It's a must-visit for food lovers, offering everything from char kway teow and asam laksa to satay and fresh seafood. The bustling atmosphere and delicious aromas make for an unforgettable culinary experience, especially in the evening.",
+        operating_hour: "Typically 4:30 PM - 12:00 AM"
+    },
+
+    'desaru coast': {
+        category: "destination",
+        link_name: "desaru coast",
+        name: "Desaru Coast",
+        image: "/desaru-coast.jpg",
+        idea: "Family Travel",
+        duration: "3 Days",
+        rating: "4.5",
+        short_location: "Johor",
+        location: "Bandar Penawar, 81930 Desaru, Johor",
+        location_link: "https://www.google.com/maps/place/Desaru+Coast/@1.4921606,104.227494,14z/data=!3m1!4b1!4m6!3m5!1s0x31da3b392e20563b:0x5e2c53f80c65532d!8m2!3d1.4921606!4d104.227494!16s%2Fg%2F11fnl5p7f3?entry=ttu",
+        price: 300, // Estimate for general activities/entry to waterpark
+        favourite: false,
+        description: "Desaru Coast is a rapidly developing coastal resort area in Johor, featuring world-class hotels, a large water park (Desaru Coast Adventure Waterpark), and a championship golf course. It offers a luxurious and family-friendly beach escape with pristine shores, diverse dining options, and recreational activities perfect for a relaxing holiday.",
+        operating_hour: "Waterpark: 10:00 AM - 6:00 PM (daily except Tuesdays, subject to change)"
+    },
+
+    'frasers hill': {
+        category: "destination",
+        link_name: "frasers hill",
+        name: "Fraser's Hill",
+        image: "/frasers-hill.jpg",
+        idea: "Nature Retreat",
+        duration: "2 Days",
+        rating: "4.3",
+        short_location: "Pahang",
+        location: "49000 Fraser's Hill, Pahang",
+        location_link: "https://www.google.com/maps/place/Fraser's+Hill/@3.704253,101.7397787,14z/data=!3m1!4b1!4m6!3m5!1s0x31cc04c000000001:0x1b8f17e33a1e944b!8m2!3d3.704253!4d101.7397787!16s%2Fg%2F11b6m286s2?entry=ttu",
+        price: 180, // Estimate for accommodation and some activities
+        favourite: false,
+        description: "Fraser's Hill is a tranquil colonial-era hill station in Pahang, known for its cool climate, lush greenery, and charming old-world appeal. It's a haven for birdwatchers, nature lovers, and those seeking a peaceful escape from city life. Activities include jungle trekking, golfing, boating, and enjoying the serene environment.",
+        operating_hour: "Generally accessible, attractions vary (e.g., Jeriau Waterfall)"
+    }
 };
 
 
