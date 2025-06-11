@@ -225,10 +225,11 @@
                                     <span><i class="fa fa-star"></i> 4.9</span>
                                     <span><i class="fa fa-location-dot"></i> Kuantan</span>
                                 </div>
+
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                                <button class="favourite-btn"><i class="fa fa-magnifying-glass heart-icon"></i></button>
                                 <div class="price-label">
                                     <p>RM 200</p>
                                 </div>
@@ -251,7 +252,7 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                                <button class="favourite-btn"><i class="fa fa-magnifying-glass heart-icon"></i></button>
                                 <div class="price-label">
                                     <p>RM 60</p>
                                 </div>
@@ -276,7 +277,7 @@
                         </div>
 
                         <div class="content-fav-and-price">
-                            <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                            <button class="favourite-btn"><i class="fa fa-magnifying-glass heart-icon"></i></button>
                             <div class="price-label">
                                 <p>RM 500</p>
                             </div>
@@ -297,7 +298,7 @@
                         </div>
 
                         <div class="content-fav-and-price">
-                            <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                            <button class="favourite-btn"><i class="fa fa-magnifying-glass heart-icon"></i></i></button>
                             <div class="price-label">
                                 <p>RM 385</p>
                             </div>
@@ -318,7 +319,7 @@
                         </div>
 
                         <div class="content-fav-and-price">
-                            <button class="favourite-btn"><i class="fa-solid fa-heart heart-icon"></i></button>
+                            <button class="favourite-btn"><i class="fa fa-magnifying-glass heart-icon"></i></button>
                             <div class="price-label">
                                 <p>RM 88</p>
                             </div>
@@ -340,31 +341,34 @@
             <div class="top-destination-wrapper swiper2">
                 <div class="swiper-wrapper">
                     <!-- Slider Destination 1 Start -->
-                     <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
-                        <img class="option-img" src="/legoland-malaysia-resort.jpg" alt="">
-                        <div class="carousel-img-overlay">
-                            <div class="img-content">
-                                <h2>Legoland Malaysia Resort</h2>
-                                <div class="hidden-content-carousel">
-                                    <span><i class="fa fa-clock"></i>4 Days</span>
-                                    <span><i class="fa fa-star"></i>5.0</span>
-                                    <span><i class="fa fa-location-dot"></i>Johor</span>
-                                </div>
-                            </div>
+                        <div class="carousel swiper-slide lg-img">
+                            <img class="option-img" src="/legoland-malaysia-resort.jpg" alt="">
+                            <div class="carousel-img-overlay">
+                                <div class="img-content">
+                                    <h2>Legoland Malaysia Resort</h2>
+                                    <div class="hidden-content-carousel">
+                                        <span><i class="fa fa-clock"></i>4 Days</span>
+                                        <span><i class="fa fa-star"></i>5.0</span>
+                                        <span><i class="fa fa-location-dot"></i>Johor</span>                                    
+                                    </div>
 
-                            <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
-                                <div class="price-label">
-                                    <p>RM 130</p>
+                                </div>
+
+                                <div class="content-fav-and-price">
+                                    <form action="/get-info/destination/legoland malaysia resort" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                    </form>
+                                    <div class="price-label">
+                                        <p>RM 130</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     
                     <!-- Slider Destination 2 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/langkawi.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -377,9 +381,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/destination/pulau langkawi" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 119</p>
                                 </div>
@@ -388,7 +394,7 @@
                     </div>
 
                     <!-- Slider Destination 3 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/island-of-tioman.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -401,9 +407,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/destination/pulau tioman" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 150</p>
                                 </div>
@@ -412,24 +420,26 @@
                     </div>
 
                     <!-- Slider Destination 4 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToDestination(this)">
-                        <img class="option-img" src="/aquaria_klcc.jpg" alt="">
+                    <div class="carousel swiper-slide lg-img">
+                        <img class="option-img" src="/show-case-1.jpeg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
-                                <h2>Aquaria KLCC</h2>
+                                <h2>Petronas Twin Tower</h2>
                                 <div class="hidden-content-carousel">
-                                    <span><i class="fa fa-clock"></i>2 Days</span>
+                                    <span><i class="fa fa-clock"></i>7 Days</span>
                                     <span><i class="fa fa-star"></i>4.8</span>
                                     <span><i class="fa fa-location-dot"></i> Kuala Lumpur</span>
                                 </div>
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/destination/petronas twin tower" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
-                                    <p>RM 350</p>
+                                    <p>RM 360</p>
                                 </div>
                             </div>
                         </div>
@@ -449,7 +459,7 @@
             <div class="top-destination-wrapper swiper2">
                 <div class="swiper-wrapper">
                     <!-- Slider Accomodation 1 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToAccomodation(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/pavilion-hotel.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -462,9 +472,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/accomodation/pavilion hotel" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 120</p>
                                 </div>
@@ -473,31 +485,33 @@
                     </div>
 
                     <!-- Slider Accomodation 2 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToAccomodation(this)">
-                        <img class="option-img" src="/batu-ferringhi-penang-hotel.png" alt="">
+                    <div class="carousel swiper-slide lg-img">
+                        <img class="option-img" src="/shangri-la-kl.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
-                                <h2>Batu Ferringhi Hotel</h2>
+                                <h2>Shangri-La Kuala Lumpur</h2>
                                 <div class="hidden-content-carousel">
                                     <span><i class="fa fa-clock"></i>1 Days</span>
-                                    <span><i class="fa fa-star"></i>4.6+</span>
-                                    <span><i class="fa fa-location-dot"></i>Penang</span>
+                                    <span><i class="fa fa-star"></i>4.8+</span>
+                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
                                 </div>
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/accomodation/shangri-la kuala lumpur" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
-                                    <p>RM 109</p>
+                                    <p>RM 289</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slider Accomodation 3 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToAccomodation(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/sunway-resort-hotel-spa.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -510,9 +524,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/accomodation/sunway resort hotel" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 99</p>
                                 </div>
@@ -521,22 +537,24 @@
                     </div>
 
                     <!-- Slider Accomodation 4 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToAccomodation(this)">
-                        <img class="option-img" src="/kuantan-resort-hotel.jpg" alt="">
+                    <div class="carousel swiper-slide lg-img">
+                        <img class="option-img" src="/hyatt-regency-kuantan.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
-                                <h2>Kuantan Resort</h2>
+                                <h2>Hyatt Regency Resort Kuantan</h2>
                                 <div class="hidden-content-carousel">
                                     <span><i class="fa fa-clock"></i>1 Days</span>
-                                    <span><i class="fa fa-star"></i>4.8+</span>
-                                    <span><i class="fa fa-location-dot"></i>Kuantan Resort Hotel</span>
+                                    <span><i class="fa fa-star"></i>4.9+</span>
+                                    <span><i class="fa fa-location-dot"></i>Pahang</span>
                                 </div>
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/accomodation/hyatt regency resort kuantan" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 130</p>
                                 </div>
@@ -559,7 +577,7 @@
             <div class="top-destination-wrapper swiper2">
                 <div class="swiper-wrapper">
                     <!-- Slider Restaurant 1 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToRestaurant(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/thirty8restaurant-kl.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -572,9 +590,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/restaurant/thirty8 restaurant" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 500</p>
                                 </div>
@@ -583,7 +603,7 @@
                     </div>
 
                     <!-- Slider Restaurant 2 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToRestaurant(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/rooftop-25-restaurant-kl.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -596,9 +616,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/restaurant/rooftop 25 restaurant" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 300</p>
                                 </div>
@@ -607,7 +629,7 @@
                     </div>
 
                     <!-- Slider Restaurant 3 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToRestaurant(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/award-winning-thai-restaurant.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -620,9 +642,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/restaurant/malai thai cuisine" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 150</p>
                                 </div>
@@ -631,22 +655,24 @@
                     </div>
 
                     <!-- Slider Restaurant 4 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToRestaurant(this)">
-                        <img class="option-img" src="/flock-at-w-kuala-lumpur.jpg" alt="">
+                    <div class="carousel swiper-slide lg-img">
+                        <img class="option-img" src="/sushi.jpeg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
-                                <h2>Flock At Western</h2>
+                                <h2>Sushi Zento Mount Austin</h2>
                                 <div class="hidden-content-carousel">
                                     <span><i class="fa fa-clock"></i>1 Days</span>
                                     <span><i class="fa fa-star"></i>4.8+</span>
-                                    <span><i class="fa fa-location-dot"></i>Kuala Lumpur</span>
+                                    <span><i class="fa fa-location-dot"></i>Johor</span>
                                 </div>
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/restaurant/sushi zento mount austin" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 350</p>
                                 </div>
@@ -669,7 +695,7 @@
             <div class="top-destination-wrapper swiper2">
                 <div class="swiper-wrapper">
                     <!-- Slider Transport 1 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToTransportation(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/bezza_lrg-transport.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -682,9 +708,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/transportation/proton bezza" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 109</p>
                                 </div>
@@ -693,7 +721,7 @@
                     </div>
 
                     <!-- Slider Transport 2 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToTransportation(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/brv_lrg-transport.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -706,9 +734,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/transportation/proton brv" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 119</p>
                                 </div>
@@ -717,7 +747,7 @@
                     </div>
 
                     <!-- Slider Transportation 3 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToTransportation(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/exora_lrg-transport.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -730,9 +760,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/transportation/proton exora" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 150</p>
                                 </div>
@@ -741,7 +773,7 @@
                     </div>
 
                     <!-- Slider Transportation 4 Start -->
-                    <div class="carousel swiper-slide lg-img" onclick="goToTransportation(this)">
+                    <div class="carousel swiper-slide lg-img">
                         <img class="option-img" src="/saga_lrg-transport.jpg" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
@@ -754,9 +786,11 @@
                             </div>
 
                             <div class="content-fav-and-price">
-                                <button class="favourite-btn">
-                                    <i class="fa-solid fa-heart heart-icon" id="specific-heart-icon"></i>
-                                </button>
+                                <form action="/get-info/transportation/proton saga" method="get">
+                                        <button class="favourite-btn">
+                                            <i class="fa fa-magnifying-glass heart-icon" id="specific-heart-icon"></i>
+                                        </button>
+                                </form>
                                 <div class="price-label">
                                     <p>RM 159</p>
                                 </div>
@@ -838,12 +872,12 @@
                 <div class="links">
                     <h2>Quick Link</h2>
                     <ul>
-                        <li><a href="../Main-Page/main-page.html">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Transport</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Weather</a></li>
-                        <li><a href="#">Favourite</a></li>
+                        <li><a href="/main-page">Home</a></li>
+                        <li><a href="/favourite-pg16">Favourite</a></li>
+                        <li><a href="/history-pg17">History</a></li>
+                        <li><a href="/weather-pg23">Weather</a></li>
+                        <li><a href="/carbon-calculator">Footprint</a></li>
+                        <li><a href="/profile-settings-pg4">About</a></li>
                     </ul>
                 </div>
 
