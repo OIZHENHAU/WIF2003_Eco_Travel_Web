@@ -312,7 +312,7 @@ header.sticky {
 
                     & .flexbox-accomodation {
                         display: flex;
-                        gap: 30px;
+                        gap: 2rem;
                     }
 
                     p {
@@ -356,9 +356,9 @@ header.sticky {
                     padding: 5px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
-                    & .flexbox-accomodation {
+                    & .flexbox-transportation {
                         display: flex;
-                        gap: 40px;
+                        gap: 1.5rem;
                     }
 
                     p {
@@ -373,7 +373,7 @@ header.sticky {
                         margin-bottom: 10px;
                     }
 
-                    & .accomodation-icon {
+                    & .transportation-icon {
                         color: white;
                         font-size: 35px;
                         align-items: center;
@@ -382,14 +382,14 @@ header.sticky {
                     }
 
 
-                    & .accomodation-carbon-list {
+                    & .transportation-carbon-list {
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
                         margin-bottom: 10px;
                     }
 
-                    & .accomodation-element-list {
+                    & .transportation-element-list {
                         display: flex;
                         justify-content: space-between;
                         gap: 120px;
@@ -402,9 +402,9 @@ header.sticky {
                     padding: 5px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
-                    & .flexbox-accomodation {
+                    & .flexbox-restaurant {
                         display: flex;
-                        gap: 25px;
+                        gap: 2.5rem;
                     }
 
                     p {
@@ -419,7 +419,7 @@ header.sticky {
                         margin-bottom: 10px;
                     }
 
-                    & .accomodation-icon {
+                    & .restaurant-icon {
                         color: white;
                         font-size: 35px;
                         align-items: center;
@@ -428,14 +428,14 @@ header.sticky {
                     }
 
 
-                    & .accomodation-carbon-list {
+                    & .restaurant-carbon-list {
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
                         margin-bottom: 10px;
                     }
 
-                    & .accomodation-element-list {
+                    & .restaurant-element-list {
                         display: flex;
                         justify-content: space-between;
                         gap: 120px;
@@ -472,32 +472,6 @@ header.sticky {
             flex-flow: wrap;
             gap: 2rem;
             margin-bottom: 30px;
-        }
-
-        & .pie {
-            flex: 1 0 225px;
-            max-width: 300px;
-            margin-left: 200px;
-            margin-bottom: 10px;
-            aspect-ratio: 1;
-            /*border: 1px solid;*/
-            border-radius: 50%;
-            background-image: conic-gradient(from 30deg, #29B6F6 0% 40%, #0086c3 40% 77%, #54d4ed 77% 100%);
-        }
-
-        & .donut {
-            background-image: 
-                radial-gradient(
-                    white 40%,
-                    transparent 0 70%,
-                    white 0
-                ),
-
-                conic-gradient(from 30deg, 
-                #29B6F6 0% 40%, 
-                #0086c3 40% 77%, 
-                #54d4ed 77% 100%
-                );
         }
 
         .legends {

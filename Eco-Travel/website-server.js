@@ -25,10 +25,10 @@ app.use(session({
 }));
 
 
-app.use(express.static("public"));
-app.use(express.static("src"));
-app.use(express.static("img"));
-app.use(express.static("views"));
+app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/src"));
+app.use(express.static(__dirname + "/img"));
+app.use(express.static(__dirname + "/views"));
 
 //use EJS as the view engine
 app.set('view engine', 'ejs');
@@ -784,6 +784,18 @@ app.get("/search", async (req, res) => {
     }
 });
 
+app.post('/offset-now', (req, res) => {
+  const { footprintData } = req.body;
+  console.log('Received Table Data:', footprintData);
+
+  // Respond with the processed data or redirect
+  res.json({ processedData: footprintData });
+});
+
+app.get('/carbon-offset', (req, res) => {
+  const data = JSON.parse(req.query.data);
+  res.render('carbonOffset-pg22', { data });
+});
 
 // GET route for forgot password page
 app.get("/forgot-password", (req, res) => {

@@ -5,6 +5,7 @@ const closeBtn = document.querySelector(".close-btn");
 
 const paymentButton = document.querySelector(".primary-btn");
 
+
 paymentButton.addEventListener('click', () => {
     window.location.href = `../Page-8/payment-page.html`;
 });

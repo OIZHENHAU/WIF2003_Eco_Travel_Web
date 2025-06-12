@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Friendly Travel Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="carbonOffset-pg22.css">
     <link rel="stylesheet" href="/Main-Page/responsiveMainPage.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
@@ -71,35 +72,44 @@
                             <div class="accomodation-carbon-list">
                                 <p class="element-title">Accomodation</p>
                                 <div class="accomodation-element-list">
-                                    <p>Electricity: 100KWH</p>
-                                    <p>27kgCO2</p>
-                                    <p>RM0.68</p>
+                                    <% data.processedData.forEach(row => {%>
+                                        <% if (row.category == "Accomodation") {%>
+                                            <p><%= row.emission%></p>
+                                            <p><%= row.cost%></p>
+                                        <% } %>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="offset-item2">
-                        <div class="flexbox-accomodation">
-                            <i class="fa-solid fa-utensils accomodation-icon"></i>
-                            <div class="accomodation-carbon-list">
-                                <p class="element-title">Restaurant</p>
-                                <div class="accomodation-element-list">
-                                    <p>Small Car (Petrol): 35miles</p>
-                                    <p>73kgCO2</p>
-                                    <p>RM19.90</p>
+                        <div class="flexbox-transportation">
+                            <i class="fa-solid fa-truck-plane transportation-icon"></i>
+                            <div class="transportation-carbon-list">
+                                <p class="element-title">Transportation</p>
+                                <div class="transportation-element-list">
+                                    <% data.processedData.forEach(row => {%>
+                                        <% if (row.category == "Vehicle") {%>
+                                            <p><%= row.emission%></p>
+                                            <p><%= row.cost%></p>
+                                        <% } %>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="offset-item3">
-                        <div class="flexbox-accomodation">
-                            <i class="fa-solid fa-truck-plane accomodation-icon"></i>
-                            <div class="accomodation-carbon-list">
-                                <p class="element-title">Transportation</p>
-                                <div class="accomodation-element-list">
-                                    <p>High meat-eater (3 days a week)</p>
-                                    <p>100kgCO2</p>
-                                    <p>RM150.59</p>
+                        <div class="flexbox-restaurant">
+                            <i class="fa-solid fa-utensils restaurant-icon"></i>
+                            <div class="restaurant-carbon-list">
+                                <p class="element-title">Restaurant</p>
+                                <div class="restaurant-element-list">
+                                    <% data.processedData.forEach(row => {%>
+                                        <% if (row.category == "Restaurant") {%>
+                                            <p><%= row.emission%></p>
+                                            <p><%= row.cost%></p>
+                                        <% } %>
+                                    <% }) %>
                                 </div>
                             </div>
                         </div>
@@ -110,16 +120,20 @@
 
             <!-- Carbon Pie Chart Shown-->
             <div class="flexbox-right">
-                <h2 class="headings">Total Carbon Footprint: <span>27KGCO2</span></h2>
+                <h2 class="headings">Total Carbon Footprint: <span>
+                    <% const totalFootprint = data.processedData[data.processedData.length - 1] %>
+                    <%= totalFootprint.total %>
+                </span></h2>
 
                 <figure class="charts">
-                    <div class="pie donut"></div>
+                    <canvas id="pieChart" style="width:100%;max-width:400px;height:100%;max-height:400px;"></canvas>
                 </figure>
 
                 <figcaption class="legends">
-                    <span>Accomodation 40%</span>
-                    <span>Restaurant 22%</span>
-                    <span>Transportation 38%</span>
+                    <% const percentage = data.processedData[data.processedData.length - 1] %>
+                    <span>Accomodation <%= percentage.accomPercent %> %</span>
+                    <span>Transportation <%= percentage.vehiclePercent %> %</span>
+                    <span>Restaurant <%= percentage.restPercent %> %</span>
                 </figcaption>
 
             </div>
@@ -305,6 +319,29 @@
     </footer>
     <!-- Footer End -->
 
+    <script>
+        const data = <%- JSON.stringify(data) %>
+        const percentage = data.processedData[data.processedData.length - 1]
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+            labels: ["Accomodation", "Transportation", "Restaurant"],
+            datasets: [{
+                data: [percentage.accomPercent, percentage.vehiclePercent, percentage.restPercent],
+                backgroundColor: ["#54d4ed", "#29B6F6", "#0086c3"],
+            }]
+            },
+            options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                position: 'top',
+                },
+            },
+            },
+        });
+    </script>
 
     <script src="carbonOffset-pg22.js"></script>
     <script src="/Main-Page/swiperMainPage.js" defer></script>
