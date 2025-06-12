@@ -40,7 +40,7 @@
         <div class="profile-sidebar">
           <div class="profile-image-container">
             <div class="profile-image-wrapper" id="profileImageWrapper">
-              <img src="<%= user.image || 'https://via.placeholder.com/150' %>" alt="Profile" id="profileImage" class="profile-image">
+              <img src="<%= (image !== 'NIL') ? image : 'https://via.placeholder.com/150' %>" alt="Profile" id="profileImage" class="profile-image">
               <div class="image-overlay">
                 <span class="camera-icon">📷</span>
               </div>

@@ -176,8 +176,11 @@ app.get("/profile-settings-pg4", async (req, res) => {
         if (!userProfileData) {
             return res.status(404).send("User Not Found!");
         }
+
+        const profileImage = userProfileData.image;
+        console.log("Profile Image: ", profileImage);
         
-        res.render("profile-settings-pg4.ejs", { user: userProfileData });
+        res.render("profile-settings-pg4.ejs", { user: userProfileData, image: profileImage });
 
     } catch (err) {
         console.error("Error loading user profile:", err);

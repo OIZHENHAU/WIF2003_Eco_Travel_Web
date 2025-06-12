@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize
   //loadProfile();
-  loadProfileImage();
+  //loadProfileImage();
   
   // Show success message
   const showSuccess = (message) => {
