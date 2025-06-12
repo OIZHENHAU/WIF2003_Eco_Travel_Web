@@ -7,7 +7,8 @@ const destinations = require("./src/destination_library");
 const accomodations = require("./src/accomodation_library");
 const restaurants = require("./src/restaurant_library");
 const transportations = require("./src/transportation_library");
-
+const multer = require('multer');
+const fs = require('fs');
 
 const app = express();
 
@@ -51,6 +52,43 @@ function getRandomDestinations(obj, count) {
   const shuffled = all.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 }
+
+// configure storage
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, 'img')); // your folder
+  },
+  filename: (req, file, cb) => {
+    const unique = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    const ext = path.extname(file.originalname);
+    cb(null, file.fieldname + '-' + unique + ext);
+  }
+});
+
+const upload = multer({ storage });
+
+app.post('/api/upload-profile-image', upload.single('profileImage'), async (req, res) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ message: 'Not authenticated' });
+  }
+  
+  const file = req.file;
+  if (!file) {
+    return res.status(400).json({ message: 'No file uploaded' });
+  }
+  
+  const imgPath = '/' + file.filename;
+  
+  try {
+    await collection.findByIdAndUpdate(req.session.userId, {
+      image: imgPath
+    });
+    res.json({ success: true, imageUrl: imgPath });
+  } catch (err) {
+    console.error('DB update error:', err);
+    res.status(500).json({ message: 'DB error' });
+  }
+});
 
 
 //Register User

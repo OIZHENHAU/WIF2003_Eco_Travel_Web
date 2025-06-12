@@ -113,6 +113,11 @@ const LoginRegisterSchema = new mongoose.Schema({
         required: true
     },
 
+    image: {
+        type: String,
+        default: "" // store the relative path to the image
+    },
+
     favourite: [destinationSchema],
 
     planner: [plannerSchema]

@@ -224,11 +224,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // Handle profile image update
-  profileImageWrapper.addEventListener('click', () => {
+  document.getElementById('updateImageBtn').addEventListener('click', () => {
     imageInput.click();
   });
   
-  imageInput.addEventListener('change', async (e) => {
+  /*imageInput.addEventListener('change', async (e) => {
     const file = e.target.files[0];
     if (file) {
       showSpinner('Uploading image...');
@@ -272,6 +272,55 @@ document.addEventListener('DOMContentLoaded', () => {
       reader.readAsDataURL(file);
     }
   });
+  */
+
+  imageInput.addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  showSpinner('Uploading image...');
+
+  const formData = new FormData();
+  formData.append('profileImage', file);
+
+  try {
+    const res = await fetch('/api/upload-profile-image', {
+      method: 'POST',
+      body: formData
+    });
+    const data = await res.json();
+
+    if (res.ok) {
+      const result = data.imageUrl;
+
+      // Update displayed image
+      const profileImage = document.getElementById('profileImage');
+      profileImage.style.display = 'block';
+      profileImage.src = result;
+      localStorage.setItem('userProfileImage', result);
+
+      // Update header avatar
+      const userIcon = document.querySelector('.user-icon');
+      if (userIcon) {
+        const headerAvatar = document.createElement('img');
+        headerAvatar.src = result;
+        headerAvatar.alt = 'User';
+        headerAvatar.style.cssText = 'width:30px;height:30px;border-radius:50%;object-fit:cover;';
+        userIcon.parentNode.replaceChild(headerAvatar, userIcon);
+      }
+
+      showSuccess('Profile image updated successfully!');
+    } else {
+      alert('Upload failed: ' + data.message);
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Upload error');
+  } finally {
+    hideSpinner();
+  }
+});
+
   
   // Handle delete account
   deleteAccountBtn.addEventListener('click', async () => {
