@@ -881,12 +881,19 @@
                     </ul>
                 </div>
 
+
                 <div class="subscribe">
                     <h2>Subscribe</h2>
                     <p class="lead">Sign Up for our monthly blog to stay informed about travel and tours.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Email Address">
-                        <button type="button" class="button">Send</button>
+                    <form action="/subscribe" method="POST" id="subscribeForm">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <button type="submit" class="button" onClick="openPopUp()">Send</button>
+                        <div class="popup" id="popup">
+                            <img src="/blue-tick.png">
+                            <h2 style="color: black;">Thank you for Subscribe!</h2>
+                            <p style="color: black" style="margin-bottom: 40px;">Please check your email for further notifications. Thanks!</p>
+                            <button type="button" style="top: 90%;" onClick="closePopUp()">OK</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -900,32 +907,15 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        function goToDestination(element) {
-            const img = element.querySelector('.option-img');
-            const imgSrc = encodeURIComponent('../Main-Page/' + img.getAttribute('src'));
-            //console.log(imgSrc);
-            window.location.href = `../Page-7/camero_detail.html?img=${imgSrc}`;
+        let popup = document.getElementById("popup");
+        const form = document.getElementById('subscribeForm');
+
+        function openPopUp() {
+            popup.classList.add("open-popup");
         }
 
-        function goToAccomodation(element) {
-            const img = element.querySelector('.option-img');
-            const imgSrc = encodeURIComponent('../Main-Page/' + img.getAttribute('src'));
-            //console.log(imgSrc);
-            window.location.href = `../Page-11/Hilton_detail.html?img=${imgSrc}`;
-        }
-
-        function goToRestaurant(element) {
-            const img = element.querySelector('.option-img');
-            const imgSrc = encodeURIComponent('../Main-Page/' + img.getAttribute('src'));
-            //console.log(imgSrc);
-            window.location.href = `../Page-12/Sushi_detail.html?img=${imgSrc}`;
-        }
-
-        function goToTransportation(element) {
-            const img = element.querySelector('.option-img');
-            const imgSrc = encodeURIComponent('../Main-Page/' + img.getAttribute('src'));
-            //console.log(imgSrc);
-            window.location.href = `../Page-15/chosen_car.html?img=${imgSrc}`;
+        function closePopUp() {
+            popup.classList.remove("open-popup");
         }
     </script>
 </body>

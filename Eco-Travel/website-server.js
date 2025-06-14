@@ -9,6 +9,9 @@ const restaurants = require("./src/restaurant_library");
 const transportations = require("./src/transportation_library");
 const multer = require('multer');
 const fs = require('fs');
+require('dotenv').config();
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const app = express();
 
@@ -90,6 +93,72 @@ app.post('/api/upload-profile-image', upload.single('profileImage'), async (req,
   }
 });
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Serialize and deserialize
+passport.serializeUser((user, done) => {
+  done(null, user._id.toString()); // Store user ID in session
+});
+
+passport.deserializeUser(async (id, done) => {
+  const user = await collection.findById(id);
+  done(null, user);
+});
+
+// Configure Google Strategy
+passport.use(new GoogleStrategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: "/auth/google/callback",
+  passReqToCallback: true
+},
+async (req, accessToken, refreshToken, profile, done) => {
+  try {
+    let user = await collection.findOne({ email: profile.emails[0].value });
+
+    if (!user) {
+      user = await collection.create({
+        name: profile.displayName,
+        email: profile.emails[0].value,
+        password: "GOOGLE_OAUTH", // Dummy password
+        image: profile.photos[0].value
+      });
+    }
+
+    console.log("User Details Google", user);
+    //req.session.userId = user._id;
+    //console.log("User Session ID", req.session.userId);
+
+    return done(null, user);
+  } catch (err) {
+    return done(err);
+  }
+}));
+
+// Start Google auth
+app.get("/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+
+app.get("/auth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/"
+  }),
+  (req, res) => {
+    // Set session.userId after successful login
+    req.session.userId = req.user._id;
+    res.redirect("/main-page");
+  }
+);
+
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect('/');
+}
+
 
 //Register User
 app.post("/signup", async(req, res) => {
@@ -170,7 +239,14 @@ app.post("/login", async(req, res) => {
 //User Profile Settingd
 app.get("/profile-settings-pg4", async (req, res) => {
     try {
-        const userProfileData = await collection.findById(req.session.userId);
+        const userId = req.user ? req.user._id : req.session.userId;
+
+        console.log("User ID in Profile Page", userId);
+        if (!userId) return res.status(401).send("Not Authenticated");
+
+        const userProfileData = await collection.findById(userId);
+        //console.log("User ID in Profile Page", req.session.userId);
+        //const userProfileData = await collection.findById(req.session.userId);
         console.log("User Profile Settings: ", userProfileData);
 
         if (!userProfileData) {
@@ -242,6 +318,50 @@ app.post("/api/update-profile", async (req, res) => {
     } catch (err) {
         console.error("Error updating profile:", err);
         res.status(500).send("Internal Server Error");
+    }
+});
+
+const nodemailer = require('nodemailer');
+
+// Route to handle subscription
+app.post('/subscribe', async (req, res) => {
+    const { email } = req.body;
+
+    // Set up transporter
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+        },
+    });
+
+    // Email content
+    const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: email,
+        subject: 'Thanks for Subscribing to Eco Travel!',
+        text: `Hello,
+
+Thank you for subscribing to our Eco Travel monthly blog! 🌍✈️
+
+We'll keep you updated with the latest travel tips, destinations, and tours.
+
+Stay tuned!
+– The Eco Travel Team`,
+    };
+
+    // Send the email
+    try {
+        await transporter.sendMail(mailOptions);
+        console.log(`Subscription email sent to ${email}`);
+        //res.send("Thank you for subscribing! Check your email.");
+        res.render("main-page.ejs");
+
+    } catch (err) {
+        console.error("Error sending email:", err);
+        //res.status(500).send("There was an error sending the subscription email.");
+        //res.redirect('/main-page?subscribed=fail');
     }
 });
 
@@ -533,7 +653,7 @@ app.post("/add-favourite/:category/:place", async(req, res) => {
                 await collection.findByIdAndUpdate(userId, { $addToSet: {favourite: favourite_destination} });
 
                 console.log(`Added ${place} to your favourites`);
-                res.render("main-page.ejs");
+                //res.render("main-page.ejs");
 
             } catch (err) {
                 console.log("Error adding to favourites: ", err);
@@ -548,7 +668,7 @@ app.post("/add-favourite/:category/:place", async(req, res) => {
                 });
 
                 console.log(`Remove ${place} from your favourites`);
-                res.render("main-page.ejs");
+                //res.render("main-page.ejs");
 
             } catch (err) {
                 console.log("Error adding to favourites: ", err);
@@ -612,7 +732,7 @@ app.post("/add-planner/:category/:place", async(req, res) => {
 
             await currentUser.save();
 
-            res.render("main-page.ejs");
+            //res.render("main-page.ejs");
 
         } catch (err) {
             console.error(err);
@@ -646,7 +766,7 @@ app.post("/add-planner/:category/:place", async(req, res) => {
 
             await currentUser.save();
 
-            res.render("main-page.ejs");
+            //res.render("main-page.ejs");
 
         } catch (err) {
             console.error(err);
@@ -680,7 +800,7 @@ app.post("/add-planner/:category/:place", async(req, res) => {
 
             await currentUser.save();
 
-            res.render("main-page.ejs");
+            //res.render("main-page.ejs");
 
         } catch (err) {
             console.error(err);
@@ -903,6 +1023,12 @@ app.post("/verify-otp", async (req, res) => {
         res.status(500).json({ success: false, message: "Server error occurred" });
     }
 });
+
+
+app.get("/search", (req, res) => {
+    res.render("payment-page-pg8.ejs");
+});
+
 
 const port = 5000;
 app.listen(port, () => {

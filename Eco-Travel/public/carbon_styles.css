@@ -300,6 +300,7 @@ header.sticky {
 
 .row {
     margin: 10px;
+    margin-left: -10px;
 }
 
 .content {
@@ -330,7 +331,8 @@ h3 {
 .table {
     border-style: solid;
     border-color: black;
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-left: -10px;
 }
 
 #carbonFootprint {
@@ -477,3 +479,4 @@ form {
     font-size: 1rem;
     color: var(--white);
 }
+

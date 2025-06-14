@@ -256,9 +256,9 @@
                 <div class="subscribe">
                     <h2>Subscribe</h2>
                     <p class="lead">Sign Up for our monthly blog to stay informed about travel and tours.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Email Address">
-                        <button type="button" class="button">Send</button>
+                    <form action="/subscribe" method="POST">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <button type="submit" class="button">Send</button>
                     </form>
                 </div>
             </div>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="empty-history-pg18.css">
-    <link rel="stylesheet" href="/Main-Page/responsiveMainPage.css">
+    <link rel="stylesheet" href="/empty-history-pg18.css">
+    <link rel="stylesheet" href="/responsiveMainPage.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -187,9 +187,9 @@
                 <div class="subscribe">
                     <h2>Subscribe</h2>
                     <p class="lead">Sign Up for our monthly blog to stay informed about travel and tours.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Email Address">
-                        <button type="button" class="button">Send</button>
+                    <form action="/subscribe" method="POST">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <button type="submit" class="button">Send</button>
                     </form>
                 </div>
             </div>
@@ -198,10 +198,10 @@
     </footer>
     <!-- Footer End -->
 
-    <script src="empty-history-pg18.js"></script>
+    <script src="/empty-history-pg18.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/Main-Page/swiperMainPage.js"></script>
+    <script src="/swiperMainPage.js"></script>
     
 </body>
 </html>

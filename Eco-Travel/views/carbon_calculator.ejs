@@ -42,7 +42,7 @@
         </div>
     </header>
 
-    <div class="container-fluid container" style="background-color: white; border-radius: 5px;">
+    <div class="container-fluid container" style="background-color: white; border-radius: 5px; margin-bottom: 100px; margin-top: 180px;">
         <!-- <nav aria-label="Carbon Calculator Categories">
             <ul class="pagination justify-content-center">
                 <li class="page-item" id="accom_calc"><a class="page-link" href="#">Accomodation</a></li>
@@ -179,8 +179,8 @@
 
                 <div class="row justify-content-right">
                     <div class="col-6">Total:</div>
-                    <div class="col-3" id="totalAccomEmission">0kg</div>
-                    <div class="col" id="totalAccomCost">RM0</div>
+                    <div class="col-3 text-end total_acc_emission" id="totalAccomEmission">0kg</div>
+                    <div class="col text-end total_acc_cost" id="totalAccomCost">RM0</div>
                 </div>
 
             </div>
@@ -217,7 +217,7 @@
                     </div>
                 </div>
                 
-                <div class="row justify-content-end">
+                <div class="row justify-content-end" style="margin-top: 40px;">
                     <div class="col-5 d-grid gap-2 d-md-flex justify-content-md-end">
                         <button id="calculateVehicle" type="button" class="btn" onclick="calculateVehicle()">
                             <i class="fa-solid fa-calculator"></i> Calculate
@@ -243,8 +243,8 @@
 
                 <div class="row justify-content-right">
                     <div class="col-6">Total:</div>
-                    <div class="col-3" id="totalVehicleEmission">0kg</div>
-                    <div class="col" id="totalVehicleCost">RM0</div>
+                    <div class="col-3 text-end total_acc_emission" id="totalVehicleEmission">0kg</div>
+                    <div class="col text-end total_acc_cost" id="totalVehicleCost">RM0</div>
                 </div>
 
             </div>
@@ -302,7 +302,7 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-end">
+                <div class="row justify-content-end" style="margin-top: 40px;">
                     <div class="col-5 d-grid gap-2 d-md-flex justify-content-md-end">
                         <button id="calculateFood" type="button" class="btn" onclick="calculateRest()">
                             <i class="fa-solid fa-calculator"></i> Calculate
@@ -328,8 +328,8 @@
 
                 <div class="row justify-content-right">
                     <div class="col-6">Total:</div>
-                    <div class="col-3" id="totalRestaurantEmission">0 tCO2</div>
-                    <div class="col" id="totalRestaurantCost">RM0</div>
+                    <div class="col-3 text-end total_acc_emission" id="totalRestaurantEmission">0 tCO2</div>
+                    <div class="col text-end total_acc_cost" id="totalRestaurantCost">RM0</div>
                 </div>
 
             </div>
@@ -441,9 +441,9 @@
                 <div class="subscribe">
                     <h2>Subscribe</h2>
                     <p class="lead">Sign Up for our monthly blog to stay informed about travel and tours.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Email Address">
-                        <button type="button" class="button">Send</button>
+                    <form action="/subscribe" method="POST">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <button type="submit" class="button">Send</button>
                     </form>
                 </div>
             </div>

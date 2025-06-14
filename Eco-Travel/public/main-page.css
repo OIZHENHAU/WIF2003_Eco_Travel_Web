@@ -468,7 +468,7 @@ form input, select {
 /* ======================== Choose Place Start ========================== */
 
 #choose-place {
-    padding: 6rem 0;
+    padding: 4rem 0;
 
 }
 
@@ -569,7 +569,7 @@ form input, select {
 /* ======================== Popular Destination Start ========================== */
 
 #top-destination {
-    padding: 6rem 0;
+    padding: 4rem 0;
 }
 
 .top-destination-wrapper {
@@ -686,7 +686,7 @@ form input, select {
 /* ======== Footer Start ======== */
 
 #footer {
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: var(--primary-color);
 
 }
@@ -749,7 +749,7 @@ form input, select {
     padding: 2rem 0;
     grid-gap: 4rem;
     color: var(--white);
-    margin: 4rem 0;
+    margin: 2rem 0;
 
 }
 
@@ -826,3 +826,51 @@ form {
 }
 
 /* ======== Footer End ======== */
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin: 15px 0;
+}
+
+.popup {
+    width: 400px;
+    background: #ced4da;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-170%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-170%, -50%) scale(1);
+}
+
+.popup img {
+    width: 100px;
+    margin-top: -50px;
+    margin-left: 110px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    margin: 30px 0 10px;
+}
+
+.popup button {
+    background-color: black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
