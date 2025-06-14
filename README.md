@@ -28,3 +28,10 @@ Update of EJS Version:
 Hey guys, I have updated our project into EJS format. So you guys can run the following to start, test and debug your code:
 
 nodemon website-server.js (under the directory c:/Users/User/.vscode/WIF2003_Eco_Travel-2/Eco-Travel)
+
+Please add your own .env file under the Eco-Travel folder:
+
+GOOGLE_CLIENT_ID="YOUR GOOGLE CLIENT ID"
+GOOGLE_CLIENT_SECRET="YOUR CLIENT SECRET"
+EMAIL_USER='YOUR EMAIL'
+EMAIL_PASS='YOUR MAIL PASSWORD'
