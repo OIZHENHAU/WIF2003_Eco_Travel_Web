@@ -308,7 +308,7 @@
             </ul>
             <p class="mt-2">
               <i class="bi bi-geo-alt-fill text-primary"></i>
-              <%=destination.location%>
+              <a href="<%= destination.location_link %>"><%=destination.location%></a>
             </p>
           </div>
         </div>
@@ -354,7 +354,7 @@
 
 
         <!-- 预订区域 -->
-        <div class="row g-3 align-items-end mt-3 booking-section" style="margin-top: 10px;">
+        <div class="row g-3 align-items-end mt-3 booking-section" style="margin-top: 10px; display:flex">
           <form action="/add-planner/<%=destination.category %>/<%=destination.name.toLowerCase()%>" method="post">
             <div class="row g-3">
               <div class="col-md-4">
@@ -366,7 +366,7 @@
                 <input type="number" name="num_of_person" class="form-control" placeholder="2" min="1" required>
               </div>
                 <div class="col-md-4 d-flex align-items-end">
-                  <button class="btn btn-primary me-2" style="margin-left: 160px;">Book Now</button>
+                  <button type="button" onClick="redirectToPayment()" class="btn btn-primary me-2" style="margin-left: 160px;">Book Now</a>
                   <button class="btn btn-outline-primary" onClick="openPopUp()">Add Planner</button>
                 </div>
             </div>
@@ -484,6 +484,21 @@
       function closePopUp() {
           popup.classList.remove("open-popup");
           window.history.go(-1);
+      }
+
+      function redirectToPayment() {
+        const numOfPerson = document.querySelector('input[name="num_of_person"]').value;
+        const pricePerPerson = <%= destination.price %>;
+
+        if (!numOfPerson || numOfPerson <= 0) {
+          alert("Please enter a valid number of persons.");
+          return;
+        }
+
+        const totalPrice = pricePerPerson * parseInt(numOfPerson);
+
+        // Redirect to payment page with query parameters
+        window.location.href = `/payment-page?total=${totalPrice}`;
       }
 
   </script>

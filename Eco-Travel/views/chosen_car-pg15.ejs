@@ -217,11 +217,7 @@
                 </div>
 
                 <div class="button_section">
-                    <button id="add_planner_button" class="rounded-pill d-inline-block content_button">
-                        Add Planner
-                    </button>
-
-                    <button id="add_planner_button" class="rounded-pill d-inline-block content_button">
+                    <button type="button" onClick="redirectToPayment()" id="add_planner_button" class="rounded-pill d-inline-block content_button">
                         Book Now
                     </button>
                 </div>
@@ -388,7 +384,17 @@
             if (imgSrc) {
               document.getElementById('car_image').src = "../Main-Page/" + decodeURIComponent(imgSrc);
             }
-          </script>
+
+            function redirectToPayment() {
+                //const numOfPerson = document.querySelector('input[name="num_of_person"]').value;
+                const pricePerPerson = <%=transportation.price %>;
+
+                const totalPrice = pricePerPerson;
+
+                // Redirect to payment page with query parameters
+                window.location.href = `/payment-page?total=${totalPrice}`;
+            }
+        </script>
 </body>
 
 </html>

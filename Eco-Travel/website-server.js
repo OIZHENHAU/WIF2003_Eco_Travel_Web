@@ -42,7 +42,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", { errorMessage: null });
   console.log("Welcome to Home Page");
 });
 
@@ -72,7 +72,7 @@ const upload = multer({ storage });
 
 app.post('/api/upload-profile-image', upload.single('profileImage'), async (req, res) => {
   if (!req.session.userId) {
-    return res.status(401).json({ message: 'Not authenticated' });
+    res.render("index.ejs", { errorMessage: null });
   }
   
   const file = req.file;
@@ -227,12 +227,12 @@ app.post("/login", async(req, res) => {
             });
 
         } else {
-            return res.send("Password Incorrect!"); // Fixed typo: req.send -> res.send, added return
+           return res.render("index.ejs", { errorMessage: "Incorrect username or password!" }); // Fixed typo: req.send -> res.send, added return
         }
 
     } catch (error) { // Added error parameter
         console.error("Login error:", error); // Better error logging
-        return res.send("Wrong Details"); // Added return
+        return res.render("index.ejs", { errorMessage: "Login error occured!" }); // Added return
     }
 });
 
@@ -242,7 +242,9 @@ app.get("/profile-settings-pg4", async (req, res) => {
         const userId = req.user ? req.user._id : req.session.userId;
 
         console.log("User ID in Profile Page", userId);
-        if (!userId) return res.status(401).send("Not Authenticated");
+        if (!userId) {
+            res.render("index.ejs", { errorMessage: null });
+        }
 
         const userProfileData = await collection.findById(userId);
         //console.log("User ID in Profile Page", req.session.userId);
@@ -827,7 +829,7 @@ app.get("/search", async (req, res) => {
             const matchesState = state && state !== "Where to?" ? destination.short_location === state : true;
 
             // If price is selected, match it; otherwise allow all
-            const matchesPrice = price && price !== "Budget" ? destination.price <= parseInt(price) : true;
+            const matchesPrice = price && price !== "Budget" ? (destination.price <= parseInt(price) && destination.price >= parseInt(price) - 50) : true;
 
             // If idea is selected, match it; otherwise allow all
             const matchesIdea = idea && idea !== "Travel Ideas" ? destination.idea === idea : true;
@@ -845,7 +847,7 @@ app.get("/search", async (req, res) => {
             const matchesState = state && state !== "Where to?" ? destination.short_location === state : true;
 
             // If price is selected, match it; otherwise allow all
-            const matchesPrice = price && price !== "Budget" ? destination.price <= parseInt(price) : true;
+            const matchesPrice = price && price !== "Budget" ? (destination.price <= parseInt(price) && destination.price >= parseInt(price) - 50) : true;
 
             // If idea is selected, match it; otherwise allow all
             const matchesIdea = idea && idea !== "Travel Ideas" ? destination.idea === idea : true;
@@ -863,7 +865,7 @@ app.get("/search", async (req, res) => {
             const matchesState = state && state !== "Where to?" ? destination.short_location === state : true;
 
             // If price is selected, match it; otherwise allow all
-            const matchesPrice = price && price !== "Budget" ? destination.price <= parseInt(price) : true;
+            const matchesPrice = price && price !== "Budget" ? (destination.price <= parseInt(price) && destination.price >= parseInt(price) - 50) : true;
 
             // If idea is selected, match it; otherwise allow all
             const matchesIdea = idea && idea !== "Travel Ideas" ? destination.idea === idea : true;
@@ -881,7 +883,7 @@ app.get("/search", async (req, res) => {
             const matchesState = state && state !== "Where to?" ? destination.short_location === state : true;
 
             // If price is selected, match it; otherwise allow all
-            const matchesPrice = price && price !== "Budget" ? destination.price <= parseInt(price) : true;
+            const matchesPrice = price && price !== "Budget" ? (destination.price <= parseInt(price) && destination.price >= parseInt(price) - 50) : true;
 
             // If idea is selected, match it; otherwise allow all
             const matchesIdea = idea && idea !== "Travel Ideas" ? destination.idea === idea : true;
@@ -1025,8 +1027,20 @@ app.post("/verify-otp", async (req, res) => {
 });
 
 
-app.get("/search", (req, res) => {
-    res.render("payment-page-pg8.ejs");
+app.get("/payment-page", (req, res) => {
+    let { total } = req.query;
+
+    // Remove "RM" (case-insensitive) and any spaces
+    if (typeof total === "string") {
+        total = total.replace(/rm\s?/i, '').trim(); // Remove 'RM' and optional space
+    }
+
+    res.render("payment-page-pg8.ejs", {
+        paymentInfo: {
+        total_price: total || 0
+        }
+    });
+
 });
 
 

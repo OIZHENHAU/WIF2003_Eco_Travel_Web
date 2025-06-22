@@ -63,7 +63,7 @@
         <div class="flexbox-top">
             <!-- Main Result Display -->
             <div class="flexbox-left card">
-                <h2 class="headings">CARBON FOOTPRINT <span>RESULT</span></h2>
+                <h2 class="headings"><span>CARBON FOOTPRINT</span> RESULT</h2>
 
                 <div class="carbonOffest-result-list">
                     <div class="offset-item1">
@@ -74,8 +74,8 @@
                                 <div class="accomodation-element-list">
                                     <% data.processedData.forEach(row => {%>
                                         <% if (row.category == "Accomodation") {%>
-                                            <p><%= row.emission%></p>
-                                            <p><%= row.cost%></p>
+                                            <p style="margin-right: 30px;">Emission: <%= row.emission%></p>
+                                            <p>Cost: <%= row.cost%></p>
                                         <% } %>
                                     <% }) %>
                                 </div>
@@ -90,8 +90,8 @@
                                 <div class="transportation-element-list">
                                     <% data.processedData.forEach(row => {%>
                                         <% if (row.category == "Vehicle") {%>
-                                            <p><%= row.emission%></p>
-                                            <p><%= row.cost%></p>
+                                            <p style="margin-right: 30px;">Emission: <%= row.emission%></p>
+                                            <p>Cost: <%= row.cost%></p>
                                         <% } %>
                                     <% }) %>
                                 </div>
@@ -106,8 +106,8 @@
                                 <div class="restaurant-element-list">
                                     <% data.processedData.forEach(row => {%>
                                         <% if (row.category == "Restaurant") {%>
-                                            <p><%= row.emission%></p>
-                                            <p><%= row.cost%></p>
+                                            <p style="margin-right: 30px;">Emission: <%= row.emission%></p>
+                                            <p>Cost: <%= row.cost%></p>
                                         <% } %>
                                     <% }) %>
                                 </div>
@@ -195,33 +195,27 @@
     <section id="location-search">
         <div class="container">
             <div class="form-wrapper">
-                <form action="/make-payment" method="get">
-                    <input type="text" placeholder="RM" class="form-control">
+                <form action="/payment-page" method="get">
+                    <input type="text" name="total" placeholder="RM 100.00" class="form-control" required>
 
-                    <select class="form-control">
+                    <select class="form-control" name="state">
                         <option value="Interest">State to Donate</option>
-                        <option value="Interest">Johor</option>
-                        <option value="Interest">Sarawak</option>
-                        <option value="Interest">Sabah</option>
-                        <option value="Interest">Penang</option>
-                        <option value="Interest">Selangor</option>
-                        <option value="Interest">Pahang</option>
-                        <option value="Interest">Perak</option>
-                        <option value="Interest">Kedah</option>
-                        <option value="Interest">Kelantan</option>
-                        <option value="Interest">Negeri Sembilan</option>
-                        <option value="Interest">Perlis</option>
-                        <option value="Interest">Terengganu</option>
-                        <option value="Interest">Malacca</option>
+                        <option value="Johor">Johor</option>
+                        <option value="Sarawak">Sarawak</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Selangor">Selangor</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Negeri Sembilan">Negeri Sembilan</option>
+                        <option value="Perlis">Perlis</option>
+                        <option value="Terengganu">Terengganu</option>
+                        <option value="Malacca">Malacca</option>
                     </select>
 
-                    <select class="form-control">
-                        <option value="Weather">Payment Type</option>
-                        <option value="Weather">Credit Card</option>
-                        <option value="Weather">PayPal</option>
-                    </select>
-
-                    <button type="button" class="primary-btn"><i class="fa-solid fa-coins"></i>  Pay Now</button>
+                    <button type="submit" class="primary-btn"><i class="fa-solid fa-coins"></i>  Pay Now</button>
                 </form>
             </div>
         </div>

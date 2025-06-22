@@ -13,6 +13,8 @@ const restaurants = {
         official_menu: "https://www.tablecheck.com/en/hilton-garden-inn-kl-south-rooftop25/reserve/landing?utm_source=tripadvisor",
         operating_hour: "10:30A.M - 11:00P.M",
         favourite: false,
+        price: 20,
+        rating: 4.9,
         description: "Indulge at this stylish rooftop bar with panoramic views of KL tower and the Petronas Twin Towers. Located on the 25th floor, Rooftop 25 Bar and Lounge offers a relaxed, sensual atmosphere with music playing throughout the night."
     },
 
@@ -30,6 +32,8 @@ const restaurants = {
         official_menu: "https://issuu.com/grandhyattkualalumpur/docs/menu_thirty8_reduced",
         operating_hour: "10:00A.M - 11:00P.M",
         favourite: false,
+        price: 10,
+        rating: 5.0,
         description: "THIRTY8 is located strategically on the 38th floor and comprises of a 360-degree city view including the dining areas, bar and lounge. Heightening the discerning diners’ experience are the lively show kitchens which serve international cuisine showcasing a variety of Western, Chinese and Japanese flavours. It is the elegant curves, captivating views, the dramatic sense of space and vibrant cuisine that makes THIRTY8 the signature restaurant of Grand Hyatt Kuala Lumpur and an ideal location for entertaining business associates, family and friend gatherings also special occasions."
     },
 
@@ -47,6 +51,8 @@ const restaurants = {
         official_menu: "https://malaithai.restaurant/#!/menu",
         operating_hour: "10:00A.M - 10:00P.M",
         favourite: false,
+        price: 18,
+        rating: 4.8,
         description: "Experience Authentic Thai Dining like never before at Menara Amplewest’s award-winning restaurant and cocktail bar. Our team of skilled Thai chefs takes pride in bringing you the best of Thai Food and speciality Desserts in a fine dining setting. Our pork-free menu caters to all preferences, including vegetarian options that will leave you craving more. Come and experience the award-winning culinary journey that we are renowned for."
     },
 
@@ -64,9 +70,202 @@ const restaurants = {
         official_menu: "http://www.edoichigroup.com/",
         operating_hour: "9:30A.M - 11:00P.M",
         favourite: false,
+        price: 10,
+        rating: 4.4,
         description: "The Modern Term Japanese Cuisine (Nihon Ryori) Means Traditional-Style Japanese Food. Similar To What Already Existed Before The End Of National Seclusion In 1868. In A Broader Sense Of The Word. It Could Also Includes Food Whose Ingredients Or Cooking Methods Were Subsequently Introduced From Abroad But Have Been Developed By Japanese Who Made Them, Their Own."
+    },
+
+    'the banana leaf kitchen': {
+        category: "restaurant",
+        link_name: "the banana leaf kitchen",
+        name: "The Banana Leaf Kitchen",
+        image: "/the-banana-leaf-kitchen.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Johor",
+        location: "1 Jalan Mutiara Austin, Johor Bahru 81100 Malaysia",
+        location_link: "https://www.google.com/maps/search/the+banana+leaf+kitchen/@1.4408964,103.6178837,7z?entry=s&sa=X&ved=1t%3A199789",
+        official_website: "http://www.thebananaleafkitchen.com/",
+        official_menu: "https://www.thebananaleafkitchen.com/ala-carte",
+        operating_hour: "9:30A.M - 11:00P.M",
+        favourite: false,
+        price: 10,
+        rating: 4.4,
+        description: "Banana Leaf is a multi-awarded international restaurant that pioneered the introduction of Southeast Asian cuisine to Filipino diners since 2001 through the authentic delights of modern Malaysian, Singaporean, Thai, Indian, Vietnamese and Indonesian foods."
+    },
+
+    'the baboon house': {
+        category: "restaurant",
+        link_name: "the baboon house",
+        name: "The Baboon House",
+        image: "/the-baboon-house.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Melaka",
+        location: "No. 89 Jalan Tun Tan Cheng Lock, Melaka 75200 Malaysia",
+        location_link: "https://www.google.com/maps/place/the+baboon+house/data=!4m2!3m1!1s0x31d1f1db5820efdd:0x3fafdd99b0059b4a?sa=X&ved=1t:242&ictx=111",
+        official_website: "http://www.thebananaleafkitchen.com/",
+        official_menu: "https://www.thebananaleafkitchen.com/ala-carte",
+        operating_hour: "9:30A.M - 9:30P.M",
+        favourite: false,
+        price: 10,
+        rating: 4.4,
+        description: "Hub of art & culture inspired by nature, kafe attached, located in the heart of the heritage. The Baboon House is = 1. An art gallery to provide the opportunities for artistes to discuss and showcase their works and ideas without any kind of prejudices or discrimination. 2. A long term and sustainable restoration project in creating a deeper understanding and appreciation towards cultures and traditions."
+    },
+
+    'hard rock cafe genting highland': {
+        category: "restaurant",
+        link_name: "hard rock cafe genting highland",
+        name: "Hard Rock Cafe Genting Highland",
+        image: "/hard-rock-cafe-genting-highland.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Pahang",
+        location: "No. 89 Jalan Tun Tan Cheng Lock, Melaka 75200 Malaysia",
+        location_link: "https://www.google.com/maps?saddr&daddr=Level+50,+Wyndham+Ion+Majestic+Jalan+Ion+Majestic,+Genting+Highlands+69000+Malaysia@3.435041,101.787125",
+        official_website: "https://cafe.hardrock.com/genting-highlands/",
+        official_menu: "https://cafe.hardrock.com/genting-highlands/files/7234/LEGENDARY_EATS_MENU.pdf",
+        operating_hour: "9:30A.M - 9:30P.M",
+        favourite: false,
+        price: 12,
+        rating: 4.8,
+        description: "Rock n roll-themed chain with a high-energy vibe serving burgers & American classics at Hard Rock Cafe Highlands."
+    },
+
+    'the beach grill': {
+        category: "restaurant",
+        link_name: "the beach grill",
+        name: "The Beach Grill",
+        image: "/the-beach-grill.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Kedah",
+        location: "07000 Langkawi, Kedah",
+        location_link: "https://www.google.com/maps/place/The+Beach+Grill/data=!4m2!3m1!1s0x0:0x55e9f17f4ac02318?sa=X&ved=1t:2428&ictx=111",
+        official_website: "http://www.sevenrooms.com/reservations/thebeachgrilllgkrz",
+        official_menu: "https://www.tripadvisor.com.my/Restaurant_Review-g298283-d14456075-Reviews-The_Beach_Grill-Langkawi_Langkawi_District_Kedah.html?m=19905",
+        operating_hour: "10:30A.M - 10:30P.M",
+        favourite: false,
+        price: 10,
+        rating: 4.9,
+        description: "Borrowing design elements from Malaysia’s traditional, twig-constructed fish traps, this beachfront venue features fresh seafood, international dishes, cocktails and fine wines."
+    },
+
+    'makan kitchen': {
+        category: "restaurant",
+        link_name: "makan kitchen",
+        name: "Makan Kitchen",
+        image: "/makan-kitchen.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Penang",
+        location: "56 Jalan Low Yat, Batu Ferringhi, Penang Island 11100 Malaysia",
+        location_link: "https://www.google.com/maps?saddr&daddr=56+Jalan+Low+Yat,+Batu+Ferringhi,+Penang+Island+11100+Malaysia@5.477498,100.26935",
+        official_website: "https://www.tablecheck.com/en/doubletree-resort-by-hilton-penang-makan-kitchen/reserve/landing?utm_source=tripadvisor",
+        official_menu: "https://www.tablecheck.com/en/doubletree-resort-by-hilton-penang-makan-kitchen/reserve/landing?utm_source=tripadvisor",
+        operating_hour: "6:30A.M - 10:30P.M",
+        favourite: false,
+        price: 18,
+        rating: 5.0,
+        description: "Makan Kitchen - All- day dining restaurant overlooking the pool with live, interactive stations showcasing the diversity of Malaysian delicacies – Malay, Chinese, Indian and other local specialties. Private dining options available for families and groups"
+    },
+
+    'red brick kitchen': {
+        category: "restaurant",
+        link_name: "red brick kitchen",
+        name: "Red Brick Kitchen",
+        image: "/red-brick-kitchen.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Perak",
+        location: "1A Laluan Panorama 4/4, Ipoh 31350 Malaysia",
+        location_link: "https://www.google.com/maps?saddr&daddr=1A+Laluan+Panorama+4/4,+Ipoh+31350+Malaysia@4.565072,101.1399",
+        official_website: "https://www.facebook.com/redbrickkitchenmy",
+        official_menu: "https://www.tablecheck.com/en/doubletree-resort-by-hilton-penang-makan-kitchen/reserve/landing?utm_source=tripadvisor",
+        operating_hour: "9:00A.M - 9:00P.M",
+        favourite: false,
+        price: 15,
+        rating: 5.0,
+        description: "Hidden resort gem: Western eats, mountain views, event space."
+    },
+
+    'on22 restaurant': {
+        category: "restaurant",
+        link_name: "on22 restaurant",
+        name: "On22 Restaurant",
+        image: "/on22-restaurant.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Sabah",
+        location: "18 Jalan Haji Saman Hyatt Centric Kota Kinabalu, Kota Kinabalu 88000 Malaysia",
+        location_link: "https://www.google.com/maps?saddr&daddr=18+Jalan+Haji+Saman+Hyatt+Centric+Kota+Kinabalu,+Kota+Kinabalu+88000+Malaysia@5.9749,116.0724",
+        official_website: "https://www.tablecheck.com/en/hyatt-centric-kota-kinabalu-on22/reserve/landing",
+        official_menu: "https://www.tablecheck.com/en/doubletree-resort-by-hilton-penang-makan-kitchen/reserve/landing?utm_source=tripadvisor",
+        operating_hour: "9:00A.M - 9:00P.M",
+        favourite: false,
+        price: 20,
+        rating: 5.0,
+        description: "ON22 Restaurant's lively atmosphere and cosy setup invite you to savour delicious Asian cuisine with a local twist, crafted with fresh, locally sourced ingredients. Perfect for small gatherings, our private sections offer an intimate dining experience."
+    },
+
+    'lagenda hill seafood restaurant': {
+        category: "restaurant",
+        link_name: "lagenda hill seafood restaurant",
+        name: "Lagenda Hill Seafood Restaurant",
+        image: "/lagenda-hill-seafood-restaurant.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Sarawak",
+        location: "Lot 1442 Section 64 No.2, Kuching 93350 Malaysia",
+        location_link: "https://maps.google.com/maps?saddr=&daddr=Lot%201442%20Section%2064%20No.2,%20Kuching%2093350%20Malaysia@1.540157,110.3556",
+        official_website: "https://www.facebook.com/LagendaHills/?_rdc=1&_rdr",
+        official_menu: "https://www.tablecheck.com/en/doubletree-resort-by-hilton-penang-makan-kitchen/reserve/landing?utm_source=tripadvisor",
+        operating_hour: "3:00P.M - 1:00A.M",
+        favourite: false,
+        price: 20,
+        rating: 5.0,
+        description: "Indulge your taste buds in a culinary adventure like no other at Lagenda Hills, the renowned Pork Free Seafood restaurant in Sarawak, proudly promoted by Malaysian MasterChef. Prepare yourself for an extraordinary dining experience as you savor the freshest and most succulent live seafood delicacies prepared with exceptional finesse."
+    },
+
+    'paya serai': {
+        category: "restaurant",
+        link_name: "paya serai",
+        name: "Paya Serai",
+        image: "/paya-serai.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Selangor",
+        location: "2, Jalan Barat Level 1, Petaling Jaya 46200 Malaysia",
+        location_link: "https://maps.google.com/maps?saddr=&daddr=2,%20Jalan%20Barat%20Level%201,%20Petaling%20Jaya%2046200%20Malaysia@3.102222,101.64123",
+        official_website: "https://www.sevenrooms.com/reservations/payaserai/tripadvisor",
+        official_menu: "https://www.sevenrooms.com/experiences/payaserai?tracking=tripadvisor",
+        operating_hour: "6:00A.M - 11:00P.M",
+        favourite: false,
+        price: 11,
+        rating: 4.2,
+        description: "Paya Serai positions itself as the Malaysian Food Hero outlet within Hilton Petaling Jaya, celebrating the rich and diverse flavors of local cuisine. The buffet offerings will spotlight Malay and broader Malaysian specialties, reinforcing its identity as the go-to destination for authentic local food."
+    },
+
+    'langkawi kitchen': {
+        category: "restaurant",
+        link_name: "langkawi kitchen",
+        name: "Langkawi Kitchen",
+        image: "/langkawi-kitchen.jpg",
+        food_info: "Vegetarian friendly, Vegan options, Gluten free options",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Kedah",
+        location: "07000 Langkawi, Kedah",
+        location_link: "https://www.google.com/maps/place/The+Beach+Grill/data=!4m2!3m1!1s0x0:0x55e9f17f4ac02318?sa=X&ved=1t:2428&ictx=111",
+        official_website: "https://www.marriott.com/en-us/dining/restaurant-bar/lgkrz-the-ritz-carlton-langkawi/5914129-langkawi-kitchen.mi",
+        official_menu: "https://www.tripadvisor.com.my/Restaurant_Review-g298283-d14456075-Reviews-The_Beach_Grill-Langkawi_Langkawi_District_Kedah.html?m=19905",
+        operating_hour: "7:30A.M - 10:30P.M",
+        favourite: false,
+        price: 15,
+        rating: 4.9,
+        description: "Borrowing design elements from Malaysia’s traditional, twig-constructed fish traps, this beachfront venue features fresh seafood, international dishes, cocktails and fine wines."
     }
-    
+
+
 };
 
 module.exports = restaurants;

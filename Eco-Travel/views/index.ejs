@@ -22,6 +22,10 @@
     <span class="loader"></span>
   </div>
 
+  <% if (errorMessage) { %>
+    <div class="toast show"><%= errorMessage %></div>
+  <% } %>
+
   <div class="theme-toggle">
     <input type="checkbox" id="darkModeToggle" class="dark-mode-toggle">
     <label for="darkModeToggle" class="toggle-label">
@@ -121,5 +125,16 @@
 
     </div>
   </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const toast = document.querySelector(".toast");
+      if (toast) {
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 4000); // hide after 4s
+      }
+    });
+  </script>
 </body>
 </html>

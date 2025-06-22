@@ -118,6 +118,108 @@ const destinations = {
         operating_hour: "11:00 AM - 10:30 PM"
     },
 
+    'cenang beach': {
+        category: "destination",
+        link_name: "cenang beach",
+        name: "Cenang Beach",
+        image: "/cenang-beach.jpg",
+        idea: "Family Travel",
+        duration: "3 Days",
+        rating: "4.2",
+        short_location: "Kedah",
+        location: "07000, Kedah",
+        location_link: "https://www.google.com/maps/place/Pantai+Cenang/@6.291916,99.7137643,15z/data=!3m1!4b1!4m6!3m5!1s0x304b880ba2f7821b:0xc3f05608f5876103!8m2!3d6.2955916!4d99.7228132!16s%2Fg%2F1q5blf90y?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        price: 239,
+        favourite: false,
+        description: "Pantai Cenang, also known as Cenang Beach, is a popular beach destination in Langkawi, Malaysia. It's known for its long stretch of sandy shore, vibrant atmosphere, and array of activities. The beach offers a mix of relaxation and excitement, with opportunities for swimming, sunbathing, and various water sports. ",
+        operating_hour: "6:00 AM - 10:30 PM"
+    },
+
+    'laman padi langkawi': {
+        category: "destination",
+        link_name: "laman padi langkawi",
+        name: "Laman Padi Langkawi",
+        image: "/laman-padi-langkawi.jpg",
+        idea: "Educational Outings",
+        duration: "1 Days",
+        rating: "4.1",
+        short_location: "Kedah",
+        location: "Pantai Cenang, 07000 Langkawi, Kedah",
+        location_link: "https://www.google.com/maps/place/laman+padi+langkawi/data=!4m2!3m1!1s0x304b880a9a7d167f:0xf61d8b74a16faf2b?sa=X&ved=1t:155783&ictx=111",
+        price: 105,
+        favourite: false,
+        description: "Open-air museum exploring the history of rice cultivation, with guided tours & hands-activities.",
+        operating_hour: "10:00 AM - 10:30 PM"
+    },
+
+    'langkawi sky bridge': {
+        category: "destination",
+        link_name: "langkawi sky bridge",
+        name: "Langkawi Sky Bridge",
+        image: "/langkawi-sky-bridge.jpg",
+        idea: "Birdwatching",
+        duration: "1 Days",
+        rating: "4.1",
+        short_location: "Kedah",
+        location: "07000 Langkawi, Kedah",
+        location_link: "https://www.google.com/maps/place/langkawi+sky+bridge/data=!4m2!3m1!1s0x304c76c41c936fc3:0x36f2796db82629c3?sa=X&ved=1t:155783&ictx=111",
+        price: 100,
+        favourite: false,
+        description: "Langkawi Sky Bridge is a 125-metre curved pedestrian cable-stayed bridge in Malaysia, completed in 2005. The bridge deck is 660 metres above sea level at the peak of Gunung Mat Cincang on Pulau Langkawi, the main island of the Langkawi archipelago in Kedah.",
+        operating_hour: "8:30 AM - 6:30 PM"
+    },
+
+    'oriental village': {
+        category: "destination",
+        link_name: "oriental village",
+        name: "Oriental Village",
+        image: "/oriental-village.jpg",
+        idea: "Birdwatching",
+        duration: "1 Days",
+        rating: "4.4",
+        short_location: "Kedah",
+        location: "07000 Langkawi, Kedah",
+        location_link: "https://www.google.com/maps/place/Oriental+Village/data=!4m2!3m1!1s0x304c76e4c9afffff:0x1d286d90cf737d1e?sa=X&ved=1t:155783&ictx=111",
+        price: 49,
+        favourite: false,
+        description: "The Oriental Village is an open-air themed village complex designed to give visitors an all-inclusive experience all inone place. The village is designed around a central lake and various attractions are located close by. The sheer assortment of activities at the oriental village demands a whole day of exploring to enjoy them.",
+        operating_hour: "8:30 AM - 6:30 PM"
+    },
+
+    'wat mai suwankiri': {
+        category: "destination",
+        link_name: "wat mai suwankiri",
+        name: "Wat Mai Suwankiri",
+        image: "/wat-mai-sunwankiri.jpg",
+        idea: "Cultural Lover",
+        duration: "1 Days",
+        rating: "4.6",
+        short_location: "Kelantan",
+        location: "16200 Tumpat, Kelantan",
+        location_link: "https://www.google.com/maps/place/Wat+Mai+Suwankiri/data=!4m2!3m1!1s0x0:0xdd52b2058d74ae07?sa=X&ved=1t:2428&ictx=111",
+        price: 32,
+        favourite: false,
+        description: "Compared to the other Thai temples in Tumpat, there's actually more to see. The hall of the dragon boat has some nice murals and the most has fishes. The other hall had a really impressive Buddha statue. One thing, the access road can be very narrow and steep.",
+        operating_hour: "8:30 AM - 6:30 PM"
+    },
+
+    'street art kota bharu': {
+        category: "destination",
+        link_name: "street art kota bharu",
+        name: "Street Art Kota Bharu",
+        image: "/street-art-kota-bharu.jpg",
+        idea: "Natural Photography",
+        duration: "1 Days",
+        rating: "5.0",
+        short_location: "Kelantan",
+        location: "15000 Kota Bharu, Kelantan",
+        location_link: "https://www.google.com/maps/place/Street+Art+Kota+Bharu/data=!4m2!3m1!1s0x0:0x56fcde92f5a2b33c?sa=X&ved=1t:2428&ictx=111",
+        price: 32,
+        favourite: false,
+        description: "Amazing street art murals. The best we have seen in our travels all over Malaysia. Near Pasar Siti Khadijah. Beautiful imagery of Malaysia customs, food and everyday life spread over several laneways. Just walk down some backstreets in the area.",
+        operating_hour: "8:30 AM - 11:59 PM"
+    },
+
     'island of tioman': {
         category: "destination",
         link_name: "island of tioman",
@@ -305,6 +407,23 @@ const destinations = {
         operating_hour: "8:00 AM - 5:00 PM"
     },
 
+    'arulmigu sri rajakaliamman glass temple': {
+        category: "destination",
+        link_name: "arulmigu sri rajakaliamman glass temple",
+        name: "Arulmigu Sri Rajakaliamman Glass Temple",
+        image: "/arulmigu-sri-rajakaliamman.jpg",
+        idea: "History Buffs",
+        duration: "1 Days",
+        rating: "4.8",
+        short_location: "Johor",
+        location: "Jalan Tun Abdul Razak 1/1, Wadi Hana, 80300 Johor Bahru",
+        location_link: "https://www.google.com/maps/place/Arulmigu+Sri+Rajakaliamman+Glass+Temple/data=!4m2!3m1!1s0x31da12cf69335e0f:0xbfde6877a54a647b?sa=X&ved=1t:155783&ictx=111",
+        price: 40,
+        favourite: false,
+        description: "The Arulmigu Sri Rajakaliamman Glass Temple is a Hindu temple in Johor Bahru, Johor, Malaysia. It is also one of the state's tourist attractions. The temple was listed in the Malaysian Book of Records as the first and only glass temple in the nation on 12 May 2010.",
+        operating_hour: "7:00 AM - 12:00 PM"
+    },
+
 'the habitat penang hill': {
         category: "destination",
         link_name: "the habitat penang hill",
@@ -337,6 +456,40 @@ const destinations = {
         favourite: false,
         description: "Entopia, a tropical sanctuary for our planet's little denizens from those that fly freely in the sky to the ones that creep stealthily beneath the ground. Journey into a magical paradise that honours the unsung heroes of our natural world with plenty to discover from outdoor adventures to cavernous mysteries and a multi-storey Indoor Discovery Centre. Live the moment with exciting interactive workshops and activities.",
         operating_hour: "9:00 AM - 7:00 PM"
+    },
+
+    'pinang peranakan mansion': {
+        category: "destination",
+        link_name: "pinang peranakan mansion",
+        name: "Pinang Peranakan Mansion",
+        image: "/pinang-peranakan-mansion.jpg",
+        idea: "Educational Outings",
+        duration: "1 Days",
+        rating: "4.8",
+        short_location: "Penang",
+        location: "29, Church St, Georgetown, 10200 George Town, Penang",
+        location_link: "https://www.google.com/maps/place/Pinang+Peranakan+Mansion/data=!4m2!3m1!1s0x304ac38fdcf36b09:0x8b7cdd7809de1be6?sa=X&ved=1t:155783&ictx=111",
+        price: 72,
+        favourite: false,
+        description: "The Pinang Peranakan Mansion in George Town, Penang, Malaysia, is a museum dedicated to Penang's Peranakan heritage. The museum itself is housed within a distinctive green-hued mansion at Church Street, George Town, which once served as the residence and office of a 19th-century Chinese tycoon, Chung Keng Quee.",
+        operating_hour: "9:00 AM - 7:00 PM"
+    },
+
+    'tropical spice garden': {
+        category: "destination",
+        link_name: "tropical spice garden",
+        name: "Tropical Spice Garden",
+        image: "/tropical-spice-garden.jpg",
+        idea: "Birdwatching",
+        duration: "1 Days",
+        rating: "4.8",
+        short_location: "Penang",
+        location: "11050 George Town, Pulau Pinang",
+        location_link: "https://www.google.com/maps/dir//Lot+595+Mukim,+2,+Jalan+Teluk+Bahang,+Teluk+Bahang,+11050+George+Town,+Pulau+Pinang/@5.4634825,100.1469378,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x304ae85e96b144b7:0xcf0985dd436d531b!2m2!1d100.2293398!2d5.4634881?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        price: 72,
+        favourite: false,
+        description: "Tropical Spice Garden is an eco-attraction tucked within a natural valley fronting the Straits of Malacca. The showcase garden houses over 500 species of herb, spice and tropical plants. Explore and discover the fabulous diversity of nature as you through trails and pathways that meander through undulating hills, jungles terraces and natural streams. ",
+        operating_hour: "10:00 AM - 7:30 PM"
     },
 
     'lost world of tambun': {
@@ -542,6 +695,57 @@ const destinations = {
         description: "Baba House Melaka is celebrated for combining traditional Peranakan charm with modern comforts, creating an inviting atmosphere that resonates with travelers. While guests commend the cleanliness and the service for enhancing their stay, some highlight concerns with room soundproofing and inconsistent housekeeping.",
         operating_hour: "9:00 AM - 8:00 PM"
     },
+
+    'mount kinabalu': {
+        category: "destination",
+        link_name: "mount kinabalu",
+        name: "Mount Kinabalu",
+        image: "/mount-kinabalu.jpg",
+        idea: "Green Lifestyle Enthusiasts",
+        duration: "3 Days",
+        rating: "4.9",
+        short_location: "Sabah",
+        location: "Ranau, Sabah",
+        location_link: "https://www.google.com/maps/place/Mount+Kinabalu/@6.075313,116.5588237,15z/data=!3m1!4b1!4m6!3m5!1s0x323ba2565e9224cb:0x2281c3fec0a9c05e!8m2!3d6.0753131!4d116.5588237!16zL20vMHFxbWY?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        price: 190,
+        favourite: false,
+        description: "Mount Kinabalu is the highest mountain in Malaysia and Borneo. With a height of 4,095 metres, it is the third-highest peak of an island on Earth, the 28th highest peak in Southeast Asia, and 20th most prominent mountain in the world. The mountain is located in Ranau district, West Coast Division of Sabah, Malaysia. ",
+        operating_hour: "10:00 AM - 7:00 PM"
+    },
+
+    'turtle island park': {
+        category: "destination",
+        link_name: "turtle island park",
+        name: "Turtle Island Park",
+        image: "/turtle-island-park.jpg",
+        idea: "Green Lifestyle Enthusiasts",
+        duration: "3 Days",
+        rating: "4.9",
+        short_location: "Sabah",
+        location: "Ranau, Sabah",
+        location_link: "https://www.google.com/maps/place/Turtle+Islands+Park/@6.1503861,118.0539499,17z/data=!4m6!3m5!1s0x3238fa450c02319d:0x2b41d94e053b887d!8m2!3d6.1494474!4d118.0540786!16zL20vMDdkMWh3?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        price: 110,
+        favourite: false,
+        description: "Turtle Islands Park is located within the Turtle Islands, which lie in the Sulu Sea some 3 kilometres north of Sandakan in Sabah, Malaysia. It consists of 3 islands - Selingaan, Little Bakkungan and Gulisaan, including the surrounding coral reefs and ocean",
+        operating_hour: "6:00 AM - 12:00 PM"
+    },
+
+    'labuk monkey bay': {
+        category: "destination",
+        link_name: "labuk monkey bay",
+        name: "Labuk Monkey Bay",
+        image: "/labuk-monkey-bay.jpg",
+        idea: "Curious learners",
+        duration: "1 Days",
+        rating: "4.9",
+        short_location: "Sabah",
+        location: "Jalan Labuk, 90000 Sandakan, Sabah",
+        location_link: "https://www.google.com/maps/place/Mount+Kinabalu/@6.075313,116.5588237,15z/data=!3m1!4b1!4m6!3m5!1s0x323ba2565e9224cb:0x2281c3fec0a9c05e!8m2!3d6.0753131!4d116.5588237!16zL20vMHFxbWY?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        price: 39,
+        favourite: false,
+        description: "Hundreds of wild monkeys roam freely at this expansive sanctuary with popular scheduled feedings.",
+        operating_hour: "8:00 AM - 7:00 PM"
+    }
 
 };
 

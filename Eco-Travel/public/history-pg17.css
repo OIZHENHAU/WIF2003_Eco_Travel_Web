@@ -581,7 +581,7 @@ header.sticky {
 /* ======== Footer Start ======== */
 
 #footer {
-    padding: 6rem 0;
+    padding: 2rem 0;
     background: var(--primary-color);
     margin-top: 100px;
     width: 100%;
@@ -646,7 +646,7 @@ header.sticky {
     padding: 2rem 0;
     grid-gap: 4rem;
     color: var(--white);
-    margin: 4rem 0;
+    margin: 2rem 0;
 
 }
 

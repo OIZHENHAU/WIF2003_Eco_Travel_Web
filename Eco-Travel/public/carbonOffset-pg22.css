@@ -104,6 +104,7 @@ a {
 /* +++++++++++++++++++Utality Class Close++++++++++++++++++++++++ */
 
 .card {
+    width: 600px;
     padding: 15px;
     border-radius: 15px;
     margin-bottom: 15px;
@@ -668,7 +669,7 @@ form input, select {
 /* ======== Footer Start ======== */
 
 #footer {
-    padding: 6rem 0;
+    padding: 2rem 0;
     background: var(--primary-color);
 
 }
@@ -731,7 +732,7 @@ form input, select {
     padding: 2rem 0;
     grid-gap: 4rem;
     color: var(--white);
-    margin: 4rem 0;
+    margin: 2rem 0;
 
 }
 

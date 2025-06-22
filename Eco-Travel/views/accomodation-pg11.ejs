@@ -366,7 +366,7 @@
                 <input type="number" name="num_of_person" class="form-control" placeholder="2" min="1" required>
               </div>
                 <div class="col-md-4 d-flex align-items-end">
-                  <button class="btn btn-primary me-2" style="margin-left: 190px;">Book Now</button>
+                  <button type="button" onClick="redirectToPayment()" class="btn btn-primary me-2" style="margin-left: 190px;">Book Now</button>
                   <button class="btn btn-outline-primary" onclick="openPopUp(this)">Add Planner</button>
                 </div>
             </div>
@@ -486,6 +486,21 @@
   function closePopUp() {
       popup.classList.remove("open-popup");
       window.history.go(-1);
+  }
+
+  function redirectToPayment() {
+        const numOfPerson = document.querySelector('input[name="num_of_person"]').value;
+        const pricePerPerson = <%=accomodation.price %>;
+
+        if (!numOfPerson || numOfPerson <= 0) {
+          alert("Please enter a valid number of persons.");
+          return;
+        }
+
+        const totalPrice = pricePerPerson * parseInt(numOfPerson);
+
+        // Redirect to payment page with query parameters
+        window.location.href = `/payment-page?total=${totalPrice}`;
   }
 
 

@@ -90,7 +90,7 @@ header {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 0.5rem;
     width: 100%;
 }
 
@@ -800,7 +800,7 @@ textarea:focus {
 /* ======== Footer Start ======== */
 
 #footer {
-  padding: 4rem 0; /* Reduced from 6rem */
+  padding: 2rem 0; /* Reduced from 6rem */
   background: var(--primary-color);
   margin-top: auto; /* This helps eliminate the scrolling issue */
 }
@@ -863,7 +863,7 @@ textarea:focus {
   padding: 2rem 0;
   grid-gap: 4rem;
   color: var(--white);
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 
 .about img {
@@ -899,6 +899,7 @@ textarea:focus {
 
 .links ul li a {
   color: var(--white);
+  text-decoration: none;
 }
 
 .subscribe .lead {
