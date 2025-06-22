@@ -246,6 +246,74 @@ const restaurants = {
         description: "Paya Serai positions itself as the Malaysian Food Hero outlet within Hilton Petaling Jaya, celebrating the rich and diverse flavors of local cuisine. The buffet offerings will spotlight Malay and broader Malaysian specialties, reinforcing its identity as the go-to destination for authentic local food."
     },
 
+    'ms elliot at hock bee': {
+        category: "restaurant",
+        link_name: "ms elliot at hock bee",
+        name: "Ms Elliot At Hock Bee",
+        image: "/our-pastries-cakes-are.jpg",
+        food_info: "Cafe, Asian, Contemporary, Fusion, Malaysian",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Pahang",
+        location: "10 Jalan Besar, Kuantan 25000 Malaysia",
+        location_link: "https://www.google.com/maps/dir//Ms+Elliot+at+Hock+Bee,+10,+Jalan+Besar,+25000+Kuantan,+Pahang/@3.8065145,103.2877955,15732m/data=!3m1!1e3!4m9!4m8!1m0!1m5!1m1!1s0x31c8bbf247c4f465:0xfd194014c2d01160!2m2!1d103.3289953!2d3.8065155!3e0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        official_website: "https://hockbee.com/",
+        official_menu: "https://hockbee.com/",
+        operating_hour: "9:30A.M - 11:00P.M",
+        favourite: false,
+        description: "Ms. Elliot is a Halal-certified, family-friendly café in Kuantan's historic Hock Bee building. Designed by Jujurwork and featured on ArchDaily, it blends modern and heritage charm. The menu fuses Pahang flavors with Western classics, offering unique dishes like Daging Salai Carbonara and Puding Diraja."
+    },
+
+    'micasa cafe by the river': {
+        category: "restaurant",
+        link_name: "micasa cafe by the river",
+        name: "Micasa Cafe by the River",
+        image: "/mi-casa.jpg",
+        food_info: "Vegan, Chinese, Japanese, Cafe, Asian, Korean, Malaysian",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Pahang",
+        location: "567 Jalan Besar Mega View Hotel, Kuantan 25000 Malaysia",
+        location_link: "https://www.google.com/maps/dir//Micasa+Caf%C3%A9+by+the+River,+Mega+View+Hotel,+Jalan+Besar,+Kuantan,+Pahang/@3.8055251,103.2880324,15732m/data=!3m1!1e3!4m9!4m8!1m0!1m5!1m1!1s0x31c8ba9c1b0443c1:0x85371a32cc3c8229!2m2!1d103.3292322!2d3.8055261!3e0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        official_website: "https://www.facebook.com/micasacafebytheriver/",
+        official_menu: "https://www.facebook.com/micasacafebytheriver/",
+        operating_hour: "9:30A.M - 11:00P.M",
+        favourite: false,
+        description: "Here in Micasa Cafe, we brew with pasion, and cook with love, just hoping you find yourself comfort and peace, in this city of Kuantan. Kuantan, a lovely town that stays in a moderate scale: not over urbanised to be too hectic, but not too under develop to be too rural. An outsider has to explore in order to unravel its beauty."
+    },
+
+    'azmi steam fish': {
+        category: "restaurant",
+        link_name: "azmi steam fish",
+        name: "Azmi Steam Fish",
+        image: "/steamed-fish-with-durian.jpg",
+        food_info: "Asian, Malaysian",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Pahang",
+        location: "Kuala Lipis 27200 Malaysia",
+        location_link: "https://www.google.com/maps/place/Azmi+Steam+Fish+(Azmi+Ikan+Stim+Tempoyak+-+Kuala+Lipis)/@4.1868586,102.0556081,983m/data=!3m2!1e3!4b1!4m6!3m5!1s0x31cbd631a36ee3bb:0xb7b2ab7064b7de5a!8m2!3d4.1868586!4d102.058183!16s%2Fg%2F11bwhb8cc4?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        official_website: "https://www.facebook.com/azmisteamfish#",
+        official_menu: "https://www.facebook.com/azmisteamfish#",
+        operating_hour: "9:30A.M - 11:00P.M",
+        favourite: false,
+        description: "Azmi Steam Fish Is A Beloved Local Eatery In Kuala Lipis Known For Its Signature Steamed Fish Dishes. Popular Among Families And Foodies Alike, It Offers Fresh Seafood Prepared With Bold, Spicy Sauces That Reflect Authentic Malaysian-Chinese Flavors. Known For Its Lively Atmosphere And Generous Portions, Azmi Steam Fish Is A Go-To Spot For Comfort Food Done Right."
+    },
+
+    'mr dakgalbi at skyavenue in genting': {
+        category: "restaurant",
+        link_name: "mr dakgalbi at skyavenue in genting",
+        name: "Mr Dakgalbi At Skyavenue In Genting",
+        image: "/mr-dakbalgi.jpg",
+        food_info: "Vegan, Chinese, Asian, Korean, Malaysian",
+        payment_info: "Accept Visa, Mastercard, amd digital payment",
+        short_location: "Pahang",
+        location: "T2-51a, Level 1, Skyavenue, Genting Highlands Reso, Genting Highlands 69000 Malaysia",
+        location_link: "https://www.google.com/maps/dir//Mr.Dakgalbi+@+SkyAvenue+(in+Genting+HighLands),+T2-51A,+Level+1,+SkyAvenue,+Genting+Highlands+Resort,+69000+Genting+Highlands,+Pahang/@3.4236389,101.791369,984m/data=!3m2!1e3!5s0x31cc1400fe8e72b3:0xbae047edf8db5fc0!4m9!4m8!1m0!1m5!1m1!1s0x31cc155044c1756d:0x4a3edd25e30a8dbd!2m2!1d101.7939439!2d3.4236389!3e0?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
+        official_website: "https://mrdakgalbi.com.my/",
+        official_menu: "https://mrdakgalbi.com.my/",
+        operating_hour: "9:30A.M - 11:00P.M",
+        favourite: false,
+        description: "Dakgalbi Is A Well-Loved Korean Dish Made With Marinated Chicken, Vegetables, And Traditional Spicy Sauce. Originating From Chuncheon, It Is Pork-Free And Often Cooked Live At The Table, Making It Both Nutritious And Entertaining. Known For Its Bold Flavors And Balanced Ingredients, Dakgalbi Is A Fun, Family-Friendly Meal Enjoyed By People Of All Ages."
+    },
+
     'langkawi kitchen': {
         category: "restaurant",
         link_name: "langkawi kitchen",

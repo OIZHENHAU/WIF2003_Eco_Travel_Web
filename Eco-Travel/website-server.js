@@ -509,7 +509,7 @@ app.get("/logout-account", (req, res) => {
         return res.redirect('profile-settings-pg4.ejs'); // stay if error
         }
         res.clearCookie('connect.sid'); // optional: clear cookie
-        res.render('index.ejs'); // go to login/register page
+        res.render("index.ejs", { errorMessage: null }); // go to login/register page
     });
 });
 
