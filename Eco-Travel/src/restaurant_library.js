@@ -259,7 +259,9 @@ const restaurants = {
         official_website: "https://hockbee.com/",
         official_menu: "https://hockbee.com/",
         operating_hour: "9:30A.M - 11:00P.M",
+        price: 11,
         favourite: false,
+        rating: 4.5,
         description: "Ms. Elliot is a Halal-certified, family-friendly café in Kuantan's historic Hock Bee building. Designed by Jujurwork and featured on ArchDaily, it blends modern and heritage charm. The menu fuses Pahang flavors with Western classics, offering unique dishes like Daging Salai Carbonara and Puding Diraja."
     },
 
@@ -276,7 +278,9 @@ const restaurants = {
         official_website: "https://www.facebook.com/micasacafebytheriver/",
         official_menu: "https://www.facebook.com/micasacafebytheriver/",
         operating_hour: "9:30A.M - 11:00P.M",
+        price: 19,
         favourite: false,
+        rating: 4.6,
         description: "Here in Micasa Cafe, we brew with pasion, and cook with love, just hoping you find yourself comfort and peace, in this city of Kuantan. Kuantan, a lovely town that stays in a moderate scale: not over urbanised to be too hectic, but not too under develop to be too rural. An outsider has to explore in order to unravel its beauty."
     },
 
@@ -294,6 +298,8 @@ const restaurants = {
         official_menu: "https://www.facebook.com/azmisteamfish#",
         operating_hour: "9:30A.M - 11:00P.M",
         favourite: false,
+        price: 13,
+        rating: 4.7,
         description: "Azmi Steam Fish Is A Beloved Local Eatery In Kuala Lipis Known For Its Signature Steamed Fish Dishes. Popular Among Families And Foodies Alike, It Offers Fresh Seafood Prepared With Bold, Spicy Sauces That Reflect Authentic Malaysian-Chinese Flavors. Known For Its Lively Atmosphere And Generous Portions, Azmi Steam Fish Is A Go-To Spot For Comfort Food Done Right."
     },
 
@@ -311,6 +317,8 @@ const restaurants = {
         official_menu: "https://mrdakgalbi.com.my/",
         operating_hour: "9:30A.M - 11:00P.M",
         favourite: false,
+        pricing: 30,
+        rating: 4.8,
         description: "Dakgalbi Is A Well-Loved Korean Dish Made With Marinated Chicken, Vegetables, And Traditional Spicy Sauce. Originating From Chuncheon, It Is Pork-Free And Often Cooked Live At The Table, Making It Both Nutritious And Entertaining. Known For Its Bold Flavors And Balanced Ingredients, Dakgalbi Is A Fun, Family-Friendly Meal Enjoyed By People Of All Ages."
     },
 
